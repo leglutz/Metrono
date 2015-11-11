@@ -19,38 +19,48 @@
             <TableRow>
                 <TextView
                     android:text="Blinking"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                <Space />
                 <ToggleButton
                     local:MvxBind="Checked Settings.IsBlinking" />
             </TableRow>
-            <Space
-                android:layout_height="20dp" />
+            <TableRow>
+                <Space
+                    android:layout_height="20dp"
+                    android:layout_span="3" />
+            </TableRow>
             <TableRow>
                 <TextView
-                    android:text="First beat"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-                <ToggleButton
-                    local:MvxBind="Checked Settings.PlayFirstBeat" />
+                    android:text="Beats sound"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_span="3" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="First"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
                 <Mvx.MvxSpinner
                     local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.FirstBeatClick" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.PlayFirstBeat" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Compound beats"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-                <ToggleButton
-                    local:MvxBind="Checked Settings.PlayCompoundBeats" />
+                    android:text="Compound"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
                 <Mvx.MvxSpinner
                     local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.CompoundBeatClick" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.PlayCompoundBeats" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Other beats"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-                <ToggleButton
-                    local:MvxBind="Checked Settings.PlayOtherBeats" />
+                    android:text="Other"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
                 <Mvx.MvxSpinner
                     local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.OtherBeatClick" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.PlayOtherBeats" />
             </TableRow>
         </TableLayout>
     </android.support.v7.widget.CardView>
