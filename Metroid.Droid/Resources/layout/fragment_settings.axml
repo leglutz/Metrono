@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        local:cardCornerRadius="5dp"
+        local:cardElevation="5dp"
+        local:cardBackgroundColor="#E0E0E0">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow>
+                <TextView
+                    android:text="Blinking"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.IsBlinking" />
+            </TableRow>
+            <Space
+                android:layout_height="20dp" />
+            <TableRow>
+                <TextView
+                    android:text="First beat"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.PlayFirstBeat" />
+                <Mvx.MvxSpinner
+                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.FirstBeatClick" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Compound beats"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.PlayCompoundBeats" />
+                <Mvx.MvxSpinner
+                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.CompoundBeatClick" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Other beats"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.PlayOtherBeats" />
+                <Mvx.MvxSpinner
+                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.OtherBeatClick" />
+            </TableRow>
+        </TableLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

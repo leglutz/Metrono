@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{C27B412B-AE12-4B02-B4FF-2874F733A898}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DiodeTeam.Metroid.Droid</RootNamespace>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>Metroid.Droid</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta5\lib\MonoAndroid\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta5\lib\MonoAndroid\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta5\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.4.0.0-beta5\lib\MonoAndroid\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.4.0.0-beta5\lib\MonoAndroid\Cirrious.MvvmCross.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.HotTuna.Binding.4.0.0-beta5\lib\MonoAndroid\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Binding.4.0.0-beta5\lib\MonoAndroid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.1.0.0-beta1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.23.1.0.0-beta1\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.1.0.0-beta1\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Json">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.4.0.0-beta5\lib\MonoAndroid\MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.4.0.0-beta5\lib\MonoAndroid\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.4.0.0-beta5\lib\MonoAndroid\MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid.Support.Fragging">
+      <HintPath>..\packages\Cirrious.MvvmCross.Droid.Support.Fragging.4.0.0-beta6\lib\MonoAndroid403\Cirrious.MvvmCross.Droid.Support.Fragging.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid.Support.AppCompat">
+      <HintPath>..\packages\Cirrious.MvvmCross.Droid.Support.AppCompat.4.0.0-beta6\lib\MonoAndroid403\Cirrious.MvvmCross.Droid.Support.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheesebaron.MvxPlugins.Settings">
+      <HintPath>..\packages\Cheesebaron.MvxPlugins.Settings.1.2.2-pre4\lib\MonoAndroid10\Cheesebaron.MvxPlugins.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Cheesebaron.MvxPlugins.Settings.Droid">
+      <HintPath>..\packages\Cheesebaron.MvxPlugins.Settings.1.2.2-pre4\lib\MonoAndroid10\Cheesebaron.MvxPlugins.Settings.Droid.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AudioService.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Converters\BeatToImageResourceValueConverter.cs" />
+    <Compile Include="Views\Fragments\MeasureFragment.cs" />
+    <Compile Include="DebugTrace.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Views\Activities\SplashScreenActivity.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Views\Fragments\MetronomeFragment.cs" />
+    <Compile Include="Views\Fragments\SettingsFragment.cs" />
+    <Compile Include="Views\Activities\MainActivity.cs" />
+    <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Metroid.Core\Metroid.Core.csproj">
+      <Project>{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}</Project>
+      <Name>Metroid.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Resources\values-v21\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Views\" />
+    <Folder Include="Resources\values\" />
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Views\Activities\" />
+    <Folder Include="Views\Fragments\" />
+    <Folder Include="Resources\menu\" />
+    <Folder Include="Bootstrap\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\eighth.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\half.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\minus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\quarter.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sixteenth.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\stop.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\thirty_second.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\whole.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\eighth.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\half.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\minus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\quarter.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sixteenth.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\stop.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\thirty_second.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\whole.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\eighth.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\half.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\minus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\quarter.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sixteenth.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\stop.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\thirty_second.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\whole.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\eighth.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\half.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\minus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\quarter.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sixteenth.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\stop.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\thirty_second.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\whole.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\eighth.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\half.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\minus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\quarter.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sixteenth.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\stop.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\thirty_second.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\whole.png" />
+    <AndroidResource Include="Resources\layout\toolbar.axml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values-v21\styles.xml" />
+    <AndroidResource Include="Resources\drawable\background.jpg" />
+    <AndroidResource Include="Resources\layout\fragment_measure.axml" />
+    <AndroidResource Include="Resources\layout\activity_splash_screen.axml" />
+    <AndroidResource Include="Resources\layout\item_metronome_beat.axml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\layout\activity_main.axml" />
+    <AndroidResource Include="Resources\layout\fragment_metronome.axml" />
+    <AndroidResource Include="Resources\layout\fragment_settings.axml" />
+    <AndroidResource Include="Resources\menu\menu.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
+  </ItemGroup>
+</Project>

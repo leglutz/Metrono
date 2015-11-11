@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="5dp">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Mvx.MvxSpinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="80dp"
+            local:MvxBind="ItemsSource TimeSignatureNumeratorList; SelectedItem Measure.TimeSignatureNumerator" />
+        <TextView
+            android:text="/"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" />
+        <Mvx.MvxSpinner
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="80dp"
+            local:MvxBind="ItemsSource TimeSignatureDenominatorList; SelectedItem Measure.TimeSignatureDenominator" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/minus"
+                local:MvxBind="Click TempoMinus1Command" />
+            <Mvx.MvxSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="80dp"
+                local:MvxBind="ItemsSource TempoList; SelectedItem Measure.Tempo" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/plus"
+                local:MvxBind="Click TempoPlus1Command" />
+            <Button
+                android:text="Tap"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                local:MvxBind="Click TapCommand" />
+        </LinearLayout>
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            local:MvxBind="Progress Measure.Tempo; Max Measure.MaxTempo, Mode=OneTime" />
+    </LinearLayout>
+</LinearLayout>
