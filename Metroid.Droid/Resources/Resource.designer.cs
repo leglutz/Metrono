@@ -1530,8 +1530,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f020049
 			public const int minus = 2130837577;
 			
-			// aapt resource value: 0x7f020052
-			public const int notification_template_icon_bg = 2130837586;
+			// aapt resource value: 0x7f020053
+			public const int notification_template_icon_bg = 2130837587;
 			
 			// aapt resource value: 0x7f02004a
 			public const int play = 2130837578;
@@ -1549,13 +1549,16 @@ namespace DiodeTeam.Metroid.Droid
 			public const int sixteenth = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int stop = 2130837583;
+			public const int splash_screen = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int thirty_second = 2130837584;
+			public const int stop = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int whole = 2130837585;
+			public const int thirty_second = 2130837585;
+			
+			// aapt resource value: 0x7f020052
+			public const int whole = 2130837586;
 			
 			static Drawable()
 			{
