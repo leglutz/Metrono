@@ -13,11 +13,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
     {
         private ColorPickerPanelView _colorPicker;
 
-        public SettingsFragment()
-        {
-            RetainInstance = true;
-        }
-
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
@@ -26,10 +21,13 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             HasOptionsMenu = true;
 
             _colorPicker = view.FindViewById<ColorPickerPanelView>(Resource.Id.color_picker);
-            _colorPicker.Color = Color.Black;
+            _colorPicker.Color = new Color(ViewModel.Settings.BlinkColor);
             _colorPicker.Click += (sender, e) => {
                 var colorPickerDialogFragment = new ColorPickerDialogFragment(_colorPicker.Color);
-                colorPickerDialogFragment.ColorChanged += (o, args) => _colorPicker.Color = args.Color;
+                colorPickerDialogFragment.ColorChanged += (o, args) => {
+                    _colorPicker.Color = args.Color;
+                    ViewModel.Settings.BlinkColor = _colorPicker.Color.ToArgb();
+                };
                 colorPickerDialogFragment.Show(FragmentManager, null);
             };
 

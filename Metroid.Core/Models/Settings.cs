@@ -19,15 +19,15 @@ namespace DiodeTeam.Metroid.Core.Models
             }
         }
 
-        /*public bool BlinkColor
+        public int BlinkColor
         {
-            get { return _settings.GetValue<Color>("Blink", true); }
+            get { return _settings.GetValue<int>("BlinkColor", 0); }
             set 
             { 
-                _settings.AddOrUpdateValue<Color>("Blink", value); 
-                RaisePropertyChanged (() => Blink);
+                _settings.AddOrUpdateValue<int>("BlinkColor", value); 
+                RaisePropertyChanged (() => BlinkColor);
             }
-        }*/
+        }
 
         public ClickKind BeatClick
         {
