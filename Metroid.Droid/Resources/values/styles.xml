@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MyTheme" parent="MyTheme.Base" />
+    <style name="MyTheme" parent="MyTheme.Base">
+        <item name="android:windowBackground">@drawable/background</item>
+    </style>
+
+     <style name="MyTheme.Splash" parent="MyTheme.Base">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
 
     <!-- Base theme applied no matter what API -->
     <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -15,11 +21,6 @@
         <!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets -->
         <item name="colorAccent">@color/colorAccent</item>
         <!-- You can also set colorControlNormal, colorControlActivated, colorControlHighlight and colorSwitchThumbNormal. -->
-    </style>
-
-    <style name="MyTheme.Splash" parent="MyTheme.Base">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
-        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="MyTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -137,6 +137,8 @@ namespace DiodeTeam.Metroid.Core.Models
             for (int i = 1; i <= TimeSignatureNumerator; i++)
             {
                 var beat = new Beat (i, TimeSignatureDenominator, Tempo);
+                beat.IsFirst = i == 1;
+                beat.IsLast = i == TimeSignatureNumerator;
                 // Compound meters
                 if(TimeSignatureNumerator > 4 && TimeSignatureNumerator % 3 == 0)
                 {

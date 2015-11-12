@@ -21,7 +21,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             // Toolbar will now take on default actionbar characteristics
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
             SetSupportActionBar (toolbar);
-            //SupportActionBar.SetDisplayHomeAsUpEnabled (true);
 
             // Metronome fragment
             SupportFragmentManager.BeginTransaction ()

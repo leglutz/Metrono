@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
 using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Resources;
+using DiodeTeam.Metroid.Core.Services;
 
 namespace DiodeTeam.Metroid.Core.ViewModels
 {
@@ -13,9 +13,9 @@ namespace DiodeTeam.Metroid.Core.ViewModels
 
         public List<ClickKind> ClickKindList { get; private set; }
 
-        public SettingsViewModel ()
+        public SettingsViewModel (ISettingsService settingsService)
         {
-            Settings = Mvx.IocConstruct<Settings> ();
+            Settings = settingsService.Settings;
 
             ClickKindList = ResourcesHelper.ClickSoundMap.Keys.ToList ();
         }

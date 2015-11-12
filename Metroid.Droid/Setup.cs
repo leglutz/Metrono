@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Android.Content;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Platform;
@@ -24,6 +25,16 @@ namespace DiodeTeam.Metroid.Droid
             base.InitializeLastChance ();
 
             Mvx.RegisterSingleton<IAudioService>(new AudioService ());
+        }
+
+        protected override IDictionary<string, string> ViewNamespaceAbbreviations
+        {
+            get
+            {
+                var toReturn = base.ViewNamespaceAbbreviations;
+                toReturn["Controls"] = "DiodeTeam.Metroid.Droid.Controls";
+                return toReturn;
+            }
         }
 
         protected override IMvxTrace CreateDebugTrace()

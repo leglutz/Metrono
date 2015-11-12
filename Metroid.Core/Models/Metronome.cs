@@ -14,7 +14,7 @@ namespace DiodeTeam.Metroid.Core.Models
         public event EventHandler<Beat> BeatFinished;
 
         private readonly IAudioService _audioService;
-        private readonly ISettingsService _settingsService;
+        private readonly Settings _settings;
 
         private bool _isPlaying;
         public bool IsPlaying
@@ -33,7 +33,7 @@ namespace DiodeTeam.Metroid.Core.Models
         public Metronome (IAudioService audioService, ISettingsService settingsService)
         {
             _audioService = audioService;
-            _settingsService = settingsService;
+            _settings = settingsService.Settings;
 
             IsPlaying = false;
             IsPaused = false;
@@ -149,26 +149,21 @@ namespace DiodeTeam.Metroid.Core.Models
         private byte[] GetBeatSound(Beat beat)
         {
             var beatSound = new byte[0];
-            if (beat.Number == 1)
+            if (beat.IsFirst && _settings.AccentuateFirstBeat)
             {
-                if (_settingsService.Settings.PlayFirstBeat)
-                {
-                    beatSound = ResourcesHelper.ClickSoundMap [_settingsService.Settings.FirstBeatClick];
-                }
+                beatSound = ResourcesHelper.ClickSoundMap [_settings.FirstBeatClick];
             }
-            else if(beat.IsCompound)
+            else if (beat.IsLast && _settings.AccentuateLastBeat)
             {
-                if (_settingsService.Settings.PlayCompoundBeats)
-                {
-                    beatSound = ResourcesHelper.ClickSoundMap [_settingsService.Settings.CompoundBeatClick];
-                }
+                beatSound = ResourcesHelper.ClickSoundMap [_settings.LastBeatClick];
+            }
+            else if(beat.IsCompound && _settings.AccentuateCompoundBeats)
+            {
+                beatSound = ResourcesHelper.ClickSoundMap [_settings.CompoundBeatClick];
             }
             else
             { 
-                if (_settingsService.Settings.PlayOtherBeats)
-                {
-                    beatSound = ResourcesHelper.ClickSoundMap [_settingsService.Settings.OtherBeatClick];
-                }
+                beatSound = ResourcesHelper.ClickSoundMap [_settings.BeatClick];
             }
 
             return beatSound;

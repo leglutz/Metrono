@@ -1,58 +1,107 @@
 ﻿using System;
-using DiodeTeam.Metroid.Core.Resources;
 using Cheesebaron.MvxPlugins.Settings.Interfaces;
+using Cirrious.MvvmCross.ViewModels;
+using DiodeTeam.Metroid.Core.Resources;
 
 namespace DiodeTeam.Metroid.Core.Models
 {
-    public class Settings
+    public class Settings : MvxNotifyPropertyChanged
     {
         private readonly ISettings _settings;
 
-        public Settings(ISettings settings)
+        public bool Blink
         {
-            _settings = settings;
+            get { return _settings.GetValue<bool>("Blink", true); }
+            set 
+            { 
+                _settings.AddOrUpdateValue<bool>("Blink", value); 
+                RaisePropertyChanged (() => Blink);
+            }
         }
 
-        public bool IsBlinking
+        /*public bool BlinkColor
         {
-            get { return _settings.GetValue<bool>("IsBlinking", true); }
-            set { _settings.AddOrUpdateValue<bool>("IsBlinking", value); }
+            get { return _settings.GetValue<Color>("Blink", true); }
+            set 
+            { 
+                _settings.AddOrUpdateValue<Color>("Blink", value); 
+                RaisePropertyChanged (() => Blink);
+            }
+        }*/
+
+        public ClickKind BeatClick
+        {
+            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.TickLo);; }
+            set 
+            { 
+                _settings.AddOrUpdateValue<ClickKind> ("BeatClick", value); 
+                RaisePropertyChanged (() => BeatClick);
+            }
         }
 
-        public bool PlayFirstBeat
+        public bool AccentuateFirstBeat
         {
-            get { return _settings.GetValue<bool>("PlayFirstBeat", true); }
-            set { _settings.AddOrUpdateValue<bool> ("PlayFirstBeat", value); }
+            get { return _settings.GetValue<bool>("AccentuateFirstBeat", true); }
+            set 
+            {
+                _settings.AddOrUpdateValue<bool> ("AccentuateFirstBeat", value); 
+                RaisePropertyChanged (() => AccentuateFirstBeat);
+            }
         }
 
         public ClickKind FirstBeatClick
         {
             get { return _settings.GetValue<ClickKind>("FirstBeatClick", ClickKind.Bell);; }
-            set { _settings.AddOrUpdateValue<ClickKind> ("FirstBeatClick", value); }
+            set 
+            {
+                _settings.AddOrUpdateValue<ClickKind> ("FirstBeatClick", value); 
+                RaisePropertyChanged (() => FirstBeatClick);
+            }
         }
 
-        public bool PlayCompoundBeats
+        public bool AccentuateLastBeat
         {
-            get { return _settings.GetValue<bool>("PlayCompoundBeats", true); }
-            set { _settings.AddOrUpdateValue<bool> ("PlayCompoundBeats", value); }
+            get { return _settings.GetValue<bool>("AccentuateLastBeat", false); }
+            set 
+            {
+                _settings.AddOrUpdateValue<bool> ("AccentuateLastBeat", value); 
+                RaisePropertyChanged (() => AccentuateLastBeat);
+            }
+        }
+
+        public ClickKind LastBeatClick
+        {
+            get { return _settings.GetValue<ClickKind>("LastBeatClick", ClickKind.Bell);; }
+            set 
+            {
+                _settings.AddOrUpdateValue<ClickKind> ("LastBeatClick", value); 
+                RaisePropertyChanged (() => LastBeatClick);
+            }
+        }
+
+        public bool AccentuateCompoundBeats
+        {
+            get { return _settings.GetValue<bool>("AccentuateCompoundBeats", true); }
+            set 
+            {
+                _settings.AddOrUpdateValue<bool> ("AccentuateCompoundBeats", value); 
+                RaisePropertyChanged (() => AccentuateCompoundBeats);
+            }
         }
 
         public ClickKind CompoundBeatClick
         {
             get { return _settings.GetValue<ClickKind>("CompoundBeatClick", ClickKind.RimshotHi);; }
-            set { _settings.AddOrUpdateValue<ClickKind> ("CompoundBeatClick", value); }
+            set 
+            {
+                _settings.AddOrUpdateValue<ClickKind> ("CompoundBeatClick", value); 
+                RaisePropertyChanged (() => CompoundBeatClick);
+            }
         }
 
-        public bool PlayOtherBeats
+        public Settings(ISettings settings)
         {
-            get { return _settings.GetValue<bool>("PlayOtherBeats", true); }
-            set { _settings.AddOrUpdateValue<bool> ("PlayOtherBeats", value); }
-        }
-
-        public ClickKind OtherBeatClick
-        {
-            get { return _settings.GetValue<ClickKind>("OtherBeatsClick", ClickKind.TickLo);; }
-            set { _settings.AddOrUpdateValue<ClickKind> ("OtherBeatsClick", value); }
+            _settings = settings;
         }
     }
 }

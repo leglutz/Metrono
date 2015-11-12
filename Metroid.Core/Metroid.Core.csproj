@@ -41,7 +41,6 @@
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\MeasureViewModel.cs" />
     <Compile Include="Converters\BoolToAlphaValueConverter.cs" />
-    <Compile Include="Models\Settings.cs" />
     <Compile Include="AppStart.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Services\ISettingsService.cs" />

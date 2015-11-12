@@ -19,10 +19,10 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            HasOptionsMenu = true;
-
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
             var view = this.BindingInflate (Resource.Layout.fragment_metronome, null);
+
+            HasOptionsMenu = true;
 
             // Get the beats card (for animation purpose)
             _beatsCard = view.FindViewById<View>(Resource.Id.beats_card);
@@ -39,6 +39,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
         {
             menu.FindItem (Resource.Id.settings_menu).SetVisible(true);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (false);
+            ((MainActivity)Activity).SupportActionBar.Title = "Metroid";
 
             base.OnPrepareOptionsMenu (menu);
         }

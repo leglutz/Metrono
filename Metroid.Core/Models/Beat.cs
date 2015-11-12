@@ -83,6 +83,20 @@ namespace DiodeTeam.Metroid.Core.Models
             }
         }
 
+        private bool _isFirst;
+        public bool IsFirst
+        { 
+            get { return _isFirst; }
+            set { SetProperty (ref _isFirst, value); }
+        }
+
+        private bool _isLast;
+        public bool IsLast
+        { 
+            get { return _isLast; }
+            set { SetProperty (ref _isLast, value); }
+        }
+
         private bool _isCompound;
         public bool IsCompound
         { 
@@ -99,15 +113,17 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public double Duration { get; private set; }
 
-        public Beat (int number = 1, int value = 4, int tempo = 120, int dots = 0, int tupletNumerator = 0, int tupletDenominator = 0, bool isCompound = false)
+        public Beat (int number = 1, int value = 4, int tempo = 120)
         {
             _number = number;
             _value = value;
             _tempo = tempo;
-            _dots = dots;
-            _tupletNumerator = tupletNumerator;
-            _tupletDenominator = tupletDenominator;
-            _isCompound = isCompound;
+            _dots = 0;
+            _tupletNumerator = 0;
+            _tupletDenominator = 0;
+            _isFirst = false;
+            _isLast = false;
+            _isCompound = false;
             _isPlaying = false;
 
             UpdateDuration ();

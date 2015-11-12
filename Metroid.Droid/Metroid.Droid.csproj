@@ -114,6 +114,12 @@
     <Compile Include="Views\Fragments\SettingsFragment.cs" />
     <Compile Include="Views\Activities\MainActivity.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
+    <Compile Include="Controls\ColorPicker\ColorPickerPanelView.cs" />
+    <Compile Include="Controls\ColorPicker\ColorChangedEventArgs.cs" />
+    <Compile Include="Controls\ColorPicker\AlphaPatternDrawable.cs" />
+    <Compile Include="Controls\ColorPicker\ColorPickerDialog.cs" />
+    <Compile Include="Controls\ColorPicker\ColorPickerView.cs" />
+    <Compile Include="Controls\ColorPicker\ColorUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -139,6 +145,8 @@
     <Folder Include="Views\Fragments\" />
     <Folder Include="Resources\menu\" />
     <Folder Include="Bootstrap\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Controls\ColorPicker\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -216,5 +224,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable\splash_screen.jpg" />
+    <AndroidResource Include="Resources\layout\dialog_color_picker.axml" />
   </ItemGroup>
 </Project>

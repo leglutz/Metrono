@@ -18,11 +18,22 @@
             android:layout_height="match_parent">
             <TableRow>
                 <TextView
-                    android:text="Blinking"
+                    android:text="Click"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
-                <Space />
+                <Mvx.MvxSpinner
+                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.BeatClick" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Blink"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                <Controls.ColorPicker.ColorPickerPanelView
+                    android:id="@+id/color_picker"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    local:MvxBind="Enabled Settings.Blink" />
                 <ToggleButton
-                    local:MvxBind="Checked Settings.IsBlinking" />
+                    local:MvxBind="Checked Settings.Blink" />
             </TableRow>
             <TableRow>
                 <Space
@@ -31,7 +42,7 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Beats sound"
+                    android:text="Beat accentuations"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_span="3" />
             </TableRow>
@@ -40,27 +51,27 @@
                     android:text="First"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
                 <Mvx.MvxSpinner
-                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.FirstBeatClick" />
+                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.FirstBeatClick; Enabled Settings.AccentuateFirstBeat" />
                 <ToggleButton
-                    local:MvxBind="Checked Settings.PlayFirstBeat" />
+                    local:MvxBind="Checked Settings.AccentuateFirstBeat" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Last"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                <Mvx.MvxSpinner
+                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.LastBeatClick; Enabled Settings.AccentuateLastBeat" />
+                <ToggleButton
+                    local:MvxBind="Checked Settings.AccentuateLastBeat" />
             </TableRow>
             <TableRow>
                 <TextView
                     android:text="Compound"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
                 <Mvx.MvxSpinner
-                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.CompoundBeatClick" />
+                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.CompoundBeatClick; Enabled Settings.AccentuateCompoundBeats" />
                 <ToggleButton
-                    local:MvxBind="Checked Settings.PlayCompoundBeats" />
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:text="Other"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
-                <Mvx.MvxSpinner
-                    local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.OtherBeatClick" />
-                <ToggleButton
-                    local:MvxBind="Checked Settings.PlayOtherBeats" />
+                    local:MvxBind="Checked Settings.AccentuateCompoundBeats" />
             </TableRow>
         </TableLayout>
     </android.support.v7.widget.CardView>
