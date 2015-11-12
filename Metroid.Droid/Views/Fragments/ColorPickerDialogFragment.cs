@@ -1,6 +1,8 @@
-﻿using Android.Graphics;
+﻿using System;
+using Android.Graphics;
 using Android.OS;
 using Android.Views;
+using Android.Widget;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
 using DiodeTeam.Metroid.Droid.Controls.ColorPicker;
@@ -32,6 +34,13 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             colorPicker.AlphaSliderVisible = true;
             _oldColor = view.FindViewById<ColorPickerPanelView>(Resource.Id.old_color_panel);
             _newColor = view.FindViewById<ColorPickerPanelView>(Resource.Id.new_color_panel);
+
+            ((LinearLayout)_oldColor.Parent).SetPadding(
+                (int) Math.Round(colorPicker.DrawingOffset), 
+                0,
+                (int) Math.Round(colorPicker.DrawingOffset), 
+                0
+            );
 
             _oldColor.SetOnClickListener(this);
             _newColor.SetOnClickListener(this);
