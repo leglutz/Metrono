@@ -6,12 +6,15 @@ using Android.Views;
 using Cirrious.MvvmCross.Droid.Support.AppCompat;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Fragments;
+using Cirrious.CrossCore;
 
 namespace DiodeTeam.Metroid.Droid.Views.Activities
 {
     [Activity (Label = "Metroid", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : MvxFragmentCompatActivity<MainViewModel>
     {
+        private SettingsFragment _settingsFragment;
+
         protected override void OnCreate (Bundle bundle)
         {
             base.OnCreate (bundle);
@@ -23,9 +26,15 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             SetSupportActionBar (toolbar);
 
             // Metronome fragment
+            var metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
+            metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
             SupportFragmentManager.BeginTransaction ()
-                .Replace (Resource.Id.content_frame, new MetronomeFragment { ViewModel = ViewModel.MetronomeViewModel })
+                .Replace (Resource.Id.content_frame, metronomeFragment)
                 .Commit ();
+           
+            // Settings fragment
+            _settingsFragment =  Mvx.IocConstruct<SettingsFragment>();
+            _settingsFragment.ViewModel = ViewModel.SettingsViewModel; 
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
@@ -42,7 +51,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 case Resource.Id.settings_menu:
                     // Settings fragment
                     SupportFragmentManager.BeginTransaction ()
-                        .Add (Resource.Id.content_frame, new SettingsFragment { ViewModel = ViewModel.SettingsViewModel })
+                        .Add (Resource.Id.content_frame, _settingsFragment)
                         .AddToBackStack (null)
                         .Commit ();
                     break;

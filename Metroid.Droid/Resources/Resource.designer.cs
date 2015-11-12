@@ -1633,8 +1633,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0b001d
 			public const int always = 2131427357;
 			
-			// aapt resource value: 0x7f0b0057
-			public const int beats_card = 2131427415;
+			// aapt resource value: 0x7f0b0058
+			public const int beats_card = 2131427416;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int beginning = 2131427354;
@@ -1726,8 +1726,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0b002a
 			public const int list_item = 2131427370;
 			
-			// aapt resource value: 0x7f0b0058
-			public const int measure_card = 2131427416;
+			// aapt resource value: 0x7f0b0057
+			public const int measure_card = 2131427415;
 			
 			// aapt resource value: 0x7f0b0059
 			public const int measure_frame = 2131427417;

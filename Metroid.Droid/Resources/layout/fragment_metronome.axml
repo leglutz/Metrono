@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v7.widget.CardView
-        android:id="@+id/beats_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/measure_card"
@@ -18,6 +17,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Mvx.MvxGridView
+                android:id="@+id/beats_card"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="20dp"
