@@ -31,7 +31,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             var view = this.BindingInflate (Resource.Layout.fragment_dialog_color_picker, null);
 
             var colorPicker = view.FindViewById<ColorPickerView>(Resource.Id.color_picker_view);
-            colorPicker.AlphaSliderVisible = true;
             _oldColor = view.FindViewById<ColorPickerPanelView>(Resource.Id.old_color_panel);
             _newColor = view.FindViewById<ColorPickerPanelView>(Resource.Id.new_color_panel);
 

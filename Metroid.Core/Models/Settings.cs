@@ -21,7 +21,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public int BlinkColor
         {
-            get { return _settings.GetValue<int>("BlinkColor", -854982401); }
+            get { return _settings.GetValue<int>("BlinkColor", -9681153); }
             set 
             { 
                 _settings.AddOrUpdateValue<int>("BlinkColor", value); 
