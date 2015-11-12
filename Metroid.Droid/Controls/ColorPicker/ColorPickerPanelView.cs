@@ -80,7 +80,8 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
         public Color Color
         {
             get { return _color; }
-            set { 
+            set 
+            { 
                 _color = value;
                 Invalidate();
             }
@@ -139,7 +140,8 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             SetUpColorRect();
         }
 
-        private void SetUpColorRect(){
+        private void SetUpColorRect()
+        {
             var dRect = _drawingRect;
 
             var left = dRect.Left + BorderWidthPx;
@@ -164,7 +166,9 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             if (e.Action == MotionEventActions.Up || e.Action == MotionEventActions.Down)
             {
                 if (PanelClicked != null)
-                    PanelClicked(this, new ColorChangedEventArgs { Color = _color });
+                {
+                    PanelClicked (this, new ColorChangedEventArgs { Color = _color });
+                }
             }
 
             return base.OnTouchEvent(e);

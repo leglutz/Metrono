@@ -2011,7 +2011,7 @@ namespace DiodeTeam.Metroid.Droid
 			public const int activity_splash_screen = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int dialog_color_picker = 2130903067;
+			public const int fragment_dialog_color_picker = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
 			public const int fragment_measure = 2130903068;
@@ -2149,15 +2149,6 @@ namespace DiodeTeam.Metroid.Droid
 			
 			// aapt resource value: 0x7f080012
 			public const int abc_toolbar_collapse_description = 2131230738;
-			
-			// aapt resource value: 0x7f080014
-			public const int app_name = 2131230740;
-			
-			// aapt resource value: 0x7f080015
-			public const int dialog_color_picker = 2131230741;
-			
-			// aapt resource value: 0x7f080016
-			public const int press_color_to_apply = 2131230742;
 			
 			// aapt resource value: 0x7f080013
 			public const int status_bar_notification_info_overflow = 2131230739;

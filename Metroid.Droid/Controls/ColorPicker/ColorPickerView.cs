@@ -151,7 +151,9 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                 _val = hsv.V;
 
                 if (ColorChanged != null)
-                    ColorChanged(this, new ColorChangedEventArgs { Color = ColorUtils.ColorFromHSV(_hue / 360, _sat, _val, _alpha) });
+                {
+                    ColorChanged (this, new ColorChangedEventArgs { Color = ColorUtils.ColorFromHSV (_hue / 360, _sat, _val, _alpha) });
+                }
 
                 Invalidate();
             }
@@ -234,7 +236,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
             DrawingOffset = CalculateRequiredOffset();
 
-
             InitPaintTools();
 
             //Needed for receiving trackball motion events.
@@ -244,7 +245,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
         private void InitPaintTools()
         {
-
             _satValPaint = new Paint();
             _satValTrackerPaint = new Paint();
             _huePaint = new Paint();
@@ -252,7 +252,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             _alphaPaint = new Paint();
             _alphaTextPaint = new Paint();
             _borderPaint = new Paint();
-
 
             _satValTrackerPaint.SetStyle(Paint.Style.Stroke);
             _satValTrackerPaint.StrokeWidth = 2f * _density;
@@ -280,7 +279,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
         private static int[] BuildHueColorArray()
         {
-
             var hue = new int[361];
 
             var count = 0;
@@ -294,7 +292,10 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
         protected override void OnDraw(Canvas canvas)
         {
-            if (_drawingRect.Width() <= 0 || _drawingRect.Height() <= 0) return;
+            if (_drawingRect.Width () <= 0 || _drawingRect.Height () <= 0)
+            {
+                return;
+            }
 
             DrawSatValPanel(canvas);
             DrawHuePanel(canvas);
@@ -303,21 +304,18 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
         private void DrawSatValPanel(Canvas canvas)
         {
-            #if __ANDROID_11__
-            if (Android.OS.Build.VERSION.SdkInt > Android.OS.BuildVersionCodes.Honeycomb)
-            {
-                RootView.SetLayerType(LayerType.Software, null);
-            }
-            #endif
+            RootView.SetLayerType(LayerType.Software, null);
 
             var rect = _satValRect;
 
-            if(BorderWidthPx > 0){
+            if(BorderWidthPx > 0)
+            {
                 _borderPaint.Color = _borderColor;
                 canvas.DrawRect(_drawingRect.Left, _drawingRect.Top, rect.Right + BorderWidthPx, rect.Bottom + BorderWidthPx, _borderPaint);
             }
 
-            if (_valShader == null) {
+            if (_valShader == null) 
+            {
                 _valShader = new LinearGradient(rect.Left, rect.Top, rect.Left, rect.Bottom,
                                                 Color.Argb(255,255,255,255), Color.Argb(255,0,0,0), Shader.TileMode.Clamp);
             }
@@ -370,7 +368,8 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                                 _borderPaint);
             }
 
-            if (_hueShader == null) {
+            if (_hueShader == null)
+            {
                 using(_hueShader = 
                       new LinearGradient(rect.Left, rect.Top, rect.Left, rect.Bottom, BuildHueColorArray(), null, Shader.TileMode.Clamp))
                     _huePaint.SetShader(_hueShader);
@@ -403,14 +402,16 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                 Y = (int) (height - (hue*height/360f) + rect.Top), 
                 X = (int) rect.Left
             };
-
-
+                    
             return p;
         }
 
         private void DrawAlphaPanel(Canvas canvas){
 
-            if(!_showAlphaPanel || _alphaRect == null || _alphaPattern == null) return;
+            if (!_showAlphaPanel || _alphaRect == null || _alphaPattern == null)
+            {
+                return;
+            }
 
             var rect = _alphaRect;
 
@@ -423,8 +424,7 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                                 rect.Bottom + BorderWidthPx,
                                 _borderPaint);
             }
-
-
+                
             _alphaPattern.Draw(canvas);
 
             var color = ColorUtils.ColorFromHSV(_hue/360f,_sat,_val);
@@ -438,7 +438,8 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                 canvas.DrawRect(rect, _alphaPaint);
             }
 
-            if(!string.IsNullOrEmpty(_alphaSliderText)){
+            if(!string.IsNullOrEmpty(_alphaSliderText))
+            {
                 canvas.DrawText(_alphaSliderText, rect.CenterX(), rect.CenterY() + 4 * _density, _alphaTextPaint);
             }
 
@@ -455,7 +456,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             };
 
             canvas.DrawRoundRect(r, 2, 2, _hueTrackerPaint);
-
         }
 
         private Point AlphaToPoint(int alpha)
@@ -520,7 +520,10 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
         private void SetUpAlphaRect()
         {
-            if(!_showAlphaPanel) return;
+            if (!_showAlphaPanel)
+            {
+                return;
+            }
 
             var dRect = _drawingRect;
 
@@ -547,24 +550,31 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
             var update = false;
 
-
-            if(e.Action == MotionEventActions.Move){
-
+            if(e.Action == MotionEventActions.Move)
+            {
                 switch(_lastTouchedPanel)
                 {
                     case PanelSatVal:
-                        var sat = _sat + x/50f;
-                        var val = _val - y/50f;
+                        var sat = _sat + x / 50f;
+                        var val = _val - y / 50f;
 
-                        if(sat < 0f)
+                        if (sat < 0f)
+                        {
                             sat = 0f;
-                        else if(sat > 1f)
+                        }
+                        else if (sat > 1f)
+                        {
                             sat = 1f;
+                        }
 
-                        if(val < 0f)
+                        if (val < 0f)
+                        {
                             val = 0f;
-                        else if(val > 1f)
+                        }
+                        else if (val > 1f)
+                        {
                             val = 1f;
+                        }
 
                         _sat = sat;
                         _val = val;
@@ -574,10 +584,12 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                     case PanelHue:
                         var hue = _hue - y * 10f;
 
-                        if(hue < 0f){
+                        if(hue < 0f)
+                        {
                             hue = 0f;
                         }
-                        else if(hue > 360f){
+                        else if(hue > 360f)
+                        {
                             hue = 360f;
                         }
 
@@ -587,16 +599,22 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                         break;
                     case PanelAlpha:
 
-                        if(!_showAlphaPanel || _alphaRect == null)
+                        if (!_showAlphaPanel || _alphaRect == null)
+                        {
                             update = false;
+                        }
                         else
                         {
                             var alpha = (int) (_alpha - x*10);
 
-                            if(alpha < 0)
+                            if (alpha < 0)
+                            {
                                 alpha = 0;
-                            else if(alpha > 0xff)
+                            }
+                            else if (alpha > 0xff)
+                            {
                                 alpha = 0xff;
+                            }
 
                             _alpha = alpha;
                             update = true;
@@ -608,7 +626,9 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             if(update)
             {
                 if (ColorChanged != null)
-                    ColorChanged(this, new ColorChangedEventArgs { Color = ColorUtils.ColorFromHSV(_hue / 360, _sat, _val, _alpha) });
+                {
+                    ColorChanged (this, new ColorChangedEventArgs { Color = ColorUtils.ColorFromHSV (_hue / 360, _sat, _val, _alpha) });
+                }
 
                 Invalidate();
                 return true;
@@ -633,14 +653,15 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                 case MotionEventActions.Up:
                     _startTouchPoint = null;
                     update = MoveTrackersIfNeeded(e);
-                    GC.Collect(); //Not sure if collecting too much here...
                     break;
             }
 
             if(update)
             {
                 if (ColorChanged != null)
-                    ColorChanged(this, new ColorChangedEventArgs { Color = ColorUtils.ColorFromHSV(_hue / 360, _sat, _val, _alpha) });
+                {
+                    ColorChanged (this, new ColorChangedEventArgs { Color = ColorUtils.ColorFromHSV (_hue / 360, _sat, _val, _alpha) });
+                }
 
                 Invalidate();
                 return true;
@@ -650,13 +671,15 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
         private bool MoveTrackersIfNeeded(MotionEvent e)
         {
-            if(_startTouchPoint == null) return false;
+            if (_startTouchPoint == null)
+            {
+                return false;
+            }
 
             var update = false;
 
             var startX = _startTouchPoint.X;
             var startY = _startTouchPoint.Y;
-
 
             if(_hueRect.Contains(startX, startY))
             {
@@ -696,18 +719,30 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             var height = rect.Height();
 
             if (x < rect.Left)
+            {
                 x = 0f;
+            }
             else if (x > rect.Right)
+            {
                 x = width;
+            }
             else
+            {
                 x = x - rect.Left;
+            }
 
             if (y < rect.Top)
+            {
                 y = 0f;
-            else if(y > rect.Bottom)
+            }
+            else if (y > rect.Bottom)
+            {
                 y = height;
+            }
             else
+            {
                 y = y - rect.Top;
+            }
 
             result[0] = 1.0f / width * x;
             result[1] = 1.0f - (1.0f / height * y);
@@ -722,11 +757,17 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             var height = rect.Height();
 
             if (y < rect.Top)
+            {
                 y = 0f;
-            else if(y > rect.Bottom)
+            }
+            else if (y > rect.Bottom)
+            {
                 y = height;
+            }
             else
+            {
                 y = y - rect.Top;
+            }
 
             return 360f - (y * 360f / height);
         }
@@ -736,12 +777,18 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             var rect = _alphaRect;
             var width = (int) rect.Width();
 
-            if(x < rect.Left)
+            if (x < rect.Left)
+            {
                 x = 0;
-            else if(x > rect.Right)
+            }
+            else if (x > rect.Right)
+            {
                 x = width;
+            }
             else
+            {
                 x = x - (int)rect.Left;
+            }
 
             return 0xff - (x * 0xff / width);
         }
@@ -762,7 +809,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
             if (!_showAlphaPanel)
             {
-
                 height = (int)(widthAllowed - _panelSpacing - _huePanelWidth);
 
                 //If calculated height (based on the width) is more than the allowed height.
@@ -778,7 +824,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
             }
             else
             {
-
                 width = (int)(heightAllowed - _alphaPanelHeight + _huePanelWidth);
 
                 if (width > widthAllowed)
@@ -790,7 +835,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                 {
                     height = heightAllowed;
                 }
-
             }
 
             SetMeasuredDimension(width, height);
@@ -905,8 +949,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                     _alphaPattern = null;
                 }
             }
-
-            GC.Collect();
 
             base.Dispose(disposing);
         }

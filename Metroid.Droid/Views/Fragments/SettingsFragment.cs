@@ -11,7 +11,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 {
     public class SettingsFragment : MvxFragment<SettingsViewModel>
     {
-        private ColorPickerPanelView _panelAlpha;
+        private ColorPickerPanelView _colorPicker;
 
         public SettingsFragment()
         {
@@ -25,17 +25,14 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
             HasOptionsMenu = true;
 
-            _panelAlpha = view.FindViewById<ColorPickerPanelView>(Resource.Id.color_picker);
-            _panelAlpha.Color = Color.Black;
-            _panelAlpha.Click += (sender, e) => {
-                using (var colorPickerDialog = new ColorPickerDialog(Activity, _panelAlpha.Color))
-                {
-                    colorPickerDialog.AlphaSliderVisible = true;
-                    colorPickerDialog.ColorChanged += (o, args) => _panelAlpha.Color = args.Color;
-                    colorPickerDialog.Show();
-                }
+            _colorPicker = view.FindViewById<ColorPickerPanelView>(Resource.Id.color_picker);
+            _colorPicker.Color = Color.Black;
+            _colorPicker.Click += (sender, e) => {
+                var colorPickerDialogFragment = new ColorPickerDialogFragment(_colorPicker.Color);
+                colorPickerDialogFragment.ColorChanged += (o, args) => _colorPicker.Color = args.Color;
+                colorPickerDialogFragment.Show(FragmentManager, null);
             };
-       
+
             return view;
         }
 

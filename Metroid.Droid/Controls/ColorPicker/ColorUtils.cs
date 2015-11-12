@@ -68,11 +68,17 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
         public static Color ColorFromHSV(float hue, float saturation, float value, int alpha = 255)
         {
             if (hue < 0.0f || hue > 1.0f)
-                throw new ArgumentOutOfRangeException("hue");
+            {
+                throw new ArgumentOutOfRangeException ("hue");
+            }
             if (saturation < 0.0f || saturation > 1.0f)
-                throw new ArgumentOutOfRangeException("saturation");
+            {
+                throw new ArgumentOutOfRangeException ("saturation");
+            }
             if (value < 0.0f || value > 1.0f)
-                throw new ArgumentOutOfRangeException("value");
+            {
+                throw new ArgumentOutOfRangeException ("value");
+            }
 
             if (saturation == 0f)
             {

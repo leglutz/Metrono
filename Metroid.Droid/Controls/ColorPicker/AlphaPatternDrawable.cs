@@ -74,7 +74,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
          */
         private void GeneratePatternBitmap()
         {
-
             if (Bounds.Width() <= 0 || Bounds.Height() <= 0)
             {
                 return;
@@ -91,7 +90,6 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
                     var isWhite = verticalStartWhite;
                     for (var j = 0; j <= _numRectanglesHorizontal; j++)
                     {
-
                         r.Top = i * _rectangleSize;
                         r.Left = j * _rectangleSize;
                         r.Bottom = r.Top + _rectangleSize;

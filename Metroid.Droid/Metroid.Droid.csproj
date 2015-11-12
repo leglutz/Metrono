@@ -117,9 +117,9 @@
     <Compile Include="Controls\ColorPicker\ColorPickerPanelView.cs" />
     <Compile Include="Controls\ColorPicker\ColorChangedEventArgs.cs" />
     <Compile Include="Controls\ColorPicker\AlphaPatternDrawable.cs" />
-    <Compile Include="Controls\ColorPicker\ColorPickerDialog.cs" />
     <Compile Include="Controls\ColorPicker\ColorPickerView.cs" />
     <Compile Include="Controls\ColorPicker\ColorUtils.cs" />
+    <Compile Include="Views\Fragments\ColorPickerDialogFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -224,6 +224,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable\splash_screen.jpg" />
-    <AndroidResource Include="Resources\layout\dialog_color_picker.axml" />
+    <AndroidResource Include="Resources\layout\fragment_dialog_color_picker.axml" />
   </ItemGroup>
 </Project>
