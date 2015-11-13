@@ -7,7 +7,7 @@
     android:padding="5dp"
     local:cardCornerRadius="5dp"
     local:cardElevation="5dp"
-    local:cardBackgroundColor="#E0E0E0">
+    local:cardBackgroundColor="@color/colorCards">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

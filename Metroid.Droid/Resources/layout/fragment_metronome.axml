@@ -7,17 +7,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/measure_card"
-        android:layout_margin="5dp"
-        android:padding="5dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="3dp"
+        local:cardBackgroundColor="@color/colorCards"
         local:cardCornerRadius="5dp"
-        local:cardElevation="5dp"
-        local:cardBackgroundColor="#E0E0E0">
+        local:cardElevation="5dp">
         <LinearLayout
+            android:id="@+id/beats_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="vertical">
             <Mvx.MvxGridView
-                android:id="@+id/beats_card"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="20dp"
@@ -49,11 +52,14 @@
         android:id="@id/measure_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="6dp"
         android:layout_alignParentBottom="true"
         local:cardCornerRadius="5dp"
         local:cardElevation="5dp"
-        local:cardBackgroundColor="#E0E0E0">
+        local:cardBackgroundColor="@color/colorCards">
         <FrameLayout
             android:id="@+id/measure_frame"
             android:layout_width="match_parent"

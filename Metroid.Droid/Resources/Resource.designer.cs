@@ -817,32 +817,32 @@ namespace DiodeTeam.Metroid.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050041
-			public const int abc_background_cache_hint_selector_material_dark = 2131034177;
-			
 			// aapt resource value: 0x7f050042
-			public const int abc_background_cache_hint_selector_material_light = 2131034178;
+			public const int abc_background_cache_hint_selector_material_dark = 2131034178;
 			
 			// aapt resource value: 0x7f050043
-			public const int abc_color_highlight_material = 2131034179;
+			public const int abc_background_cache_hint_selector_material_light = 2131034179;
+			
+			// aapt resource value: 0x7f050044
+			public const int abc_color_highlight_material = 2131034180;
 			
 			// aapt resource value: 0x7f050004
 			public const int abc_input_method_navigation_guard = 2131034116;
 			
-			// aapt resource value: 0x7f050044
-			public const int abc_primary_text_disable_only_material_dark = 2131034180;
-			
 			// aapt resource value: 0x7f050045
-			public const int abc_primary_text_disable_only_material_light = 2131034181;
+			public const int abc_primary_text_disable_only_material_dark = 2131034181;
 			
 			// aapt resource value: 0x7f050046
-			public const int abc_primary_text_material_dark = 2131034182;
+			public const int abc_primary_text_disable_only_material_light = 2131034182;
 			
 			// aapt resource value: 0x7f050047
-			public const int abc_primary_text_material_light = 2131034183;
+			public const int abc_primary_text_material_dark = 2131034183;
 			
 			// aapt resource value: 0x7f050048
-			public const int abc_search_url_text = 2131034184;
+			public const int abc_primary_text_material_light = 2131034184;
+			
+			// aapt resource value: 0x7f050049
+			public const int abc_search_url_text = 2131034185;
 			
 			// aapt resource value: 0x7f050005
 			public const int abc_search_url_text_normal = 2131034117;
@@ -853,11 +853,11 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f050007
 			public const int abc_search_url_text_selected = 2131034119;
 			
-			// aapt resource value: 0x7f050049
-			public const int abc_secondary_text_material_dark = 2131034185;
-			
 			// aapt resource value: 0x7f05004a
-			public const int abc_secondary_text_material_light = 2131034186;
+			public const int abc_secondary_text_material_dark = 2131034186;
+			
+			// aapt resource value: 0x7f05004b
+			public const int abc_secondary_text_material_light = 2131034187;
 			
 			// aapt resource value: 0x7f050008
 			public const int accent_material_dark = 2131034120;
@@ -915,6 +915,9 @@ namespace DiodeTeam.Metroid.Droid
 			
 			// aapt resource value: 0x7f050040
 			public const int colorAccent = 2131034176;
+			
+			// aapt resource value: 0x7f050041
+			public const int colorCards = 2131034177;
 			
 			// aapt resource value: 0x7f05003e
 			public const int colorPrimary = 2131034174;
@@ -1036,11 +1039,11 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f05003b
 			public const int switch_thumb_disabled_material_light = 2131034171;
 			
-			// aapt resource value: 0x7f05004b
-			public const int switch_thumb_material_dark = 2131034187;
-			
 			// aapt resource value: 0x7f05004c
-			public const int switch_thumb_material_light = 2131034188;
+			public const int switch_thumb_material_dark = 2131034188;
+			
+			// aapt resource value: 0x7f05004d
+			public const int switch_thumb_material_light = 2131034189;
 			
 			// aapt resource value: 0x7f05003c
 			public const int switch_thumb_normal_material_dark = 2131034172;
@@ -1634,7 +1637,7 @@ namespace DiodeTeam.Metroid.Droid
 			public const int always = 2131427357;
 			
 			// aapt resource value: 0x7f0b0058
-			public const int beats_card = 2131427416;
+			public const int beats_layout = 2131427416;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int beginning = 2131427354;

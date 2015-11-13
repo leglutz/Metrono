@@ -1,4 +1,5 @@
-﻿using Android.OS;
+﻿using Android.Animation;
+using Android.OS;
 using Android.Views;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
@@ -13,7 +14,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
     {
         private readonly Settings _settings;
 
-        private View _beatsCard;
+        private ObjectAnimator _backgroundColorAnimator;
 
         public MetronomeFragment(ISettingsService settingsService)
         {
@@ -29,8 +30,9 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
             HasOptionsMenu = true;
 
-            // Get the beats card (for animation purpose)
-            _beatsCard = view.FindViewById<View>(Resource.Id.beats_card);
+            // Beats layout background animation
+            var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.BlinkColor, beatsLayout.SolidColor);
 
             // Measure fragment
             ChildFragmentManager.BeginTransaction ()
@@ -65,6 +67,13 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
         private void OnBeatStarted (object sender, Beat beat)
         {
+            if (_settings.Blink)
+            {
+                Activity.RunOnUiThread (() => {
+                    _backgroundColorAnimator.SetDuration ((long)(beat.Duration * 1000));
+                    _backgroundColorAnimator.Start ();
+                });
+            }
         }
     }
 }

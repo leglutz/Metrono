@@ -3,6 +3,8 @@ using Android.OS;
 using Android.Views;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
+using DiodeTeam.Metroid.Core.Models;
+using DiodeTeam.Metroid.Core.Services;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Controls.ColorPicker;
 using DiodeTeam.Metroid.Droid.Views.Activities;
@@ -11,7 +13,16 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 {
     public class SettingsFragment : MvxFragment<SettingsViewModel>
     {
+        private readonly Settings _settings;
+
         private ColorPickerPanelView _colorPicker;
+
+        public SettingsFragment(ISettingsService settingsService)
+        {
+            _settings = settingsService.Settings;
+
+            RetainInstance = true;
+        }
 
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -21,7 +32,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             HasOptionsMenu = true;
 
             _colorPicker = view.FindViewById<ColorPickerPanelView>(Resource.Id.color_picker);
-            _colorPicker.Color = Color.Tomato;
+            _colorPicker.Color = new Color(_settings.BlinkColor);
             _colorPicker.Click += (sender, e) => {
                 var colorPickerDialogFragment = new ColorPickerDialogFragment(_colorPicker.Color);
                 colorPickerDialogFragment.ColorChanged += (o, args) => {
