@@ -1,5 +1,6 @@
 ﻿using System;
 using Cheesebaron.MvxPlugins.Settings.Interfaces;
+using Cirrious.CrossCore.UI;
 using Cirrious.MvvmCross.ViewModels;
 using DiodeTeam.Metroid.Core.Resources;
 
@@ -8,6 +9,16 @@ namespace DiodeTeam.Metroid.Core.Models
     public class Settings : MvxNotifyPropertyChanged
     {
         private readonly ISettings _settings;
+
+        public ClickKind BeatClick
+        {
+            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.TickLo);; }
+            set 
+            { 
+                _settings.AddOrUpdateValue<ClickKind> ("BeatClick", value); 
+                RaisePropertyChanged (() => BeatClick);
+            }
+        }
 
         public bool Blink
         {
@@ -21,7 +32,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public int BlinkColor
         {
-            get { return _settings.GetValue<int>("BlinkColor", -9681153); }
+            get { return _settings.GetValue<int>("BlinkColor", MvxColors.OrangeRed.ARGB); }
             set 
             { 
                 _settings.AddOrUpdateValue<int>("BlinkColor", value); 
@@ -29,13 +40,13 @@ namespace DiodeTeam.Metroid.Core.Models
             }
         }
 
-        public ClickKind BeatClick
+        public bool Vibration
         {
-            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.TickLo);; }
+            get { return _settings.GetValue<bool>("Vibration", false); }
             set 
             { 
-                _settings.AddOrUpdateValue<ClickKind> ("BeatClick", value); 
-                RaisePropertyChanged (() => BeatClick);
+                _settings.AddOrUpdateValue<bool>("Vibration", value); 
+                RaisePropertyChanged (() => Vibration);
             }
         }
 

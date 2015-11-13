@@ -8,7 +8,8 @@ namespace DiodeTeam.Metroid.Core.Converters
     {
         protected override double Convert (bool isPlaying, Type targetType, object parameter, CultureInfo culture)
         {
-            return isPlaying ? 1.0 : 0.5;
+            var alpha = double.Parse(parameter.ToString());
+            return isPlaying ? 1.0 : alpha;
         }
     }
 }

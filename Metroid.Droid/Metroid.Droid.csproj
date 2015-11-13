@@ -97,6 +97,15 @@
     <Reference Include="Cheesebaron.MvxPlugins.Settings.Droid">
       <HintPath>..\packages\Cheesebaron.MvxPlugins.Settings.1.2.2-pre4\lib\MonoAndroid10\Cheesebaron.MvxPlugins.Settings.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.1.0.0-beta1\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.23.1.0.0-beta1\lib\MonoAndroid403\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid.Support.Design">
+      <HintPath>..\packages\Cirrious.MvvmCross.Droid.Support.Design.4.0.0-beta6\lib\MonoAndroid403\Cirrious.MvvmCross.Droid.Support.Design.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

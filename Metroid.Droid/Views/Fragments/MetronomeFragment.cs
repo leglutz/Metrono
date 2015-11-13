@@ -1,6 +1,8 @@
 ﻿using Android.Animation;
 using Android.OS;
 using Android.Views;
+using Cirrious.CrossCore;
+using Cirrious.CrossCore.Droid;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
 using DiodeTeam.Metroid.Core.Models;
@@ -13,12 +15,14 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
     public class MetronomeFragment : MvxFragment<MetronomeViewModel>
     {
         private readonly Settings _settings;
+        private readonly Vibrator _vibrator;
 
         private ObjectAnimator _backgroundColorAnimator;
 
-        public MetronomeFragment(ISettingsService settingsService)
+        public MetronomeFragment(ISettingsService settingsService, IMvxAndroidGlobals globals)
         {
             _settings = settingsService.Settings;
+            _vibrator = globals.ApplicationContext.GetSystemService(Android.Content.Context.VibratorService) as Vibrator;
 
             RetainInstance = true;
         }
@@ -32,7 +36,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
             // Beats layout background animation
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
-            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.BlinkColor, beatsLayout.SolidColor);
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.BlinkColor, 0);
 
             // Measure fragment
             ChildFragmentManager.BeginTransaction ()
@@ -67,12 +71,20 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
         private void OnBeatStarted (object sender, Beat beat)
         {
+            // Blink
             if (_settings.Blink)
             {
                 Activity.RunOnUiThread (() => {
+                    _backgroundColorAnimator.SetObjectValues(_settings.BlinkColor, 0);
                     _backgroundColorAnimator.SetDuration ((long)(beat.Duration * 1000));
                     _backgroundColorAnimator.Start ();
                 });
+            }
+
+            // Vibration
+            if (_settings.Vibration)
+            {
+                _vibrator.Vibrate ((long)(beat.Duration / 2.0 * 1000));
             }
         }
     }
