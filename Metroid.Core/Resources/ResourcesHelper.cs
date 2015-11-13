@@ -1,20 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using DiodeTeam.Metroid.Core.Attributes;
 
 namespace DiodeTeam.Metroid.Core.Resources
 {
     public enum ClickKind
     {
+        [EnumDescription ("Bell")]
         Bell,
-        ClaveHi,
-        ClaveLo,
-        RimshotHi,
-        RimshotLo,
+        [EnumDescription ("Tambourine")]
         Tambourine,
+        [EnumDescription ("Tick Lo")]
+        TickLo,
+        [EnumDescription ("Tick Hi")]
         TickHi,
-        TickLo
+        [EnumDescription ("Clave Lo")]
+        ClaveLo,
+        [EnumDescription ("Clave Hi")]
+        ClaveHi,
+        [EnumDescription ("Rimshot Lo")]
+        RimshotLo,
+        [EnumDescription ("Rimshot Hi")]
+        RimshotHi
     }
 
     public static class ResourcesHelper

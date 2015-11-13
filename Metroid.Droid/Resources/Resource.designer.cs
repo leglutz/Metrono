@@ -2026,46 +2026,52 @@ namespace DiodeTeam.Metroid.Droid
 			public const int fragment_settings = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int item_metronome_beat = 2130903071;
+			public const int notification_media_action = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int notification_media_action = 2130903072;
+			public const int notification_media_cancel_action = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int notification_media_cancel_action = 2130903073;
+			public const int notification_template_big_media = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int notification_template_big_media = 2130903074;
+			public const int notification_template_big_media_narrow = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int notification_template_big_media_narrow = 2130903075;
+			public const int notification_template_lines = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int notification_template_lines = 2130903076;
+			public const int notification_template_media = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int notification_template_media = 2130903077;
+			public const int notification_template_part_chronometer = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int notification_template_part_chronometer = 2130903078;
+			public const int notification_template_part_time = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int notification_template_part_time = 2130903079;
+			public const int select_dialog_item_material = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int select_dialog_item_material = 2130903080;
+			public const int select_dialog_multichoice_material = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int select_dialog_multichoice_material = 2130903081;
+			public const int select_dialog_singlechoice_material = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int select_dialog_singlechoice_material = 2130903082;
+			public const int support_simple_spinner_dropdown_item = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int support_simple_spinner_dropdown_item = 2130903083;
+			public const int template_drop_down_item_click_kind = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int toolbar = 2130903084;
+			public const int template_item_click_kind = 2130903084;
+			
+			// aapt resource value: 0x7f03002d
+			public const int template_item_metronome_beat = 2130903085;
+			
+			// aapt resource value: 0x7f03002e
+			public const int toolbar = 2130903086;
 			
 			static Layout()
 			{

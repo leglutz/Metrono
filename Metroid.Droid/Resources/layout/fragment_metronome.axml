@@ -32,7 +32,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="fill_vertical"
                 local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
-                local:MvxItemTemplate="@layout/item_metronome_beat" />
+                local:MvxItemTemplate="@layout/template_item_metronome_beat" />
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="80dp"

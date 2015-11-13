@@ -212,7 +212,6 @@
     <AndroidResource Include="Resources\drawable\background.jpg" />
     <AndroidResource Include="Resources\layout\fragment_measure.axml" />
     <AndroidResource Include="Resources\layout\activity_splash_screen.axml" />
-    <AndroidResource Include="Resources\layout\item_metronome_beat.axml" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\layout\activity_main.axml" />
     <AndroidResource Include="Resources\layout\fragment_metronome.axml" />
@@ -225,5 +224,8 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable\splash_screen.jpg" />
     <AndroidResource Include="Resources\layout\fragment_dialog_color_picker.axml" />
+    <AndroidResource Include="Resources\layout\template_drop_down_item_click_kind.axml" />
+    <AndroidResource Include="Resources\layout\template_item_click_kind.axml" />
+    <AndroidResource Include="Resources\layout\template_item_metronome_beat.axml" />
   </ItemGroup>
 </Project>

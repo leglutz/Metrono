@@ -46,6 +46,9 @@
     <Compile Include="Services\ISettingsService.cs" />
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
+    <Compile Include="Converters\EnumToDescriptionValueConverter.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -54,6 +57,8 @@
     <Folder Include="Resources\Sounds\" />
     <Folder Include="Services\" />
     <Folder Include="Converters\" />
+    <Folder Include="Attributes\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Sounds\Clicks\Bell.wav" />
@@ -66,7 +71,6 @@
     <EmbeddedResource Include="Resources\Sounds\Clicks\TickLo.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta5\lib\portable-win+net45+wp8+win8+wpa81\Cirrious.CrossCore.dll</HintPath>
     </Reference>
@@ -85,7 +89,6 @@
     <Reference Include="Cheesebaron.MvxPlugins.Settings">
       <HintPath>..\packages\Cheesebaron.MvxPlugins.Settings.1.2.2-pre4\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Cheesebaron.MvxPlugins.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
