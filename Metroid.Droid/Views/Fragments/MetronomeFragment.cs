@@ -9,6 +9,9 @@ using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Services;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Activities;
+using Android.Widget;
+using Cirrious.MvvmCross.Binding.Droid.Views;
+using System;
 
 namespace DiodeTeam.Metroid.Droid.Views.Fragments
 {
@@ -37,6 +40,28 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             // Beats layout background animation
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
             _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.BlinkColor, 0);
+
+            // TODO improve this shit (maybe to make different styles?)
+            // TODO remove the todo of the ColorPicker
+            // TODO Tap button size to check
+            var gridView = view.FindViewById<MvxGridView>(Resource.Id.grid_view);
+            gridView.LayoutChange += (sender, e) => {
+                var height = gridView.Height - gridView.PaddingTop - gridView.PaddingBottom;
+                var width = gridView.Width - gridView.PaddingLeft - gridView.PaddingRight;
+                const int numberOfCells = 20;
+                var numberOfColumns = 0;
+                var numberOfRows = 20;
+                var cellWidth = 0;
+                do
+                {
+                    numberOfColumns++;
+                    numberOfRows = (int)Math.Ceiling((double)numberOfCells / numberOfColumns);
+
+                    cellWidth = (width / numberOfColumns) + 2*gridView.HorizontalSpacing;
+                }
+                while (cellWidth * (numberOfRows + 1) >= height);
+                gridView.NumColumns = numberOfColumns + 2;
+            };
 
             // Measure fragment
             ChildFragmentManager.BeginTransaction ()
