@@ -27,6 +27,7 @@
                 android:horizontalSpacing="2dp"
                 android:verticalSpacing="2dp"
                 android:stretchMode="columnWidth"
+                android:numColumns="auto_fit"
                 local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
                 local:MvxItemTemplate="@layout/template_item_metronome_beat" />
             <android.support.design.widget.FloatingActionButton
