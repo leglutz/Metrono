@@ -44,23 +44,23 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             // TODO improve this shit (maybe to make different styles?)
             // TODO remove the todo of the ColorPicker
             // TODO Tap button size to check
+            // TODO style => maximize height/width items (0dp blabla) and adjust the site depending on the number of cells (not 20 all the time)
             var gridView = view.FindViewById<MvxGridView>(Resource.Id.grid_view);
             gridView.LayoutChange += (sender, e) => {
-                var height = gridView.Height - gridView.PaddingTop - gridView.PaddingBottom;
-                var width = gridView.Width - gridView.PaddingLeft - gridView.PaddingRight;
+                var height = gridView.Height;
                 const int numberOfCells = 20;
                 var numberOfColumns = 0;
                 var numberOfRows = 20;
-                var cellWidth = 0;
+                var cellHeight = gridView.GetChildAt(0).Height;
                 do
                 {
                     numberOfColumns++;
                     numberOfRows = (int)Math.Ceiling((double)numberOfCells / numberOfColumns);
-
-                    cellWidth = (width / numberOfColumns) + 2*gridView.HorizontalSpacing;
                 }
-                while (cellWidth * (numberOfRows + 1) >= height);
-                gridView.NumColumns = numberOfColumns + 2;
+                while (cellHeight * numberOfRows >= height);
+
+                gridView.NumColumns = numberOfColumns;
+                gridView.RequestLayout();
             };
 
             // Measure fragment
