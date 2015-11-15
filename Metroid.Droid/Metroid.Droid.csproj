@@ -175,6 +175,17 @@
     <AndroidResource Include="Resources\drawable-hdpi\stop.png" />
     <AndroidResource Include="Resources\drawable-hdpi\thirty_second.png" />
     <AndroidResource Include="Resources\drawable-hdpi\whole.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\eighth.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\half.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\minus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\quarter.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sixteenth.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\stop.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\thirty_second.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\whole.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\eighth.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\half.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
@@ -221,6 +232,7 @@
     <AndroidResource Include="Resources\layout\fragment_settings.axml" />
     <AndroidResource Include="Resources\menu\menu.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
