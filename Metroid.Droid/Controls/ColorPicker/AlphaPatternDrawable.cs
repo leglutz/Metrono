@@ -107,12 +107,12 @@ namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
 
         public override void SetAlpha(int alpha)
         {
-            throw new NotImplementedException();
+            // Not implemented
         }
 
         public override void SetColorFilter(ColorFilter cf)
         {
-            throw new NotImplementedException();
+            // Not implemented
         }
 
         public override int Opacity
