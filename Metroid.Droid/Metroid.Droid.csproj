@@ -144,7 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Resources\values-v21\" />
     <Folder Include="Resources\drawable\" />
     <Folder Include="Views\" />
     <Folder Include="Resources\values\" />
@@ -222,7 +221,6 @@
     <AndroidResource Include="Resources\layout\toolbar.axml" />
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\values-v21\styles.xml" />
     <AndroidResource Include="Resources\drawable\background.jpg" />
     <AndroidResource Include="Resources\layout\fragment_measure.axml" />
     <AndroidResource Include="Resources\layout\activity_splash_screen.axml" />
