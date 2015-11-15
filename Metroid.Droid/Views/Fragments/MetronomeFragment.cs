@@ -9,9 +9,6 @@ using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Services;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Activities;
-using Android.Widget;
-using Cirrious.MvvmCross.Binding.Droid.Views;
-using System;
 
 namespace DiodeTeam.Metroid.Droid.Views.Fragments
 {
@@ -40,28 +37,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             // Beats layout background animation
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
             _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.BlinkColor, 0);
-
-            // TODO improve this shit (maybe to make different styles?)
-            // TODO remove the todo of the ColorPicker
-            // TODO Tap button size to check
-            // TODO style => maximize height/width items (0dp blabla) and adjust the site depending on the number of cells (not 20 all the time)
-            var gridView = view.FindViewById<MvxGridView>(Resource.Id.grid_view);
-            gridView.LayoutChange += (sender, e) => {
-                var height = gridView.Height;
-                const int numberOfCells = 20;
-                var numberOfColumns = 0;
-                var numberOfRows = 20;
-                var cellHeight = gridView.GetChildAt(0).Height;
-                do
-                {
-                    numberOfColumns++;
-                    numberOfRows = (int)Math.Ceiling((double)numberOfCells / numberOfColumns);
-                }
-                while (cellHeight * numberOfRows >= height);
-
-                gridView.NumColumns = numberOfColumns;
-                gridView.RequestLayout();
-            };
 
             // Measure fragment
             ChildFragmentManager.BeginTransaction ()
@@ -109,7 +84,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             // Vibration
             if (_settings.Vibration)
             {
-                _vibrator.Vibrate ((long)(beat.Duration / 2.0 * 1000));
+                _vibrator.Vibrate ((long)(beat.Duration / 4.0 * 1000));
             }
         }
     }
