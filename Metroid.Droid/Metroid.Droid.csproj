@@ -156,6 +156,11 @@
     <Folder Include="Bootstrap\" />
     <Folder Include="Controls\" />
     <Folder Include="Controls\ColorPicker\" />
+    <Folder Include="Resources\values-hdpi\" />
+    <Folder Include="Resources\values-xhdpi\" />
+    <Folder Include="Resources\values-xxhdpi\" />
+    <Folder Include="Resources\values-xxxhdpi\" />
+    <Folder Include="Resources\values-mdpi\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
