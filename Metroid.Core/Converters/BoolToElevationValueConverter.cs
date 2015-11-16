@@ -6,10 +6,10 @@ namespace DiodeTeam.Metroid.Core.Converters
 {
     public class BoolToElevationValueConverter : MvxValueConverter<bool, int>
     {
-        protected override int Convert (bool isPlaying, Type targetType, object parameter, CultureInfo culture)
+        protected override int Convert (bool value, Type targetType, object parameter, CultureInfo culture)
         {
             var elevation = int.Parse(parameter.ToString());
-            return isPlaying ? elevation : 0;
+            return value ? elevation : 0;
         }
     }
 }

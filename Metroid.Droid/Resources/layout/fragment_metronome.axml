@@ -36,7 +36,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:text="Tap to start"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="Touch to start"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 local:MvxBind="Visibility InvertedVisibility(Metronome.IsPlaying)" />
             <TextView
@@ -44,7 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:text="Tap to stop"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="Touch to stop"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 local:MvxBind="Visibility Visibility(Metronome.IsPlaying)" />
         </RelativeLayout>

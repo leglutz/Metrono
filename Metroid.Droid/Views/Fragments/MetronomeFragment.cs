@@ -9,10 +9,11 @@ using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Services;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Activities;
+using Android.Widget;
 
 namespace DiodeTeam.Metroid.Droid.Views.Fragments
 {
-    public class MetronomeFragment : MvxFragment<MetronomeViewModel>
+    public class MetronomeFragment : MvxFragment<MetronomeViewModel>, View.IOnTouchListener
     {
         private readonly Settings _settings;
         private readonly Vibrator _vibrator;
@@ -38,12 +39,26 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
             _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.BlinkColor, 0);
 
+            // GridView touch handler
+            var gridView =  view.FindViewById<GridView>(Resource.Id.grid_view);
+            gridView.SetOnTouchListener (this);
+
             // Measure fragment
             ChildFragmentManager.BeginTransaction ()
                 .Replace (Resource.Id.measure_frame, new MeasureFragment { ViewModel = ViewModel.MeasureViewModel })
                 .Commit ();
             
             return view;
+        }
+
+        public bool OnTouch (View v, MotionEvent e)
+        {
+            if (e.Action == MotionEventActions.Down)
+            {
+                ViewModel.StartStopCommand.Execute();
+            }
+
+            return true;
         }
 
         public override void OnPrepareOptionsMenu (IMenu menu)

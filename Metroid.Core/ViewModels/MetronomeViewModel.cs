@@ -11,8 +11,7 @@ namespace DiodeTeam.Metroid.Core.ViewModels
         public Metronome Metronome { get; set; }
 
         public IMvxCommand SettingsCommand { get; private set; }
-        public IMvxCommand StopCommand { get; private set; }
-        public IMvxCommand PlayCommand { get; private set; }
+        public IMvxCommand StartStopCommand { get; private set; }
 
         public MetronomeViewModel ()
         {
@@ -20,24 +19,19 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             Metronome = Mvx.IocConstruct<Metronome> ();
 
             SettingsCommand = new MvxCommand (() => ShowViewModel<SettingsViewModel> ());
-            StopCommand = new MvxCommand (() => Stop ());
-            PlayCommand = new MvxCommand (() => Play ());
+            StartStopCommand = new MvxCommand (DoStartStopCommand);
         }
 
-        private void Stop ()
+        private void DoStartStopCommand ()
         {
-            if (Metronome.IsPlaying)
+            if(Metronome.IsPlaying)
             {
-                Metronome.Stop ();
+                Metronome.Stop();
             }
-        }
-
-        private void Play ()
-        {
-            if (!Metronome.IsPlaying)
+            else
             {
                 Metronome.Play (MeasureViewModel.Measure, true);
-            }
+            }    
         }
     }
 }
