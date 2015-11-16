@@ -11,9 +11,9 @@
         android:layout_marginTop="@dimen/margin_normal"
         android:layout_marginRight="@dimen/margin_normal"
         android:layout_marginBottom="@dimen/margin_small"
-        local:cardBackgroundColor="@color/colorCards"
-        local:cardCornerRadius="5dp"
-        local:cardElevation="5dp">
+        local:cardBackgroundColor="@color/color_cards"
+        local:cardCornerRadius="@dimen/card_corner_radius"
+        local:cardElevation="@dimen/card_elevation">
         <RelativeLayout
             android:id="@+id/beats_layout"
             android:layout_width="match_parent"
@@ -24,11 +24,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_small"
-                android:horizontalSpacing="@dimen/measure_grid_horizontal_spacing"
-                android:verticalSpacing="@dimen/measure_grid_vertical_spacing"
+                android:horizontalSpacing="@dimen/metronome_grid_horizontal_spacing"
+                android:verticalSpacing="@dimen/metronome_grid_vertical_spacing"
                 android:stretchMode="columnWidth"
                 android:numColumns="auto_fit"
-                android:columnWidth="@dimen/measure_grid_column_width"
+                android:columnWidth="@dimen/metronome_grid_column_width"
                 local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
                 local:MvxItemTemplate="@layout/template_item_metronome_beat" />
             <android.support.design.widget.FloatingActionButton
@@ -59,9 +59,9 @@
         android:layout_marginRight="@dimen/margin_normal"
         android:layout_marginBottom="@dimen/margin_normal"
         android:layout_alignParentBottom="true"
-        local:cardCornerRadius="5dp"
-        local:cardElevation="5dp"
-        local:cardBackgroundColor="@color/colorCards">
+        local:cardCornerRadius="@dimen/card_corner_radius"
+        local:cardElevation="@dimen/card_elevation"
+        local:cardBackgroundColor="@color/color_cards">
         <FrameLayout
             android:id="@+id/measure_frame"
             android:layout_width="match_parent"
