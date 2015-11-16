@@ -10,7 +10,7 @@ using DiodeTeam.Metroid.Droid.Views.Fragments;
 
 namespace DiodeTeam.Metroid.Droid.Views.Activities
 {
-    [Activity (Label = "Metroid", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : MvxFragmentCompatActivity<MainViewModel>
     {
         private SettingsFragment _settingsFragment;

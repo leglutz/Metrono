@@ -2241,6 +2241,45 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f090012
 			public const int abc_toolbar_collapse_description = 2131296274;
 			
+			// aapt resource value: 0x7f090014
+			public const int app_name = 2131296276;
+			
+			// aapt resource value: 0x7f090017
+			public const int measure_tap = 2131296279;
+			
+			// aapt resource value: 0x7f090015
+			public const int metronome_touch_to_start = 2131296277;
+			
+			// aapt resource value: 0x7f090016
+			public const int metronome_touch_to_stop = 2131296278;
+			
+			// aapt resource value: 0x7f090018
+			public const int settings = 2131296280;
+			
+			// aapt resource value: 0x7f090020
+			public const int settings_beat_compound = 2131296288;
+			
+			// aapt resource value: 0x7f09001e
+			public const int settings_beat_first = 2131296286;
+			
+			// aapt resource value: 0x7f09001f
+			public const int settings_beat_last = 2131296287;
+			
+			// aapt resource value: 0x7f09001d
+			public const int settings_beats_accentuation = 2131296285;
+			
+			// aapt resource value: 0x7f09001b
+			public const int settings_blink = 2131296283;
+			
+			// aapt resource value: 0x7f09001a
+			public const int settings_click = 2131296282;
+			
+			// aapt resource value: 0x7f090019
+			public const int settings_general = 2131296281;
+			
+			// aapt resource value: 0x7f09001c
+			public const int settings_vibration = 2131296284;
+			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
 			

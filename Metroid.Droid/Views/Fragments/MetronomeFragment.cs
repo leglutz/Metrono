@@ -65,7 +65,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
         {
             menu.FindItem (Resource.Id.settings_menu).SetVisible(true);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (false);
-            ((MainActivity)Activity).SupportActionBar.Title = "Metroid";
+            ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.app_name);
 
             base.OnPrepareOptionsMenu (menu);
         }

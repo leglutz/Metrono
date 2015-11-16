@@ -17,7 +17,7 @@
     <dimen name="card_elevation">5dp</dimen>
 
     <!-- Splash screen -->
-    <dimen name="splash_screen_progress_bar_margin_bottom">40dp</dimen>
+    <dimen name="splash_screen_progress_bar_margin_bottom">120dp</dimen>
 
     <!-- Metronome -->
     <dimen name="metronome_grid_column_width">50dp</dimen>

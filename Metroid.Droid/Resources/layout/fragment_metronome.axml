@@ -37,7 +37,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/margin_small"
-                android:text="Touch to start"
+                android:text="@string/metronome_touch_to_start"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 local:MvxBind="Visibility InvertedVisibility(Metronome.IsPlaying)" />
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/margin_small"
-                android:text="Touch to stop"
+                android:text="@string/metronome_touch_to_stop"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 local:MvxBind="Visibility Visibility(Metronome.IsPlaying)" />
         </RelativeLayout>

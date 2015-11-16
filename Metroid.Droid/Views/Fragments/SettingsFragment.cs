@@ -49,7 +49,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
         {
             menu.FindItem (Resource.Id.settings_menu).SetVisible(false);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (true);
-            ((MainActivity)Activity).SupportActionBar.Title = "Settings";
+            ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.settings);
 
             base.OnPrepareOptionsMenu (menu);
         }

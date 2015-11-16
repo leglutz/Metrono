@@ -49,7 +49,7 @@
             android:src="@drawable/plus"
             local:MvxBind="Click TempoPlus1Command" />
         <Button
-            android:text="Tap"
+            android:text="@string/measure_tap"
             android:layout_width="@dimen/measure_tap_button_layout_width"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_large"
