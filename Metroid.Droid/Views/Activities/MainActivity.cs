@@ -3,10 +3,10 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Droid.Support.AppCompat;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Fragments;
-using Cirrious.CrossCore;
 
 namespace DiodeTeam.Metroid.Droid.Views.Activities
 {
@@ -20,6 +20,11 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             base.OnCreate (bundle);
 
             SetContentView (Resource.Layout.activity_main);
+
+            // TODO delete
+            var metrics = Resources.DisplayMetrics;
+            var height = (int) ((metrics.HeightPixels)/Resources.DisplayMetrics.Density);
+            var width = (int) ((metrics.WidthPixels)/Resources.DisplayMetrics.Density);
 
             // Toolbar will now take on default actionbar characteristics
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);

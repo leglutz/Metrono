@@ -2,5 +2,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="ch.diodeteam.metroid">
 	<uses-sdk android:minSdkVersion="16" />
 	<uses-permission android:name="android.permission.VIBRATE" />
-	<application android:label="Metroid" android:theme="@android:style/Theme.Holo.Light"></application>
+	<application android:label="Metroid" android:theme="@android:style/Theme.Holo.Light" android:icon="@mipmap/icon"></application>
 </manifest>

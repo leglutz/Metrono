@@ -155,17 +155,19 @@
     <Folder Include="Bootstrap\" />
     <Folder Include="Controls\" />
     <Folder Include="Controls\ColorPicker\" />
-    <Folder Include="Resources\values-hdpi\" />
-    <Folder Include="Resources\values-xhdpi\" />
-    <Folder Include="Resources\values-xxhdpi\" />
-    <Folder Include="Resources\values-xxxhdpi\" />
-    <Folder Include="Resources\values-mdpi\" />
+    <Folder Include="Resources\mipmap-mdpi\" />
+    <Folder Include="Resources\mipmap-hdpi\" />
+    <Folder Include="Resources\mipmap-xhdpi\" />
+    <Folder Include="Resources\mipmap-xxhdpi\" />
+    <Folder Include="Resources\mipmap-xxxhdpi\" />
+    <Folder Include="Resources\values-h640dp\" />
+    <Folder Include="Resources\values-h960dp\" />
+    <Folder Include="Resources\values-h470dp\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\eighth.png" />
     <AndroidResource Include="Resources\drawable-hdpi\half.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\minus.png" />
     <AndroidResource Include="Resources\drawable-hdpi\play.png" />
     <AndroidResource Include="Resources\drawable-hdpi\plus.png" />
@@ -176,7 +178,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\whole.png" />
     <AndroidResource Include="Resources\drawable-mdpi\eighth.png" />
     <AndroidResource Include="Resources\drawable-mdpi\half.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-mdpi\minus.png" />
     <AndroidResource Include="Resources\drawable-mdpi\play.png" />
     <AndroidResource Include="Resources\drawable-mdpi\plus.png" />
@@ -187,7 +188,6 @@
     <AndroidResource Include="Resources\drawable-mdpi\whole.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\eighth.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\half.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\minus.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\play.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\plus.png" />
@@ -198,7 +198,6 @@
     <AndroidResource Include="Resources\drawable-xhdpi\whole.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\eighth.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\half.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\minus.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\play.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\plus.png" />
@@ -209,7 +208,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\whole.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\eighth.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\half.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\minus.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\play.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\plus.png" />
@@ -239,5 +237,11 @@
     <AndroidResource Include="Resources\layout\template_drop_down_item_click_kind.axml" />
     <AndroidResource Include="Resources\layout\template_item_click_kind.axml" />
     <AndroidResource Include="Resources\layout\template_item_metronome_beat.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
+    <AndroidResource Include="Resources\values-h470dp\dimens.xml" />
   </ItemGroup>
 </Project>

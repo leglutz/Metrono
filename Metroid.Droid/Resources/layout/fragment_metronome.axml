@@ -7,10 +7,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/measure_card"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_small"
         local:cardBackgroundColor="@color/colorCards"
         local:cardCornerRadius="5dp"
         local:cardElevation="5dp">
@@ -18,17 +18,17 @@
             android:id="@+id/beats_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp">
+            android:layout_margin="@dimen/margin_normal">
             <Mvx.MvxGridView
                 android:id="@+id/grid_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="2dp"
-                android:horizontalSpacing="2dp"
-                android:verticalSpacing="2dp"
+                android:layout_margin="@dimen/margin_small"
+                android:horizontalSpacing="@dimen/measure_grid_horizontal_spacing"
+                android:verticalSpacing="@dimen/measure_grid_vertical_spacing"
                 android:stretchMode="columnWidth"
                 android:numColumns="auto_fit"
-                android:columnWidth="50dp"
+                android:columnWidth="@dimen/measure_grid_column_width"
                 local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
                 local:MvxItemTemplate="@layout/template_item_metronome_beat" />
             <android.support.design.widget.FloatingActionButton
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_margin="3dp"
+                android:layout_margin="@dimen/margin_small"
                 android:src="@drawable/play"
                 local:MvxBind="Click PlayCommand; Visibility InvertedVisibility(Metronome.IsPlaying)" />
             <android.support.design.widget.FloatingActionButton
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_margin="3dp"
+                android:layout_margin="@dimen/margin_small"
                 android:src="@drawable/stop"
                 android:visibility="gone"
                 local:MvxBind="Click StopCommand; Visibility Visibility(Metronome.IsPlaying)" />
@@ -54,10 +54,10 @@
         android:id="@id/measure_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
         android:layout_alignParentBottom="true"
         local:cardCornerRadius="5dp"
         local:cardElevation="5dp"
