@@ -34,7 +34,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             var metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
             metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
             SupportFragmentManager.BeginTransaction ()
-                .Replace (Resource.Id.content_frame, metronomeFragment)
+                .Add (Resource.Id.content_frame, metronomeFragment)
                 .Commit ();
            
             // Settings fragment
@@ -56,12 +56,18 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 case Resource.Id.settings_menu:
                     // Settings fragment
                     SupportFragmentManager.BeginTransaction ()
+                        .SetCustomAnimations(Resource.Animation.abc_slide_in_bottom, 0, 0, Resource.Animation.abc_slide_out_bottom)
                         .Add (Resource.Id.content_frame, _settingsFragment)
-                        .AddToBackStack (null)
+                        .AddToBackStack(null)
                         .Commit ();
                     break;
                 case Android.Resource.Id.Home:
-                    SupportFragmentManager.PopBackStack ();
+                    // Metronome fragment
+                    SupportFragmentManager.PopBackStack();
+                    /*SupportFragmentManager.BeginTransaction ()
+                        .SetCustomAnimations(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom)
+                        .Replace (Resource.Id.content_frame, _metronomeFragment)
+                        .Commit ();*/
                     break;
             }
 
