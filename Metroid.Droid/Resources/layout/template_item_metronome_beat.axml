@@ -7,7 +7,6 @@
     local:cardCornerRadius="@dimen/card_corner_radius"
     local:MvxBind="CardElevation BoolToElevation(IsPlaying, 2); Alpha BoolToAlpha(IsPlaying, 0.5)">
     <RelativeLayout
-        android:id="@+id/beats_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_normal">
