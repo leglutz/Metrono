@@ -23,7 +23,7 @@
                     android:layout_span="3"
                     android:layout_marginBottom="@dimen/settings_margin"
                     android:text="@string/settings_general"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textSize="@dimen/text_medium" />
             </TableRow>
             <TableRow>
                 <TextView
@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/settings_click"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textSize="@dimen/text_small" />
                 <Mvx.MvxSpinner
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -47,7 +47,7 @@
                 <TextView
                     android:layout_gravity="center_vertical"
                     android:text="@string/settings_blink"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textSize="@dimen/text_small" />
                 <Controls.ColorPicker.ColorPickerPanelView
                     android:id="@+id/color_picker"
                     android:layout_width="0dp"
@@ -64,7 +64,7 @@
                 <TextView
                     android:layout_gravity="center_vertical"
                     android:text="@string/settings_vibration"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textSize="@dimen/text_small" />
                 <Space
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -83,13 +83,13 @@
                     android:layout_marginTop="@dimen/settings_margin"
                     android:layout_marginBottom="@dimen/settings_margin"
                     android:text="@string/settings_beats_accentuation"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textSize="@dimen/text_medium" />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_gravity="center_vertical"
                     android:text="@string/settings_beat_first"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textSize="@dimen/text_small" />
                 <Mvx.MvxSpinner
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -106,7 +106,7 @@
                 <TextView
                     android:layout_gravity="center_vertical"
                     android:text="@string/settings_beat_last"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textSize="@dimen/text_small" />
                 <Mvx.MvxSpinner
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -123,7 +123,7 @@
                 <TextView
                     android:layout_gravity="center_vertical"
                     android:text="@string/settings_beat_compound"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textSize="@dimen/text_small" />
                 <Mvx.MvxSpinner
                     android:layout_width="0dp"
                     android:layout_weight="1"

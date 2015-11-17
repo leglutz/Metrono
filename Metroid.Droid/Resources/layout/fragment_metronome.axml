@@ -38,7 +38,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/metronome_margin_small"
                 android:text="@string/metronome_touch_to_start"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/text_small"
                 local:MvxBind="Visibility InvertedVisibility(Metronome.IsPlaying)" />
             <TextView
                 android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/metronome_margin_small"
                 android:text="@string/metronome_touch_to_stop"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/text_small"
                 local:MvxBind="Visibility Visibility(Metronome.IsPlaying)" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>

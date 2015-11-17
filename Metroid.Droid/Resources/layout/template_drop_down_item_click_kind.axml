@@ -6,5 +6,5 @@
     android:layout_marginLeft="@dimen/drop_down_item_click_kind_margin_left"
     android:layout_marginTop="@dimen/drop_down_item_click_kind_margin_top"
     android:layout_marginBottom="@dimen/drop_down_item_click_kind_margin_bottom"
-    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textSize="@dimen/text_medium"
     local:MvxBind="Text EnumToDescription(.)" />

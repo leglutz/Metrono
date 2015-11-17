@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="→"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/text_medium"
             android:gravity="center" />
         <Controls.ColorPicker.ColorPickerPanelView
             android:id="@+id/new_color_panel"

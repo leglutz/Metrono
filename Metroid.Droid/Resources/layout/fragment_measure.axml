@@ -15,13 +15,13 @@
             android:layout_height="match_parent"
             local:MvxBind="ItemsSource TimeSignatureNumeratorList; SelectedItem Measure.TimeSignatureNumerator" />
         <TextView
-            android:text="/"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/measure_padding"
-            android:paddingRight="@dimen/measure_padding" />
+            android:paddingRight="@dimen/measure_padding"
+            android:text="/"
+            android:textSize="@dimen/text_medium" />
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
             android:layout_height="match_parent"
@@ -48,10 +48,10 @@
             android:src="@drawable/plus"
             local:MvxBind="Click TempoPlus1Command" />
         <Button
-            android:text="@string/measure_tap"
             android:layout_width="@dimen/measure_tap_button_layout_width"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/measure_tap_button_margin_left"
+            android:text="@string/measure_tap"
             local:MvxBind="Click TapCommand" />
     </LinearLayout>
     <SeekBar
