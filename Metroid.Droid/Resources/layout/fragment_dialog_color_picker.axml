@@ -3,16 +3,16 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/margin_xlarge"
-    android:padding="@dimen/padding_normal"
-    local:cardCornerRadius="@dimen/card_corner_radius"
-    local:cardElevation="@dimen/card_elevation"
-    local:cardBackgroundColor="@color/color_cards">
+    android:layout_margin="@dimen/dialog_color_picker_margin"
+    android:padding="@dimen/dialog_color_picker_padding"
+    local:cardCornerRadius="@dimen/card_view_corner_radius"
+    local:cardElevation="@dimen/card_view_elevation"
+    local:cardBackgroundColor="@color/card_view_color">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/padding_normal"
-        android:paddingRight="@dimen/padding_normal"
+        android:paddingLeft="@dimen/dialog_color_picker_padding"
+        android:paddingRight="@dimen/dialog_color_picker_padding"
         android:orientation="vertical">
         <Controls.ColorPicker.ColorPickerView
             android:id="@+id/color_picker_view"
@@ -20,9 +20,9 @@
             android:layout_height="wrap_content" />
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/color_picker_panel_height"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/margin_large">
+            android:layout_height="@dimen/dialog_color_picker_panel_height"
+            android:layout_marginBottom="@dimen/dialog_color_picker_margin"
+            android:orientation="horizontal">
             <Controls.ColorPicker.ColorPickerPanelView
                 android:id="@+id/old_color_panel"
                 android:layout_height="wrap_content"

@@ -7,28 +7,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/measure_card"
-        android:layout_marginLeft="@dimen/margin_normal"
-        android:layout_marginTop="@dimen/margin_normal"
-        android:layout_marginRight="@dimen/margin_normal"
-        android:layout_marginBottom="@dimen/margin_small"
-        local:cardBackgroundColor="@color/color_cards"
-        local:cardCornerRadius="@dimen/card_corner_radius"
-        local:cardElevation="@dimen/card_elevation">
+        android:layout_marginLeft="@dimen/metronome_margin"
+        android:layout_marginTop="@dimen/metronome_margin"
+        android:layout_marginRight="@dimen/metronome_margin"
+        android:layout_marginBottom="@dimen/metronome_margin"
+        local:cardBackgroundColor="@color/card_view_color"
+        local:cardCornerRadius="@dimen/card_view_corner_radius"
+        local:cardElevation="@dimen/card_view_elevation">
         <RelativeLayout
             android:id="@+id/beats_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin_normal">
+            android:layout_margin="@dimen/metronome_margin">
             <Mvx.MvxGridView
                 android:id="@+id/grid_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/margin_small"
-                android:horizontalSpacing="@dimen/metronome_grid_horizontal_spacing"
-                android:verticalSpacing="@dimen/metronome_grid_vertical_spacing"
+                android:layout_margin="@dimen/metronome_margin_small"
+                android:horizontalSpacing="@dimen/metronome_grid_view_horizontal_spacing"
+                android:verticalSpacing="@dimen/metronome_grid_view_vertical_spacing"
                 android:stretchMode="columnWidth"
                 android:numColumns="auto_fit"
-                android:columnWidth="@dimen/metronome_grid_column_width"
+                android:columnWidth="@dimen/metronome_grid_view_column_width"
                 local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
                 local:MvxItemTemplate="@layout/template_item_metronome_beat" />
             <TextView
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/metronome_margin_small"
                 android:text="@string/metronome_touch_to_start"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 local:MvxBind="Visibility InvertedVisibility(Metronome.IsPlaying)" />
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/metronome_margin_small"
                 android:text="@string/metronome_touch_to_stop"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 local:MvxBind="Visibility Visibility(Metronome.IsPlaying)" />
@@ -55,14 +55,14 @@
         android:id="@id/measure_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_normal"
-        android:layout_marginTop="@dimen/margin_small"
-        android:layout_marginRight="@dimen/margin_normal"
-        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_marginLeft="@dimen/metronome_margin"
+        android:layout_marginTop="@dimen/metronome_margin_small"
+        android:layout_marginRight="@dimen/metronome_margin"
+        android:layout_marginBottom="@dimen/metronome_margin"
         android:layout_alignParentBottom="true"
-        local:cardCornerRadius="@dimen/card_corner_radius"
-        local:cardElevation="@dimen/card_elevation"
-        local:cardBackgroundColor="@color/color_cards">
+        local:cardCornerRadius="@dimen/card_view_corner_radius"
+        local:cardElevation="@dimen/card_view_elevation"
+        local:cardBackgroundColor="@color/card_view_color">
         <FrameLayout
             android:id="@+id/measure_frame"
             android:layout_width="match_parent"

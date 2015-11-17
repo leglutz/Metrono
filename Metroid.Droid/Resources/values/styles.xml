@@ -3,7 +3,7 @@
 
     <style name="MyTheme" parent="MyTheme.Base" />
 
-     <style name="MyTheme.Splash" parent="MyTheme.Base">
+    <style name="MyTheme.Splash" parent="MyTheme.Base">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
