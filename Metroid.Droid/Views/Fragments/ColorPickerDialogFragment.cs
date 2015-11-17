@@ -22,7 +22,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
         {
             _baseColor = baseColor;
 
-            SetStyle(MvxDialogFragment.StyleNoTitle, 0);
+            SetStyle(MvxDialogFragment.StyleNoTitle, Android.Resource.Style.ThemeHoloLightDialogNoActionBar);
         }
 
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
