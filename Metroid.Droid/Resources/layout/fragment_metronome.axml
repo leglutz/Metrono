@@ -10,8 +10,8 @@
         android:layout_marginLeft="@dimen/metronome_margin"
         android:layout_marginTop="@dimen/metronome_margin"
         android:layout_marginRight="@dimen/metronome_margin"
-        android:layout_marginBottom="@dimen/metronome_margin"
-        local:cardBackgroundColor="@color/card_view_color"
+        android:layout_marginBottom="@dimen/metronome_margin_small"
+        local:cardBackgroundColor="@color/card_view"
         local:cardCornerRadius="@dimen/card_view_corner_radius"
         local:cardElevation="@dimen/card_view_elevation">
         <RelativeLayout
@@ -62,7 +62,7 @@
         android:layout_alignParentBottom="true"
         local:cardCornerRadius="@dimen/card_view_corner_radius"
         local:cardElevation="@dimen/card_view_elevation"
-        local:cardBackgroundColor="@color/card_view_color">
+        local:cardBackgroundColor="@color/card_view">
         <FrameLayout
             android:id="@+id/measure_frame"
             android:layout_width="match_parent"

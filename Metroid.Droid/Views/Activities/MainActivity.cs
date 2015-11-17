@@ -21,16 +21,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
             SetContentView (Resource.Layout.activity_main);
 
-            // TODO delete
-            var metrics = Resources.DisplayMetrics;
-            var contentView = FindViewById<View> (Window.IdAndroidContent);
-            contentView.ViewTreeObserver.GlobalLayout += (sender, e) => {
-                var height = (int) ((contentView.Height)/Resources.DisplayMetrics.Density);
-                var width = (int) ((contentView.Width)/Resources.DisplayMetrics.Density);
-                var sizeText = FindViewById<Android.Widget.TextView> (Resource.Id.size_text);
-                sizeText.Text = height + " x " + width + " " + Resources.DisplayMetrics.DensityDpi.ToString();
-            };
-
             // Toolbar will now take on default actionbar characteristics
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
             SetSupportActionBar (toolbar);

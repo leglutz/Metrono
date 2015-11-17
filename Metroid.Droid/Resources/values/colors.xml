@@ -6,6 +6,10 @@
     <color name="colorPrimaryDark">#212121</color>
     <color name="colorAccent">#9E9D24</color>
 
-    <color name="card_view_color">#E0E0E0</color>
+    <!--- CardView -->
+    <color name="card_view">#E0E0E0</color>
+
+    <!-- ColorPicker -->
+    <color name="color_picker">#E0E0E0</color>
 
 </resources>

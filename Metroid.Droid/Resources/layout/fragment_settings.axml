@@ -10,7 +10,7 @@
         android:layout_margin="@dimen/settings_margin"
         local:cardCornerRadius="@dimen/card_view_corner_radius"
         local:cardElevation="@dimen/card_view_elevation"
-        local:cardBackgroundColor="@color/card_view_color">
+        local:cardBackgroundColor="@color/card_view">
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

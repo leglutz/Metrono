@@ -5,6 +5,9 @@
     <dimen name="card_view_corner_radius">5dp</dimen>
     <dimen name="card_view_elevation">5dp</dimen>
 
+    <!-- activity_splash_screen -->
+    <dimen name="splash_screen_progress_bar_margin_bottom">50dp</dimen>
+
     <!-- fragment_metronome -->
     <dimen name="metronome_margin">5dp</dimen>
     <dimen name="metronome_margin_small">3dp</dimen>
