@@ -1280,14 +1280,14 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f070002
 			public const int cardview_default_radius = 2131165186;
 			
+			// aapt resource value: 0x7f07005f
+			public const int dialog_color_picker_margin = 2131165279;
+			
 			// aapt resource value: 0x7f070060
-			public const int dialog_color_picker_margin = 2131165280;
+			public const int dialog_color_picker_padding = 2131165280;
 			
 			// aapt resource value: 0x7f070061
-			public const int dialog_color_picker_padding = 2131165281;
-			
-			// aapt resource value: 0x7f070062
-			public const int dialog_color_picker_panel_height = 2131165282;
+			public const int dialog_color_picker_panel_height = 2131165281;
 			
 			// aapt resource value: 0x7f070046
 			public const int disabled_alpha_material_dark = 2131165254;
@@ -1295,14 +1295,14 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f070047
 			public const int disabled_alpha_material_light = 2131165255;
 			
-			// aapt resource value: 0x7f070068
-			public const int drop_down_item_click_kind_margin_bottom = 2131165288;
-			
 			// aapt resource value: 0x7f070066
-			public const int drop_down_item_click_kind_margin_left = 2131165286;
+			public const int drop_down_item_click_kind_margin_bottom = 2131165286;
 			
-			// aapt resource value: 0x7f070067
-			public const int drop_down_item_click_kind_margin_top = 2131165287;
+			// aapt resource value: 0x7f070064
+			public const int drop_down_item_click_kind_margin_left = 2131165284;
+			
+			// aapt resource value: 0x7f070065
+			public const int drop_down_item_click_kind_margin_top = 2131165285;
 			
 			// aapt resource value: 0x7f070048
 			public const int highlight_alpha_material_colored = 2131165256;
@@ -1313,47 +1313,44 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f07004a
 			public const int highlight_alpha_material_light = 2131165258;
 			
-			// aapt resource value: 0x7f070065
-			public const int item_metronome_beat_layout_height = 2131165285;
-			
-			// aapt resource value: 0x7f070064
-			public const int item_metronome_beat_layout_width = 2131165284;
-			
 			// aapt resource value: 0x7f070063
-			public const int item_metronome_beat_margin = 2131165283;
+			public const int item_metronome_beat_layout_height = 2131165283;
 			
-			// aapt resource value: 0x7f070057
-			public const int measure_layout_height = 2131165271;
+			// aapt resource value: 0x7f070062
+			public const int item_metronome_beat_margin = 2131165282;
 			
 			// aapt resource value: 0x7f070056
-			public const int measure_padding = 2131165270;
-			
-			// aapt resource value: 0x7f070058
-			public const int measure_spinner_layout_width = 2131165272;
-			
-			// aapt resource value: 0x7f07005a
-			public const int measure_tap_button_layout_width = 2131165274;
-			
-			// aapt resource value: 0x7f07005b
-			public const int measure_tap_button_margin_left = 2131165275;
-			
-			// aapt resource value: 0x7f070059
-			public const int measure_tempo_button_layout_width = 2131165273;
-			
-			// aapt resource value: 0x7f070053
-			public const int metronome_grid_view_column_width = 2131165267;
-			
-			// aapt resource value: 0x7f070054
-			public const int metronome_grid_view_horizontal_spacing = 2131165268;
+			public const int measure_layout_height = 2131165270;
 			
 			// aapt resource value: 0x7f070055
-			public const int metronome_grid_view_vertical_spacing = 2131165269;
+			public const int measure_padding = 2131165269;
 			
-			// aapt resource value: 0x7f070051
-			public const int metronome_margin = 2131165265;
+			// aapt resource value: 0x7f070057
+			public const int measure_spinner_layout_width = 2131165271;
+			
+			// aapt resource value: 0x7f070059
+			public const int measure_tap_button_layout_width = 2131165273;
+			
+			// aapt resource value: 0x7f07005a
+			public const int measure_tap_button_margin_left = 2131165274;
+			
+			// aapt resource value: 0x7f070058
+			public const int measure_tempo_button_layout_width = 2131165272;
 			
 			// aapt resource value: 0x7f070052
-			public const int metronome_margin_small = 2131165266;
+			public const int metronome_grid_view_column_width = 2131165266;
+			
+			// aapt resource value: 0x7f070053
+			public const int metronome_grid_view_horizontal_spacing = 2131165267;
+			
+			// aapt resource value: 0x7f070054
+			public const int metronome_grid_view_vertical_spacing = 2131165268;
+			
+			// aapt resource value: 0x7f070050
+			public const int metronome_margin = 2131165264;
+			
+			// aapt resource value: 0x7f070051
+			public const int metronome_margin_small = 2131165265;
 			
 			// aapt resource value: 0x7f07004b
 			public const int notification_large_icon_height = 2131165259;
@@ -1364,20 +1361,17 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f07004d
 			public const int notification_subtext_size = 2131165261;
 			
-			// aapt resource value: 0x7f07005f
-			public const int settings_color_picker_layout_height = 2131165279;
+			// aapt resource value: 0x7f07005e
+			public const int settings_color_picker_layout_height = 2131165278;
+			
+			// aapt resource value: 0x7f07005b
+			public const int settings_margin = 2131165275;
 			
 			// aapt resource value: 0x7f07005c
-			public const int settings_margin = 2131165276;
+			public const int settings_padding = 2131165276;
 			
 			// aapt resource value: 0x7f07005d
-			public const int settings_padding = 2131165277;
-			
-			// aapt resource value: 0x7f07005e
-			public const int settings_spinner_layout_height = 2131165278;
-			
-			// aapt resource value: 0x7f070050
-			public const int splash_screen_progress_bar_margin_bottom = 2131165264;
+			public const int settings_spinner_layout_height = 2131165277;
 			
 			static Dimension()
 			{
@@ -1660,8 +1654,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c000a
 			public const int MvxBindingTagUnique = 2131492874;
 			
-			// aapt resource value: 0x7f0c005c
-			public const int action0 = 2131492956;
+			// aapt resource value: 0x7f0c005d
+			public const int action0 = 2131492957;
 			
 			// aapt resource value: 0x7f0c0043
 			public const int action_bar = 2131492931;
@@ -1687,8 +1681,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c0044
 			public const int action_context_bar = 2131492932;
 			
-			// aapt resource value: 0x7f0c0060
-			public const int action_divider = 2131492960;
+			// aapt resource value: 0x7f0c0061
+			public const int action_divider = 2131492961;
 			
 			// aapt resource value: 0x7f0c0002
 			public const int action_menu_divider = 2131492866;
@@ -1714,8 +1708,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c001d
 			public const int always = 2131492893;
 			
-			// aapt resource value: 0x7f0c0058
-			public const int beats_layout = 2131492952;
+			// aapt resource value: 0x7f0c0059
+			public const int beats_layout = 2131492953;
 			
 			// aapt resource value: 0x7f0c001a
 			public const int beginning = 2131492890;
@@ -1723,29 +1717,29 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c002d
 			public const int buttonPanel = 2131492909;
 			
-			// aapt resource value: 0x7f0c005d
-			public const int cancel_action = 2131492957;
+			// aapt resource value: 0x7f0c005e
+			public const int cancel_action = 2131492958;
 			
 			// aapt resource value: 0x7f0c003b
 			public const int checkbox = 2131492923;
 			
-			// aapt resource value: 0x7f0c0063
-			public const int chronometer = 2131492963;
+			// aapt resource value: 0x7f0c0064
+			public const int chronometer = 2131492964;
 			
 			// aapt resource value: 0x7f0c001e
 			public const int collapseActionView = 2131492894;
 			
-			// aapt resource value: 0x7f0c005b
-			public const int color_picker = 2131492955;
+			// aapt resource value: 0x7f0c005c
+			public const int color_picker = 2131492956;
 			
-			// aapt resource value: 0x7f0c0054
-			public const int color_picker_view = 2131492948;
+			// aapt resource value: 0x7f0c0055
+			public const int color_picker_view = 2131492949;
 			
 			// aapt resource value: 0x7f0c0033
 			public const int contentPanel = 2131492915;
 			
-			// aapt resource value: 0x7f0c0053
-			public const int content_frame = 2131492947;
+			// aapt resource value: 0x7f0c0054
+			public const int content_frame = 2131492948;
 			
 			// aapt resource value: 0x7f0c0039
 			public const int custom = 2131492921;
@@ -1768,8 +1762,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c001b
 			public const int end = 2131492891;
 			
-			// aapt resource value: 0x7f0c0068
-			public const int end_padder = 2131492968;
+			// aapt resource value: 0x7f0c0069
+			public const int end_padder = 2131492969;
 			
 			// aapt resource value: 0x7f0c0027
 			public const int expand_activities_button = 2131492903;
@@ -1777,8 +1771,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c003a
 			public const int expanded_menu = 2131492922;
 			
-			// aapt resource value: 0x7f0c0059
-			public const int grid_view = 2131492953;
+			// aapt resource value: 0x7f0c005a
+			public const int grid_view = 2131492954;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int home = 2131492868;
@@ -1795,14 +1789,14 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c0028
 			public const int image = 2131492904;
 			
-			// aapt resource value: 0x7f0c0067
-			public const int info = 2131492967;
+			// aapt resource value: 0x7f0c0068
+			public const int info = 2131492968;
 			
-			// aapt resource value: 0x7f0c0061
-			public const int line1 = 2131492961;
+			// aapt resource value: 0x7f0c0062
+			public const int line1 = 2131492962;
 			
-			// aapt resource value: 0x7f0c0065
-			public const int line3 = 2131492965;
+			// aapt resource value: 0x7f0c0066
+			public const int line3 = 2131492966;
 			
 			// aapt resource value: 0x7f0c000b
 			public const int listMode = 2131492875;
@@ -1810,14 +1804,14 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c002a
 			public const int list_item = 2131492906;
 			
-			// aapt resource value: 0x7f0c0057
-			public const int measure_card = 2131492951;
+			// aapt resource value: 0x7f0c0058
+			public const int measure_card = 2131492952;
 			
-			// aapt resource value: 0x7f0c005a
-			public const int measure_frame = 2131492954;
+			// aapt resource value: 0x7f0c005b
+			public const int measure_frame = 2131492955;
 			
-			// aapt resource value: 0x7f0c005f
-			public const int media_actions = 2131492959;
+			// aapt resource value: 0x7f0c0060
+			public const int media_actions = 2131492960;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int middle = 2131492892;
@@ -1828,8 +1822,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c0020
 			public const int never = 2131492896;
 			
-			// aapt resource value: 0x7f0c0056
-			public const int new_color_panel = 2131492950;
+			// aapt resource value: 0x7f0c0057
+			public const int new_color_panel = 2131492951;
 			
 			// aapt resource value: 0x7f0c0010
 			public const int none = 2131492880;
@@ -1837,8 +1831,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c000c
 			public const int normal = 2131492876;
 			
-			// aapt resource value: 0x7f0c0055
-			public const int old_color_panel = 2131492949;
+			// aapt resource value: 0x7f0c0056
+			public const int old_color_panel = 2131492950;
 			
 			// aapt resource value: 0x7f0c002f
 			public const int parentPanel = 2131492911;
@@ -1897,8 +1891,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c0051
 			public const int select_dialog_listview = 2131492945;
 			
-			// aapt resource value: 0x7f0c0069
-			public const int settings_menu = 2131492969;
+			// aapt resource value: 0x7f0c006a
+			public const int settings_menu = 2131492970;
 			
 			// aapt resource value: 0x7f0c003c
 			public const int shortcut = 2131492924;
@@ -1911,6 +1905,9 @@ namespace DiodeTeam.Metroid.Droid
 			
 			// aapt resource value: 0x7f0c0013
 			public const int showTitle = 2131492883;
+			
+			// aapt resource value: 0x7f0c0053
+			public const int size_text = 2131492947;
 			
 			// aapt resource value: 0x7f0c002e
 			public const int spacer = 2131492910;
@@ -1927,8 +1924,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c0019
 			public const int src_over = 2131492889;
 			
-			// aapt resource value: 0x7f0c005e
-			public const int status_bar_latest_event_content = 2131492958;
+			// aapt resource value: 0x7f0c005f
+			public const int status_bar_latest_event_content = 2131492959;
 			
 			// aapt resource value: 0x7f0c004e
 			public const int submit_area = 2131492942;
@@ -1936,17 +1933,17 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c000d
 			public const int tabMode = 2131492877;
 			
-			// aapt resource value: 0x7f0c0066
-			public const int text = 2131492966;
+			// aapt resource value: 0x7f0c0067
+			public const int text = 2131492967;
 			
-			// aapt resource value: 0x7f0c0064
-			public const int text2 = 2131492964;
+			// aapt resource value: 0x7f0c0065
+			public const int text2 = 2131492965;
 			
 			// aapt resource value: 0x7f0c0036
 			public const int textSpacerNoButtons = 2131492918;
 			
-			// aapt resource value: 0x7f0c0062
-			public const int time = 2131492962;
+			// aapt resource value: 0x7f0c0063
+			public const int time = 2131492963;
 			
 			// aapt resource value: 0x7f0c002c
 			public const int title = 2131492908;

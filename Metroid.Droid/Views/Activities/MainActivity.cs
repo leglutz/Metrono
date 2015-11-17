@@ -23,8 +23,13 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
             // TODO delete
             var metrics = Resources.DisplayMetrics;
-            var height = (int) ((metrics.HeightPixels)/Resources.DisplayMetrics.Density);
-            var width = (int) ((metrics.WidthPixels)/Resources.DisplayMetrics.Density);
+            var contentView = FindViewById<View> (Window.IdAndroidContent);
+            contentView.ViewTreeObserver.GlobalLayout += (sender, e) => {
+                var height = (int) ((contentView.Height)/Resources.DisplayMetrics.Density);
+                var width = (int) ((contentView.Width)/Resources.DisplayMetrics.Density);
+                var sizeText = FindViewById<Android.Widget.TextView> (Resource.Id.size_text);
+                sizeText.Text = height + " x " + width + " " + Resources.DisplayMetrics.DensityDpi.ToString();
+            };
 
             // Toolbar will now take on default actionbar characteristics
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
@@ -64,10 +69,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 case Android.Resource.Id.Home:
                     // Metronome fragment
                     SupportFragmentManager.PopBackStack();
-                    /*SupportFragmentManager.BeginTransaction ()
-                        .SetCustomAnimations(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom)
-                        .Replace (Resource.Id.content_frame, _metronomeFragment)
-                        .Commit ();*/
                     break;
             }
 
