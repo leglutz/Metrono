@@ -13,5 +13,12 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
             return this.BindingInflate (Resource.Layout.fragment_measure, null);
         }
+
+        public override void OnPause ()
+        {
+            base.OnPause ();
+
+            ViewModel.SaveSettings ();
+        }
     }
 }

@@ -4,11 +4,14 @@ using System.Linq;
 using Cirrious.MvvmCross.ViewModels;
 using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Resources;
+using DiodeTeam.Metroid.Core.Services;
 
 namespace DiodeTeam.Metroid.Core.ViewModels
 {
     public class MeasureViewModel : MvxViewModel
     {
+        private readonly ISettingsService _settingsService;
+
         public Measure Measure { get; private set; }
 
         public List<int> TempoList { get; private set; }
@@ -19,9 +22,14 @@ namespace DiodeTeam.Metroid.Core.ViewModels
         public IMvxCommand TempoMinus1Command { get; private set; }
         public IMvxCommand TapCommand { get; private set; }
 
-        public MeasureViewModel ()
+        public MeasureViewModel (ISettingsService settingsService)
         {
+            _settingsService = settingsService;
+
             Measure = new Measure ();
+            Measure.Tempo = _settingsService.Settings.LastTempo;
+            Measure.TimeSignatureNumerator = _settingsService.Settings.LastTimeSignatureNumerator;
+            Measure.TimeSignatureDenominator = _settingsService.Settings.LastTimeSignatureDenominator;
 
             TempoList = new List<int> (Enumerable.Range (Measure.MinTempo, Measure.MaxTempo + 1));
             TimeSignatureNumeratorList = new List<int> (Enumerable.Range (1, 20));
@@ -30,6 +38,13 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             TempoPlus1Command = new MvxCommand (() => Measure.Tempo += 1);
             TempoMinus1Command = new MvxCommand (() => Measure.Tempo -= 1);
             TapCommand = new MvxCommand (() => Measure.TapTempo ());
+        }
+
+        public void SaveSettings()
+        {
+            _settingsService.Settings.LastTempo = Measure.Tempo;
+            _settingsService.Settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;
+            _settingsService.Settings.LastTimeSignatureDenominator = Measure.TimeSignatureDenominator;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Android.Animation;
 using Android.OS;
 using Android.Views;
+using Android.Widget;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
@@ -9,7 +10,6 @@ using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Services;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Activities;
-using Android.Widget;
 
 namespace DiodeTeam.Metroid.Droid.Views.Fragments
 {

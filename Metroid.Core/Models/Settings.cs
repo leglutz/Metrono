@@ -10,9 +10,39 @@ namespace DiodeTeam.Metroid.Core.Models
     {
         private readonly ISettings _settings;
 
+        public int LastTempo
+        {
+            get { return _settings.GetValue<int>("LastTempo", 120); }
+            set 
+            { 
+                _settings.AddOrUpdateValue<int> ("LastTempo", value); 
+                RaisePropertyChanged (() => LastTempo);
+            }
+        }
+
+        public int LastTimeSignatureNumerator
+        {
+            get { return _settings.GetValue<int>("LastTimeSignatureNumerator", 4); }
+            set 
+            { 
+                _settings.AddOrUpdateValue<int> ("LastTimeSignatureNumerator", value); 
+                RaisePropertyChanged (() => LastTimeSignatureNumerator);
+            }
+        }
+
+        public int LastTimeSignatureDenominator
+        {
+            get { return _settings.GetValue<int>("LastTimeSignatureDenominator", 4); }
+            set 
+            { 
+                _settings.AddOrUpdateValue<int> ("LastTimeSignatureDenominator", value); 
+                RaisePropertyChanged (() => LastTimeSignatureDenominator);
+            }
+        }
+
         public ClickKind BeatClick
         {
-            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.TickLo);; }
+            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.TickLo); }
             set 
             { 
                 _settings.AddOrUpdateValue<ClickKind> ("BeatClick", value); 
@@ -62,7 +92,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public ClickKind FirstBeatClick
         {
-            get { return _settings.GetValue<ClickKind>("FirstBeatClick", ClickKind.Bell);; }
+            get { return _settings.GetValue<ClickKind>("FirstBeatClick", ClickKind.Bell); }
             set 
             {
                 _settings.AddOrUpdateValue<ClickKind> ("FirstBeatClick", value); 
@@ -82,7 +112,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public ClickKind LastBeatClick
         {
-            get { return _settings.GetValue<ClickKind>("LastBeatClick", ClickKind.Bell);; }
+            get { return _settings.GetValue<ClickKind>("LastBeatClick", ClickKind.Bell); }
             set 
             {
                 _settings.AddOrUpdateValue<ClickKind> ("LastBeatClick", value); 
@@ -102,7 +132,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public ClickKind CompoundBeatClick
         {
-            get { return _settings.GetValue<ClickKind>("CompoundBeatClick", ClickKind.RimshotHi);; }
+            get { return _settings.GetValue<ClickKind>("CompoundBeatClick", ClickKind.RimshotHi); }
             set 
             {
                 _settings.AddOrUpdateValue<ClickKind> ("CompoundBeatClick", value); 

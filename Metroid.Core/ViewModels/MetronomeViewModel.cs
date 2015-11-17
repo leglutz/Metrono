@@ -1,7 +1,6 @@
 ﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
 using DiodeTeam.Metroid.Core.Models;
-using DiodeTeam.Metroid.Core.Services;
 
 namespace DiodeTeam.Metroid.Core.ViewModels
 {
