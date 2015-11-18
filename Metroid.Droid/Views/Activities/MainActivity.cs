@@ -36,6 +36,12 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 .AddTestDevice("F43503B8EEC80D05409A9FC72C1A1739") // Galaxy S4
                 .AddTestDevice("4AE7A27D261394B5DFF97D4B3C7C1356") // Galaxy S5
                 .AddTestDevice("F68B62EDB7232D4875A7EFC6EE6E331F") // Nexus 4
+                .AddTestDevice("E64603CCE00EC680C56E2A96FF2FB6CF") // Nexus 5
+                .AddTestDevice("FFAE46A5D5D2455E9BCDE29D8ACE1238") // Nexus 6
+                .AddTestDevice("23449335DD2B0E8CE6D7BAB66581838D") // HTC One
+                .AddTestDevice("0CE065667AEB2C5B3587B95A640C85B0") // Xperia S
+                .AddTestDevice("F2221279A5619E51A78C8496C4DC4753") // Xperia Z
+                .AddTestDevice("0B04ED2E47EE0BB7DA11F64E36862E6E") // Xperia Z Compact
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);

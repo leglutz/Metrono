@@ -1400,12 +1400,6 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0a005e
 			public const int measure_tempo_button_padding = 2131361886;
 			
-			// aapt resource value: 0x7f0a006b
-			public const int metronome_grid_view_column_width = 2131361899;
-			
-			// aapt resource value: 0x7f0a006c
-			public const int metronome_grid_view_horizontal_spacing = 2131361900;
-			
 			// aapt resource value: 0x7f0a0056
 			public const int metronome_grid_view_vertical_spacing = 2131361878;
 			

@@ -4,8 +4,8 @@
     <!-- h550dp-xxhdpi -->
 
     <!-- template_item_metronome_beat -->
-    <dimen name="item_metronome_beat_layout_width">60dp</dimen>
-    <dimen name="item_metronome_beat_layout_height">60dp</dimen>
+    <dimen name="item_metronome_beat_layout_width">55dp</dimen>
+    <dimen name="item_metronome_beat_layout_height">55dp</dimen>
 
     <!-- fragment_measure -->
     <dimen name="measure_layout_height">60dp</dimen>

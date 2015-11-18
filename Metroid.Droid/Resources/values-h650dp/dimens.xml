@@ -3,16 +3,14 @@
 
     <!-- h650dp -->
 
-    <!-- fragment_metronome -->
-    <dimen name="metronome_grid_view_column_width">70dp</dimen>
+    <!-- template_item_metronome_beat -->
+    <dimen name="item_metronome_beat_layout_width">65dp</dimen>
+    <dimen name="item_metronome_beat_layout_height">65dp</dimen>
 
     <!-- fragment_measure -->
-    <dimen name="measure_layout_height">80dp</dimen>
+    <dimen name="measure_layout_height">70dp</dimen>
     <dimen name="measure_tempo_button_layout_width">70dp</dimen>
     <dimen name="measure_tap_button_layout_width">120dp</dimen>
     <dimen name="measure_tap_button_margin_left">20dp</dimen>
-
-    <!-- template_item_metronome_beat -->
-    <dimen name="item_metronome_beat_layout_height">70dp</dimen>
 
 </resources>
