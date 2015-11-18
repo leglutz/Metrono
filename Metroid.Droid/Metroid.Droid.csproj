@@ -166,8 +166,8 @@
     <Folder Include="Resources\values-h650dp\" />
     <Folder Include="Resources\drawable-h550dp-xxhdpi\" />
     <Folder Include="Resources\values-h550dp-xxhdpi\" />
-    <Folder Include="Resources\drawable-h550dp\" />
-    <Folder Include="Resources\values-h550dp\" />
+    <Folder Include="Resources\drawable-h550dp-xhdpi\" />
+    <Folder Include="Resources\values-h550dp-xhdpi\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -252,7 +252,7 @@
     <AndroidResource Include="Resources\values-h650dp\dimens.xml" />
     <AndroidResource Include="Resources\drawable-h550dp-xxhdpi\background.jpg" />
     <AndroidResource Include="Resources\values-h550dp-xxhdpi\dimens.xml" />
-    <AndroidResource Include="Resources\drawable-h550dp\background.jpg" />
-    <AndroidResource Include="Resources\values-h550dp\dimens.xml" />
+    <AndroidResource Include="Resources\drawable-h550dp-xhdpi\background.jpg" />
+    <AndroidResource Include="Resources\values-h550dp-xhdpi\dimens.xml" />
   </ItemGroup>
 </Project>
