@@ -18,12 +18,12 @@
             android:id="@+id/beats_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/metronome_margin">
+            android:layout_margin="@dimen/metronome_margin_small">
             <Mvx.MvxGridView
                 android:id="@+id/grid_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/metronome_margin_small"
+                android:padding="@dimen/metronome_margin_small"
                 android:horizontalSpacing="@dimen/metronome_grid_view_horizontal_spacing"
                 android:verticalSpacing="@dimen/metronome_grid_view_vertical_spacing"
                 android:stretchMode="columnWidth"
