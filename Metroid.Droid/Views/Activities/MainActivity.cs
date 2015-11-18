@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content.PM;
+using Android.Gms.Ads;
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -13,6 +14,8 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
     [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : MvxFragmentCompatActivity<MainViewModel>
     {
+        private AdView _adView;
+        private MetronomeFragment _metronomeFragment;
         private SettingsFragment _settingsFragment;
 
         protected override void OnCreate (Bundle bundle)
@@ -25,11 +28,20 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
             SetSupportActionBar (toolbar);
 
+            // AdView
+            var adRequest = new AdRequest.Builder ()
+                .AddTestDevice (AdRequest.DeviceIdEmulator)
+                .AddTestDevice("A4345C113A901171A1CC2471BDAFF7DB")
+                .AddTestDevice("9FBB55A713C3B6A69EECC6E4AEB2101C")
+                .Build ();
+            _adView = FindViewById<AdView> (Resource.Id.ad_view);
+            _adView.LoadAd(adRequest);
+
             // Metronome fragment
-            var metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
-            metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
+            _metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
+            _metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
             SupportFragmentManager.BeginTransaction ()
-                .Add (Resource.Id.content_frame, metronomeFragment)
+                .Add (Resource.Id.content_frame, _metronomeFragment)
                 .Commit ();
            
             // Settings fragment
@@ -67,9 +79,24 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         protected override void OnPause ()
         {
-            base.OnPause ();
-
             ViewModel.MetronomeViewModel.Metronome.Stop();
+            _adView.Pause ();
+
+            base.OnPause ();
+        }
+
+        protected override void OnResume ()
+        {
+            base.OnResume ();
+
+            _adView.Resume ();
+        }
+
+        protected override void OnDestroy ()
+        {
+            _adView.Destroy ();
+
+            base.OnDestroy ();
         }
     }
 }
