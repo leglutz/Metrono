@@ -31,8 +31,16 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             // AdView
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
+                // Galaxy S2
                 .AddTestDevice("A4345C113A901171A1CC2471BDAFF7DB")
+                // Galaxy S3
                 .AddTestDevice("9FBB55A713C3B6A69EECC6E4AEB2101C")
+                // Galaxy S4
+                .AddTestDevice("F43503B8EEC80D05409A9FC72C1A1739")
+                // Galaxy S5
+                .AddTestDevice("4AE7A27D261394B5DFF97D4B3C7C1356")
+                // Nexus 4
+                .AddTestDevice("F68B62EDB7232D4875A7EFC6EE6E331F")
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);

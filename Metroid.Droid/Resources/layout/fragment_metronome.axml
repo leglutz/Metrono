@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_above="@+id/measure_card"
         android:layout_marginLeft="@dimen/metronome_margin"
         android:layout_marginTop="@dimen/metronome_margin"
@@ -14,28 +14,32 @@
         local:cardBackgroundColor="@color/card_view"
         local:cardCornerRadius="@dimen/card_view_corner_radius"
         local:cardElevation="@dimen/card_view_elevation">
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/beats_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/metronome_margin_small">
-            <Mvx.MvxGridView
-                android:id="@+id/grid_view"
+            android:orientation="vertical">
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/metronome_margin_small"
-                android:horizontalSpacing="@dimen/metronome_grid_view_horizontal_spacing"
-                android:verticalSpacing="@dimen/metronome_grid_view_vertical_spacing"
-                android:stretchMode="columnWidth"
-                android:numColumns="auto_fit"
-                android:columnWidth="@dimen/metronome_grid_view_column_width"
-                local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
-                local:MvxItemTemplate="@layout/template_item_metronome_beat" />
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <Mvx.MvxGridView
+                    android:id="@+id/grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/metronome_margin"
+                    android:layout_marginRight="@dimen/metronome_margin"
+                    android:stretchMode="columnWidth"
+                    android:numColumns="5"
+                    android:verticalSpacing="@dimen/metronome_grid_view_vertical_spacing"
+                    local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
+                    local:MvxItemTemplate="@layout/template_item_metronome_beat" />
+            </RelativeLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginBottom="@dimen/metronome_margin_small"
                 android:text="@string/metronome_touch_to_start"
                 android:textSize="@dimen/text_small"
@@ -43,13 +47,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginBottom="@dimen/metronome_margin_small"
                 android:text="@string/metronome_touch_to_stop"
                 android:textSize="@dimen/text_small"
                 local:MvxBind="Visibility Visibility(Metronome.IsPlaying)" />
-        </RelativeLayout>
+        </LinearLayout>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@id/measure_card"

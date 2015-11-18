@@ -36,6 +36,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:src="@drawable/minus"
+            android:cropToPadding="true"
+            android:scaleType="centerInside"
+            android:padding="@dimen/measure_tempo_button_padding"
             local:MvxBind="Click TempoMinus1Command" />
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
@@ -46,6 +49,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:src="@drawable/plus"
+            android:cropToPadding="true"
+            android:scaleType="centerInside"
+            android:padding="@dimen/measure_tempo_button_padding"
             local:MvxBind="Click TempoPlus1Command" />
         <Button
             android:layout_width="@dimen/measure_tap_button_layout_width"
