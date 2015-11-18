@@ -162,10 +162,12 @@
     <Folder Include="Resources\mipmap-xhdpi\" />
     <Folder Include="Resources\mipmap-xxhdpi\" />
     <Folder Include="Resources\mipmap-xxxhdpi\" />
-    <Folder Include="Resources\drawable-h550dp\" />
     <Folder Include="Resources\drawable-h650dp\" />
-    <Folder Include="Resources\values-h550dp\" />
     <Folder Include="Resources\values-h650dp\" />
+    <Folder Include="Resources\drawable-h550dp-xxhdpi\" />
+    <Folder Include="Resources\values-h550dp-xxhdpi\" />
+    <Folder Include="Resources\drawable-h550dp\" />
+    <Folder Include="Resources\values-h550dp\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -246,9 +248,11 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\values\dimens.xml" />
-    <AndroidResource Include="Resources\drawable-h550dp\background.jpg" />
     <AndroidResource Include="Resources\drawable-h650dp\background.jpg" />
-    <AndroidResource Include="Resources\values-h550dp\dimens.xml" />
     <AndroidResource Include="Resources\values-h650dp\dimens.xml" />
+    <AndroidResource Include="Resources\drawable-h550dp-xxhdpi\background.jpg" />
+    <AndroidResource Include="Resources\values-h550dp-xxhdpi\dimens.xml" />
+    <AndroidResource Include="Resources\drawable-h550dp\background.jpg" />
+    <AndroidResource Include="Resources\values-h550dp\dimens.xml" />
   </ItemGroup>
 </Project>
