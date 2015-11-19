@@ -24,6 +24,16 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
             SetContentView (Resource.Layout.activity_main);
 
+            // TODO delete
+            var metrics = Resources.DisplayMetrics;
+            var contentView = FindViewById<View> (Window.IdAndroidContent);
+            contentView.ViewTreeObserver.GlobalLayout += (sender, e) => {
+                var height = (int) ((contentView.Height)/Resources.DisplayMetrics.Density);
+                var width = (int) ((contentView.Width)/Resources.DisplayMetrics.Density);
+                var sizeText = FindViewById<Android.Widget.TextView> (Resource.Id.size_text);
+                sizeText.Text = height + " x " + width + " " + Resources.DisplayMetrics.DensityDpi.ToString();
+            };
+
             // Toolbar will now take on default actionbar characteristics
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
             SetSupportActionBar (toolbar);
@@ -31,17 +41,15 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             // AdView
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
-                .AddTestDevice("A4345C113A901171A1CC2471BDAFF7DB") // Galaxy S2
-                .AddTestDevice("9FBB55A713C3B6A69EECC6E4AEB2101C") // Galaxy S3
-                .AddTestDevice("F43503B8EEC80D05409A9FC72C1A1739") // Galaxy S4
-                .AddTestDevice("4AE7A27D261394B5DFF97D4B3C7C1356") // Galaxy S5
-                .AddTestDevice("F68B62EDB7232D4875A7EFC6EE6E331F") // Nexus 4
-                .AddTestDevice("E64603CCE00EC680C56E2A96FF2FB6CF") // Nexus 5
-                .AddTestDevice("FFAE46A5D5D2455E9BCDE29D8ACE1238") // Nexus 6
-                .AddTestDevice("23449335DD2B0E8CE6D7BAB66581838D") // HTC One
-                .AddTestDevice("0CE065667AEB2C5B3587B95A640C85B0") // Xperia S
-                .AddTestDevice("F2221279A5619E51A78C8496C4DC4753") // Xperia Z
-                .AddTestDevice("0B04ED2E47EE0BB7DA11F64E36862E6E") // Xperia Z Compact
+                .AddTestDevice("8AB3CB50EEA11C715DC6E0F15ADC7CEC") // Samsung Galaxy S2
+                .AddTestDevice("A538B166F286F87A47B2D600E0968262") // Motorola Droid Razr
+                .AddTestDevice("DA017FBAC24CCDAAF97AD0B634BCB4A0") // Motorola Moto X
+                .AddTestDevice("031CCE28BE1E56DE518153AF164C4CEF") // Sony Xperia Z
+                .AddTestDevice("BEA4D61AAD98987FF358CE1A34E60381") // HTC One X
+                .AddTestDevice("357B0383DFBCA45B3FF9CD0B86138DF5") // Samsung Galaxy S5
+                .AddTestDevice("507F28A4B85875B7134D08CD5B7FD2AC") // Samsung Galaxy S6
+                .AddTestDevice("E2492DDF275420924197F1222E8F6B3C") // Motorola Nexus 6
+                //.AddTestDevice("3109107719D5CFB27B6793173D75B4D0") // Sony Xperia Z Compact
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);

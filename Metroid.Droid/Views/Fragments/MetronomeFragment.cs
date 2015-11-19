@@ -1,7 +1,6 @@
 ﻿using Android.Animation;
 using Android.OS;
 using Android.Views;
-using Android.Widget;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
@@ -39,8 +38,9 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
             _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.BlinkColor, 0);
             beatsLayout.SetOnTouchListener (this);
-            // GridView touch handler
-            var gridView =  view.FindViewById<GridView>(Resource.Id.grid_view);
+
+            // GridView
+            var gridView = view.FindViewById<View>(Resource.Id.grid_view);
             gridView.SetOnTouchListener (this);
 
             // Measure fragment
