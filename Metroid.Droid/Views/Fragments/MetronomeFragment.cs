@@ -63,8 +63,8 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
             protected override View GetBindableView(View convertView, object source, int templateId)
             {
-                var beat = (Beat)source;
-                Mvx.Trace (beat.Number.ToString ());
+                //var beat = (Beat)source;
+                //Mvx.Trace (beat.Number.ToString ());
 
                 return base.GetBindableView(convertView, source, templateId);
             }
