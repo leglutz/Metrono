@@ -3,5 +3,5 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textSize="@dimen/text_medium"
-    local:MvxBind="Text EnumToDescription(.)" />
+    style="@style/spinner_drop_down_item"
+    local:MvxBind="Text ." />

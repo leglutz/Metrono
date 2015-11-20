@@ -237,9 +237,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable\splash_screen.jpg" />
     <AndroidResource Include="Resources\layout\fragment_dialog_color_picker.axml" />
-    <AndroidResource Include="Resources\layout\template_drop_down_item_click_kind.axml" />
-    <AndroidResource Include="Resources\layout\template_item_click_kind.axml" />
-    <AndroidResource Include="Resources\layout\template_item_metronome_beat.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\icon.png" />
@@ -250,5 +247,10 @@
     <AndroidResource Include="Resources\values-w360dp\dimens.xml" />
     <AndroidResource Include="Resources\drawable-w411dp\background.jpg" />
     <AndroidResource Include="Resources\values-w411dp\dimens.xml" />
+    <AndroidResource Include="Resources\layout\template_metronome_beat_item.axml" />
+    <AndroidResource Include="Resources\layout\template_settings_click_item.axml" />
+    <AndroidResource Include="Resources\layout\template_settings_click_drop_down_item.axml" />
+    <AndroidResource Include="Resources\layout\template_measure_item.axml" />
+    <AndroidResource Include="Resources\layout\template_measure_drop_down_item.axml" />
   </ItemGroup>
 </Project>

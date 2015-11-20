@@ -6,6 +6,9 @@
     <dimen name="text_medium">18sp</dimen>
     <dimen name="text_large">22sp</dimen>
 
+    <!-- Spinner -->
+    <dimen name="spinner_padding">5dp</dimen>
+
     <!-- CardView -->
     <dimen name="card_view_corner_radius">5dp</dimen>
     <dimen name="card_view_elevation">3dp</dimen>
@@ -18,10 +21,10 @@
     <dimen name="metronome_margin_small">2dp</dimen>
     <dimen name="metronome_grid_view_vertical_spacing">2dp</dimen>
 
-    <!-- template_item_metronome_beat -->
-    <dimen name="item_metronome_beat_margin">2dp</dimen>
-    <dimen name="item_metronome_beat_layout_width">40dp</dimen>
-    <dimen name="item_metronome_beat_layout_height">40dp</dimen>
+    <!-- template_metronome_beat_item -->
+    <dimen name="metronome_beat_item_margin">2dp</dimen>
+    <dimen name="metronome_beat_item_layout_width">40dp</dimen>
+    <dimen name="metronome_beat_item_layout_height">40dp</dimen>
 
     <!-- fragment_measure -->
     <dimen name="measure_padding">3dp</dimen>
@@ -43,7 +46,7 @@
     <dimen name="dialog_color_picker_padding">5dp</dimen>
     <dimen name="dialog_color_picker_panel_height">40dp</dimen>
 
-    <!-- template_drop_down_item_click_kind -->
+    <!-- template_settings_click_drop_down_item -->
     <dimen name="drop_down_item_click_kind_margin_left">5dp</dimen>
     <dimen name="drop_down_item_click_kind_margin_top">10dp</dimen>
     <dimen name="drop_down_item_click_kind_margin_bottom">10dp</dimen>

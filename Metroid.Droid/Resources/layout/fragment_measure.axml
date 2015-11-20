@@ -13,7 +13,9 @@
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
             android:layout_height="match_parent"
-            local:MvxBind="ItemsSource TimeSignatureNumeratorList; SelectedItem Measure.TimeSignatureNumerator" />
+            local:MvxBind="ItemsSource TimeSignatureNumeratorList; SelectedItem Measure.TimeSignatureNumerator"
+            local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
+            local:MvxItemTemplate="@layout/template_measure_item" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -25,7 +27,9 @@
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
             android:layout_height="match_parent"
-            local:MvxBind="ItemsSource TimeSignatureDenominatorList; SelectedItem Measure.TimeSignatureDenominator" />
+            local:MvxBind="ItemsSource TimeSignatureDenominatorList; SelectedItem Measure.TimeSignatureDenominator"
+            local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
+            local:MvxItemTemplate="@layout/template_measure_item" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -43,7 +47,9 @@
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
             android:layout_height="match_parent"
-            local:MvxBind="ItemsSource TempoList; SelectedItem Measure.Tempo" />
+            local:MvxBind="ItemsSource TempoList; SelectedItem Measure.Tempo"
+            local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
+            local:MvxItemTemplate="@layout/template_measure_item" />
         <ImageButton
             android:layout_width="@dimen/measure_tempo_button_layout_width"
             android:layout_height="match_parent"

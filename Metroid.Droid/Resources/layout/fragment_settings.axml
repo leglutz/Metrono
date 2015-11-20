@@ -41,8 +41,8 @@
                         android:layout_height="@dimen/settings_spinner_layout_height"
                         android:layout_marginLeft="@dimen/settings_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.BeatClick"
-                        local:MvxDropDownItemTemplate="@layout/template_drop_down_item_click_kind"
-                        local:MvxItemTemplate="@layout/template_item_click_kind" />
+                        local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
+                        local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <Space
                         android:layout_marginLeft="@dimen/settings_margin" />
                 </TableRow>
@@ -99,8 +99,8 @@
                         android:layout_height="@dimen/settings_spinner_layout_height"
                         android:layout_marginLeft="@dimen/settings_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.FirstBeatClick; Enabled Settings.AccentuateFirstBeat"
-                        local:MvxDropDownItemTemplate="@layout/template_drop_down_item_click_kind"
-                        local:MvxItemTemplate="@layout/template_item_click_kind" />
+                        local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
+                        local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
                         android:layout_marginLeft="@dimen/settings_margin"
                         local:MvxBind="Checked Settings.AccentuateFirstBeat" />
@@ -116,8 +116,8 @@
                         android:layout_height="@dimen/settings_spinner_layout_height"
                         android:layout_marginLeft="@dimen/settings_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.LastBeatClick; Enabled Settings.AccentuateLastBeat"
-                        local:MvxDropDownItemTemplate="@layout/template_drop_down_item_click_kind"
-                        local:MvxItemTemplate="@layout/template_item_click_kind" />
+                        local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
+                        local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
                         android:layout_marginLeft="@dimen/settings_margin"
                         local:MvxBind="Checked Settings.AccentuateLastBeat" />
@@ -133,8 +133,8 @@
                         android:layout_height="@dimen/settings_spinner_layout_height"
                         android:layout_marginLeft="@dimen/settings_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.CompoundBeatClick; Enabled Settings.AccentuateCompoundBeats"
-                        local:MvxDropDownItemTemplate="@layout/template_drop_down_item_click_kind"
-                        local:MvxItemTemplate="@layout/template_item_click_kind" />
+                        local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
+                        local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
                         android:layout_marginLeft="@dimen/settings_margin"
                         local:MvxBind="Checked Settings.AccentuateCompoundBeats" />
