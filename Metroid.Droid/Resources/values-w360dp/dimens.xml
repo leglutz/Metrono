@@ -3,6 +3,11 @@
 
     <!-- w360dp -->
 
+    <!-- Texts -->
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_medium">20sp</dimen>
+    <dimen name="text_large">24sp</dimen>
+
     <!-- fragment_metronome -->
     <dimen name="metronome_margin">8dp</dimen>
     <dimen name="metronome_margin_small">4dp</dimen>
