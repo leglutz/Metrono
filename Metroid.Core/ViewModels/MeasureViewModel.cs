@@ -8,7 +8,7 @@ using DiodeTeam.Metroid.Core.Services;
 
 namespace DiodeTeam.Metroid.Core.ViewModels
 {
-    public class MeasureViewModel : MvxViewModel
+    public class MeasureViewModel : ViewModelBase
     {
         private readonly ISettingsService _settingsService;
 
@@ -40,7 +40,7 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             TapCommand = new MvxCommand (() => Measure.TapTempo ());
         }
 
-        public void SaveSettings()
+        protected override void Hide ()
         {
             _settingsService.Settings.LastTempo = Measure.Tempo;
             _settingsService.Settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;

@@ -6,17 +6,25 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Droid.Support.AppCompat;
+using DiodeTeam.Metroid.Core.Helpers;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Fragments;
+using MvvmCross.Plugins.Messenger;
 
 namespace DiodeTeam.Metroid.Droid.Views.Activities
 {
     [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
-    public class MainActivity : MvxFragmentCompatActivity<MainViewModel>
+    public class MainActivity : MvxAppCompatActivity<MainViewModel>
     {
+        private readonly IMvxMessenger _messenger;
+
         private AdView _adView;
-        private MetronomeFragment _metronomeFragment;
         private SettingsFragment _settingsFragment;
+
+        public MainActivity ()
+        {
+            _messenger = Mvx.Resolve<IMvxMessenger>();
+        }
 
         protected override void OnCreate (Bundle bundle)
         {
@@ -55,10 +63,10 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             _adView.LoadAd(adRequest);
 
             // Metronome fragment
-            _metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
-            _metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
+            var metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
+            metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
             SupportFragmentManager.BeginTransaction ()
-                .Add (Resource.Id.content_frame, _metronomeFragment)
+                .Replace (Resource.Id.content_frame, metronomeFragment)
                 .Commit ();
            
             // Settings fragment
@@ -96,7 +104,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         protected override void OnPause ()
         {
-            ViewModel.MetronomeViewModel.Metronome.Stop();
+            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Hide));
             _adView.Pause ();
 
             base.OnPause ();
@@ -106,11 +114,13 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
         {
             base.OnResume ();
 
+            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Show));
             _adView.Resume ();
         }
 
         protected override void OnDestroy ()
         {
+            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Dispose));
             _adView.Destroy ();
 
             base.OnDestroy ();

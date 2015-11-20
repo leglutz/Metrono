@@ -98,9 +98,9 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
         public override void OnPause ()
         {
-            base.OnPause ();
-
             ViewModel.Metronome.BeatStarted -= OnBeatStarted;
+
+            base.OnPause ();
         }
 
         private void OnBeatStarted (object sender, Beat beat)

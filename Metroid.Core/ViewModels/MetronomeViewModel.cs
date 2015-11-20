@@ -4,7 +4,7 @@ using DiodeTeam.Metroid.Core.Models;
 
 namespace DiodeTeam.Metroid.Core.ViewModels
 {
-    public class MetronomeViewModel : MvxViewModel
+    public class MetronomeViewModel : ViewModelBase
     {
         public MeasureViewModel MeasureViewModel { get; private set; }
         public Metronome Metronome { get; set; }
@@ -31,6 +31,11 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             {
                 Metronome.Play (MeasureViewModel.Measure, true);
             }    
+        }
+
+        protected override void Hide()
+        {
+            Metronome.Stop ();
         }
     }
 }

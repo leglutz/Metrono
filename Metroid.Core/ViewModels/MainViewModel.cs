@@ -1,9 +1,8 @@
 ﻿using Cirrious.CrossCore;
-using Cirrious.MvvmCross.ViewModels;
 
 namespace DiodeTeam.Metroid.Core.ViewModels
 {
-    public class MainViewModel : MvxViewModel
+    public class MainViewModel : ViewModelBase
     {
         public MetronomeViewModel MetronomeViewModel { get; private set; }
         public SettingsViewModel SettingsViewModel { get; private set; }
