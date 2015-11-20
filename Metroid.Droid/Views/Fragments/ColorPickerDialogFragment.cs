@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.App;
 using Android.Graphics;
 using Android.OS;
 using Android.Views;
@@ -25,10 +26,11 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             SetStyle(MvxDialogFragment.StyleNoTitle, Android.Resource.Style.ThemeHoloLightDialogNoActionBar);
         }
 
-        public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        public override Dialog OnCreateDialog(Bundle savedState)
         {
-            var ignored = base.OnCreateView (inflater, container, savedInstanceState);
-            var view = this.BindingInflate (Resource.Layout.fragment_dialog_color_picker, null);
+            base.EnsureBindingContextSet(savedState);
+
+            var view = this.BindingInflate(Resource.Layout.fragment_dialog_color_picker, null);
 
             var colorPicker = view.FindViewById<ColorPickerView>(Resource.Id.color_picker_view);
             _oldColor = view.FindViewById<ColorPickerPanelView>(Resource.Id.old_color_panel);
@@ -51,7 +53,10 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             _oldColor.Color = _baseColor;
             colorPicker.Color = _baseColor;
 
-            return view;
+            var dialog = new AlertDialog.Builder(Activity);
+            dialog.SetView(view);
+
+            return dialog.Create();
         }
 
         public void OnClick(View view)
