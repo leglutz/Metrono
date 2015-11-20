@@ -46,6 +46,17 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
             SetSupportActionBar (toolbar);
 
+            // Metronome fragment
+            var metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
+            metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
+            SupportFragmentManager.BeginTransaction ()
+                .Replace (Resource.Id.content_frame, metronomeFragment)
+                .Commit ();
+           
+            // Settings fragment
+            _settingsFragment =  Mvx.IocConstruct<SettingsFragment>();
+            _settingsFragment.ViewModel = ViewModel.SettingsViewModel; 
+
             // AdView
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
@@ -61,17 +72,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);
-
-            // Metronome fragment
-            var metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
-            metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
-            SupportFragmentManager.BeginTransaction ()
-                .Replace (Resource.Id.content_frame, metronomeFragment)
-                .Commit ();
-           
-            // Settings fragment
-            _settingsFragment =  Mvx.IocConstruct<SettingsFragment>();
-            _settingsFragment.ViewModel = ViewModel.SettingsViewModel; 
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
