@@ -9,6 +9,8 @@ using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Services;
 using DiodeTeam.Metroid.Core.ViewModels;
 using DiodeTeam.Metroid.Droid.Views.Activities;
+using Cirrious.MvvmCross.Binding.Droid.Views;
+using Android.Content;
 
 namespace DiodeTeam.Metroid.Droid.Views.Fragments
 {
@@ -40,7 +42,8 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             beatsLayout.SetOnTouchListener (this);
 
             // GridView
-            var gridView = view.FindViewById<View>(Resource.Id.grid_view);
+            var gridView = view.FindViewById<MvxGridView>(Resource.Id.grid_view);
+            //gridView.Adapter = new CustomAdapter (Activity, (MvxAndroidBindingContext)BindingContext);
             gridView.SetOnTouchListener (this);
 
             // Measure fragment
@@ -49,6 +52,22 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
                 .Commit ();
             
             return view;
+        }
+
+        public class CustomAdapter : MvxAdapter
+        {
+            public CustomAdapter(Context context, IMvxAndroidBindingContext bindingContext)
+                : base(context, bindingContext)
+            {
+            }
+
+            protected override View GetBindableView(View convertView, object source, int templateId)
+            {
+                var beat = (Beat)source;
+                Mvx.Trace (beat.Number.ToString ());
+
+                return base.GetBindableView(convertView, source, templateId);
+            }
         }
 
         public bool OnTouch (View v, MotionEvent e)
