@@ -13,22 +13,23 @@
         <!--We will be using the toolbar so no need to show ActionBar-->
         <item name="windowActionBar">false</item>
         <!-- colorPrimary is used for the default action bar background -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/color_primary</item>
         <!-- colorPrimaryDark is used for the status bar -->
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets -->
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/color_accent</item>
         <!-- You can also set colorControlNormal, colorControlActivated, colorControlHighlight and colorSwitchThumbNormal. -->
     </style>
 
+    <!--- Toolbar -->
     <style name="toolbar_theme" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="toolbar_popup_theme" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Spinner -->
     <style name="spinner_item">
         <item name="android:textSize">@dimen/text_medium</item>
         <item name="android:padding">@dimen/spinner_padding</item>
     </style>
-
     <style name="spinner_drop_down_item">
         <item name="android:textSize">@dimen/text_medium</item>
         <item name="android:padding">@dimen/spinner_padding</item>

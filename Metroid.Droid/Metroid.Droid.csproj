@@ -252,5 +252,6 @@
     <AndroidResource Include="Resources\layout\template_settings_click_drop_down_item.axml" />
     <AndroidResource Include="Resources\layout\template_measure_item.axml" />
     <AndroidResource Include="Resources\layout\template_measure_drop_down_item.axml" />
+    <AndroidResource Include="Resources\drawable\button.xml" />
   </ItemGroup>
 </Project>

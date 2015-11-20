@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/dialog_color_picker_padding"
     android:paddingRight="@dimen/dialog_color_picker_padding"
-    android:background="@color/color_picker"
+    android:background="@color/dialog_color_picker"
     android:orientation="vertical">
     <Controls.ColorPicker.ColorPickerView
         android:id="@+id/color_picker_view"
