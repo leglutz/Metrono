@@ -25,8 +25,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
         {
             _settings = settingsService.Settings;
             _vibrator = globals.ApplicationContext.GetSystemService(Android.Content.Context.VibratorService) as Vibrator;
-
-            RetainInstance = true;
         }
 
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

@@ -23,7 +23,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         public MainActivity ()
         {
-            _messenger = Mvx.Resolve<IMvxMessenger>();
+           _messenger = Mvx.Resolve<IMvxMessenger>();
         }
 
         protected override void OnCreate (Bundle bundle)

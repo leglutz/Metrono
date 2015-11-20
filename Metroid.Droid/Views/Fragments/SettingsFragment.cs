@@ -20,8 +20,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
         public SettingsFragment(ISettingsService settingsService)
         {
             _settings = settingsService.Settings;
-
-            RetainInstance = true;
         }
 
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
