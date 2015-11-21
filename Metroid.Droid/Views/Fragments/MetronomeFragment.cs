@@ -41,7 +41,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
             // GridView
             var gridView = view.FindViewById<MvxGridView>(Resource.Id.grid_view);
-            //gridView.Adapter = new CustomAdapter (Activity, (MvxAndroidBindingContext)BindingContext);
+            gridView.Adapter = new CustomAdapter (Activity, (MvxAndroidBindingContext)BindingContext);
             gridView.SetOnTouchListener (this);
 
             // Measure fragment
@@ -61,8 +61,8 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
 
             protected override View GetBindableView(View convertView, object source, int templateId)
             {
-                //var beat = (Beat)source;
-                //Mvx.Trace (beat.Number.ToString ());
+                var beat = (Beat)source;
+                Mvx.Trace (beat.Number.ToString ());
 
                 return base.GetBindableView(convertView, source, templateId);
             }

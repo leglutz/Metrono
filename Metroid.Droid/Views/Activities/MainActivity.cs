@@ -14,7 +14,7 @@ using MvvmCross.Plugins.Messenger;
 namespace DiodeTeam.Metroid.Droid.Views.Activities
 {
     [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
-    public class MainActivity : MvxAppCompatActivity<MainViewModel>
+    public class MainActivity : MvxAppCompatActivity<MainViewModel>, Android.Views.ViewTreeObserver.IOnGlobalLayoutListener
     {
         private readonly IMvxMessenger _messenger;
 
@@ -32,15 +32,9 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
             SetContentView (Resource.Layout.activity_main);
 
-            // TODO delete
-            var metrics = Resources.DisplayMetrics;
+            // TODO Remove
             var contentView = FindViewById<View> (Window.IdAndroidContent);
-            contentView.ViewTreeObserver.GlobalLayout += (sender, e) => {
-                var height = (int) ((contentView.Height)/Resources.DisplayMetrics.Density);
-                var width = (int) ((contentView.Width)/Resources.DisplayMetrics.Density);
-                var sizeText = FindViewById<Android.Widget.TextView> (Resource.Id.size_text);
-                sizeText.Text = height + " x " + width + " " + Resources.DisplayMetrics.DensityDpi.ToString();
-            };
+            contentView.ViewTreeObserver.AddOnGlobalLayoutListener(this);
 
             // Toolbar will now take on default actionbar characteristics
             var toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
@@ -72,6 +66,17 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);
+        }
+
+        public void OnGlobalLayout ()
+        {
+            var metrics = Resources.DisplayMetrics;
+            var contentView = FindViewById<View> (Window.IdAndroidContent);
+            var height = (int) ((contentView.Height)/metrics.Density);
+            var width = (int) ((contentView.Width)/metrics.Density);
+            var density =  metrics.DensityDpi.ToString();
+            Mvx.Trace (height + " x " + width + " " + density);
+            contentView.ViewTreeObserver.RemoveOnGlobalLayoutListener(this);
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
