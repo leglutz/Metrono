@@ -21,6 +21,8 @@
     <dimen name="metronome_card_view_margin">3dp</dimen>
     <dimen name="metronome_card_view_margin_small">2dp</dimen>
     <dimen name="metronome_internal_margin">2dp</dimen>
+    <dimen name="metronome_internal_padding">2dp</dimen>
+    <dimen name="metronome_grid_view_horizontal_spacing">2dp</dimen>
     <dimen name="metronome_grid_view_vertical_spacing">2dp</dimen>
 
     <!-- template_metronome_beat_item -->

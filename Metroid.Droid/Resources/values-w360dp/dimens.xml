@@ -4,8 +4,11 @@
     <!-- w360dp -->
 
     <!-- fragment_metronome -->
-    <dimen name="metronome_margin">8dp</dimen>
-    <dimen name="metronome_margin_small">4dp</dimen>
+    <dimen name="metronome_card_view_margin">6dp</dimen>
+    <dimen name="metronome_card_view_margin_small">4dp</dimen>
+    <dimen name="metronome_internal_margin">4dp</dimen>
+    <dimen name="metronome_internal_padding">4dp</dimen>
+    <dimen name="metronome_grid_view_horizontal_spacing">4dp</dimen>
     <dimen name="metronome_grid_view_vertical_spacing">4dp</dimen>
 
      <!-- template_metronome_beat_item -->
@@ -13,5 +16,12 @@
 
     <!-- fragment_measure -->
     <dimen name="measure_padding">6dp</dimen>
+    <dimen name="measure_layout_height">50dp</dimen>
+    <dimen name="measure_tempo_button_layout_width">50dp</dimen>
+    <dimen name="measure_tap_button_layout_width">90dp</dimen>
+    <dimen name="measure_tap_button_margin_left">25dp</dimen>
+
+    <!-- fragment_settings -->
+    <dimen name="settings_card_view_margin">6dp</dimen>
 
 </resources>
