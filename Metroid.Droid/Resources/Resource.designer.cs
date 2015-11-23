@@ -1425,7 +1425,7 @@ namespace DiodeTeam.Metroid.Droid
 			public const int settings_card_view_margin = 2131361893;
 			
 			// aapt resource value: 0x7f0a0069
-			public const int settings_color_picker_layout_height = 2131361897;
+			public const int settings_color_picker_padding = 2131361897;
 			
 			// aapt resource value: 0x7f0a0066
 			public const int settings_internal_margin = 2131361894;
@@ -1434,7 +1434,7 @@ namespace DiodeTeam.Metroid.Droid
 			public const int settings_internal_padding = 2131361895;
 			
 			// aapt resource value: 0x7f0a0068
-			public const int settings_spinner_layout_height = 2131361896;
+			public const int settings_row_height = 2131361896;
 			
 			// aapt resource value: 0x7f0a0052
 			public const int spinner_drop_down_item_padding = 2131361874;

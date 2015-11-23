@@ -68,6 +68,7 @@
             android:layout_marginTop="@dimen/measure_tempo_button_layout_margin"
             android:layout_marginBottom="@dimen/measure_tempo_button_layout_margin"
             android:text="@string/measure_tap"
+            android:textSize="@dimen/text_medium"
             android:background="@drawable/button"
             local:MvxBind="Click TapCommand" />
     </LinearLayout>

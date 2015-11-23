@@ -168,6 +168,9 @@
     <Folder Include="Resources\values-w360dp\" />
     <Folder Include="Resources\drawable-w411dp\" />
     <Folder Include="Resources\values-w411dp\" />
+    <Folder Include="Resources\drawable-w480dp\" />
+    <Folder Include="Resources\values-w480dp\" />
+    <Folder Include="Resources\values-v21\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -255,5 +258,8 @@
     <AndroidResource Include="Resources\layout\template_measure_item.axml" />
     <AndroidResource Include="Resources\layout\template_measure_drop_down_item.axml" />
     <AndroidResource Include="Resources\drawable\button.xml" />
+    <AndroidResource Include="Resources\drawable-w480dp\background.jpg" />
+    <AndroidResource Include="Resources\values-w480dp\dimens.xml" />
+    <AndroidResource Include="Resources\values-v21\styles.xml" />
   </ItemGroup>
 </Project>

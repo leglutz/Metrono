@@ -62,6 +62,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 .AddTestDevice("357B0383DFBCA45B3FF9CD0B86138DF5") // Samsung Galaxy S5
                 .AddTestDevice("507F28A4B85875B7134D08CD5B7FD2AC") // Samsung Galaxy S6
                 .AddTestDevice("E2492DDF275420924197F1222E8F6B3C") // Motorola Nexus 6
+                .AddTestDevice("2AEBA62B2AF8435AC4C3FD4ACA680610") // Samsung Galaxy Mega 6.3
                 //.AddTestDevice("3109107719D5CFB27B6793173D75B4D0") // Sony Xperia Z Compact
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
