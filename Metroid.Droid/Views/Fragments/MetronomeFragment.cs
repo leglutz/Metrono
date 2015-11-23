@@ -27,7 +27,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
         public MetronomeFragment(ISettingsService settingsService, IMvxAndroidGlobals globals)
         {
             _settings = settingsService.Settings;
-            _vibrator = globals.ApplicationContext.GetSystemService(Android.Content.Context.VibratorService) as Vibrator;
+            _vibrator = (Vibrator)globals.ApplicationContext.GetSystemService(Android.Content.Context.VibratorService);
         }
 
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

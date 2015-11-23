@@ -20,10 +20,10 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             switch(lifeCycleMessage.LifeCycleEvent)
             {
                 case LifeCycleEvent.Show:
-                    Show();
+                    Show ();
                     break;
                 case LifeCycleEvent.Hide:
-                    Hide ();
+                    Hide();
                     break;
                 case LifeCycleEvent.Dispose:
                     Dispose ();

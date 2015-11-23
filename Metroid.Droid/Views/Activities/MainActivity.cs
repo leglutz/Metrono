@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.Gms.Ads;
+using Android.Media;
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -14,7 +15,7 @@ using MvvmCross.Plugins.Messenger;
 namespace DiodeTeam.Metroid.Droid.Views.Activities
 {
     [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
-    public class MainActivity : MvxAppCompatActivity<MainViewModel>
+    public class MainActivity : MvxAppCompatActivity<MainViewModel>, AudioManager.IOnAudioFocusChangeListener
     {
         private readonly IMvxMessenger _messenger;
 
@@ -67,6 +68,9 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
             // Keep the screen always on
             Window.AddFlags (WindowManagerFlags.KeepScreenOn);
+
+            var audioManager = (AudioManager) GetSystemService(Android.Content.Context.AudioService);
+            audioManager.RequestAudioFocus(this, Stream.Music, AudioFocus.Gain);
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
@@ -99,7 +103,12 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         protected override void OnPause ()
         {
-            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Hide));
+            var keyguardManager = (KeyguardManager) GetSystemService(Android.Content.Context.KeyguardService);
+            // Don't stop if only locked
+            if(!keyguardManager.IsDeviceLocked)
+            {
+                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Hide));   
+            }
             _adView.Pause ();
 
             base.OnPause ();
@@ -119,6 +128,14 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             _adView.Destroy ();
 
             base.OnDestroy ();
+        }
+
+        public void OnAudioFocusChange (AudioFocus focusChange)
+        {
+            if(focusChange == AudioFocus.LossTransient)
+            {
+                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Hide));   
+            }
         }
     }
 }
