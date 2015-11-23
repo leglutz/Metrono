@@ -64,6 +64,9 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);
+
+            // Keep the screen always on
+            Window.AddFlags (WindowManagerFlags.KeepScreenOn);
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
