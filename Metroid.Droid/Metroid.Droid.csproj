@@ -117,7 +117,6 @@
     <Compile Include="Services\AudioService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Converters\BeatToImageResourceValueConverter.cs" />
     <Compile Include="Views\Fragments\MeasureFragment.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
@@ -154,7 +153,6 @@
     <Folder Include="Views\" />
     <Folder Include="Resources\values\" />
     <Folder Include="Resources\layout\" />
-    <Folder Include="Converters\" />
     <Folder Include="Views\Activities\" />
     <Folder Include="Views\Fragments\" />
     <Folder Include="Resources\menu\" />

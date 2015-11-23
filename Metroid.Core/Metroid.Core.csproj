@@ -40,7 +40,6 @@
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\MeasureViewModel.cs" />
-    <Compile Include="Converters\BoolToAlphaValueConverter.cs" />
     <Compile Include="AppStart.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Services\ISettingsService.cs" />
@@ -49,7 +48,6 @@
     <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
     <Compile Include="Converters\EnumToDescriptionValueConverter.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Converters\BoolToElevationValueConverter.cs" />
     <Compile Include="Helpers\LifeCycleMessage.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
   </ItemGroup>
