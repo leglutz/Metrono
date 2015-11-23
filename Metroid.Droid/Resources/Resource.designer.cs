@@ -1810,6 +1810,12 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c001f
 			public const int always = 2131492895;
 			
+			// aapt resource value: 0x7f0c006c
+			public const int beat_image_view = 2131492972;
+			
+			// aapt resource value: 0x7f0c006d
+			public const int beat_number_text_view = 2131492973;
+			
 			// aapt resource value: 0x7f0c005a
 			public const int beats_layout = 2131492954;
 			
@@ -1993,8 +1999,8 @@ namespace DiodeTeam.Metroid.Droid
 			// aapt resource value: 0x7f0c0053
 			public const int select_dialog_listview = 2131492947;
 			
-			// aapt resource value: 0x7f0c006c
-			public const int settings_menu = 2131492972;
+			// aapt resource value: 0x7f0c006e
+			public const int settings_menu = 2131492974;
 			
 			// aapt resource value: 0x7f0c003e
 			public const int shortcut = 2131492926;

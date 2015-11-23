@@ -25,16 +25,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
-                <Mvx.MvxGridView
+                <GridView
                     android:id="@+id/grid_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:stretchMode="columnWidth"
                     android:numColumns="5"
-                    android:verticalSpacing="@dimen/metronome_grid_view_vertical_spacing"
-                    local:MvxBind="ItemsSource MeasureViewModel.Measure.BeatList"
-                    local:MvxItemTemplate="@layout/template_metronome_beat_item" />
+                    android:gravity="center"
+                    android:verticalSpacing="@dimen/metronome_grid_view_vertical_spacing" />
             </RelativeLayout>
             <TextView
                 android:layout_width="wrap_content"

@@ -93,6 +93,7 @@ namespace DiodeTeam.Metroid.Core.Models
             _tempo = tempo;
             _timeSignatureNumerator = signatureNominator;
             _timeSignatureDenominator = signatureDenominator;
+            _beatList = new ObservableCollection<Beat> ();
             _isPlaying = false;
 
             UpdateBeatList ();
@@ -133,7 +134,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         private void UpdateBeatList ()
         {
-            var beatList = new List<Beat> ();
+            BeatList.Clear ();
             for (int i = 1; i <= TimeSignatureNumerator; i++)
             {
                 var beat = new Beat (i, TimeSignatureDenominator, Tempo);
@@ -144,9 +145,8 @@ namespace DiodeTeam.Metroid.Core.Models
                 {
                     beat.IsCompound = (i-1) % 3 == 0;
                 }
-                beatList.Add (beat);
+                BeatList.Add (beat);
             }
-            BeatList = new ObservableCollection<Beat> (beatList);
         }
 
         private int ConvertMillisecondsToTempo (double milliseconds)
