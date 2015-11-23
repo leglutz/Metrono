@@ -11,7 +11,7 @@
     <dimen name="metronome_grid_view_horizontal_spacing">4dp</dimen>
     <dimen name="metronome_grid_view_vertical_spacing">4dp</dimen>
 
-     <!-- template_metronome_beat_item -->
+    <!-- template_metronome_beat_item -->
     <dimen name="metronome_beat_item_margin">4dp</dimen>
 
     <!-- fragment_measure -->
