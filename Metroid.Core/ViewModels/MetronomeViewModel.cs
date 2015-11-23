@@ -37,6 +37,11 @@ namespace DiodeTeam.Metroid.Core.ViewModels
         {
             Metronome.Stop ();
         }
+
+        protected override void Dispose ()
+        {
+            Metronome.Stop ();
+        }
     }
 }
 
