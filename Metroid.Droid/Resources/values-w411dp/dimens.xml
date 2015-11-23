@@ -8,8 +8,4 @@
     <dimen name="text_medium">22sp</dimen>
     <dimen name="text_large">26sp</dimen>
 
-    <!-- template_item_metronome_beat -->
-    <dimen name="item_metronome_beat_layout_width">70dp</dimen>
-    <dimen name="item_metronome_beat_layout_height">70dp</dimen>
-
 </resources>

@@ -7,7 +7,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/settings_margin"
+        android:layout_margin="@dimen/settings_card_view_margin"
         local:cardCornerRadius="@dimen/card_view_corner_radius"
         local:cardElevation="@dimen/card_view_elevation"
         local:cardBackgroundColor="@color/card_view">
@@ -17,14 +17,14 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/settings_padding">
+                android:padding="@dimen/settings_internal_padding">
                 <TableRow>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_span="3"
-                        android:layout_marginBottom="@dimen/settings_margin"
+                        android:layout_marginBottom="@dimen/settings_internal_margin"
                         android:text="@string/settings_general"
                         android:textSize="@dimen/text_medium" />
                 </TableRow>
@@ -39,12 +39,12 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="@dimen/settings_spinner_layout_height"
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.BeatClick"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
                         local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <Space
-                        android:layout_marginLeft="@dimen/settings_margin" />
+                        android:layout_marginLeft="@dimen/settings_internal_margin" />
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -56,11 +56,11 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="@dimen/settings_color_picker_layout_height"
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         android:layout_gravity="center_vertical"
                         local:MvxBind="Enabled Settings.Blink" />
                     <ToggleButton
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="Checked Settings.Blink" />
                 </TableRow>
                 <TableRow>
@@ -72,9 +72,9 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/settings_margin" />
+                        android:layout_marginLeft="@dimen/settings_internal_margin" />
                     <ToggleButton
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="Checked Settings.Vibration" />
                 </TableRow>
                 <TableRow>
@@ -83,8 +83,8 @@
                         android:layout_height="wrap_content"
                         android:layout_span="3"
                         android:layout_weight="1"
-                        android:layout_marginTop="@dimen/settings_margin"
-                        android:layout_marginBottom="@dimen/settings_margin"
+                        android:layout_marginTop="@dimen/settings_internal_margin"
+                        android:layout_marginBottom="@dimen/settings_internal_margin"
                         android:text="@string/settings_beats_accentuation"
                         android:textSize="@dimen/text_medium" />
                 </TableRow>
@@ -97,12 +97,12 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="@dimen/settings_spinner_layout_height"
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.FirstBeatClick; Enabled Settings.AccentuateFirstBeat"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
                         local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="Checked Settings.AccentuateFirstBeat" />
                 </TableRow>
                 <TableRow>
@@ -114,12 +114,12 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="@dimen/settings_spinner_layout_height"
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.LastBeatClick; Enabled Settings.AccentuateLastBeat"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
                         local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="Checked Settings.AccentuateLastBeat" />
                 </TableRow>
                 <TableRow>
@@ -131,12 +131,12 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="@dimen/settings_spinner_layout_height"
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.CompoundBeatClick; Enabled Settings.AccentuateCompoundBeats"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
                         local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
-                        android:layout_marginLeft="@dimen/settings_margin"
+                        android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="Checked Settings.AccentuateCompoundBeats" />
                 </TableRow>
             </TableLayout>

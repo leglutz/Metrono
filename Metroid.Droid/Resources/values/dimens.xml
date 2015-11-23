@@ -7,7 +7,8 @@
     <dimen name="text_large">22sp</dimen>
 
     <!-- Spinner -->
-    <dimen name="spinner_padding">5dp</dimen>
+    <dimen name="spinner_item_padding">5dp</dimen>
+    <dimen name="spinner_drop_down_item_padding">10dp</dimen>
 
     <!-- CardView -->
     <dimen name="card_view_corner_radius">5dp</dimen>
@@ -17,38 +18,34 @@
     <dimen name="splash_screen_progress_bar_margin_bottom">100dp</dimen>
 
     <!-- fragment_metronome -->
-    <dimen name="metronome_margin">3dp</dimen>
-    <dimen name="metronome_margin_small">2dp</dimen>
+    <dimen name="metronome_card_view_margin">3dp</dimen>
+    <dimen name="metronome_card_view_margin_small">2dp</dimen>
+    <dimen name="metronome_internal_margin">2dp</dimen>
     <dimen name="metronome_grid_view_vertical_spacing">2dp</dimen>
 
     <!-- template_metronome_beat_item -->
     <dimen name="metronome_beat_item_margin">2dp</dimen>
-    <dimen name="metronome_beat_item_layout_width">40dp</dimen>
-    <dimen name="metronome_beat_item_layout_height">40dp</dimen>
 
     <!-- fragment_measure -->
     <dimen name="measure_padding">3dp</dimen>
+    <dimen name="measure_internal_padding">3dp</dimen>
     <dimen name="measure_layout_height">45dp</dimen>
     <dimen name="measure_spinner_layout_width">80dp</dimen>
-    <dimen name="measure_tempo_button_layout_width">50dp</dimen>
-    <dimen name="measure_tempo_button_layout_margin">2dp</dimen>
+    <dimen name="measure_tempo_button_layout_width">45dp</dimen>
+    <dimen name="measure_tempo_button_layout_margin">3dp</dimen>
     <dimen name="measure_tap_button_layout_width">80dp</dimen>
     <dimen name="measure_tap_button_margin_left">20dp</dimen>
 
     <!-- fragment_settings -->
-    <dimen name="settings_margin">4dp</dimen>
-    <dimen name="settings_padding">10dp</dimen>
+    <dimen name="settings_card_view_margin">4dp</dimen>
+    <dimen name="settings_internal_margin">4dp</dimen>
+    <dimen name="settings_internal_padding">10dp</dimen>
     <dimen name="settings_spinner_layout_height">50dp</dimen>
     <dimen name="settings_color_picker_layout_height">40dp</dimen>
 
     <!-- fragment_dialog_color_picker -->
-    <dimen name="dialog_color_picker_margin">5dp</dimen>
     <dimen name="dialog_color_picker_padding">5dp</dimen>
+    <dimen name="dialog_color_picker_panel_margin">5dp</dimen>
     <dimen name="dialog_color_picker_panel_height">40dp</dimen>
-
-    <!-- template_settings_click_drop_down_item -->
-    <dimen name="drop_down_item_click_kind_margin_left">5dp</dimen>
-    <dimen name="drop_down_item_click_kind_margin_top">10dp</dimen>
-    <dimen name="drop_down_item_click_kind_margin_bottom">10dp</dimen>
 
 </resources>
