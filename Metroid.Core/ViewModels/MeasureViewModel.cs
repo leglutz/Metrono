@@ -27,10 +27,7 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             _settingsService = settingsService;
 
             Measure = new Measure ();
-            Measure.Tempo = _settingsService.Settings.LastTempo;
-            Measure.TimeSignatureNumerator = _settingsService.Settings.LastTimeSignatureNumerator;
-            Measure.TimeSignatureDenominator = _settingsService.Settings.LastTimeSignatureDenominator;
-
+           
             TempoList = new List<int> (Enumerable.Range (Measure.MinTempo, Measure.MaxTempo + 1));
             TimeSignatureNumeratorList = new List<int> (Enumerable.Range (1, 20));
             TimeSignatureDenominatorList = new List<int> (ResourcesHelper.NoteImageSourceMap.Keys);
@@ -38,6 +35,13 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             TempoPlus1Command = new MvxCommand (() => Measure.Tempo += 1);
             TempoMinus1Command = new MvxCommand (() => Measure.Tempo -= 1);
             TapCommand = new MvxCommand (() => Measure.TapTempo ());
+        }
+
+        protected override void Show ()
+        {
+            Measure.Tempo = _settingsService.Settings.LastTempo;
+            Measure.TimeSignatureNumerator = _settingsService.Settings.LastTimeSignatureNumerator;
+            Measure.TimeSignatureDenominator = _settingsService.Settings.LastTimeSignatureDenominator;
         }
 
         protected override void Hide ()
