@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+    <!-- w540dp -->
+
+    <!-- Texts -->
+    <dimen name="text_small">22sp</dimen>
+    <dimen name="text_medium">26sp</dimen>
+    <dimen name="text_large">30sp</dimen>
+
+    <!-- fragment_measure -->
+    <dimen name="measure_layout_height">80dp</dimen>
+    <dimen name="measure_spinner_layout_width">110dp</dimen>
+    <dimen name="measure_tempo_button_layout_width">80dp</dimen>
+    <dimen name="measure_tap_button_layout_width">130dp</dimen>
+    <dimen name="measure_tap_button_margin_left">50dp</dimen>
+
+    <!-- fragment_settings -->
+    <dimen name="settings_row_height">80dp</dimen>
+
+    <!-- fragment_dialog_color_picker -->
+    <dimen name="dialog_color_picker_panel_height">80dp</dimen>
+
+</resources>

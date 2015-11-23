@@ -171,6 +171,8 @@
     <Folder Include="Resources\drawable-w480dp\" />
     <Folder Include="Resources\values-w480dp\" />
     <Folder Include="Resources\values-v21\" />
+    <Folder Include="Resources\drawable-w540dp\" />
+    <Folder Include="Resources\values-w540dp\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -261,5 +263,7 @@
     <AndroidResource Include="Resources\drawable-w480dp\background.jpg" />
     <AndroidResource Include="Resources\values-w480dp\dimens.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
+    <AndroidResource Include="Resources\drawable-w540dp\background.jpg" />
+    <AndroidResource Include="Resources\values-w540dp\dimens.xml" />
   </ItemGroup>
 </Project>
