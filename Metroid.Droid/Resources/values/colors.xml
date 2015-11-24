@@ -2,8 +2,8 @@
 <resources>
 
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
-    <color name="color_primary">#616161</color>
-    <color name="color_primary_dark">#424242</color>
+    <color name="color_primary">#424242</color>
+    <color name="color_primary_dark">#212121</color>
     <color name="color_accent">#78909C</color>
 
     <!-- Button -->
@@ -11,9 +11,9 @@
     <color name="button_end">#546E7A</color>
 
     <!-- CardView -->
-    <color name="card_view">#E0E0E0</color>
+    <color name="card_view">#EEEEEE</color>
 
     <!-- Dialog color picker -->
-    <color name="dialog_color_picker">#E0E0E0</color>
+    <color name="dialog_color_picker">#EEEEEE</color>
 
 </resources>
