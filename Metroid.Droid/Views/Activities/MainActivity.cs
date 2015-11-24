@@ -21,6 +21,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         private AdView _adView;
         private SettingsFragment _settingsFragment;
+        private PowerManager _powerManager;
 
         public MainActivity ()
         {
@@ -66,11 +67,15 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);
 
-            // Keep the screen always on
-            Window.AddFlags (WindowManagerFlags.KeepScreenOn);
-
+            // AudioManager
             var audioManager = (AudioManager) GetSystemService(Android.Content.Context.AudioService);
             audioManager.RequestAudioFocus(this, Stream.Music, AudioFocus.Gain);
+
+            // PowerManager
+            _powerManager = (PowerManager) GetSystemService(Android.Content.Context.PowerService);
+
+            // Keep the screen always on
+            Window.AddFlags (WindowManagerFlags.KeepScreenOn);
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
@@ -103,9 +108,9 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         protected override void OnPause ()
         {
-            var keyguardManager = (KeyguardManager) GetSystemService(Android.Content.Context.KeyguardService);
-            // Don't stop if only locked
-            if(!keyguardManager.IsDeviceLocked)
+            // Don't hide if locked/sleep only
+            var isSceenAwake = (Build.VERSION.SdkInt < BuildVersionCodes.KitkatWatch ? _powerManager.IsScreenOn : _powerManager.IsInteractive);
+            if(isSceenAwake)
             {
                 _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Hide));   
             }
@@ -117,6 +122,11 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
         protected override void OnResume ()
         {
             base.OnResume ();
+
+            var isSceenAwake = (Build.VERSION.SdkInt < BuildVersionCodes.KitkatWatch ? _powerManager.IsScreenOn : _powerManager.IsInteractive);
+            if(isSceenAwake)
+            {
+            }
 
             _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Show));
             _adView.Resume ();
