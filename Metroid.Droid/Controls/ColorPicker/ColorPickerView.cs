@@ -25,7 +25,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 
-namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
+namespace DiodeCompany.Metroid.Droid.Controls.ColorPicker
 {
     public class ColorPickerView : View
     {

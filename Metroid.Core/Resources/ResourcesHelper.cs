@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using DiodeTeam.Metroid.Core.Attributes;
+using DiodeCompany.Metroid.Core.Attributes;
 
-namespace DiodeTeam.Metroid.Core.Resources
+namespace DiodeCompany.Metroid.Core.Resources
 {
     public enum ClickKind
     {
@@ -71,7 +71,7 @@ namespace DiodeTeam.Metroid.Core.Resources
 
         private static byte[] GetClickSound (Assembly assembly, ClickKind clickKind)
         {
-            using (var stream = assembly.GetManifestResourceStream ("DiodeTeam.Metroid.Core.Resources.Sounds.Clicks." + clickKind.ToString () + ".wav"))
+            using (var stream = assembly.GetManifestResourceStream ("DiodeCompany.Metroid.Core.Resources.Sounds.Clicks." + clickKind.ToString () + ".wav"))
             {
                 using (var streamReader = new BinaryReader (stream))
                 {

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using DiodeTeam.Metroid.Core.Models;
-using DiodeTeam.Metroid.Core.Resources;
-using DiodeTeam.Metroid.Core.Services;
+using DiodeCompany.Metroid.Core.Models;
+using DiodeCompany.Metroid.Core.Resources;
+using DiodeCompany.Metroid.Core.Services;
 
-namespace DiodeTeam.Metroid.Core.ViewModels
+namespace DiodeCompany.Metroid.Core.ViewModels
 {
     public class SettingsViewModel : ViewModelBase
     {

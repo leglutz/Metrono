@@ -6,7 +6,7 @@ using Xamarin.UITest;
 using Xamarin.UITest.Android;
 using Xamarin.UITest.Queries;
 
-namespace DiodeTeam.Metroid.UITests
+namespace DiodeCompany.Metroid.UITests
 {
     [TestFixture]
     public class Tests

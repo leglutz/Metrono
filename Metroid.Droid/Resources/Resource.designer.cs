@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("DiodeTeam.Metroid.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("DiodeCompany.Metroid.Droid.Resource", IsApplication=true)]
 
-namespace DiodeTeam.Metroid.Droid
+namespace DiodeCompany.Metroid.Droid
 {
 	
 	
@@ -26,27 +26,27 @@ namespace DiodeTeam.Metroid.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxBind = global::DiodeTeam.Metroid.Droid.Resource.Attribute.MvxBind;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxDropDownItemTemplate = global::DiodeTeam.Metroid.Droid.Resource.Attribute.MvxDropDownItemTemplate;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxGroupItemTemplate = global::DiodeTeam.Metroid.Droid.Resource.Attribute.MvxGroupItemTemplate;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxItemTemplate = global::DiodeTeam.Metroid.Droid.Resource.Attribute.MvxItemTemplate;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxLang = global::DiodeTeam.Metroid.Droid.Resource.Attribute.MvxLang;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxSource = global::DiodeTeam.Metroid.Droid.Resource.Attribute.MvxSource;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxTemplate = global::DiodeTeam.Metroid.Droid.Resource.Attribute.MvxTemplate;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Id.MvvmCrossTagId = global::DiodeTeam.Metroid.Droid.Resource.Id.MvvmCrossTagId;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Id.MvxBindingTagUnique = global::DiodeTeam.Metroid.Droid.Resource.Id.MvxBindingTagUnique;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxBinding;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxBind = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxBinding_MvxBind;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxLang = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxBinding_MvxLang;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxControl;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxControl_MvxTemplate;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxExpandableListView;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxImageView;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxImageView_MvxSource;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxListView;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
-			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::DiodeTeam.Metroid.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxBind = global::DiodeCompany.Metroid.Droid.Resource.Attribute.MvxBind;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxDropDownItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Attribute.MvxDropDownItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxGroupItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Attribute.MvxGroupItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Attribute.MvxItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxLang = global::DiodeCompany.Metroid.Droid.Resource.Attribute.MvxLang;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxSource = global::DiodeCompany.Metroid.Droid.Resource.Attribute.MvxSource;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxTemplate = global::DiodeCompany.Metroid.Droid.Resource.Attribute.MvxTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Id.MvvmCrossTagId = global::DiodeCompany.Metroid.Droid.Resource.Id.MvvmCrossTagId;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Id.MvxBindingTagUnique = global::DiodeCompany.Metroid.Droid.Resource.Id.MvxBindingTagUnique;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxBinding;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxBind = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxBinding_MvxBind;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxLang = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxBinding_MvxLang;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxControl;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxControl_MvxTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxExpandableListView;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxImageView;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxImageView_MvxSource;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxListView;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 		}
 		
 		public partial class Animation

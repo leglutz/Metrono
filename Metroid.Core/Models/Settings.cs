@@ -2,9 +2,9 @@
 using Cheesebaron.MvxPlugins.Settings.Interfaces;
 using Cirrious.CrossCore.UI;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeTeam.Metroid.Core.Resources;
+using DiodeCompany.Metroid.Core.Resources;
 
-namespace DiodeTeam.Metroid.Core.Models
+namespace DiodeCompany.Metroid.Core.Models
 {
     public class Settings : MvxNotifyPropertyChanged
     {
@@ -42,7 +42,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public ClickKind BeatClick
         {
-            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.TickLo); }
+            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.BeepLo); }
             set 
             { 
                 _settings.AddOrUpdateValue<ClickKind> ("BeatClick", value); 
@@ -92,7 +92,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public ClickKind FirstBeatClick
         {
-            get { return _settings.GetValue<ClickKind>("FirstBeatClick", ClickKind.Bell); }
+            get { return _settings.GetValue<ClickKind>("FirstBeatClick", ClickKind.BeepHi); }
             set 
             {
                 _settings.AddOrUpdateValue<ClickKind> ("FirstBeatClick", value); 
@@ -112,7 +112,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public ClickKind LastBeatClick
         {
-            get { return _settings.GetValue<ClickKind>("LastBeatClick", ClickKind.Bell); }
+            get { return _settings.GetValue<ClickKind>("LastBeatClick", ClickKind.Tambourine); }
             set 
             {
                 _settings.AddOrUpdateValue<ClickKind> ("LastBeatClick", value); 
@@ -132,7 +132,7 @@ namespace DiodeTeam.Metroid.Core.Models
 
         public ClickKind CompoundBeatClick
         {
-            get { return _settings.GetValue<ClickKind>("CompoundBeatClick", ClickKind.RimshotHi); }
+            get { return _settings.GetValue<ClickKind>("CompoundBeatClick", ClickKind.Bell); }
             set 
             {
                 _settings.AddOrUpdateValue<ClickKind> ("CompoundBeatClick", value); 

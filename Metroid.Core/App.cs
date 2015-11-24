@@ -1,7 +1,7 @@
 using Cirrious.CrossCore.IoC;
 using Cirrious.MvvmCross.ViewModels;
 
-namespace DiodeTeam.Metroid.Core
+namespace DiodeCompany.Metroid.Core
 {
     public class App : MvxApplication
     {

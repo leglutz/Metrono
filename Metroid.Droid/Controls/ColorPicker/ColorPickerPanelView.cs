@@ -25,7 +25,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 
-namespace DiodeTeam.Metroid.Droid.Controls.ColorPicker
+namespace DiodeCompany.Metroid.Droid.Controls.ColorPicker
 {
     public delegate void PanelClickedEventHandler(object sender, ColorChangedEventArgs e);
 

@@ -6,9 +6,9 @@ using Android.Views;
 using Android.Widget;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
-using DiodeTeam.Metroid.Droid.Controls.ColorPicker;
+using DiodeCompany.Metroid.Droid.Controls.ColorPicker;
 
-namespace DiodeTeam.Metroid.Droid.Views.Fragments
+namespace DiodeCompany.Metroid.Droid.Views.Fragments
 {
     public class ColorPickerDialogFragment : MvxDialogFragment, View.IOnClickListener
     {

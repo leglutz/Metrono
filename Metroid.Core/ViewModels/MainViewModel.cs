@@ -1,6 +1,6 @@
 ﻿using Cirrious.CrossCore;
 
-namespace DiodeTeam.Metroid.Core.ViewModels
+namespace DiodeCompany.Metroid.Core.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {

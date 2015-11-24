@@ -3,13 +3,13 @@ using Android.OS;
 using Android.Views;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
-using DiodeTeam.Metroid.Core.Models;
-using DiodeTeam.Metroid.Core.Services;
-using DiodeTeam.Metroid.Core.ViewModels;
-using DiodeTeam.Metroid.Droid.Controls.ColorPicker;
-using DiodeTeam.Metroid.Droid.Views.Activities;
+using DiodeCompany.Metroid.Core.Models;
+using DiodeCompany.Metroid.Core.Services;
+using DiodeCompany.Metroid.Core.ViewModels;
+using DiodeCompany.Metroid.Droid.Controls.ColorPicker;
+using DiodeCompany.Metroid.Droid.Views.Activities;
 
-namespace DiodeTeam.Metroid.Droid.Views.Fragments
+namespace DiodeCompany.Metroid.Droid.Views.Fragments
 {
     public class SettingsFragment : MvxFragment<SettingsViewModel>
     {

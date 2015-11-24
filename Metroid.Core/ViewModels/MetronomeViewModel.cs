@@ -1,9 +1,9 @@
 ﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeTeam.Metroid.Core.Helpers;
-using DiodeTeam.Metroid.Core.Models;
+using DiodeCompany.Metroid.Core.Helpers;
+using DiodeCompany.Metroid.Core.Models;
 
-namespace DiodeTeam.Metroid.Core.ViewModels
+namespace DiodeCompany.Metroid.Core.ViewModels
 {
     public class MetronomeViewModel : ViewModelBase
     {

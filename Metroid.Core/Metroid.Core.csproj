@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DiodeTeam.Metroid.Core</RootNamespace>
+    <RootNamespace>DiodeCompany.Metroid.Core</RootNamespace>
     <AssemblyName>Metroid.Core</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>

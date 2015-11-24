@@ -2,9 +2,9 @@ using Android.OS;
 using Android.Views;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
-using DiodeTeam.Metroid.Core.ViewModels;
+using DiodeCompany.Metroid.Core.ViewModels;
 
-namespace DiodeTeam.Metroid.Droid.Views.Fragments
+namespace DiodeCompany.Metroid.Droid.Views.Fragments
 {
     public class MeasureFragment : MvxFragment<MeasureViewModel>
     {

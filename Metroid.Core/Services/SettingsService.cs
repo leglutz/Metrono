@@ -1,7 +1,7 @@
 ﻿using Cirrious.CrossCore;
-using DiodeTeam.Metroid.Core.Models;
+using DiodeCompany.Metroid.Core.Models;
 
-namespace DiodeTeam.Metroid.Core.Services
+namespace DiodeCompany.Metroid.Core.Services
 {
     public class SettingsService : ISettingsService
     {

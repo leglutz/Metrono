@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using Cirrious.CrossCore.Platform;
 
-namespace DiodeTeam.Metroid.Droid
+namespace DiodeCompany.Metroid.Droid
 {
     public class DebugTrace : IMvxTrace
     {
