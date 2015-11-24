@@ -136,11 +136,17 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         private bool IsScreenAwake()
         {
-            #if __ANDROID_20__
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.KitkatWatch)
+            {
                 return _powerManager.IsInteractive;
-            #else
+            }
+            else 
+            {
+                // Disable the obsolete warning message
+                #pragma warning disable 618
                 return _powerManager.IsScreenOn;
-            #endif
+                #pragma warning restore 618
+            }
         }
     }
 }
