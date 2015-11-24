@@ -30,6 +30,14 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             _vibrator = (Vibrator)globals.ApplicationContext.GetSystemService(Android.Content.Context.VibratorService);
         }
 
+        public override void OnViewModelSet ()
+        {
+            base.OnViewModelSet ();
+
+            ViewModel.Metronome.BeatStarted += OnBeatStarted;
+            ViewModel.Metronome.BeatFinished += OnBeatFinished;
+        }
+
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
@@ -73,22 +81,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Fragments
             ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.app_name);
 
             base.OnPrepareOptionsMenu (menu);
-        }
-
-        public override void OnResume ()
-        {
-            base.OnResume ();
-
-            ViewModel.Metronome.BeatStarted += OnBeatStarted;
-            ViewModel.Metronome.BeatFinished += OnBeatFinished;
-        }
-
-        public override void OnPause ()
-        {
-            ViewModel.Metronome.BeatStarted -= OnBeatStarted;
-            ViewModel.Metronome.BeatFinished -= OnBeatFinished;
-
-            base.OnPause ();
         }
 
         private void OnBeatStarted (object sender, Beat beat)
