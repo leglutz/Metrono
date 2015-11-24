@@ -52,17 +52,6 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
             // AdView
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
-                .AddTestDevice("8AB3CB50EEA11C715DC6E0F15ADC7CEC") // Samsung Galaxy S2
-                .AddTestDevice("A538B166F286F87A47B2D600E0968262") // Motorola Droid Razr
-                .AddTestDevice("DA017FBAC24CCDAAF97AD0B634BCB4A0") // Motorola Moto X
-                .AddTestDevice("031CCE28BE1E56DE518153AF164C4CEF") // Sony Xperia Z
-                .AddTestDevice("BEA4D61AAD98987FF358CE1A34E60381") // HTC One X
-                .AddTestDevice("357B0383DFBCA45B3FF9CD0B86138DF5") // Samsung Galaxy S5
-                .AddTestDevice("507F28A4B85875B7134D08CD5B7FD2AC") // Samsung Galaxy S6
-                .AddTestDevice("E2492DDF275420924197F1222E8F6B3C") // Motorola Nexus 6
-                .AddTestDevice("2AEBA62B2AF8435AC4C3FD4ACA680610") // Samsung Galaxy Mega 6.3
-                .AddTestDevice("0051822137F6B272857CBD7CE46DB438") // Sony Xperia Z Ultra HSPA
-                //.AddTestDevice("3109107719D5CFB27B6793173D75B4D0") // Sony Xperia Z Compact
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
             _adView.LoadAd(adRequest);
@@ -108,11 +97,13 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
 
         protected override void OnPause ()
         {
-            // Don't hide if locked/sleep only
-            var isSceenAwake = (Build.VERSION.SdkInt < BuildVersionCodes.KitkatWatch ? _powerManager.IsScreenOn : _powerManager.IsInteractive);
-            if(isSceenAwake)
+            if(IsScreenAwake())
             {
-                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Hide));   
+                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
+            }
+            else
+            {
+                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Lock));   
             }
             _adView.Pause ();
 
@@ -123,12 +114,7 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
         {
             base.OnResume ();
 
-            var isSceenAwake = (Build.VERSION.SdkInt < BuildVersionCodes.KitkatWatch ? _powerManager.IsScreenOn : _powerManager.IsInteractive);
-            if(isSceenAwake)
-            {
-            }
-
-            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Show));
+            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Start));
             _adView.Resume ();
         }
 
@@ -144,8 +130,17 @@ namespace DiodeTeam.Metroid.Droid.Views.Activities
         {
             if(focusChange == AudioFocus.LossTransient)
             {
-                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Hide));   
+                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
             }
+        }
+
+        private bool IsScreenAwake()
+        {
+            #if __ANDROID_20__
+                return _powerManager.IsInteractive;
+            #else
+                return _powerManager.IsScreenOn;
+            #endif
         }
     }
 }

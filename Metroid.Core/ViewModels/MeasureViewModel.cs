@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cirrious.MvvmCross.ViewModels;
+using DiodeTeam.Metroid.Core.Helpers;
 using DiodeTeam.Metroid.Core.Models;
 using DiodeTeam.Metroid.Core.Resources;
 using DiodeTeam.Metroid.Core.Services;
@@ -35,20 +36,24 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             TempoPlus1Command = new MvxCommand (() => Measure.Tempo += 1);
             TempoMinus1Command = new MvxCommand (() => Measure.Tempo -= 1);
             TapCommand = new MvxCommand (() => Measure.TapTempo ());
-        }
 
-        protected override void Show ()
-        {
+            // Initialize values with saved ones
             Measure.Tempo = _settingsService.Settings.LastTempo;
             Measure.TimeSignatureNumerator = _settingsService.Settings.LastTimeSignatureNumerator;
             Measure.TimeSignatureDenominator = _settingsService.Settings.LastTimeSignatureDenominator;
         }
 
-        protected override void Hide ()
+        protected override void OnLifeCycleMessage (LifeCycleMessage lifeCycleMessage)
         {
-            _settingsService.Settings.LastTempo = Measure.Tempo;
-            _settingsService.Settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;
-            _settingsService.Settings.LastTimeSignatureDenominator = Measure.TimeSignatureDenominator;
+            switch(lifeCycleMessage.LifeCycleEvent)
+            {
+                case LifeCycleEvent.Stop:
+                case LifeCycleEvent.Dispose:
+                    _settingsService.Settings.LastTempo = Measure.Tempo;
+                    _settingsService.Settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;
+                    _settingsService.Settings.LastTimeSignatureDenominator = Measure.TimeSignatureDenominator;
+                    break;
+            }
         }
     }
 }

@@ -5,8 +5,9 @@ namespace DiodeTeam.Metroid.Core.Helpers
 {
     public enum LifeCycleEvent
     {
-        Show,
-        Hide,
+        Start,
+        Stop,
+        Lock,
         Dispose
     }
 

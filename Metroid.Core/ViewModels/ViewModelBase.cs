@@ -15,30 +15,9 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             _subscriptionToken = Mvx.Resolve<IMvxMessenger> ().Subscribe<LifeCycleMessage> (OnLifeCycleMessage);
         }
 
-        private void OnLifeCycleMessage (LifeCycleMessage lifeCycleMessage)
+        protected virtual void OnLifeCycleMessage (LifeCycleMessage lifeCycleMessage)
         {
-            switch(lifeCycleMessage.LifeCycleEvent)
-            {
-                case LifeCycleEvent.Show:
-                    Show ();
-                    break;
-                case LifeCycleEvent.Hide:
-                    Hide();
-                    break;
-                case LifeCycleEvent.Dispose:
-                    Dispose ();
-                    break;
-            }
         }
-
-        protected virtual void Show()
-        {}
-
-        protected virtual void Hide()
-        {}
-
-        protected virtual void Dispose()
-        {}
     }
 }
 

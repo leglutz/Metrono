@@ -1,5 +1,6 @@
 ﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
+using DiodeTeam.Metroid.Core.Helpers;
 using DiodeTeam.Metroid.Core.Models;
 
 namespace DiodeTeam.Metroid.Core.ViewModels
@@ -33,14 +34,15 @@ namespace DiodeTeam.Metroid.Core.ViewModels
             }    
         }
 
-        protected override void Hide()
+        protected override void OnLifeCycleMessage (LifeCycleMessage lifeCycleMessage)
         {
-            Metronome.Stop ();
-        }
-
-        protected override void Dispose ()
-        {
-            Metronome.Stop ();
+            switch(lifeCycleMessage.LifeCycleEvent)
+            {
+                case LifeCycleEvent.Stop:
+                case LifeCycleEvent.Dispose:
+                    Metronome.Stop ();
+                    break;
+            }
         }
     }
 }
