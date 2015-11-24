@@ -7,10 +7,10 @@ namespace DiodeTeam.Metroid.Core.Resources
 {
     public enum ClickKind
     {
-        [EnumDescription ("Bell")]
-        Bell,
-        [EnumDescription ("Tambourine")]
-        Tambourine,
+        [EnumDescription ("Beep Lo")]
+        BeepLo,
+        [EnumDescription ("Beep Hi")]
+        BeepHi,
         [EnumDescription ("Tick Lo")]
         TickLo,
         [EnumDescription ("Tick Hi")]
@@ -22,7 +22,11 @@ namespace DiodeTeam.Metroid.Core.Resources
         [EnumDescription ("Rimshot Lo")]
         RimshotLo,
         [EnumDescription ("Rimshot Hi")]
-        RimshotHi
+        RimshotHi,
+        [EnumDescription ("Bell")]
+        Bell,
+        [EnumDescription ("Tambourine")]
+        Tambourine
     }
 
     public static class ResourcesHelper
@@ -52,14 +56,17 @@ namespace DiodeTeam.Metroid.Core.Resources
         {
             var assembly = typeof(ResourcesHelper).GetTypeInfo ().Assembly;
             ClickSoundMap = new Dictionary<ClickKind, byte[]> ();
-            ClickSoundMap [ClickKind.Bell] = GetClickSound (assembly, ClickKind.Bell);
-            ClickSoundMap [ClickKind.ClaveHi] = GetClickSound (assembly, ClickKind.ClaveHi);
-            ClickSoundMap [ClickKind.ClaveLo] = GetClickSound (assembly, ClickKind.ClaveLo);
-            ClickSoundMap [ClickKind.RimshotHi] = GetClickSound (assembly, ClickKind.RimshotHi);
-            ClickSoundMap [ClickKind.RimshotLo] = GetClickSound (assembly, ClickKind.RimshotLo);
-            ClickSoundMap [ClickKind.Tambourine] = GetClickSound (assembly, ClickKind.Tambourine);
-            ClickSoundMap [ClickKind.TickHi] = GetClickSound (assembly, ClickKind.TickHi);
+            ClickSoundMap [ClickKind.BeepLo] = GetClickSound (assembly, ClickKind.BeepLo);
+            ClickSoundMap [ClickKind.BeepHi] = GetClickSound (assembly, ClickKind.BeepHi);
             ClickSoundMap [ClickKind.TickLo] = GetClickSound (assembly, ClickKind.TickLo);
+            ClickSoundMap [ClickKind.TickHi] = GetClickSound (assembly, ClickKind.TickHi);
+            ClickSoundMap [ClickKind.ClaveLo] = GetClickSound (assembly, ClickKind.ClaveLo);
+            ClickSoundMap [ClickKind.ClaveHi] = GetClickSound (assembly, ClickKind.ClaveHi);
+            ClickSoundMap [ClickKind.RimshotLo] = GetClickSound (assembly, ClickKind.RimshotLo);
+            ClickSoundMap [ClickKind.RimshotHi] = GetClickSound (assembly, ClickKind.RimshotHi);
+            ClickSoundMap [ClickKind.Bell] = GetClickSound (assembly, ClickKind.Bell);
+            ClickSoundMap [ClickKind.Tambourine] = GetClickSound (assembly, ClickKind.Tambourine);
+
         }
 
         private static byte[] GetClickSound (Assembly assembly, ClickKind clickKind)

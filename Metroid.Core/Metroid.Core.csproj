@@ -71,6 +71,8 @@
     <EmbeddedResource Include="Resources\Sounds\Clicks\Tambourine.wav" />
     <EmbeddedResource Include="Resources\Sounds\Clicks\TickHi.wav" />
     <EmbeddedResource Include="Resources\Sounds\Clicks\TickLo.wav" />
+    <EmbeddedResource Include="Resources\Sounds\Clicks\BeepLo.wav" />
+    <EmbeddedResource Include="Resources\Sounds\Clicks\BeepHi.wav" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
