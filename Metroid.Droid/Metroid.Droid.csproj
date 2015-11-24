@@ -41,6 +41,11 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Fred\Documents\Dev\DiodeCompany\Metroid\Metroid.Droid\metroid.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>Frouti2Glutz</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>metroidkey</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>Frouti2Glutz</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
