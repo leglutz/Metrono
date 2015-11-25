@@ -15,8 +15,8 @@ namespace DiodeCompany.Metroid.Droid.Activities
 		protected override void OnCreate (Bundle bundle)
 		{
             // Initialize Insights
-            Xamarin.Insights.Initialize("ab6566a0d14adf0748a3d916dca49e4cfe75fbd6", ApplicationContext);
-
+            Xamarin.Insights.Initialize (XamarinInsights.ApiKey, this);
+			
 			base.OnCreate (bundle);
 		}
 	}

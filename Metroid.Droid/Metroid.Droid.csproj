@@ -17,6 +17,7 @@
     <AssemblyName>Metroid.Droid</AssemblyName>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <Description>Android metronome</Description>
+    <XamarinInsightsApiKey>ab6566a0d14adf0748a3d916dca49e4cfe75fbd6</XamarinInsightsApiKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,9 +44,9 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <AndroidKeyStore>True</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\Fred\Documents\Dev\DiodeCompany\Metroid\Metroid.Droid\metroid.keystore</AndroidSigningKeyStore>
-    <AndroidSigningStorePass>Frouti2Glutz</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>metroidkey</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>Frouti2Glutz</AndroidSigningKeyPass>
+    <AndroidSigningStorePass>metroid_password</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>metroid_key</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>metroid_password</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
