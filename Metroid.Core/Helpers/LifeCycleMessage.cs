@@ -8,7 +8,7 @@ namespace DiodeCompany.Metroid.Core.Helpers
         Start,
         Stop,
         Lock,
-        Dispose
+        Destroy
     }
 
     public class LifeCycleMessage : MvxMessage

@@ -39,7 +39,7 @@ namespace DiodeCompany.Metroid.Core.ViewModels
             switch(lifeCycleMessage.LifeCycleEvent)
             {
                 case LifeCycleEvent.Stop:
-                case LifeCycleEvent.Dispose:
+                case LifeCycleEvent.Destroy:
                     Metronome.Stop ();
                     break;
             }

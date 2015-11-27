@@ -46,7 +46,7 @@ namespace DiodeCompany.Metroid.Core.ViewModels
             switch(lifeCycleMessage.LifeCycleEvent)
             {
                 case LifeCycleEvent.Stop:
-                case LifeCycleEvent.Dispose:
+                case LifeCycleEvent.Destroy:
                     _settingsService.Settings.LastTempo = Measure.Tempo;
                     _settingsService.Settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;
                     _settingsService.Settings.LastTimeSignatureDenominator = Measure.TimeSignatureDenominator;
