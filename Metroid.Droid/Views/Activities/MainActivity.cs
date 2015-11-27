@@ -19,8 +19,10 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
     {
         private readonly IMvxMessenger _messenger;
 
-        private AdView _adView;
+        private MetronomeFragment _metronomeFragment;
         private SettingsFragment _settingsFragment;
+        private AdView _adView;
+        private AudioManager _audioManager;
         private PowerManager _powerManager;
 
         public MainActivity ()
@@ -39,10 +41,10 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
             SetSupportActionBar (toolbar);
 
             // Metronome fragment
-            var metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
-            metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
+            _metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
+            _metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
             SupportFragmentManager.BeginTransaction ()
-                .Replace (Resource.Id.content_frame, metronomeFragment)
+                .Replace (Resource.Id.content_frame, _metronomeFragment)
                 .Commit ();
            
             // Settings fragment
@@ -57,8 +59,8 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
             _adView.LoadAd(adRequest);
 
             // AudioManager
-            var audioManager = (AudioManager) GetSystemService(Android.Content.Context.AudioService);
-            audioManager.RequestAudioFocus(this, Stream.Music, AudioFocus.Gain);
+            _audioManager = (AudioManager) GetSystemService(Android.Content.Context.AudioService);
+            _audioManager.RequestAudioFocus(this, Stream.Music, AudioFocus.Gain);
 
             // PowerManager
             _powerManager = (PowerManager) GetSystemService(Android.Content.Context.PowerService);
@@ -122,6 +124,8 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
         {
             _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Dispose));
             _adView.Destroy ();
+            _audioManager.Dispose ();
+            _powerManager.Dispose ();
 
             base.OnDestroy ();
         }
