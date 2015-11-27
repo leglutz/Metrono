@@ -30,13 +30,6 @@ namespace DiodeCompany.Metroid.Core.Models
             private set { SetProperty (ref _isPaused, value); }
         }
 
-        private int _totalBeat;
-        public int TotalBeat
-        { 
-            get { return _totalBeat; }
-            private set { SetProperty (ref _totalBeat, value); }
-        }
-
         public Metronome (IAudioService audioService, ISettingsService settingsService)
         {
             _audioService = audioService;
@@ -44,7 +37,6 @@ namespace DiodeCompany.Metroid.Core.Models
 
             IsPlaying = false;
             IsPaused = false;
-            TotalBeat = 0;
         }
 
         public void Play (Measure measure, bool loop = false)
@@ -55,7 +47,7 @@ namespace DiodeCompany.Metroid.Core.Models
 
                 IsPlaying = true;
                 IsPaused = false;
-                TotalBeat = 0;
+
                 Task.Run (async () => await PlayMeasureAsync (measure, loop).ConfigureAwait (false)).ContinueWith (x => Stop ());
             }
         }
@@ -124,7 +116,7 @@ namespace DiodeCompany.Metroid.Core.Models
         {
             beat.IsPlaying = true;
             FireBeatStarted (beat);
-            TotalBeat++;
+
             var beatSound = GetBeatSound (beat);
             await _audioService.PlayAsync (beatSound).ConfigureAwait (false);
 
