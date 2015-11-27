@@ -39,6 +39,7 @@ namespace DiodeCompany.Metroid.Droid.Services
         public void StopPlaying ()
         {
             _audioTrack.Stop ();
+            _audioTrack.Release ();
         }
 
         public async Task PlayAsync (byte[] sound)
