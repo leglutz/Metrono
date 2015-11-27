@@ -122,7 +122,7 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
 
         protected override void OnDestroy ()
         {
-            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Dispose));
+            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Destroy));
             _adView.Destroy ();
             _audioManager.Dispose ();
             _powerManager.Dispose ();
