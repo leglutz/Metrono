@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Android.Media;
 using DiodeCompany.Metroid.Core.Services;
 
@@ -19,6 +18,8 @@ namespace DiodeCompany.Metroid.Droid.Services
             get { return 44100; }
         }
 
+        public int MinBufferSize { get; private set;}
+
         public bool IsPlaying
         {
             get { return _audioTrack.PlayState == PlayState.Playing; }
@@ -26,8 +27,8 @@ namespace DiodeCompany.Metroid.Droid.Services
 
         public AudioService ()
         {
-            var minPlayBuffSizeInBytes = AudioTrack.GetMinBufferSize (SamplingRate, ChannelOut.Mono, Encoding.Pcm16bit);
-            _audioTrack = new AudioTrack (Stream.Music, SamplingRate, ChannelOut.Mono, Encoding.Pcm16bit, minPlayBuffSizeInBytes, AudioTrackMode.Stream);
+            MinBufferSize = AudioTrack.GetMinBufferSize (SamplingRate, ChannelOut.Mono, Encoding.Pcm16bit);
+            _audioTrack = new AudioTrack (Stream.Music, SamplingRate, ChannelOut.Mono, Encoding.Pcm16bit, MinBufferSize, AudioTrackMode.Stream);
         }
 
         public void StartPlaying ()
