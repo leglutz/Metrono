@@ -30,6 +30,13 @@ namespace DiodeCompany.Metroid.Core.Models
             private set { SetProperty (ref _isPaused, value); }
         }
 
+        private int _totalBeat;
+        public int TotalBeat
+        { 
+            get { return _totalBeat; }
+            private set { SetProperty (ref _totalBeat, value); }
+        }
+
         public Metronome (IAudioService audioService, ISettingsService settingsService)
         {
             _audioService = audioService;
@@ -37,6 +44,7 @@ namespace DiodeCompany.Metroid.Core.Models
 
             IsPlaying = false;
             IsPaused = false;
+            TotalBeat = 0;
         }
 
         public void Play (Measure measure, bool loop = false)
@@ -47,7 +55,7 @@ namespace DiodeCompany.Metroid.Core.Models
 
                 IsPlaying = true;
                 IsPaused = false;
-
+                TotalBeat = 0;
                 Task.Run (async () => await PlayMeasureAsync (measure, loop).ConfigureAwait (false)).ContinueWith (x => Stop ());
             }
         }
@@ -91,7 +99,7 @@ namespace DiodeCompany.Metroid.Core.Models
             measure.IsPlaying = true;
             FireMeasureStarted (measure);
 
-            do
+            while (IsPlaying && currentBeatIndex < measure.BeatList.Count)
             {
                 // Play the current beat
                 var currentBeat = measure.BeatList [currentBeatIndex];
@@ -105,9 +113,8 @@ namespace DiodeCompany.Metroid.Core.Models
                 }
 
                 // Check if is paused and pause if needed
-                await PauseAysnc ();
+                await PauseAysnc ().ConfigureAwait (false);
             }
-            while (IsPlaying && currentBeatIndex < measure.BeatList.Count);
 
             measure.IsPlaying = false;
             FireMeasureFinished (measure);
@@ -117,7 +124,7 @@ namespace DiodeCompany.Metroid.Core.Models
         {
             beat.IsPlaying = true;
             FireBeatStarted (beat);
-
+            TotalBeat++;
             var beatSound = GetBeatSound (beat);
             await _audioService.PlayAsync (beatSound).ConfigureAwait (false);
 
@@ -130,16 +137,16 @@ namespace DiodeCompany.Metroid.Core.Models
                 var samplesLeft = samplesPerBeat - samplesElapsed;
 
                 // Rest for a full write chunk or until the next click needs to play, whichever is less.
-                var emptyChunk = Math.Min (samplesLeft, _audioService.SamplingRate / 2);
-                await _audioService.PlayAsync (Get16BitPcm (new double[emptyChunk])).ConfigureAwait (false);
+                var numberOfEmptyChunk = Math.Min (samplesLeft, _audioService.MinBufferSize);
+                await _audioService.PlayAsync (new byte[2 * numberOfEmptyChunk]).ConfigureAwait (false);
 
-                samplesElapsed += emptyChunk;
+                samplesElapsed += numberOfEmptyChunk;
 
                 // In case the tempo changed
                 samplesPerBeat = GetSamplesPerBeat (beat);
 
                 // Check if is paused and pause if needed
-                await PauseAysnc ();
+                await PauseAysnc ().ConfigureAwait (false);
             }
 
             beat.IsPlaying = false;
