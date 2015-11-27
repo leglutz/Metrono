@@ -52,7 +52,7 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
 
             // GridView
             _gridView = view.FindViewById<GridView>(Resource.Id.grid_view);
-            // Do it without MvvmCross, because there's is a problem with MvvmCross adapter and MvxGridView
+            // Do it without MvvmCross, because there's is a problem with MvvmCross adapter and MvxGridView (the first item is not displayed)
             _gridView.Adapter = new BeatAdapter (Activity, _gridView, ViewModel.MeasureViewModel.Measure.BeatList);
             _gridView.SetOnTouchListener (this);
 
