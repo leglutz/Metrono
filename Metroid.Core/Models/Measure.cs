@@ -84,7 +84,7 @@ namespace DiodeCompany.Metroid.Core.Models
             set { SetProperty (ref _isPlaying, value); }
         }
 
-        public Measure (int number = 1, int tempo = 120, int signatureNominator = 4, int signatureDenominator = 4, int repetitionNumber = 1)
+        public Measure (int tempo = 120, int signatureNominator = 4, int signatureDenominator = 4, int number = 1, int repetitionNumber = 1)
         {
             _tapTempoQueue = new Queue<int> ();
             _lastTap = DateTime.Now;
