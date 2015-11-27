@@ -73,7 +73,8 @@
             local:MvxBind="Click TapCommand" />
     </LinearLayout>
     <SeekBar
+        android:id="@+id/seek_bar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        local:MvxBind="Progress Measure.Tempo; Max Measure.MaxTempo, Mode=OneTime" />
+        local:MvxBind="Progress Measure.Tempo" />
 </LinearLayout>
