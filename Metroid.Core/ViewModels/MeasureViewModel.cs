@@ -27,7 +27,10 @@ namespace DiodeCompany.Metroid.Core.ViewModels
         {
             _settingsService = settingsService;
 
-            Measure = new Measure ();
+            // Create a new measure
+            Measure = new Measure (_settingsService.Settings.LastTempo, 
+                                   _settingsService.Settings.LastTimeSignatureNumerator, 
+                                   _settingsService.Settings.LastTimeSignatureDenominator);
            
             TempoList = new List<int> (Enumerable.Range (Measure.MinTempo, Measure.MaxTempo + 1));
             TimeSignatureNumeratorList = new List<int> (Enumerable.Range (1, 20));
@@ -36,11 +39,6 @@ namespace DiodeCompany.Metroid.Core.ViewModels
             TempoPlus1Command = new MvxCommand (() => Measure.Tempo += 1);
             TempoMinus1Command = new MvxCommand (() => Measure.Tempo -= 1);
             TapCommand = new MvxCommand (() => Measure.TapTempo ());
-
-            // Initialize values with saved ones
-            Measure.Tempo = _settingsService.Settings.LastTempo;
-            Measure.TimeSignatureNumerator = _settingsService.Settings.LastTimeSignatureNumerator;
-            Measure.TimeSignatureDenominator = _settingsService.Settings.LastTimeSignatureDenominator;
         }
 
         protected override void OnLifeCycleMessage (LifeCycleMessage lifeCycleMessage)
