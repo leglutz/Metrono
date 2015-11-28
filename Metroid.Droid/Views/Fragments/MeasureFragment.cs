@@ -9,6 +9,11 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
 {
     public class MeasureFragment : MvxFragment<MeasureViewModel>
     {
+        public MeasureFragment ()
+        {
+            RetainInstance = true;
+        }
+
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
