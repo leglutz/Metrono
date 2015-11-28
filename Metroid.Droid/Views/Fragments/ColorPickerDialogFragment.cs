@@ -27,6 +27,8 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
             _settings = Mvx.Resolve<ISettingsService>().Settings;
 
             SetStyle(MvxDialogFragment.StyleNoTitle, Android.Resource.Style.ThemeHoloLightDialogNoActionBar);
+
+            RetainInstance = true;
         }
 
         public override Dialog OnCreateDialog(Bundle savedState)
