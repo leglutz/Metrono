@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- fr -->
+
+    <!-- Metronome -->
+    <string name="metronome_touch_to_start">Toucher pour démarrer</string>
+    <string name="metronome_touch_to_stop">Toucher pour arrêter</string>
+
+    <!-- Settings -->
+    <string name="settings">Paramètres</string>
+    <string name="settings_general">General</string>
+    <string name="settings_click">Click</string>
+    <string name="settings_blink">Clignotement</string>
+    <string name="settings_vibration">Vibration</string>
+    <string name="settings_beats_accentuation">Accentuation des temps</string>
+    <string name="settings_beat_first">Premier</string>
+    <string name="settings_beat_last">Dernier</string>
+    <string name="settings_beat_compound">Composé</string>
+
+</resources>

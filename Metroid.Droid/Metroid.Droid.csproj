@@ -146,6 +146,7 @@
     <Compile Include="Controls\ColorPicker\ColorUtils.cs" />
     <Compile Include="Views\Fragments\ColorPickerDialogFragment.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Views\Adapters\BeatAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -181,6 +182,8 @@
     <Folder Include="Resources\values-w480dp\" />
     <Folder Include="Resources\values-v21\" />
     <Folder Include="Resources\values-w540dp\" />
+    <Folder Include="Resources\values-fr\" />
+    <Folder Include="Views\Adapters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets')" />
@@ -270,5 +273,6 @@
     <AndroidResource Include="Resources\values-w480dp\dimens.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
     <AndroidResource Include="Resources\values-w540dp\dimens.xml" />
+    <AndroidResource Include="Resources\values-fr\strings.xml" />
   </ItemGroup>
 </Project>
