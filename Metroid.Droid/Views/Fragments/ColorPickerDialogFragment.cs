@@ -4,8 +4,11 @@ using Android.Graphics;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
+using DiodeCompany.Metroid.Core.Models;
+using DiodeCompany.Metroid.Core.Services;
 using DiodeCompany.Metroid.Droid.Controls.ColorPicker;
 
 namespace DiodeCompany.Metroid.Droid.Views.Fragments
@@ -14,14 +17,14 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
     {
         public event ColorChangedEventHandler ColorChanged;
 
-        private readonly Color _baseColor;
+        private readonly Settings _settings;
 
         private ColorPickerPanelView _oldColor;
         private ColorPickerPanelView _newColor;
 
-        public ColorPickerDialogFragment (Color baseColor)
-        {
-            _baseColor = baseColor;
+        public ColorPickerDialogFragment ()
+        { 
+            _settings = Mvx.Resolve<ISettingsService>().Settings;
 
             SetStyle(MvxDialogFragment.StyleNoTitle, Android.Resource.Style.ThemeHoloLightDialogNoActionBar);
         }
@@ -50,8 +53,9 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
                 _newColor.Color = args.Color;
             };
 
-            _oldColor.Color = _baseColor;
-            colorPicker.Color = _baseColor;
+            var oldColor = new Color (_settings.BlinkColor);
+            _oldColor.Color = oldColor;
+            colorPicker.Color = oldColor;
 
             var dialog = new AlertDialog.Builder(Activity);
             dialog.SetView(view);
