@@ -19,7 +19,6 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
     {
         private readonly IMvxMessenger _messenger;
 
-        private MetronomeFragment _metronomeFragment;
         private SettingsFragment _settingsFragment;
         private AdView _adView;
         private AudioManager _audioManager;
@@ -41,22 +40,23 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
             SetSupportActionBar (toolbar);
 
             // Metronome fragment
-            _metronomeFragment = Mvx.IocConstruct<MetronomeFragment>();
-            _metronomeFragment.ViewModel = ViewModel.MetronomeViewModel; 
+            var metronomeFragment = new MetronomeFragment() { ViewModel = ViewModel.MetronomeViewModel };
             SupportFragmentManager.BeginTransaction ()
-                .Replace (Resource.Id.content_frame, _metronomeFragment)
+                .Replace (Resource.Id.content_frame, metronomeFragment)
                 .Commit ();
            
             // Settings fragment
-            _settingsFragment =  Mvx.IocConstruct<SettingsFragment>();
-            _settingsFragment.ViewModel = ViewModel.SettingsViewModel; 
+            _settingsFragment = new SettingsFragment() { ViewModel = ViewModel.SettingsViewModel };
 
             // AdView
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
                 .Build ();
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
+            #if !DEBUG
+            // Initialize Insights
             _adView.LoadAd(adRequest);
+            #endif
 
             // AudioManager
             _audioManager = (AudioManager) GetSystemService(Android.Content.Context.AudioService);
