@@ -55,7 +55,7 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
                 _newColor.Color = args.Color;
             };
 
-            var oldColor = new Color (_settings.BlinkColor);
+            var oldColor = new Color (_settings.FlashColor);
             _oldColor.Color = oldColor;
             colorPicker.Color = oldColor;
 

@@ -29,12 +29,12 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
             HasOptionsMenu = true;
 
             _colorPicker = view.FindViewById<ColorPickerPanelView>(Resource.Id.color_picker);
-            _colorPicker.Color = new Color(ViewModel.Settings.BlinkColor);
+            _colorPicker.Color = new Color(ViewModel.Settings.FlashColor);
             _colorPicker.Click += (sender, e) => {
                 var colorPickerDialogFragment = new ColorPickerDialogFragment();
                 colorPickerDialogFragment.ColorChanged += (o, args) => {
                     _colorPicker.Color = args.Color;
-                    ViewModel.Settings.BlinkColor = _colorPicker.Color.ToArgb();
+                    ViewModel.Settings.FlashColor = _colorPicker.Color.ToArgb();
                 };
                 colorPickerDialogFragment.Show(FragmentManager, null);
             };

@@ -39,10 +39,7 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
 
             // Beats layout background animation
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
-            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, 
-                                                                "backgroundColor", 
-                                                                new ArgbEvaluator (), 
-                                                                _settings.BlinkColor, 0);
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.FlashColor, 0);
             beatsLayout.SetOnTouchListener (this);
 
             // GridView
@@ -110,11 +107,11 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
                 }
             });
         
-            // Blink
-            if (_settings.Blink)
+            // Flash
+            if (_settings.Flash)
             {
                 Activity.RunOnUiThread (() => {
-                    _backgroundColorAnimator.SetObjectValues(_settings.BlinkColor, 0);
+                    _backgroundColorAnimator.SetObjectValues(_settings.FlashColor, 0);
                     _backgroundColorAnimator.SetDuration ((long)(beat.Duration * 1000));
                     _backgroundColorAnimator.Start ();
                 });

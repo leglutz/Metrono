@@ -50,23 +50,23 @@ namespace DiodeCompany.Metroid.Core.Models
             }
         }
 
-        public bool Blink
+        public bool Flash
         {
-            get { return _settings.GetValue<bool>("Blink", true); }
+            get { return _settings.GetValue<bool>("Flash", true); }
             set 
             { 
-                _settings.AddOrUpdateValue<bool>("Blink", value); 
-                RaisePropertyChanged (() => Blink);
+                _settings.AddOrUpdateValue<bool>("Flash", value); 
+                RaisePropertyChanged (() => Flash);
             }
         }
 
-        public int BlinkColor
+        public int FlashColor
         {
-            get { return _settings.GetValue<int>("BlinkColor", MvxColors.OrangeRed.ARGB); }
+            get { return _settings.GetValue<int>("FlashColor", MvxColors.OrangeRed.ARGB); }
             set 
             { 
-                _settings.AddOrUpdateValue<int>("BlinkColor", value); 
-                RaisePropertyChanged (() => BlinkColor);
+                _settings.AddOrUpdateValue<int>("FlashColor", value); 
+                RaisePropertyChanged (() => FlashColor);
             }
         }
 

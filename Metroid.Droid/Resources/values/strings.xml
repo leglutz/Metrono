@@ -16,7 +16,7 @@
     <string name="settings">Settings</string>
     <string name="settings_general">General</string>
     <string name="settings_click">Click</string>
-    <string name="settings_blink">Blink</string>
+    <string name="settings_flash">Flash</string>
     <string name="settings_vibration">Vibration</string>
     <string name="settings_beats_accentuation">Beats accentuation</string>
     <string name="settings_beat_first">First</string>

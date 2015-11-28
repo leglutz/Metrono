@@ -50,7 +50,7 @@
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:text="@string/settings_blink"
+                        android:text="@string/settings_flash"
                         android:textSize="@dimen/text_small" />
                     <Controls.ColorPicker.ColorPickerPanelView
                         android:id="@+id/color_picker"
@@ -61,12 +61,12 @@
                         android:paddingTop="@dimen/settings_color_picker_padding"
                         android:paddingBottom="@dimen/settings_color_picker_padding"
                         android:layout_gravity="center_vertical"
-                        local:MvxBind="Enabled Settings.Blink" />
+                        local:MvxBind="Enabled Settings.Flash" />
                     <ToggleButton
                         android:layout_height="@dimen/settings_row_height"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
                         android:textSize="@dimen/text_small"
-                        local:MvxBind="Checked Settings.Blink" />
+                        local:MvxBind="Checked Settings.Flash" />
                 </TableRow>
                 <TableRow>
                     <TextView

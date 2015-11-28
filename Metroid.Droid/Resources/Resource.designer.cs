@@ -2505,11 +2505,11 @@ namespace DiodeCompany.Metroid.Droid
 			// aapt resource value: 0x7f060044
 			public const int settings_beats_accentuation = 2131099716;
 			
-			// aapt resource value: 0x7f060042
-			public const int settings_blink = 2131099714;
-			
 			// aapt resource value: 0x7f060041
 			public const int settings_click = 2131099713;
+			
+			// aapt resource value: 0x7f060042
+			public const int settings_flash = 2131099714;
 			
 			// aapt resource value: 0x7f060040
 			public const int settings_general = 2131099712;
