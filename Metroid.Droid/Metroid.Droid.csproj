@@ -150,6 +150,7 @@
     <Compile Include="Views\Fragments\ColorPickerDialogFragment.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Views\Adapters\BeatAdapter.cs" />
+    <Compile Include="Helpers\GoogleAnalyticsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -187,6 +188,7 @@
     <Folder Include="Resources\values-w540dp\" />
     <Folder Include="Resources\values-fr\" />
     <Folder Include="Views\Adapters\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets')" />
