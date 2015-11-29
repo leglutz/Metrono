@@ -50,7 +50,6 @@ namespace DiodeCompany.Metroid.Droid.Helpers
             builder.SetCategory(eventCategory);
             builder.SetAction(@event);
             builder.SetLabel("AppEvent");
-
             _tracker.Send(builder.Build());
         }
     }
