@@ -89,6 +89,7 @@ namespace DiodeCompany.Metroid.Core.Models
         {
             var currentBeatIndex = 0;
             measure.IsPlaying = true;
+
             FireMeasureStarted (measure);
 
             while (IsPlaying && currentBeatIndex < measure.BeatList.Count)
@@ -109,16 +110,18 @@ namespace DiodeCompany.Metroid.Core.Models
             }
 
             measure.IsPlaying = false;
+
             FireMeasureFinished (measure);
         }
 
         private async Task PlayBeatAsync (Beat beat)
         {
             beat.IsPlaying = true;
-            FireBeatStarted (beat);
 
             var beatSound = GetBeatSound (beat);
             await _audioService.PlayAsync (beatSound).ConfigureAwait (false);
+
+            FireBeatStarted (beat);
 
             // Divided by two due to the ratio 16 bit PCM / wav
             var samplesElapsed = beatSound.Length / 2;
@@ -142,6 +145,7 @@ namespace DiodeCompany.Metroid.Core.Models
             }
 
             beat.IsPlaying = false;
+
             FireBeatFinished (beat);
         }
 
@@ -179,22 +183,6 @@ namespace DiodeCompany.Metroid.Core.Models
         private int GetSamplesPerBeat (Beat beat)
         {
             return beat.Duration < int.MaxValue ? (int)(_audioService.SamplingRate * beat.Duration) : int.MaxValue;
-        }
-
-        private byte[] Get16BitPcm (double[] samples)
-        {
-            byte[] generatedSound = new byte[2 * samples.Length];
-            int index = 0;
-            foreach (var sample in samples)
-            {
-                // Scale to maximum amplitude
-                short maxSample = (short)((sample * short.MaxValue));
-                // In 16 bit wav PCM, first byte is the low order byte
-                generatedSound [index++] = (byte)(maxSample & 0x00ff);
-                generatedSound [index++] = (byte)((uint)(maxSample & 0xff00) >> 8);
-
-            }
-            return generatedSound;
         }
 
         private void FireMeasureStarted (Measure measure)
