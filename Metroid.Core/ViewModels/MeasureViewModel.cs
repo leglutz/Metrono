@@ -11,7 +11,7 @@ namespace DiodeCompany.Metroid.Core.ViewModels
 {
     public class MeasureViewModel : ViewModelBase
     {
-        private readonly ISettingsService _settingsService;
+        private readonly Settings _settings;
 
         public Measure Measure { get; private set; }
 
@@ -25,12 +25,12 @@ namespace DiodeCompany.Metroid.Core.ViewModels
 
         public MeasureViewModel (ISettingsService settingsService)
         {
-            _settingsService = settingsService;
+            _settings = settingsService.Settings;
 
             // Create a new measure
-            Measure = new Measure (_settingsService.Settings.LastTempo, 
-                                   _settingsService.Settings.LastTimeSignatureNumerator, 
-                                   _settingsService.Settings.LastTimeSignatureDenominator);
+            Measure = new Measure (_settings.LastTempo, 
+                                   _settings.LastTimeSignatureNumerator, 
+                                   _settings.LastTimeSignatureDenominator);
            
             TempoList = new List<int> (Enumerable.Range (Measure.MinTempo, Measure.MaxTempo + 1));
             TimeSignatureNumeratorList = new List<int> (Enumerable.Range (1, 20));
@@ -47,9 +47,9 @@ namespace DiodeCompany.Metroid.Core.ViewModels
             {
                 case LifeCycleEvent.Stop:
                 case LifeCycleEvent.Destroy:
-                    _settingsService.Settings.LastTempo = Measure.Tempo;
-                    _settingsService.Settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;
-                    _settingsService.Settings.LastTimeSignatureDenominator = Measure.TimeSignatureDenominator;
+                    _settings.LastTempo = Measure.Tempo;
+                    _settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;
+                    _settings.LastTimeSignatureDenominator = Measure.TimeSignatureDenominator;
                     break;
             }
         }
