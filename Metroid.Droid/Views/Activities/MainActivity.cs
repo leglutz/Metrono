@@ -7,7 +7,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Droid.Support.AppCompat;
-using DiodeCompany.Metroid.Core.Helpers;
+using DiodeCompany.Metroid.Core.Messages;
 using DiodeCompany.Metroid.Core.ViewModels;
 using DiodeCompany.Metroid.Droid.Helpers;
 using DiodeCompany.Metroid.Droid.Views.Fragments;

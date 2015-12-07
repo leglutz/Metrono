@@ -3,18 +3,16 @@ using System.Threading.Tasks;
 using Cirrious.MvvmCross.ViewModels;
 using DiodeCompany.Metroid.Core.Resources;
 using DiodeCompany.Metroid.Core.Services;
+using MvvmCross.Plugins.Messenger;
+using DiodeCompany.Metroid.Core.Messages;
 
 namespace DiodeCompany.Metroid.Core.Models
 {
     public class Metronome : MvxNotifyPropertyChanged
     {
-        public event EventHandler<Measure> MeasureStarted;
-        public event EventHandler<Measure> MeasureFinished;
-        public event EventHandler<Beat> BeatStarted;
-        public event EventHandler<Beat> BeatFinished;
-
         private readonly IAudioService _audioService;
         private readonly Settings _settings;
+        private readonly IMvxMessenger _messenger;
 
         private bool _isPlaying;
         public bool IsPlaying
@@ -30,10 +28,11 @@ namespace DiodeCompany.Metroid.Core.Models
             private set { SetProperty (ref _isPaused, value); }
         }
 
-        public Metronome (IAudioService audioService, ISettingsService settingsService)
+        public Metronome (IAudioService audioService, ISettingsService settingsService, IMvxMessenger messenger)
         {
             _audioService = audioService;
             _settings = settingsService.Settings;
+            _messenger = messenger;
 
             IsPlaying = false;
             IsPaused = false;
@@ -90,7 +89,7 @@ namespace DiodeCompany.Metroid.Core.Models
             var currentBeatIndex = 0;
             measure.IsPlaying = true;
 
-            FireMeasureStarted (measure);
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureStarted, measure));   
 
             while (IsPlaying && currentBeatIndex < measure.BeatList.Count)
             {
@@ -111,17 +110,17 @@ namespace DiodeCompany.Metroid.Core.Models
 
             measure.IsPlaying = false;
 
-            FireMeasureFinished (measure);
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureFinished, measure));   
         }
 
         private async Task PlayBeatAsync (Beat beat)
         {
             beat.IsPlaying = true;
-
+            // Play the beat first (sound takes more time than light)
             var beatSound = GetBeatSound (beat);
             await _audioService.PlayAsync (beatSound).ConfigureAwait (false);
 
-            FireBeatStarted (beat);
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatStarted, beat: beat));   
 
             // Divided by two due to the ratio 16 bit PCM / wav
             var samplesElapsed = beatSound.Length / 2;
@@ -146,7 +145,7 @@ namespace DiodeCompany.Metroid.Core.Models
 
             beat.IsPlaying = false;
 
-            FireBeatFinished (beat);
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatFinished, beat: beat));   
         }
 
         private byte[] GetBeatSound(Beat beat)
@@ -183,42 +182,6 @@ namespace DiodeCompany.Metroid.Core.Models
         private int GetSamplesPerBeat (Beat beat)
         {
             return beat.Duration < int.MaxValue ? (int)(_audioService.SamplingRate * beat.Duration) : int.MaxValue;
-        }
-
-        private void FireMeasureStarted (Measure measure)
-        {
-            var measureStarted = MeasureStarted;
-            if (measureStarted != null)
-            {
-                measureStarted.BeginInvoke (this, measure, null, null);
-            }
-        }
-
-        private void FireMeasureFinished (Measure measure)
-        {
-            var measureFinished = MeasureFinished;
-            if (measureFinished != null)
-            {
-                measureFinished.BeginInvoke (this, measure, null, null);
-            }
-        }
-
-        private void FireBeatStarted (Beat beat)
-        {
-            var beatStarted = BeatStarted;
-            if (beatStarted != null)
-            {
-                beatStarted.BeginInvoke (this, beat, null, null);
-            }
-        }
-
-        private void FireBeatFinished (Beat beat)
-        {
-            var beatFinished = BeatFinished;
-            if (beatFinished != null)
-            {
-                beatFinished.BeginInvoke (this, beat, null, null);
-            }
         }
     }
 }

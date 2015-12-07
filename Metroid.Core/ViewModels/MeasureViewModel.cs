@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.Helpers;
+using DiodeCompany.Metroid.Core.Messages;
 using DiodeCompany.Metroid.Core.Models;
 using DiodeCompany.Metroid.Core.Resources;
 using DiodeCompany.Metroid.Core.Services;

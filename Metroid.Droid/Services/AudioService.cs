@@ -34,7 +34,6 @@ namespace DiodeCompany.Metroid.Droid.Services
         public void StartPlaying ()
         {
             _audioTrack.Play ();
-            _audioTrack.Flush ();
         }
 
         public void StopPlaying ()

@@ -7,25 +7,29 @@ using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
+using DiodeCompany.Metroid.Core.Messages;
 using DiodeCompany.Metroid.Core.Models;
 using DiodeCompany.Metroid.Core.Services;
 using DiodeCompany.Metroid.Core.ViewModels;
+using DiodeCompany.Metroid.Droid.Helpers;
 using DiodeCompany.Metroid.Droid.Views.Activities;
 using DiodeCompany.Metroid.Droid.Views.Adapters;
+using MvvmCross.Plugins.Messenger;
 
 namespace DiodeCompany.Metroid.Droid.Views.Fragments
 {
     public class MetronomeFragment : MvxFragment<MetronomeViewModel>, View.IOnTouchListener
     {
         private readonly Settings _settings;
+        private readonly MvxSubscriptionToken _metronomeMessageSubscriptionToken;
 
         private ObjectAnimator _backgroundColorAnimator;
         private GridView _gridView;
-        private Vibrator _vibrator;
 
         public MetronomeFragment()
         {
             _settings = Mvx.Resolve<ISettingsService>().Settings;
+            _metronomeMessageSubscriptionToken = Mvx.Resolve<IMvxMessenger>().SubscribeOnMainThread<MetronomeMessage> (OnMetronomeMessage);
 
             RetainInstance = true;
         }
@@ -54,26 +58,7 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
                 .Replace (Resource.Id.measure_frame, measureFragment)
                 .Commit ();
 
-            // Vibrator
-            _vibrator = (Vibrator) Activity.GetSystemService(Android.Content.Context.VibratorService);
-            
             return view;
-        }
-
-        public override void OnStart ()
-        {
-            base.OnStart ();
-
-            ViewModel.Metronome.BeatStarted += OnBeatStarted;
-            ViewModel.Metronome.BeatFinished += OnBeatFinished;
-        }
-
-        public override void OnStop ()
-        {
-            ViewModel.Metronome.BeatStarted -= OnBeatStarted;
-            ViewModel.Metronome.BeatFinished -= OnBeatFinished;
-
-            base.OnStop ();
         }
 
         public bool OnTouch (View v, MotionEvent e)
@@ -81,6 +66,14 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
             if (e.Action == MotionEventActions.Down)
             {
                 ViewModel.StartStopCommand.Execute();
+                if(ViewModel.Metronome.IsPlaying)
+                {
+                    GoogleAnalyticsHelper.Instance.TrackEvent ("Metronome", "Start");
+                }
+                else
+                {
+                    GoogleAnalyticsHelper.Instance.TrackEvent ("Metronome", "Stop");
+                }
             }
 
             return true;
@@ -95,46 +88,43 @@ namespace DiodeCompany.Metroid.Droid.Views.Fragments
             base.OnPrepareOptionsMenu (menu);
         }
 
-        private void OnBeatStarted (object sender, Beat beat)
+        private void OnMetronomeMessage (MetronomeMessage metronomeMessage)
         {
-            // Beat
-            Activity.RunOnUiThread (() => {
-                var beatView = _gridView.GetChildAt (beat.Number - 1);
-                if(beatView != null)
-                {
-                    ((CardView)beatView).Alpha = 1f;
-                    ((CardView)beatView).CardElevation = 2;
-                }
-            });
-        
-            // Flash
-            if (_settings.Flash)
+            switch(metronomeMessage.MetronomeEvent)
             {
-                Activity.RunOnUiThread (() => {
-                    _backgroundColorAnimator.SetObjectValues(_settings.FlashColor, 0);
-                    _backgroundColorAnimator.SetDuration ((long)(beat.Duration * 1000));
-                    _backgroundColorAnimator.Start ();
-                });
-            }
+                case MetronomeEvent.BeatStarted:
+                    {
+                        // Beat
+                        var beat = metronomeMessage.Beat;
+                        var beatView = _gridView.GetChildAt (beat.Number - 1);
+                        if (beatView != null)
+                        {
+                            ((CardView)beatView).Alpha = 1f;
+                            ((CardView)beatView).CardElevation = 2;
+                        }
 
-            // Vibration
-            if (_settings.Vibration)
-            {
-                _vibrator.Vibrate ((long)(beat.Duration / 4.0 * 1000));
+                        // Flash
+                        if (_settings.Flash)
+                        {
+                            _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, 0);
+                            _backgroundColorAnimator.SetDuration ((long)(beat.Duration * 1000));
+                            _backgroundColorAnimator.Start ();
+                        }
+                    }
+                    break;
+                case MetronomeEvent.BeatFinished:
+                    {
+                        // Beat
+                        var beat = metronomeMessage.Beat;
+                        var beatView = _gridView.GetChildAt (beat.Number - 1);
+                        if(beatView != null)
+                        {
+                            ((CardView)beatView).Alpha = 0.5f;
+                            ((CardView)beatView).CardElevation = 0;
+                        }
+                    }
+                    break;
             }
-        }
-
-        private void OnBeatFinished (object sender, Beat beat)
-        {
-            // Beat
-            Activity.RunOnUiThread (() => {
-                var beatView = _gridView.GetChildAt (beat.Number - 1);
-                if(beatView != null)
-                {
-                    ((CardView)beatView).Alpha = 0.5f;
-                    ((CardView)beatView).CardElevation = 0;
-                }
-            });
         }
     }
 }

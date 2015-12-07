@@ -1,20 +1,29 @@
 ﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.Helpers;
+using DiodeCompany.Metroid.Core.Messages;
 using DiodeCompany.Metroid.Core.Models;
+using DiodeCompany.Metroid.Core.Services;
+using MvvmCross.Plugins.Messenger;
+using Plugin.Vibrate;
 
 namespace DiodeCompany.Metroid.Core.ViewModels
 {
     public class MetronomeViewModel : ViewModelBase
     {
+        private readonly Settings _settings;
+        private readonly MvxSubscriptionToken _metronomeMessageSubscriptionToken;
+
         public MeasureViewModel MeasureViewModel { get; private set; }
         public Metronome Metronome { get; set; }
 
         public IMvxCommand SettingsCommand { get; private set; }
         public IMvxCommand StartStopCommand { get; private set; }
 
-        public MetronomeViewModel ()
+        public MetronomeViewModel (ISettingsService settingsService, IMvxMessenger messenger)
         {
+            _settings = settingsService.Settings;
+            _metronomeMessageSubscriptionToken = messenger.SubscribeOnThreadPoolThread<MetronomeMessage> (OnMetronomeMessage);
+
             MeasureViewModel = Mvx.IocConstruct<MeasureViewModel> ();
             Metronome = Mvx.IocConstruct<Metronome> ();
 
@@ -41,6 +50,20 @@ namespace DiodeCompany.Metroid.Core.ViewModels
                 case LifeCycleEvent.Stop:
                 case LifeCycleEvent.Destroy:
                     Metronome.Stop ();
+                    break;
+            }
+        }
+
+        private void OnMetronomeMessage (MetronomeMessage metronomeMessage)
+        {
+            switch(metronomeMessage.MetronomeEvent)
+            {
+                case MetronomeEvent.BeatStarted:
+                    // Vibration
+                    if (_settings.Vibration)
+                    {
+                        CrossVibrate.Current.Vibration ((int)(metronomeMessage.Beat.Duration / 4.0 * 1000));
+                    }
                     break;
             }
         }

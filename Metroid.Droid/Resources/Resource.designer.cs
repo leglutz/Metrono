@@ -47,6 +47,8 @@ namespace DiodeCompany.Metroid.Droid
 			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxListView;
 			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::DiodeCompany.Metroid.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::Plugin.Vibrate.Resource.String.ApplicationName = global::DiodeCompany.Metroid.Droid.Resource.String.ApplicationName;
+			global::Plugin.Vibrate.Resource.String.Hello = global::DiodeCompany.Metroid.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -2326,6 +2328,12 @@ namespace DiodeCompany.Metroid.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f07003b
+			public const int ApplicationName = 2131165243;
+			
+			// aapt resource value: 0x7f07003a
+			public const int Hello = 2131165242;
+			
 			// aapt resource value: 0x7f070026
 			public const int abc_action_bar_home_description = 2131165222;
 			
@@ -2386,11 +2394,11 @@ namespace DiodeCompany.Metroid.Droid
 			// aapt resource value: 0x7f070022
 			public const int accept = 2131165218;
 			
-			// aapt resource value: 0x7f07003b
-			public const int ad_unit_id = 2131165243;
+			// aapt resource value: 0x7f07003d
+			public const int ad_unit_id = 2131165245;
 			
-			// aapt resource value: 0x7f07003a
-			public const int app_name = 2131165242;
+			// aapt resource value: 0x7f07003c
+			public const int app_name = 2131165244;
 			
 			// aapt resource value: 0x7f070001
 			public const int auth_google_play_services_client_facebook_display_name = 2131165185;
@@ -2497,41 +2505,41 @@ namespace DiodeCompany.Metroid.Droid
 			// aapt resource value: 0x7f070023
 			public const int decline = 2131165219;
 			
+			// aapt resource value: 0x7f070040
+			public const int measure_tap = 2131165248;
+			
 			// aapt resource value: 0x7f07003e
-			public const int measure_tap = 2131165246;
-			
-			// aapt resource value: 0x7f07003c
-			public const int metronome_touch_to_start = 2131165244;
-			
-			// aapt resource value: 0x7f07003d
-			public const int metronome_touch_to_stop = 2131165245;
+			public const int metronome_touch_to_start = 2131165246;
 			
 			// aapt resource value: 0x7f07003f
-			public const int settings = 2131165247;
-			
-			// aapt resource value: 0x7f070047
-			public const int settings_beat_compound = 2131165255;
-			
-			// aapt resource value: 0x7f070045
-			public const int settings_beat_first = 2131165253;
-			
-			// aapt resource value: 0x7f070046
-			public const int settings_beat_last = 2131165254;
-			
-			// aapt resource value: 0x7f070044
-			public const int settings_beats_accentuation = 2131165252;
+			public const int metronome_touch_to_stop = 2131165247;
 			
 			// aapt resource value: 0x7f070041
-			public const int settings_click = 2131165249;
+			public const int settings = 2131165249;
 			
-			// aapt resource value: 0x7f070042
-			public const int settings_flash = 2131165250;
+			// aapt resource value: 0x7f070049
+			public const int settings_beat_compound = 2131165257;
 			
-			// aapt resource value: 0x7f070040
-			public const int settings_general = 2131165248;
+			// aapt resource value: 0x7f070047
+			public const int settings_beat_first = 2131165255;
+			
+			// aapt resource value: 0x7f070048
+			public const int settings_beat_last = 2131165256;
+			
+			// aapt resource value: 0x7f070046
+			public const int settings_beats_accentuation = 2131165254;
 			
 			// aapt resource value: 0x7f070043
-			public const int settings_vibration = 2131165251;
+			public const int settings_click = 2131165251;
+			
+			// aapt resource value: 0x7f070044
+			public const int settings_flash = 2131165252;
+			
+			// aapt resource value: 0x7f070042
+			public const int settings_general = 2131165250;
+			
+			// aapt resource value: 0x7f070045
+			public const int settings_vibration = 2131165253;
 			
 			// aapt resource value: 0x7f070039
 			public const int status_bar_notification_info_overflow = 2131165241;

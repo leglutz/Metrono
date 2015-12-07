@@ -1,7 +1,6 @@
-﻿using System;
-using MvvmCross.Plugins.Messenger;
+﻿using MvvmCross.Plugins.Messenger;
 
-namespace DiodeCompany.Metroid.Core.Helpers
+namespace DiodeCompany.Metroid.Core.Messages
 {
     public enum LifeCycleEvent
     {
