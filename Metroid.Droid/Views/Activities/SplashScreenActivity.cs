@@ -20,6 +20,7 @@ namespace DiodeCompany.Metroid.Droid.Activities
             Xamarin.Insights.Initialize (XamarinInsights.ApiKey, this);
             // Initialize Google Analytics
             GoogleAnalyticsHelper.Instance.Initialize(ApplicationContext);
+            GoogleAnalyticsHelper.Instance.TrackPage("SplashScreen");
             #endif
 
 			base.OnCreate (bundle);

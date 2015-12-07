@@ -32,25 +32,26 @@ namespace DiodeCompany.Metroid.Droid.Helpers
         {
             _googleAnalytics = GoogleAnalytics.GetInstance(context);
             _googleAnalytics.SetLocalDispatchPeriod(60);
-
             _tracker = _googleAnalytics.NewTracker(TrackingId);
-            _tracker.EnableExceptionReporting(true);
-            _tracker.EnableAutoActivityTracking(true);
         }
 
         public void TrackPage(string pageName)
         {
+            #if !DEBUG
             _tracker.SetScreenName (pageName);
             _tracker.Send(new HitBuilders.ScreenViewBuilder().Build());
+            #endif
         }
 
         public void TrackEvent(string eventCategory, string @event)
         {
-            HitBuilders.EventBuilder builder = new HitBuilders.EventBuilder();
+            #if !DEBUG
+            var builder = new HitBuilders.EventBuilder();
             builder.SetCategory(eventCategory);
             builder.SetAction(@event);
-            builder.SetLabel("AppEvent");
+            builder.SetLabel("Event");
             _tracker.Send(builder.Build());
+            #endif
         }
     }
 }

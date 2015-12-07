@@ -9,6 +9,7 @@ using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Droid.Support.AppCompat;
 using DiodeCompany.Metroid.Core.Helpers;
 using DiodeCompany.Metroid.Core.ViewModels;
+using DiodeCompany.Metroid.Droid.Helpers;
 using DiodeCompany.Metroid.Droid.Views.Fragments;
 using MvvmCross.Plugins.Messenger;
 
@@ -49,11 +50,11 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
             _settingsFragment = new SettingsFragment() { ViewModel = ViewModel.SettingsViewModel };
 
             // AdView
+            _adView = FindViewById<AdView> (Resource.Id.ad_view);
+            #if !DEBUG
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
                 .Build ();
-            _adView = FindViewById<AdView> (Resource.Id.ad_view);
-            #if !DEBUG
             // Initialize Insights
             _adView.LoadAd(adRequest);
             #endif
@@ -67,6 +68,8 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
 
             // Keep the screen always on
             Window.AddFlags (WindowManagerFlags.KeepScreenOn);
+
+            GoogleAnalyticsHelper.Instance.TrackPage("Main");
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
@@ -87,10 +90,12 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
                         .Add (Resource.Id.content_frame, _settingsFragment)
                         .AddToBackStack(null)
                         .Commit ();
+                    GoogleAnalyticsHelper.Instance.TrackPage("Settings");
                     break;
                 case Android.Resource.Id.Home:
                     // Metronome fragment
                     SupportFragmentManager.PopBackStack();
+                    GoogleAnalyticsHelper.Instance.TrackPage("Main");
                     break;
             }
 
@@ -108,6 +113,7 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
                 _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Lock));   
             }
             _adView.Pause ();
+            GoogleAnalyticsHelper.Instance.TrackEvent ("Life cycle", "Pause");
 
             base.OnPause ();
         }
@@ -118,14 +124,13 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
 
             _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Start));
             _adView.Resume ();
+            GoogleAnalyticsHelper.Instance.TrackEvent ("Life cycle", "Resume");
         }
 
         protected override void OnDestroy ()
         {
             _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Destroy));
             _adView.Destroy ();
-            _audioManager.Dispose ();
-            _powerManager.Dispose ();
 
             base.OnDestroy ();
         }
