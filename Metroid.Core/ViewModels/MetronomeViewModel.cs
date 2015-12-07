@@ -62,7 +62,7 @@ namespace DiodeCompany.Metroid.Core.ViewModels
                     // Vibration
                     if (_settings.Vibration)
                     {
-                        CrossVibrate.Current.Vibration ((int)(metronomeMessage.Beat.Duration / 4.0 * 1000));
+                        CrossVibrate.Current.Vibration ((int)(metronomeMessage.Beat.Duration / 3.0 * 1000));
                     }
                     break;
             }
