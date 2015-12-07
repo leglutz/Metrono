@@ -12,7 +12,7 @@ namespace DiodeCompany.Metroid.Core.ViewModels
 
         protected ViewModelBase ()
         {
-            _subscriptionToken = Mvx.Resolve<IMvxMessenger> ().Subscribe<LifeCycleMessage> (OnLifeCycleMessage);
+            _subscriptionToken = Mvx.Resolve<IMvxMessenger> ().SubscribeOnThreadPoolThread<LifeCycleMessage> (OnLifeCycleMessage);
         }
 
         protected virtual void OnLifeCycleMessage (LifeCycleMessage lifeCycleMessage)
