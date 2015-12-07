@@ -9,10 +9,11 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/measure_layout_height">
+        android:layout_height="wrap_content">
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/spinner_min_height"
             local:MvxBind="ItemsSource TimeSignatureNumeratorList; SelectedItem Measure.TimeSignatureNumerator"
             local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
             local:MvxItemTemplate="@layout/template_measure_item" />
@@ -22,11 +23,12 @@
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/measure_internal_padding"
             android:paddingRight="@dimen/measure_internal_padding"
-            android:text="/"
-            android:textSize="@dimen/text_medium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="/" />
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/spinner_min_height"
             local:MvxBind="ItemsSource TimeSignatureDenominatorList; SelectedItem Measure.TimeSignatureDenominator"
             local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
             local:MvxItemTemplate="@layout/template_measure_item" />
@@ -34,10 +36,10 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/measure_layout_height">
+        android:layout_height="wrap_content">
         <ImageButton
             android:layout_width="@dimen/measure_tempo_button_layout_width"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/measure_tempo_button_layout_margin"
             android:layout_gravity="center"
             android:src="@drawable/minus"
@@ -47,13 +49,15 @@
             local:MvxBind="Click TempoMinus1Command" />
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minHeight="@dimen/spinner_min_height"
             local:MvxBind="ItemsSource TempoList; SelectedItem Measure.Tempo"
             local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
             local:MvxItemTemplate="@layout/template_measure_item" />
         <ImageButton
             android:layout_width="@dimen/measure_tempo_button_layout_width"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/measure_tempo_button_layout_margin"
             android:layout_gravity="center"
             android:src="@drawable/plus"
@@ -63,13 +67,13 @@
             local:MvxBind="Click TempoPlus1Command" />
         <Button
             android:layout_width="@dimen/measure_tap_button_layout_width"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/measure_tap_button_margin_left"
             android:layout_marginTop="@dimen/measure_tempo_button_layout_margin"
             android:layout_marginBottom="@dimen/measure_tempo_button_layout_margin"
-            android:text="@string/measure_tap"
-            android:textSize="@dimen/text_medium"
             android:background="@drawable/button"
+            android:textAppearance="?android:attr/textAppearanceButton"
+            android:text="@string/measure_tap"
             local:MvxBind="Click TapCommand" />
     </LinearLayout>
     <SeekBar

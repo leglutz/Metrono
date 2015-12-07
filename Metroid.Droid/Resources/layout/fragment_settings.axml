@@ -25,21 +25,21 @@
                         android:layout_weight="1"
                         android:layout_span="3"
                         android:layout_marginBottom="@dimen/settings_internal_margin"
-                        android:text="@string/settings_general"
-                        android:textSize="@dimen/text_large"
-                        android:textStyle="bold" />
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/settings_general" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="@string/settings_click"
-                        android:textSize="@dimen/text_small" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/settings_click" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/spinner_min_height"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.BeatClick"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
@@ -50,38 +50,38 @@
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:text="@string/settings_flash"
-                        android:textSize="@dimen/text_small" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/settings_flash" />
                     <Controls.ColorPicker.ColorPickerPanelView
                         android:id="@+id/color_picker"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
                         android:paddingTop="@dimen/settings_color_picker_padding"
                         android:paddingBottom="@dimen/settings_color_picker_padding"
                         android:layout_gravity="center_vertical"
                         local:MvxBind="Enabled Settings.Flash" />
                     <ToggleButton
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textSize="@dimen/text_small"
+                        android:textAppearance="?android:attr/textAppearanceButton"
                         local:MvxBind="Checked Settings.Flash" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:text="@string/settings_vibration"
-                        android:textSize="@dimen/text_small" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/settings_vibration" />
                     <Space
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/settings_internal_margin" />
                     <ToggleButton
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textSize="@dimen/text_small"
+                        android:textAppearance="?android:attr/textAppearanceButton"
                         local:MvxBind="Checked Settings.Vibration" />
                 </TableRow>
                 <TableRow>
@@ -92,65 +92,67 @@
                         android:layout_weight="1"
                         android:layout_marginTop="@dimen/settings_internal_margin"
                         android:layout_marginBottom="@dimen/settings_internal_margin"
-                        android:text="@string/settings_beats_accentuation"
-                        android:textSize="@dimen/text_large"
-                        android:textStyle="bold" />
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/settings_beats_accentuation" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:text="@string/settings_beat_first"
-                        android:textSize="@dimen/text_small" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/settings_beat_first" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/spinner_min_height"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.FirstBeatClick; Enabled Settings.AccentuateFirstBeat"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
                         local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textSize="@dimen/text_small"
+                        android:textAppearance="?android:attr/textAppearanceButton"
                         local:MvxBind="Checked Settings.AccentuateFirstBeat" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:text="@string/settings_beat_last"
-                        android:textSize="@dimen/text_small" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/settings_beat_last" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/spinner_min_height"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.LastBeatClick; Enabled Settings.AccentuateLastBeat"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
                         local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textSize="@dimen/text_small"
+                        android:textAppearance="?android:attr/textAppearanceButton"
                         local:MvxBind="Checked Settings.AccentuateLastBeat" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:text="@string/settings_beat_compound"
-                        android:textSize="@dimen/text_small" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/settings_beat_compound" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/spinner_min_height"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
                         local:MvxBind="ItemsSource ClickKindList; SelectedItem Settings.CompoundBeatClick; Enabled Settings.AccentuateCompoundBeats"
                         local:MvxDropDownItemTemplate="@layout/template_settings_click_drop_down_item"
                         local:MvxItemTemplate="@layout/template_settings_click_item" />
                     <ToggleButton
-                        android:layout_height="@dimen/settings_row_height"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textSize="@dimen/text_small"
+                        android:textAppearance="?android:attr/textAppearanceButton"
                         local:MvxBind="Checked Settings.AccentuateCompoundBeats" />
                 </TableRow>
             </TableLayout>

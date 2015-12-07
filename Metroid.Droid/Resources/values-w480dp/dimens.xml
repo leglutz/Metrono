@@ -3,22 +3,10 @@
 
     <!-- w480dp -->
 
-    <!-- Texts -->
-    <dimen name="text_small">20sp</dimen>
-    <dimen name="text_medium">24sp</dimen>
-    <dimen name="text_large">28sp</dimen>
-
     <!-- fragment_measure -->
-    <dimen name="measure_layout_height">70dp</dimen>
     <dimen name="measure_spinner_layout_width">100dp</dimen>
     <dimen name="measure_tempo_button_layout_width">70dp</dimen>
     <dimen name="measure_tap_button_layout_width">120dp</dimen>
     <dimen name="measure_tap_button_margin_left">40dp</dimen>
-
-    <!-- fragment_settings -->
-    <dimen name="settings_row_height">70dp</dimen>
-
-    <!-- fragment_dialog_color_picker -->
-    <dimen name="dialog_color_picker_panel_height">70dp</dimen>
 
 </resources>

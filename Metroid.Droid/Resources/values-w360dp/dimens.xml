@@ -3,11 +3,6 @@
 
     <!-- w360dp -->
 
-    <!-- Texts -->
-    <dimen name="text_small">16sp</dimen>
-    <dimen name="text_medium">20sp</dimen>
-    <dimen name="text_large">24sp</dimen>
-
     <!-- fragment_metronome -->
     <dimen name="metronome_card_view_margin">6dp</dimen>
     <dimen name="metronome_card_view_margin_small">4dp</dimen>
@@ -21,7 +16,6 @@
 
     <!-- fragment_measure -->
     <dimen name="measure_padding">6dp</dimen>
-    <dimen name="measure_layout_height">50dp</dimen>
     <dimen name="measure_tempo_button_layout_width">50dp</dimen>
     <dimen name="measure_tap_button_layout_width">90dp</dimen>
     <dimen name="measure_tap_button_margin_left">25dp</dimen>

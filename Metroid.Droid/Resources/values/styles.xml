@@ -27,11 +27,11 @@
 
     <!-- Spinner -->
     <style name="spinner_item">
-        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
         <item name="android:padding">@dimen/spinner_item_padding</item>
     </style>
     <style name="spinner_drop_down_item">
-        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
         <item name="android:padding">@dimen/spinner_drop_down_item_padding</item>
     </style>
 
