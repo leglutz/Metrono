@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
+    <!-- Texts -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+
     <!-- Dimensions -->
     <dimen name="dimen_small">2dp</dimen>
     <dimen name="dimen_medium">3dp</dimen>
 
     <!-- Spinner -->
-    <dimen name="spinner_item_padding">5dp</dimen>
+    <dimen name="spinner_item_padding">@dimen/dimen_medium</dimen>
     <dimen name="spinner_drop_down_item_padding">10dp</dimen>
 
     <!-- CardView -->
@@ -24,7 +29,7 @@
     <dimen name="metronome_grid_view_vertical_spacing">@dimen/dimen_small</dimen>
 
     <!-- template_metronome_beat_item -->
-    <dimen name="metronome_beat_item_margin">@dimen/dimen_small</dimen>
+    <dimen name="metronome_beat_item_padding">@dimen/dimen_small</dimen>
     <dimen name="metronome_beat_item_image_margin_left">@dimen/dimen_medium</dimen>
 
     <!-- fragment_measure -->
@@ -33,14 +38,12 @@
     <dimen name="measure_spinner_layout_width">80dp</dimen>
     <dimen name="measure_tempo_button_layout_width">45dp</dimen>
     <dimen name="measure_tempo_button_layout_height">35dp</dimen>
-    <dimen name="measure_tap_button_layout_width">80dp</dimen>
-    <dimen name="measure_tap_button_margin_left">20dp</dimen>
+    <dimen name="measure_tap_button_margin">@dimen/dimen_medium</dimen>
 
     <!-- fragment_settings -->
     <dimen name="settings_card_view_margin">@dimen/dimen_medium</dimen>
     <dimen name="settings_internal_margin">@dimen/dimen_medium</dimen>
     <dimen name="settings_internal_padding">@dimen/dimen_medium</dimen>
-    <dimen name="settings_color_picker_padding">@dimen/dimen_medium</dimen>
 
     <!-- fragment_dialog_color_picker -->
     <dimen name="dialog_color_picker_padding">@dimen/dimen_medium</dimen>

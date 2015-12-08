@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
-    <!-- w360dp -->
+    <!-- sw320dp -->
+
+    <!-- Texts -->
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_medium">20sp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
 
     <!-- Dimensions -->
     <dimen name="dimen_small">4dp</dimen>
@@ -14,7 +19,5 @@
     <dimen name="measure_spinner_layout_width">90dp</dimen>
     <dimen name="measure_tempo_button_layout_width">55dp</dimen>
     <dimen name="measure_tempo_button_layout_height">45dp</dimen>
-    <dimen name="measure_tap_button_layout_width">90dp</dimen>
-    <dimen name="measure_tap_button_margin_left">30dp</dimen>
 
 </resources>

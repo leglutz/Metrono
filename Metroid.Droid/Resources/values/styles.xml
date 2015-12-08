@@ -27,12 +27,25 @@
 
     <!-- Spinner -->
     <style name="spinner_item">
-        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
         <item name="android:padding">@dimen/spinner_item_padding</item>
     </style>
     <style name="spinner_drop_down_item">
-        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
         <item name="android:padding">@dimen/spinner_drop_down_item_padding</item>
+    </style>
+
+    <!-- Texts -->
+    <style name="text_small">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+    <style name="text_medium">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+    <style name="text_large">
+        <item name="android:textSize">@dimen/text_size_large</item>
     </style>
 
 </resources>

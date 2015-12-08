@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginBottom="@dimen/metronome_internal_margin"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textAppearance="@style/text_small"
                 android:text="@string/metronome_touch_to_start"
                 local:MvxBind="Visibility InvertedVisibility(Metronome.IsPlaying)" />
             <TextView
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginBottom="@dimen/metronome_internal_margin"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textAppearance="@style/text_small"
                 android:text="@string/metronome_touch_to_stop"
                 local:MvxBind="Visibility Visibility(Metronome.IsPlaying)" />
         </LinearLayout>

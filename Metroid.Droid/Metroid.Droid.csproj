@@ -187,14 +187,13 @@
     <Folder Include="Resources\mipmap-xhdpi\" />
     <Folder Include="Resources\mipmap-xxhdpi\" />
     <Folder Include="Resources\mipmap-xxxhdpi\" />
-    <Folder Include="Resources\values-w360dp\" />
-    <Folder Include="Resources\values-w411dp\" />
-    <Folder Include="Resources\values-w480dp\" />
     <Folder Include="Resources\values-v21\" />
-    <Folder Include="Resources\values-w540dp\" />
     <Folder Include="Resources\values-fr\" />
     <Folder Include="Views\Adapters\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Resources\values-sw480dp\" />
+    <Folder Include="Resources\values-sw600dp\" />
+    <Folder Include="Resources\values-sw360dp\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets')" />
@@ -273,17 +272,16 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\values\dimens.xml" />
-    <AndroidResource Include="Resources\values-w360dp\dimens.xml" />
-    <AndroidResource Include="Resources\values-w411dp\dimens.xml" />
     <AndroidResource Include="Resources\layout\template_metronome_beat_item.axml" />
     <AndroidResource Include="Resources\layout\template_settings_click_item.axml" />
     <AndroidResource Include="Resources\layout\template_settings_click_drop_down_item.axml" />
     <AndroidResource Include="Resources\layout\template_measure_item.axml" />
     <AndroidResource Include="Resources\layout\template_measure_drop_down_item.axml" />
     <AndroidResource Include="Resources\drawable\button.xml" />
-    <AndroidResource Include="Resources\values-w480dp\dimens.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
-    <AndroidResource Include="Resources\values-w540dp\dimens.xml" />
     <AndroidResource Include="Resources\values-fr\strings.xml" />
+    <AndroidResource Include="Resources\values-sw480dp\dimens.xml" />
+    <AndroidResource Include="Resources\values-sw600dp\dimens.xml" />
+    <AndroidResource Include="Resources\values-sw360dp\dimens.xml" />
   </ItemGroup>
 </Project>

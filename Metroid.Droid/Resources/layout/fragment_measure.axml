@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:paddingLeft="@dimen/measure_padding"
-    android:paddingRight="@dimen/measure_padding">
+    android:paddingRight="@dimen/measure_padding"
+    android:rowCount="3"
+    android:columnCount="2">
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0">
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
             android:layout_height="wrap_content"
@@ -23,7 +26,7 @@
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/measure_internal_padding"
             android:paddingRight="@dimen/measure_internal_padding"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="@style/text_medium"
             android:text="/" />
         <Mvx.MvxSpinner
             android:layout_width="@dimen/measure_spinner_layout_width"
@@ -35,8 +38,10 @@
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="0">
         <ImageButton
             android:layout_width="@dimen/measure_tempo_button_layout_width"
             android:layout_height="@dimen/measure_tempo_button_layout_height"
@@ -63,19 +68,23 @@
             android:scaleType="centerInside"
             android:background="@drawable/button"
             local:MvxBind="Click TempoPlus1Command" />
-        <Button
-            android:layout_width="@dimen/measure_tap_button_layout_width"
-            android:layout_height="@dimen/measure_tempo_button_layout_height"
-            android:layout_marginLeft="@dimen/measure_tap_button_margin_left"
-            android:layout_gravity="center"
-            android:background="@drawable/button"
-            android:textAppearance="?android:attr/textAppearanceButton"
-            android:text="@string/measure_tap"
-            local:MvxBind="Click TapCommand" />
     </LinearLayout>
+    <Button
+        android:layout_margin="@dimen/measure_tap_button_margin"
+        android:layout_gravity="fill"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_rowSpan="2"
+        android:background="@drawable/button"
+        android:textAppearance="@style/text_medium"
+        android:text="@string/measure_tap"
+        local:MvxBind="Click TapCommand" />
     <SeekBar
         android:id="@+id/seek_bar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
         local:MvxBind="Progress Measure.Tempo" />
-</LinearLayout>
+</GridLayout>

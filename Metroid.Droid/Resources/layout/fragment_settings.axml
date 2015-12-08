@@ -25,7 +25,7 @@
                         android:layout_weight="1"
                         android:layout_span="3"
                         android:layout_marginBottom="@dimen/settings_internal_margin"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textAppearance="@style/text_large"
                         android:text="@string/settings_general" />
                 </TableRow>
                 <TableRow>
@@ -33,7 +33,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textAppearance="@style/text_small"
                         android:text="@string/settings_click" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
@@ -50,7 +50,7 @@
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textAppearance="@style/text_small"
                         android:text="@string/settings_flash" />
                     <Controls.ColorPicker.ColorPickerPanelView
                         android:id="@+id/color_picker"
@@ -58,20 +58,18 @@
                         android:layout_weight="1"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:paddingTop="@dimen/settings_color_picker_padding"
-                        android:paddingBottom="@dimen/settings_color_picker_padding"
                         android:layout_gravity="center_vertical"
                         local:MvxBind="Enabled Settings.Flash" />
                     <ToggleButton
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textAppearance="?android:attr/textAppearanceButton"
+                        android:layout_gravity="center"
                         local:MvxBind="Checked Settings.Flash" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textAppearance="@style/text_small"
                         android:text="@string/settings_vibration" />
                     <Space
                         android:layout_width="0dp"
@@ -81,7 +79,7 @@
                     <ToggleButton
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textAppearance="?android:attr/textAppearanceButton"
+                        android:layout_gravity="center"
                         local:MvxBind="Checked Settings.Vibration" />
                 </TableRow>
                 <TableRow>
@@ -92,13 +90,13 @@
                         android:layout_weight="1"
                         android:layout_marginTop="@dimen/settings_internal_margin"
                         android:layout_marginBottom="@dimen/settings_internal_margin"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textAppearance="@style/text_large"
                         android:text="@string/settings_beats_accentuation" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textAppearance="@style/text_small"
                         android:text="@string/settings_beat_first" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
@@ -112,13 +110,13 @@
                     <ToggleButton
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textAppearance="?android:attr/textAppearanceButton"
+                        android:layout_gravity="center"
                         local:MvxBind="Checked Settings.AccentuateFirstBeat" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textAppearance="@style/text_small"
                         android:text="@string/settings_beat_last" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
@@ -132,13 +130,13 @@
                     <ToggleButton
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textAppearance="?android:attr/textAppearanceButton"
+                        android:layout_gravity="center"
                         local:MvxBind="Checked Settings.AccentuateLastBeat" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_gravity="center_vertical"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textAppearance="@style/text_small"
                         android:text="@string/settings_beat_compound" />
                     <Mvx.MvxSpinner
                         android:layout_width="0dp"
@@ -152,7 +150,7 @@
                     <ToggleButton
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/settings_internal_margin"
-                        android:textAppearance="?android:attr/textAppearanceButton"
+                        android:layout_gravity="center"
                         local:MvxBind="Checked Settings.AccentuateCompoundBeats" />
                 </TableRow>
             </TableLayout>
