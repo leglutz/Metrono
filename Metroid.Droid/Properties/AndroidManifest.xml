@@ -1,16 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ch.diodecompany.metroid" android:versionCode="8" android:versionName="1.0.7">
 	<uses-sdk android:minSdkVersion="16" />
-	<compatible-screens>
-		<!-- Normal size screens -->
-		<screen android:screenSize="normal" android:screenDensity="hdpi" />
-		<screen android:screenSize="normal" android:screenDensity="xhdpi" />
-		<screen android:screenSize="normal" android:screenDensity="280" />
-		<screen android:screenSize="normal" android:screenDensity="360" />
-		<screen android:screenSize="normal" android:screenDensity="420" />
-		<screen android:screenSize="normal" android:screenDensity="480" />
-		<screen android:screenSize="normal" android:screenDensity="560" />
-	</compatible-screens>
+    <supports-screens android:smallScreens="false"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:xlargeScreens="false" />
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
