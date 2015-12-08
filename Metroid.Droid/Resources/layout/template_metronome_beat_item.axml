@@ -14,7 +14,7 @@
             android:id="@+id/beat_image_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/metronome_beat_item_margin"
+            android:layout_marginLeft="@dimen/metronome_beat_item_image_margin_left"
             android:scaleType="fitXY" />
         <TextView
             android:id="@+id/beat_number_text_view"

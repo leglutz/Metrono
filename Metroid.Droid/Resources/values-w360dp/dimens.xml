@@ -3,27 +3,18 @@
 
     <!-- w360dp -->
 
-    <!-- fragment_metronome -->
-    <dimen name="metronome_card_view_margin">6dp</dimen>
-    <dimen name="metronome_card_view_margin_small">4dp</dimen>
-    <dimen name="metronome_internal_margin">4dp</dimen>
-    <dimen name="metronome_internal_padding">4dp</dimen>
-    <dimen name="metronome_grid_view_horizontal_spacing">4dp</dimen>
-    <dimen name="metronome_grid_view_vertical_spacing">4dp</dimen>
+    <!-- Dimensions -->
+    <dimen name="dimen_small">4dp</dimen>
+    <dimen name="dimen_medium">6dp</dimen>
 
-    <!-- template_metronome_beat_item -->
-    <dimen name="metronome_beat_item_margin">4dp</dimen>
+    <!-- Spinner -->
+    <dimen name="spinner_min_height">50dp</dimen>
 
     <!-- fragment_measure -->
-    <dimen name="measure_padding">6dp</dimen>
-    <dimen name="measure_tempo_button_layout_width">50dp</dimen>
+    <dimen name="measure_spinner_layout_width">90dp</dimen>
+    <dimen name="measure_tempo_button_layout_width">55dp</dimen>
+    <dimen name="measure_tempo_button_layout_height">45dp</dimen>
     <dimen name="measure_tap_button_layout_width">90dp</dimen>
-    <dimen name="measure_tap_button_margin_left">25dp</dimen>
-
-    <!-- fragment_settings -->
-    <dimen name="settings_card_view_margin">6dp</dimen>
-
-    <!-- fragment_dialog_color_picker -->
-    <dimen name="dialog_color_picker_panel_height">50dp</dimen>
+    <dimen name="measure_tap_button_margin_left">30dp</dimen>
 
 </resources>

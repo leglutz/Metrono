@@ -39,8 +39,7 @@
         android:layout_height="wrap_content">
         <ImageButton
             android:layout_width="@dimen/measure_tempo_button_layout_width"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/measure_tempo_button_layout_margin"
+            android:layout_height="@dimen/measure_tempo_button_layout_height"
             android:layout_gravity="center"
             android:src="@drawable/minus"
             android:cropToPadding="true"
@@ -57,8 +56,7 @@
             local:MvxItemTemplate="@layout/template_measure_item" />
         <ImageButton
             android:layout_width="@dimen/measure_tempo_button_layout_width"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/measure_tempo_button_layout_margin"
+            android:layout_height="@dimen/measure_tempo_button_layout_height"
             android:layout_gravity="center"
             android:src="@drawable/plus"
             android:cropToPadding="true"
@@ -67,10 +65,9 @@
             local:MvxBind="Click TempoPlus1Command" />
         <Button
             android:layout_width="@dimen/measure_tap_button_layout_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/measure_tempo_button_layout_height"
             android:layout_marginLeft="@dimen/measure_tap_button_margin_left"
-            android:layout_marginTop="@dimen/measure_tempo_button_layout_margin"
-            android:layout_marginBottom="@dimen/measure_tempo_button_layout_margin"
+            android:layout_gravity="center"
             android:background="@drawable/button"
             android:textAppearance="?android:attr/textAppearanceButton"
             android:text="@string/measure_tap"

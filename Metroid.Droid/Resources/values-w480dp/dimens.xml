@@ -3,10 +3,18 @@
 
     <!-- w480dp -->
 
+    <!-- Dimensions -->
+    <dimen name="dimen_small">8dp</dimen>
+    <dimen name="dimen_medium">12dp</dimen>
+
+    <!-- Spinner -->
+    <dimen name="spinner_min_height">60dp</dimen>
+
     <!-- fragment_measure -->
     <dimen name="measure_spinner_layout_width">100dp</dimen>
-    <dimen name="measure_tempo_button_layout_width">70dp</dimen>
-    <dimen name="measure_tap_button_layout_width">120dp</dimen>
+    <dimen name="measure_tempo_button_layout_width">65dp</dimen>
+    <dimen name="measure_tempo_button_layout_height">55dp</dimen>
+    <dimen name="measure_tap_button_layout_width">100dp</dimen>
     <dimen name="measure_tap_button_margin_left">40dp</dimen>
 
 </resources>
