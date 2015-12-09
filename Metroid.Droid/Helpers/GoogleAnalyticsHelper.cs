@@ -28,30 +28,29 @@ namespace DiodeCompany.Metroid.Droid.Helpers
         private GoogleAnalyticsHelper()
         {}
 
-        public void Initialize(Context context)
+        public void Initialize(Application application)
         {
-            _googleAnalytics = GoogleAnalytics.GetInstance(context);
-            _googleAnalytics.SetLocalDispatchPeriod(60);
+            _googleAnalytics = GoogleAnalytics.GetInstance(application.ApplicationContext);
             _tracker = _googleAnalytics.NewTracker(TrackingId);
+
+            #if DEBUG
+            _googleAnalytics.SetDryRun(true);
+            #endif
         }
 
         public void TrackPage(string pageName)
         {
-            #if !DEBUG
             _tracker.SetScreenName (pageName);
             _tracker.Send(new HitBuilders.ScreenViewBuilder().Build());
-            #endif
         }
 
         public void TrackEvent(string eventCategory, string @event)
         {
-            #if !DEBUG
             var builder = new HitBuilders.EventBuilder();
             builder.SetCategory(eventCategory);
             builder.SetAction(@event);
             builder.SetLabel("Event");
             _tracker.Send(builder.Build());
-            #endif
         }
     }
 }

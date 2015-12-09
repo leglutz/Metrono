@@ -69,6 +69,7 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
             // Keep the screen always on
             Window.AddFlags (WindowManagerFlags.KeepScreenOn);
 
+            // We are on main page
             GoogleAnalyticsHelper.Instance.TrackPage("Main");
         }
 
@@ -113,7 +114,6 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
                 _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Lock));   
             }
             _adView.Pause ();
-            GoogleAnalyticsHelper.Instance.TrackEvent ("Life cycle", "Pause");
 
             base.OnPause ();
         }
@@ -124,7 +124,6 @@ namespace DiodeCompany.Metroid.Droid.Views.Activities
 
             _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Start));
             _adView.Resume ();
-            GoogleAnalyticsHelper.Instance.TrackEvent ("Life cycle", "Resume");
         }
 
         protected override void OnDestroy ()

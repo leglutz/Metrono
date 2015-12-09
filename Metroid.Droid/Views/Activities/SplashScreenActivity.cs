@@ -15,13 +15,10 @@ namespace DiodeCompany.Metroid.Droid.Activities
 
 		protected override void OnCreate (Bundle bundle)
 		{
-            #if !DEBUG
-            // Initialize Insights
-            Xamarin.Insights.Initialize (XamarinInsights.ApiKey, this);
+            // Initialize Xamarin Insights
+            XamarinInsightsHelper.Instance.Initialize(Application);
             // Initialize Google Analytics
-            GoogleAnalyticsHelper.Instance.Initialize(ApplicationContext);
-            GoogleAnalyticsHelper.Instance.TrackPage("SplashScreen");
-            #endif
+            GoogleAnalyticsHelper.Instance.Initialize(Application);
 
 			base.OnCreate (bundle);
 		}

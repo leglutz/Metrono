@@ -17,7 +17,6 @@
     <AssemblyName>Metroid.Droid</AssemblyName>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <Description>Android metronome</Description>
-    <XamarinInsightsApiKey>ab6566a0d14adf0748a3d916dca49e4cfe75fbd6</XamarinInsightsApiKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -157,6 +156,7 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Views\Adapters\BeatAdapter.cs" />
     <Compile Include="Helpers\GoogleAnalyticsHelper.cs" />
+    <Compile Include="Helpers\XamarinInsightsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
