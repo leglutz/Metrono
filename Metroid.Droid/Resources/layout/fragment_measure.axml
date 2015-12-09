@@ -11,11 +11,13 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_row="0"
         android:layout_column="0">
         <Mvx.MvxSpinner
-            android:layout_width="@dimen/measure_spinner_layout_width"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="@dimen/spinner_min_width"
             android:minHeight="@dimen/spinner_min_height"
             local:MvxBind="ItemsSource TimeSignatureNumeratorList; SelectedItem Measure.TimeSignatureNumerator"
             local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
@@ -29,8 +31,9 @@
             android:textAppearance="@style/text_medium"
             android:text="/" />
         <Mvx.MvxSpinner
-            android:layout_width="@dimen/measure_spinner_layout_width"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="@dimen/spinner_min_width"
             android:minHeight="@dimen/spinner_min_height"
             local:MvxBind="ItemsSource TimeSignatureDenominatorList; SelectedItem Measure.TimeSignatureDenominator"
             local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
@@ -43,26 +46,29 @@
         android:layout_row="1"
         android:layout_column="0">
         <ImageButton
-            android:layout_width="@dimen/measure_tempo_button_layout_width"
-            android:layout_height="@dimen/measure_tempo_button_layout_height"
-            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_width="@dimen/measure_tempo_button_width"
+            android:layout_margin="@dimen/measure_tempo_button_margin"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/minus"
             android:cropToPadding="true"
             android:scaleType="centerInside"
             android:background="@drawable/button"
             local:MvxBind="Click TempoMinus1Command" />
         <Mvx.MvxSpinner
-            android:layout_width="@dimen/measure_spinner_layout_width"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:minWidth="@dimen/spinner_min_width"
             android:minHeight="@dimen/spinner_min_height"
+            android:layout_gravity="center"
             local:MvxBind="ItemsSource TempoList; SelectedItem Measure.Tempo"
             local:MvxDropDownItemTemplate="@layout/template_measure_drop_down_item"
             local:MvxItemTemplate="@layout/template_measure_item" />
         <ImageButton
-            android:layout_width="@dimen/measure_tempo_button_layout_width"
-            android:layout_height="@dimen/measure_tempo_button_layout_height"
-            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_width="@dimen/measure_tempo_button_width"
+            android:layout_margin="@dimen/measure_tempo_button_margin"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/plus"
             android:cropToPadding="true"
             android:scaleType="centerInside"

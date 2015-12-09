@@ -1375,44 +1375,41 @@ namespace DiodeCompany.Metroid.Droid
 			// aapt resource value: 0x7f0b004a
 			public const int highlight_alpha_material_light = 2131427402;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int measure_internal_padding = 2131427424;
-			
-			// aapt resource value: 0x7f0b005f
-			public const int measure_padding = 2131427423;
-			
 			// aapt resource value: 0x7f0b0061
-			public const int measure_spinner_layout_width = 2131427425;
+			public const int measure_internal_padding = 2131427425;
+			
+			// aapt resource value: 0x7f0b0060
+			public const int measure_padding = 2131427424;
 			
 			// aapt resource value: 0x7f0b0064
 			public const int measure_tap_button_margin = 2131427428;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int measure_tempo_button_layout_height = 2131427427;
-			
 			// aapt resource value: 0x7f0b0062
-			public const int measure_tempo_button_layout_width = 2131427426;
+			public const int measure_tempo_button_margin = 2131427426;
+			
+			// aapt resource value: 0x7f0b0063
+			public const int measure_tempo_button_width = 2131427427;
+			
+			// aapt resource value: 0x7f0b005f
+			public const int metronome_beat_item_image_margin_left = 2131427423;
 			
 			// aapt resource value: 0x7f0b005e
-			public const int metronome_beat_item_image_margin_left = 2131427422;
-			
-			// aapt resource value: 0x7f0b005d
-			public const int metronome_beat_item_padding = 2131427421;
-			
-			// aapt resource value: 0x7f0b0058
-			public const int metronome_card_view_margin = 2131427416;
-			
-			// aapt resource value: 0x7f0b005b
-			public const int metronome_grid_view_horizontal_spacing = 2131427419;
-			
-			// aapt resource value: 0x7f0b005c
-			public const int metronome_grid_view_vertical_spacing = 2131427420;
+			public const int metronome_beat_item_padding = 2131427422;
 			
 			// aapt resource value: 0x7f0b0059
-			public const int metronome_internal_margin = 2131427417;
+			public const int metronome_card_view_margin = 2131427417;
+			
+			// aapt resource value: 0x7f0b005c
+			public const int metronome_grid_view_horizontal_spacing = 2131427420;
+			
+			// aapt resource value: 0x7f0b005d
+			public const int metronome_grid_view_vertical_spacing = 2131427421;
 			
 			// aapt resource value: 0x7f0b005a
-			public const int metronome_internal_padding = 2131427418;
+			public const int metronome_internal_margin = 2131427418;
+			
+			// aapt resource value: 0x7f0b005b
+			public const int metronome_internal_padding = 2131427419;
 			
 			// aapt resource value: 0x7f0b004b
 			public const int notification_large_icon_height = 2131427403;
@@ -1440,6 +1437,9 @@ namespace DiodeCompany.Metroid.Droid
 			
 			// aapt resource value: 0x7f0b0057
 			public const int spinner_min_height = 2131427415;
+			
+			// aapt resource value: 0x7f0b0058
+			public const int spinner_min_width = 2131427416;
 			
 			// aapt resource value: 0x7f0b0050
 			public const int text_size_large = 2131427408;
