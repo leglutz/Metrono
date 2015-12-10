@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metroid.Droid", "Metroid.Droid\Metroid.Droid.csproj", "{C27B412B-AE12-4B02-B4FF-2874F733A898}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.Droid", "Metrono.Droid\Metrono.Droid.csproj", "{C27B412B-AE12-4B02-B4FF-2874F733A898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metroid.Core", "Metroid.Core\Metroid.Core.csproj", "{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.Core", "Metrono.Core\Metrono.Core.csproj", "{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metroid.UITests", "Metroid.UITests\Metroid.UITests.csproj", "{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.UITests", "Metrono.UITests\Metrono.UITests.csproj", "{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
