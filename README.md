@@ -1,2 +1,2 @@
-# Metronoid
-Metronome for Android
+# Metrono
+Metronome
