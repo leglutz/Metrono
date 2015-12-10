@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{C27B412B-AE12-4B02-B4FF-2874F733A898}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DiodeCompany.Metroid.Droid</RootNamespace>
+    <RootNamespace>DiodeCompany.Metrono.Droid</RootNamespace>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -14,9 +14,9 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <AssemblyName>Metroid.Droid</AssemblyName>
+    <AssemblyName>Metrono.Droid</AssemblyName>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
-    <Description>Android metronome</Description>
+    <Description>Metronome for Android</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,10 +42,10 @@
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <AndroidKeyStore>True</AndroidKeyStore>
-    <AndroidSigningKeyStore>C:\Users\Fred\Documents\Dev\DiodeCompany\Metroid\Metroid.Droid\metroid.keystore</AndroidSigningKeyStore>
-    <AndroidSigningStorePass>metroid_password</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>metroid_key</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>metroid_password</AndroidSigningKeyPass>
+    <AndroidSigningKeyStore>C:\Users\Fred\Documents\Dev\DiodeCompany\Metrono\Metrono.Droid\***REMOVED***</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>***REMOVED***</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>***REMOVED***</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>***REMOVED***</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -165,7 +165,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Metroid.Core\Metroid.Core.csproj">
+    <ProjectReference Include="..\Metrono.Core\Metrono.Core.csproj">
       <Project>{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}</Project>
       <Name>Metroid.Core</Name>
     </ProjectReference>
