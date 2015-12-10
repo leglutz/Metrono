@@ -1,6 +1,6 @@
 ﻿using MvvmCross.Plugins.Messenger;
 
-namespace DiodeCompany.Metroid.Core.Messages
+namespace DiodeCompany.Metrono.Core.Messages
 {
     public enum LifeCycleEvent
     {

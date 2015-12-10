@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using Cirrious.CrossCore.Converters;
-using DiodeCompany.Metroid.Core.Attributes;
-using DiodeCompany.Metroid.Core.Extensions;
+using DiodeCompany.Metrono.Core.Attributes;
+using DiodeCompany.Metrono.Core.Extensions;
 
-namespace DiodeCompany.Metroid.Core.Converters
+namespace DiodeCompany.Metrono.Core.Converters
 {
     public class EnumToDescriptionValueConverter : MvxValueConverter<Enum, string>
     {

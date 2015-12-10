@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Cirrious.MvvmCross.ViewModels;
 
-namespace DiodeCompany.Metroid.Core.Models
+namespace DiodeCompany.Metrono.Core.Models
 {
     public class Measure : MvxNotifyPropertyChanged
     {

@@ -1,7 +1,7 @@
 ﻿using MvvmCross.Plugins.Messenger;
-using DiodeCompany.Metroid.Core.Models;
+using DiodeCompany.Metrono.Core.Models;
 
-namespace DiodeCompany.Metroid.Core.Messages
+namespace DiodeCompany.Metrono.Core.Messages
 {
     public enum MetronomeEvent
     {

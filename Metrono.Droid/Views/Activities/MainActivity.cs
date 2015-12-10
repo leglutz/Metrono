@@ -7,13 +7,13 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Droid.Support.AppCompat;
-using DiodeCompany.Metroid.Core.Messages;
-using DiodeCompany.Metroid.Core.ViewModels;
-using DiodeCompany.Metroid.Droid.Helpers;
-using DiodeCompany.Metroid.Droid.Views.Fragments;
+using DiodeCompany.Metrono.Core.Messages;
+using DiodeCompany.Metrono.Core.ViewModels;
+using DiodeCompany.Metrono.Droid.Helpers;
+using DiodeCompany.Metrono.Droid.Views.Fragments;
 using MvvmCross.Plugins.Messenger;
 
-namespace DiodeCompany.Metroid.Droid.Views.Activities
+namespace DiodeCompany.Metrono.Droid.Views.Activities
 {
     [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>, AudioManager.IOnAudioFocusChangeListener

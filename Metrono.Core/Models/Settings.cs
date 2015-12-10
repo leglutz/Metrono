@@ -2,9 +2,9 @@
 using Cheesebaron.MvxPlugins.Settings.Interfaces;
 using Cirrious.CrossCore.UI;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.Resources;
+using DiodeCompany.Metrono.Core.Resources;
 
-namespace DiodeCompany.Metroid.Core.Models
+namespace DiodeCompany.Metrono.Core.Models
 {
     public class Settings : MvxNotifyPropertyChanged
     {

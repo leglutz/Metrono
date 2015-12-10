@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.Resources;
-using DiodeCompany.Metroid.Core.Services;
+using DiodeCompany.Metrono.Core.Messages;
+using DiodeCompany.Metrono.Core.Resources;
+using DiodeCompany.Metrono.Core.Services;
 using MvvmCross.Plugins.Messenger;
-using DiodeCompany.Metroid.Core.Messages;
 
-namespace DiodeCompany.Metroid.Core.Models
+namespace DiodeCompany.Metrono.Core.Models
 {
     public class Metronome : MvxNotifyPropertyChanged
     {

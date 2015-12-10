@@ -4,9 +4,9 @@ using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using DiodeCompany.Metroid.Core.Models;
+using DiodeCompany.Metrono.Core.Models;
 
-namespace DiodeCompany.Metroid.Droid.Views.Adapters
+namespace DiodeCompany.Metrono.Droid.Views.Adapters
 {
     public class BeatAdapter : BaseAdapter<Beat>
     {

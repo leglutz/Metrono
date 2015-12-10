@@ -2,11 +2,11 @@
 using Android.Content;
 using Android.Gms.Analytics;
 
-namespace DiodeCompany.Metroid.Droid.Helpers
+namespace DiodeCompany.Metrono.Droid.Helpers
 {
     public class GoogleAnalyticsHelper
     {
-        private const string TrackingId = "UA-70767993-1";
+        private const string TrackingId = "UA-70767993-3";
 
         private static GoogleAnalyticsHelper _instance;
 

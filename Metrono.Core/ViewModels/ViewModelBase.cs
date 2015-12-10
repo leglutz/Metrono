@@ -1,10 +1,10 @@
 ﻿using System;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.Messages;
+using DiodeCompany.Metrono.Core.Messages;
 using MvvmCross.Plugins.Messenger;
 
-namespace DiodeCompany.Metroid.Core.ViewModels
+namespace DiodeCompany.Metrono.Core.ViewModels
 {
     public abstract class ViewModelBase : MvxViewModel
     {

@@ -7,11 +7,11 @@ using Android.Widget;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
-using DiodeCompany.Metroid.Core.Models;
-using DiodeCompany.Metroid.Core.Services;
-using DiodeCompany.Metroid.Droid.Controls.ColorPicker;
+using DiodeCompany.Metrono.Core.Models;
+using DiodeCompany.Metrono.Core.Services;
+using DiodeCompany.Metrono.Droid.Controls.ColorPicker;
 
-namespace DiodeCompany.Metroid.Droid.Views.Fragments
+namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
     public class ColorPickerDialogFragment : MvxDialogFragment, View.IOnClickListener
     {

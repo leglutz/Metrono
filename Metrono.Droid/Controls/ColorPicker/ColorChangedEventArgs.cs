@@ -21,7 +21,7 @@
 using System;
 using Android.Graphics;
 
-namespace DiodeCompany.Metroid.Droid.Controls.ColorPicker
+namespace DiodeCompany.Metrono.Droid.Controls.ColorPicker
 {
     public delegate void ColorChangedEventHandler(object sender, ColorChangedEventArgs e);
 

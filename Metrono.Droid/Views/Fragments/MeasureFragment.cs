@@ -3,9 +3,9 @@ using Android.Views;
 using Android.Widget;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
-using DiodeCompany.Metroid.Core.ViewModels;
+using DiodeCompany.Metrono.Core.ViewModels;
 
-namespace DiodeCompany.Metroid.Droid.Views.Fragments
+namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
     public class MeasureFragment : MvxFragment<MeasureViewModel>
     {

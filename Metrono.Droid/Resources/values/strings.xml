@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Global -->
-    <string name="app_name">Metroid</string>
+    <string name="app_name">Metrono</string>
     <string name="ad_unit_id">ca-app-pub-7359993483718540/3078757712</string>
 
     <!-- Metronome -->

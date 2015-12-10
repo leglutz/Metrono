@@ -1,7 +1,7 @@
 ﻿using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.ViewModels;
+using DiodeCompany.Metrono.Core.ViewModels;
 
-namespace DiodeCompany.Metroid.Core
+namespace DiodeCompany.Metrono.Core
 {
     public class AppStart : MvxNavigatingObject, IMvxAppStart
     {

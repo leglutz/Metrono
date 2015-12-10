@@ -14,7 +14,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <AssemblyName>Metrono.Droid</AssemblyName>
+    <AssemblyName>DiodeCompany.Metrono.Droid</AssemblyName>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <Description>Metronome for Android</Description>
   </PropertyGroup>
@@ -167,7 +167,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Metrono.Core\Metrono.Core.csproj">
       <Project>{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}</Project>
-      <Name>Metroid.Core</Name>
+      <Name>Metrono.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

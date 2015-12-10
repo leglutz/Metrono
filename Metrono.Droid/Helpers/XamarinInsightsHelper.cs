@@ -1,11 +1,11 @@
 ﻿using Android.App;
 using Xamarin;
 
-namespace DiodeCompany.Metroid.Droid.Helpers
+namespace DiodeCompany.Metrono.Droid.Helpers
 {
     public class XamarinInsightsHelper
     {
-        private const string ApiKey = "ab6566a0d14adf0748a3d916dca49e4cfe75fbd6";
+        private const string ApiKey = "5f5da99d136cd7a61641b178fba1ae3c99668fe5";
 
         private static XamarinInsightsHelper _instance;
 

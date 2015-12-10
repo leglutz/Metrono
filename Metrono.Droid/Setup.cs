@@ -4,10 +4,10 @@ using Cirrious.CrossCore;
 using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.Droid.Platform;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.Services;
-using DiodeCompany.Metroid.Droid.Services;
+using DiodeCompany.Metrono.Core.Services;
+using DiodeCompany.Metrono.Droid.Services;
 
-namespace DiodeCompany.Metroid.Droid
+namespace DiodeCompany.Metrono.Droid
 {
     public class Setup : MvxAndroidSetup
     {
@@ -32,7 +32,7 @@ namespace DiodeCompany.Metroid.Droid
             get
             {
                 var toReturn = base.ViewNamespaceAbbreviations;
-                toReturn["Controls"] = "DiodeCompany.Metroid.Droid.Controls";
+                toReturn["Controls"] = "DiodeCompany.Metrono.Droid.Controls";
                 return toReturn;
             }
         }

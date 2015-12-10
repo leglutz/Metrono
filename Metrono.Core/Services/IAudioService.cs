@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DiodeCompany.Metroid.Core.Services
+namespace DiodeCompany.Metrono.Core.Services
 {
     public interface IAudioService
     {

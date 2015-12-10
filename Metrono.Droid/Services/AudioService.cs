@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Android.Media;
-using DiodeCompany.Metroid.Core.Services;
+using DiodeCompany.Metrono.Core.Services;
 
-namespace DiodeCompany.Metroid.Droid.Services
+namespace DiodeCompany.Metrono.Droid.Services
 {
     /// <summary>
     /// Audio service.

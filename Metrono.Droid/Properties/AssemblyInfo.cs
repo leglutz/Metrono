@@ -5,12 +5,12 @@ using Android.App;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle ("Metroid.Android")]
+[assembly: AssemblyTitle ("Metrono.Android")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("Diode Team")]
+[assembly: AssemblyCompany ("Diode Company")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("Diode Team")]
+[assembly: AssemblyCopyright ("Diode Company")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 

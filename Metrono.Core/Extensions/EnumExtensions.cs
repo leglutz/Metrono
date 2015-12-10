@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace DiodeCompany.Metroid.Core.Extensions
+namespace DiodeCompany.Metrono.Core.Extensions
 {
     public static class EnumExtensions
     {

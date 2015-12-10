@@ -1,12 +1,12 @@
 ﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metroid.Core.Messages;
-using DiodeCompany.Metroid.Core.Models;
-using DiodeCompany.Metroid.Core.Services;
+using DiodeCompany.Metrono.Core.Messages;
+using DiodeCompany.Metrono.Core.Models;
+using DiodeCompany.Metrono.Core.Services;
 using MvvmCross.Plugins.Messenger;
 using Plugin.Vibrate;
 
-namespace DiodeCompany.Metroid.Core.ViewModels
+namespace DiodeCompany.Metrono.Core.ViewModels
 {
     public class MetronomeViewModel : ViewModelBase
     {

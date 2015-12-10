@@ -1,6 +1,6 @@
-﻿using DiodeCompany.Metroid.Core.Models;
+﻿using DiodeCompany.Metrono.Core.Models;
 
-namespace DiodeCompany.Metroid.Core.Services
+namespace DiodeCompany.Metrono.Core.Services
 {
     public interface ISettingsService
     { 

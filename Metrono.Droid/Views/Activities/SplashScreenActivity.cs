@@ -2,9 +2,9 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Cirrious.MvvmCross.Droid.Views;
-using DiodeCompany.Metroid.Droid.Helpers;
+using DiodeCompany.Metrono.Droid.Helpers;
 
-namespace DiodeCompany.Metroid.Droid.Activities
+namespace DiodeCompany.Metrono.Droid.Activities
 {
 	[Activity (Label = "@string/app_name", MainLauncher = true, Theme = "@style/MyTheme.Splash", NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class SplashScreenActivity : MvxSplashScreenActivity

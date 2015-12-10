@@ -7,7 +7,7 @@
     <ProjectGuid>{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>DiodeCompany.Metrono.Core</RootNamespace>
-    <AssemblyName>Metrono.Core</AssemblyName>
+    <AssemblyName>DiodeCompany.Metrono.Core</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>

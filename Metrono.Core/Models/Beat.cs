@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Cirrious.MvvmCross.ViewModels;
 
-namespace DiodeCompany.Metroid.Core.Models
+namespace DiodeCompany.Metrono.Core.Models
 {
     public class Beat : MvxNotifyPropertyChanged
     {

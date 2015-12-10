@@ -7,16 +7,16 @@ using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
-using DiodeCompany.Metroid.Core.Messages;
-using DiodeCompany.Metroid.Core.Models;
-using DiodeCompany.Metroid.Core.Services;
-using DiodeCompany.Metroid.Core.ViewModels;
-using DiodeCompany.Metroid.Droid.Helpers;
-using DiodeCompany.Metroid.Droid.Views.Activities;
-using DiodeCompany.Metroid.Droid.Views.Adapters;
+using DiodeCompany.Metrono.Core.Messages;
+using DiodeCompany.Metrono.Core.Models;
+using DiodeCompany.Metrono.Core.Services;
+using DiodeCompany.Metrono.Core.ViewModels;
+using DiodeCompany.Metrono.Droid.Helpers;
+using DiodeCompany.Metrono.Droid.Views.Activities;
+using DiodeCompany.Metrono.Droid.Views.Adapters;
 using MvvmCross.Plugins.Messenger;
 
-namespace DiodeCompany.Metroid.Droid.Views.Fragments
+namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
     public class MetronomeFragment : MvxFragment<MetronomeViewModel>, View.IOnTouchListener
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DiodeCompany.Metroid.Core.Attributes
+namespace DiodeCompany.Metrono.Core.Attributes
 {
     [AttributeUsage (AttributeTargets.Field)]
     public class EnumDescriptionAttribute : Attribute

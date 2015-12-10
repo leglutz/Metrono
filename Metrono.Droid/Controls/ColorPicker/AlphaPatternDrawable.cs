@@ -22,7 +22,7 @@ using System;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 
-namespace DiodeCompany.Metroid.Droid.Controls.ColorPicker
+namespace DiodeCompany.Metrono.Droid.Controls.ColorPicker
 {
     public class AlphaPatternDrawable: Drawable
     {
