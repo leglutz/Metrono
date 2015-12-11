@@ -27,10 +27,7 @@ namespace DiodeCompany.Metrono.Core.ViewModels
         {
             _settings = settingsService.Settings;
 
-            // Create a new measure
-            Measure = new Measure (_settings.LastTempo, 
-                                   _settings.LastTimeSignatureNumerator, 
-                                   _settings.LastTimeSignatureDenominator);
+            Measure = new Measure ();
            
             TempoList = new List<int> (Enumerable.Range (Measure.MinTempo, Measure.MaxTempo + 1));
             TimeSignatureNumeratorList = new List<int> (Enumerable.Range (1, 20));
@@ -45,8 +42,15 @@ namespace DiodeCompany.Metrono.Core.ViewModels
         {
             switch(lifeCycleMessage.LifeCycleEvent)
             {
+                case LifeCycleEvent.Start:
+                    // Restore values
+                    Measure.TimeSignatureNumerator = _settings.LastTimeSignatureNumerator;
+                    Measure.TimeSignatureDenominator = _settings.LastTimeSignatureDenominator;
+                    Measure.Tempo = _settings.LastTempo;
+                    break;
                 case LifeCycleEvent.Stop:
                 case LifeCycleEvent.Destroy:
+                    // Store values
                     _settings.LastTempo = Measure.Tempo;
                     _settings.LastTimeSignatureNumerator = Measure.TimeSignatureNumerator;
                     _settings.LastTimeSignatureDenominator = Measure.TimeSignatureDenominator;
