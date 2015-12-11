@@ -32,7 +32,6 @@ namespace DiodeCompany.Metrono.Core.Resources
     public static class ResourcesHelper
     {
         public static Dictionary<int, string> NoteImageSourceMap { get; private set; }
-
         public static Dictionary<ClickKind, byte[]> ClickSoundMap { get; private set; }
 
         static ResourcesHelper ()

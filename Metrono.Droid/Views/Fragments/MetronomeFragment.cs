@@ -95,19 +95,18 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 case MetronomeEvent.BeatStarted:
                     {
                         // Beat
-                        var beat = metronomeMessage.Beat;
-                        var beatView = _gridView.GetChildAt (beat.Number - 1);
+                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1) as CardView;
                         if (beatView != null)
                         {
-                            ((CardView)beatView).Alpha = 1f;
-                            ((CardView)beatView).CardElevation = 2;
+                            beatView.Alpha = 1;
+                            beatView.CardElevation = 2;
                         }
 
                         // Flash
                         if (_settings.Flash)
                         {
                             _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, 0);
-                            _backgroundColorAnimator.SetDuration ((long)(beat.Duration * 1000));
+                            _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
                             _backgroundColorAnimator.Start ();
                         }
                     }
@@ -115,12 +114,11 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 case MetronomeEvent.BeatFinished:
                     {
                         // Beat
-                        var beat = metronomeMessage.Beat;
-                        var beatView = _gridView.GetChildAt (beat.Number - 1);
-                        if(beatView != null)
+                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1) as CardView;
+                        if (beatView != null)
                         {
-                            ((CardView)beatView).Alpha = 0.5f;
-                            ((CardView)beatView).CardElevation = 0;
+                            beatView.Alpha = 0.5f;
+                            beatView.CardElevation = 0;
                         }
                     }
                     break;

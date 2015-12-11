@@ -14,6 +14,8 @@ namespace DiodeCompany.Metrono.Core.Models
         private readonly Settings _settings;
         private readonly IMvxMessenger _messenger;
 
+        private readonly byte[] _defaultEmptyChunksArray;
+
         private bool _isPlaying;
         public bool IsPlaying
         { 
@@ -34,6 +36,8 @@ namespace DiodeCompany.Metrono.Core.Models
             _settings = settingsService.Settings;
             _messenger = messenger;
 
+            _defaultEmptyChunksArray = new byte[_audioService.MinBufferSize];
+
             IsPlaying = false;
             IsPaused = false;
         }
@@ -47,7 +51,8 @@ namespace DiodeCompany.Metrono.Core.Models
                 IsPlaying = true;
                 IsPaused = false;
 
-                Task.Run (async () => await PlayMeasureAsync (measure, loop).ConfigureAwait (false)).ContinueWith (x => Stop ());
+                Task.Run (async () => await PlayMeasureAsync (measure, loop).ConfigureAwait(false))
+                    .ContinueWith (x => Stop ()).ConfigureAwait(false);
             }
         }
 
@@ -89,13 +94,15 @@ namespace DiodeCompany.Metrono.Core.Models
             var currentBeatIndex = 0;
             measure.IsPlaying = true;
 
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureStarted, measure));   
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureStarted, measure));
 
             while (IsPlaying && currentBeatIndex < measure.BeatList.Count)
             {
                 // Play the current beat
                 var currentBeat = measure.BeatList [currentBeatIndex];
-                await PlayBeatAsync (currentBeat).ConfigureAwait (false);
+                await PlayBeatAsync (measure, currentBeat)
+                    // It's a horrible trick... But I don't know how to do it other way
+                    .ContinueWith(x => GC.Collect ()).ConfigureAwait(false);
 
                 currentBeatIndex++;
                 if (currentBeatIndex >= measure.BeatList.Count && loop)
@@ -105,77 +112,85 @@ namespace DiodeCompany.Metrono.Core.Models
                 }
 
                 // Check if is paused and pause if needed
-                await PauseAysnc ().ConfigureAwait (false);
+                if (_isPaused)
+                {
+                    await PauseAysnc ().ConfigureAwait(false);
+                }
             }
 
             measure.IsPlaying = false;
 
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureFinished, measure));   
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureFinished, measure));
         }
 
-        private async Task PlayBeatAsync (Beat beat)
+        private async Task PlayBeatAsync (Measure measure, Beat beat)
         {
             beat.IsPlaying = true;
+
             // Play the beat first (sound takes more time than light)
             var beatSound = GetBeatSound (beat);
-            await _audioService.PlayAsync (beatSound).ConfigureAwait (false);
+            await _audioService.PlayAsync (beatSound).ConfigureAwait(false);
 
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatStarted, beat: beat));   
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatStarted, measure, beat));
 
             // Divided by two due to the ratio 16 bit PCM / wav
             var samplesElapsed = beatSound.Length / 2;
             var samplesPerBeat = GetSamplesPerBeat (beat);
-
             while (IsPlaying && samplesElapsed < samplesPerBeat)
             {
                 var samplesLeft = samplesPerBeat - samplesElapsed;
 
                 // Rest for a full write chunk or until the next click needs to play, whichever is less.
-                var numberOfEmptyChunk = Math.Min (samplesLeft, _audioService.MinBufferSize);
-                await _audioService.PlayAsync (new byte[2 * numberOfEmptyChunk]).ConfigureAwait (false);
+                var emptyChunksArray = _defaultEmptyChunksArray;
+                if (samplesLeft < _defaultEmptyChunksArray.Length)
+                {
+                    // Multiplied by two due to the ratio wav / 16 bit PCM
+                    emptyChunksArray = new byte[2 * samplesLeft];
+                }
+                await _audioService.PlayAsync (emptyChunksArray).ConfigureAwait(false);
 
-                samplesElapsed += numberOfEmptyChunk;
+                samplesElapsed += emptyChunksArray.Length / 2;
 
                 // In case the tempo changed
                 samplesPerBeat = GetSamplesPerBeat (beat);
 
                 // Check if is paused and pause if needed
-                await PauseAysnc ().ConfigureAwait (false);
+                if (_isPaused)
+                {
+                    await PauseAysnc ().ConfigureAwait(false);
+                }
             }
 
             beat.IsPlaying = false;
 
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatFinished, beat: beat));   
+            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatFinished, measure, beat));
         }
 
         private byte[] GetBeatSound(Beat beat)
         {
-            var beatSound = new byte[0];
             if (beat.IsFirst && _settings.AccentuateFirstBeat)
             {
-                beatSound = ResourcesHelper.ClickSoundMap [_settings.FirstBeatClick];
+                return ResourcesHelper.ClickSoundMap [_settings.FirstBeatClick];
             }
             else if (beat.IsLast && _settings.AccentuateLastBeat)
             {
-                beatSound = ResourcesHelper.ClickSoundMap [_settings.LastBeatClick];
+                return ResourcesHelper.ClickSoundMap [_settings.LastBeatClick];
             }
             else if(beat.IsCompound && _settings.AccentuateCompoundBeats)
             {
-                beatSound = ResourcesHelper.ClickSoundMap [_settings.CompoundBeatClick];
+                return ResourcesHelper.ClickSoundMap [_settings.CompoundBeatClick];
             }
             else
             { 
-                beatSound = ResourcesHelper.ClickSoundMap [_settings.BeatClick];
+                return ResourcesHelper.ClickSoundMap [_settings.BeatClick];
             }
-
-            return beatSound;
         }
 
         private async Task PauseAysnc ()
         {
             while (IsPaused)
             {
-                await Task.Delay (50).ConfigureAwait (false);
+                await Task.Delay (50).ConfigureAwait(false);
             }
         }
 

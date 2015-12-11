@@ -56,13 +56,15 @@ namespace DiodeCompany.Metrono.Core.ViewModels
 
         private void OnMetronomeMessage (MetronomeMessage metronomeMessage)
         {
-            switch(metronomeMessage.MetronomeEvent)
+            switch (metronomeMessage.MetronomeEvent)
             {
                 case MetronomeEvent.BeatStarted:
-                    // Vibration
-                    if (_settings.Vibration)
                     {
-                        CrossVibrate.Current.Vibration ((int)(metronomeMessage.Beat.Duration / 3.0 * 1000));
+                        // Vibration
+                        if (_settings.Vibration)
+                        {
+                            CrossVibrate.Current.Vibration ((int)(metronomeMessage.Beat.Duration / 3.0 * 1000));
+                        }
                     }
                     break;
             }
