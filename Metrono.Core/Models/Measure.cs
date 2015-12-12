@@ -18,7 +18,7 @@ namespace DiodeCompany.Metrono.Core.Models
 
         public int MaxTempo
         {
-            get { return 300; }
+            get { return 250; }
         }
 
         private int _number;
