@@ -100,9 +100,7 @@ namespace DiodeCompany.Metrono.Core.Models
             {
                 // Play the current beat
                 var currentBeat = measure.BeatList [currentBeatIndex];
-                await PlayBeatAsync (measure, currentBeat)
-                    // It's a horrible trick... But I don't know how to do it other way
-                    .ContinueWith(x => GC.Collect ()).ConfigureAwait(false);
+                await PlayBeatAsync (measure, currentBeat).ConfigureAwait(false);
 
                 currentBeatIndex++;
                 if (currentBeatIndex >= measure.BeatList.Count && loop)
@@ -164,6 +162,12 @@ namespace DiodeCompany.Metrono.Core.Models
             beat.IsPlaying = false;
 
             _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatFinished, measure, beat));
+
+            // Run the GC on each beat to avoid an unwanted GC
+            // It's a horrible trick... But I don't know how to do it other way
+            #pragma warning disable 4014
+            Task.Run (() => GC.Collect ());
+            #pragma warning restore 4014
         }
 
         private byte[] GetBeatSound(Beat beat)
