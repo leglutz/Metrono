@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Android.Content;
-using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using DiodeCompany.Metrono.Core.Models;
@@ -88,8 +87,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Adapters
             view.LayoutParameters = new GridView.LayoutParams (size, size);
 
             // Initial values for card view
-            ((CardView)view).Alpha = 0.5f;
-            ((CardView)view).CardElevation = 0;
+            view.Alpha = 0.5f;
 
             return view;
         }
