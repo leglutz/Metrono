@@ -48,7 +48,6 @@ namespace DiodeCompany.Metrono.Core.Resources
             NoteImageSourceMap [4] = "Quarter";
             NoteImageSourceMap [8] = "Eighth";
             NoteImageSourceMap [16] = "Sixteenth";
-            NoteImageSourceMap [32] = "ThirtySecond";
         }
 
         private static void CreateClickSoundMap ()

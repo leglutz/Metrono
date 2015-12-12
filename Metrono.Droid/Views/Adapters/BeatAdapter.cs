@@ -61,9 +61,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Adapters
                 case 16:
                     imageResource = Resource.Drawable.sixteenth;
                     break;
-                case 32:
-                    imageResource = Resource.Drawable.thirty_second;
-                    break;
             }
             beatImageView.SetImageResource (imageResource);
 
