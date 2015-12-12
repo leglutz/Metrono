@@ -103,7 +103,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                         // Flash
                         if (_settings.Flash)
                         {
-                            _backgroundColorAnimator.End ();
                             _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, 0);
                             _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
                             _backgroundColorAnimator.Start ();
@@ -117,6 +116,12 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                         if (beatView != null)
                         {
                             beatView.Alpha = 0.5f;
+                        }
+
+                        // Flash
+                        if (_settings.Flash)
+                        {
+                            _backgroundColorAnimator.End ();
                         }
                     }
                     break;
