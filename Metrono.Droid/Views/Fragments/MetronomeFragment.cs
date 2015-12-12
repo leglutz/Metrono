@@ -1,6 +1,5 @@
 ﻿using Android.Animation;
 using Android.OS;
-using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Cirrious.CrossCore;
@@ -42,9 +41,9 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             HasOptionsMenu = true;
 
             // Beats layout background animation
-            var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
-            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator (), _settings.FlashColor, 0);
-            beatsLayout.SetOnTouchListener (this);
+            var beatslayout = view.FindViewById<View>(Resource.Id.beats_layout);
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatslayout, "backgroundColor", new ArgbEvaluator (), _settings.FlashColor, 0);
+            beatslayout.SetOnTouchListener (this);
 
             // GridView
             _gridView = view.FindViewById<GridView>(Resource.Id.grid_view);
@@ -95,16 +94,16 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 case MetronomeEvent.BeatStarted:
                     {
                         // Beat
-                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1) as CardView;
+                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
                         if (beatView != null)
                         {
                             beatView.Alpha = 1;
-                            beatView.CardElevation = 2;
                         }
 
                         // Flash
                         if (_settings.Flash)
                         {
+                            _backgroundColorAnimator.End ();
                             _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, 0);
                             _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
                             _backgroundColorAnimator.Start ();
@@ -114,11 +113,10 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 case MetronomeEvent.BeatFinished:
                     {
                         // Beat
-                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1) as CardView;
+                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
                         if (beatView != null)
                         {
                             beatView.Alpha = 0.5f;
-                            beatView.CardElevation = 0;
                         }
                     }
                     break;
