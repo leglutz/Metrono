@@ -13,19 +13,12 @@
     <!-- Spinner -->
     <dimen name="spinner_item_padding">@dimen/dimen_medium</dimen>
     <dimen name="spinner_drop_down_item_padding">10dp</dimen>
-
-    <!-- CardView -->
-    <dimen name="card_view_corner_radius">5dp</dimen>
-    <dimen name="card_view_elevation">5dp</dimen>
-
-    <!-- Spinner -->
     <dimen name="spinner_min_height">40dp</dimen>
     <dimen name="spinner_min_width">80dp</dimen>
 
     <!-- fragment_metronome -->
-    <dimen name="metronome_card_view_margin">@dimen/dimen_medium</dimen>
-    <dimen name="metronome_internal_margin">@dimen/dimen_medium</dimen>
-    <dimen name="metronome_internal_padding">@dimen/dimen_medium</dimen>
+    <dimen name="metronome_margin">@dimen/dimen_medium</dimen>
+    <dimen name="metronome_padding">@dimen/dimen_medium</dimen>
     <dimen name="metronome_grid_view_horizontal_spacing">@dimen/dimen_small</dimen>
     <dimen name="metronome_grid_view_vertical_spacing">@dimen/dimen_small</dimen>
 
@@ -35,19 +28,17 @@
 
     <!-- fragment_measure -->
     <dimen name="measure_padding">@dimen/dimen_medium</dimen>
-    <dimen name="measure_internal_padding">@dimen/dimen_medium</dimen>
     <dimen name="measure_tempo_button_margin">@dimen/dimen_small</dimen>
     <dimen name="measure_tempo_button_width">50dp</dimen>
     <dimen name="measure_tap_button_margin">@dimen/dimen_small</dimen>
 
     <!-- fragment_settings -->
-    <dimen name="settings_card_view_margin">@dimen/dimen_medium</dimen>
-    <dimen name="settings_internal_margin">@dimen/dimen_medium</dimen>
-    <dimen name="settings_internal_padding">@dimen/dimen_medium</dimen>
+    <dimen name="settings_margin">@dimen/dimen_medium</dimen>
+    <dimen name="settings_padding">@dimen/dimen_medium</dimen>
 
     <!-- fragment_dialog_color_picker -->
     <dimen name="dialog_color_picker_padding">@dimen/dimen_medium</dimen>
-    <dimen name="dialog_color_picker_panel_margin">@dimen/dimen_medium</dimen>
+    <dimen name="dialog_color_picker_margin">@dimen/dimen_medium</dimen>
     <dimen name="dialog_color_picker_panel_height">50dp</dimen>
 
 </resources>

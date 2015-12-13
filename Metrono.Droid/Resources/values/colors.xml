@@ -6,14 +6,11 @@
     <color name="color_primary_dark">#212121</color>
     <color name="color_accent">#78909C</color>
 
+    <!-- Global -->
+    <color name="background">#EEEEEE</color>
+
     <!-- Button -->
     <color name="button_start">#78909C</color>
     <color name="button_end">#546E7A</color>
-
-    <!-- CardView -->
-    <color name="card_view">#EEEEEE</color>
-
-    <!-- Dialog color picker -->
-    <color name="dialog_color_picker">#EEEEEE</color>
 
 </resources>

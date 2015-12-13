@@ -1,5 +1,6 @@
 ﻿using Android.Animation;
 using Android.OS;
+using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
 using Cirrious.CrossCore;
@@ -41,9 +42,9 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             HasOptionsMenu = true;
 
             // Beats layout background animation
-            var beatslayout = view.FindViewById<View>(Resource.Id.beats_layout);
-            _backgroundColorAnimator = ObjectAnimator.OfObject (beatslayout, "backgroundColor", new ArgbEvaluator (), _settings.FlashColor, 0);
-            beatslayout.SetOnTouchListener (this);
+            var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), _settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
+            beatsLayout.SetOnTouchListener (this);
 
             // GridView
             _gridView = view.FindViewById<GridView>(Resource.Id.grid_view);
@@ -102,8 +103,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
                         // Flash
                         if (_settings.Flash)
-                        {
-                            _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, 0);
+                        {   
+                            _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
                             _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
                             _backgroundColorAnimator.Start ();
                         }

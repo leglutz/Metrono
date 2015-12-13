@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/dialog_color_picker_padding"
     android:paddingRight="@dimen/dialog_color_picker_padding"
-    android:background="@color/dialog_color_picker"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/background">
     <Controls.ColorPicker.ColorPickerView
         android:id="@+id/color_picker_view"
         android:layout_width="wrap_content"
@@ -14,7 +14,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dialog_color_picker_panel_height"
-        android:layout_marginBottom="@dimen/dialog_color_picker_panel_margin"
+        android:layout_marginBottom="@dimen/dialog_color_picker_margin"
         android:orientation="horizontal">
         <Controls.ColorPicker.ColorPickerPanelView
             android:id="@+id/old_color_panel"
