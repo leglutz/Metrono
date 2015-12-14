@@ -11,8 +11,8 @@
     <string name="measure_tap">Tap</string>
 
     <!-- ToggleButton -->
-    <string name="toggle_button_off">Oui</string>
-    <string name="toggle_button_on">Non</string>
+    <string name="toggle_button_off">Non</string>
+    <string name="toggle_button_on">Oui</string>
 
     <!-- Settings -->
     <string name="settings">Paramètres</string>
