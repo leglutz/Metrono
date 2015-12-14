@@ -46,6 +46,9 @@ namespace DiodeCompany.Metrono.Core.Models
         {
             if (IsPaused || !IsPlaying)
             {
+                // Run the GC to clean everything
+                GC.Collect ();
+
                 _audioService.StartPlaying ();
 
                 IsPlaying = true;
@@ -71,6 +74,9 @@ namespace DiodeCompany.Metrono.Core.Models
         {
             if (IsPaused)
             {
+                // Run the GC to clean everything
+                GC.Collect ();
+
                 _audioService.StartPlaying ();
 
                 IsPlaying = true;
@@ -164,10 +170,7 @@ namespace DiodeCompany.Metrono.Core.Models
             _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatFinished, measure, beat));
 
             // Run the GC on each beat to avoid an unwanted GC
-            // It's a horrible trick... But I don't know how to do it other way
-            #pragma warning disable 4014
-            Task.Run (() => GC.Collect ());
-            #pragma warning restore 4014
+            GC.Collect (0);
         }
 
         private byte[] GetBeatSound(Beat beat)

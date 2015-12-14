@@ -43,8 +43,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
             // Beats layout background animation
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
-            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), _settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
             beatsLayout.SetOnTouchListener (this);
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), _settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
 
             // GridView
             _gridView = view.FindViewById<GridView>(Resource.Id.grid_view);
