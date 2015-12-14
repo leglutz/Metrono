@@ -12,6 +12,10 @@
     <!-- Measure -->
     <string name="measure_tap">Tap</string>
 
+    <!-- ToggleButton -->
+    <string name="toggle_button_off">No</string>
+    <string name="toggle_button_on">Yes</string>
+
     <!-- Settings -->
     <string name="settings">Settings</string>
     <string name="settings_general">General</string>

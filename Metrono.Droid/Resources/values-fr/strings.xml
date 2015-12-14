@@ -7,6 +7,13 @@
     <string name="metronome_touch_to_start">Toucher pour démarrer</string>
     <string name="metronome_touch_to_stop">Toucher pour arrêter</string>
 
+    <!-- Measure -->
+    <string name="measure_tap">Tap</string>
+
+    <!-- ToggleButton -->
+    <string name="toggle_button_off">Oui</string>
+    <string name="toggle_button_on">Non</string>
+
     <!-- Settings -->
     <string name="settings">Paramètres</string>
     <string name="settings_general">Général</string>

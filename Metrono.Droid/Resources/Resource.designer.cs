@@ -2424,32 +2424,32 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f07003f
 			public const int metronome_touch_to_stop = 2131165247;
 			
-			// aapt resource value: 0x7f070041
-			public const int settings = 2131165249;
+			// aapt resource value: 0x7f070043
+			public const int settings = 2131165251;
+			
+			// aapt resource value: 0x7f07004b
+			public const int settings_beat_compound = 2131165259;
 			
 			// aapt resource value: 0x7f070049
-			public const int settings_beat_compound = 2131165257;
+			public const int settings_beat_first = 2131165257;
 			
-			// aapt resource value: 0x7f070047
-			public const int settings_beat_first = 2131165255;
+			// aapt resource value: 0x7f07004a
+			public const int settings_beat_last = 2131165258;
 			
 			// aapt resource value: 0x7f070048
-			public const int settings_beat_last = 2131165256;
-			
-			// aapt resource value: 0x7f070046
-			public const int settings_beats_accentuation = 2131165254;
-			
-			// aapt resource value: 0x7f070043
-			public const int settings_click = 2131165251;
-			
-			// aapt resource value: 0x7f070044
-			public const int settings_flash = 2131165252;
-			
-			// aapt resource value: 0x7f070042
-			public const int settings_general = 2131165250;
+			public const int settings_beats_accentuation = 2131165256;
 			
 			// aapt resource value: 0x7f070045
-			public const int settings_vibration = 2131165253;
+			public const int settings_click = 2131165253;
+			
+			// aapt resource value: 0x7f070046
+			public const int settings_flash = 2131165254;
+			
+			// aapt resource value: 0x7f070044
+			public const int settings_general = 2131165252;
+			
+			// aapt resource value: 0x7f070047
+			public const int settings_vibration = 2131165255;
 			
 			// aapt resource value: 0x7f070039
 			public const int status_bar_notification_info_overflow = 2131165241;
@@ -2459,6 +2459,12 @@ namespace DiodeCompany.Metrono.Droid
 			
 			// aapt resource value: 0x7f070020
 			public const int store_picture_title = 2131165216;
+			
+			// aapt resource value: 0x7f070041
+			public const int toggle_button_off = 2131165249;
+			
+			// aapt resource value: 0x7f070042
+			public const int toggle_button_on = 2131165250;
 			
 			static String()
 			{
@@ -3412,14 +3418,17 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0a0139
 			public const int spinner_item = 2131362105;
 			
+			// aapt resource value: 0x7f0a013e
+			public const int text_large = 2131362110;
+			
 			// aapt resource value: 0x7f0a013d
-			public const int text_large = 2131362109;
+			public const int text_medium = 2131362109;
 			
 			// aapt resource value: 0x7f0a013c
-			public const int text_medium = 2131362108;
+			public const int text_small = 2131362108;
 			
 			// aapt resource value: 0x7f0a013b
-			public const int text_small = 2131362107;
+			public const int toggle_button = 2131362107;
 			
 			// aapt resource value: 0x7f0a0138
 			public const int toolbar_popup_theme = 2131362104;

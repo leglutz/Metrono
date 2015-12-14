@@ -59,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/settings_margin"
                     android:layout_gravity="center"
+                    style="@style/toggle_button"
                     local:MvxBind="Checked Settings.Flash" />
             </TableRow>
             <TableRow>
@@ -75,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/settings_margin"
                     android:layout_gravity="center"
+                    style="@style/toggle_button"
                     local:MvxBind="Checked Settings.Vibration" />
             </TableRow>
             <TableRow>
@@ -106,6 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/settings_margin"
                     android:layout_gravity="center"
+                    style="@style/toggle_button"
                     local:MvxBind="Checked Settings.AccentuateFirstBeat" />
             </TableRow>
             <TableRow>
@@ -126,6 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/settings_margin"
                     android:layout_gravity="center"
+                    style="@style/toggle_button"
                     local:MvxBind="Checked Settings.AccentuateLastBeat" />
             </TableRow>
             <TableRow>
@@ -146,6 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/settings_margin"
                     android:layout_gravity="center"
+                    style="@style/toggle_button"
                     local:MvxBind="Checked Settings.AccentuateCompoundBeats" />
             </TableRow>
         </TableLayout>

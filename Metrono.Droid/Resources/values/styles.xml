@@ -37,6 +37,12 @@
         <item name="android:padding">@dimen/spinner_drop_down_item_padding</item>
     </style>
 
+    <!-- ToggleButton -->
+    <style name="toggle_button" parent="android:Widget">
+        <item name="android:textOff">@string/toggle_button_off</item>
+        <item name="android:textOn">@string/toggle_button_on</item>
+    </style>
+
     <!-- Texts -->
     <style name="text_small">
         <item name="android:textSize">@dimen/text_size_small</item>
