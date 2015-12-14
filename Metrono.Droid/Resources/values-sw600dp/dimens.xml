@@ -14,7 +14,7 @@
 
     <!-- Spinner -->
     <dimen name="spinner_min_height">70dp</dimen>
-    <dimen name="spinner_min_width">110dp</dimen>
+    <dimen name="spinner_min_width">120dp</dimen>
 
     <!-- fragment_measure -->
     <dimen name="measure_tempo_button_width">80dp</dimen>
