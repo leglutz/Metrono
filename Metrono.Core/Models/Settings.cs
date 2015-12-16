@@ -40,16 +40,6 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        public ClickKind BeatClick
-        {
-            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.BeepLo); }
-            set 
-            { 
-                _settings.AddOrUpdateValue<ClickKind> ("BeatClick", value); 
-                RaisePropertyChanged (() => BeatClick);
-            }
-        }
-
         public bool Flash
         {
             get { return _settings.GetValue<bool>("Flash", true); }
@@ -80,13 +70,33 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        public bool AccentuateFirstBeat
+        public bool PlayClick
         {
-            get { return _settings.GetValue<bool>("AccentuateFirstBeat", true); }
+            get { return _settings.GetValue<bool>("PlayClick", true); }
             set 
             {
-                _settings.AddOrUpdateValue<bool> ("AccentuateFirstBeat", value); 
-                RaisePropertyChanged (() => AccentuateFirstBeat);
+                _settings.AddOrUpdateValue<bool> ("PlayClick", value); 
+                RaisePropertyChanged (() => PlayClick);
+            }
+        }
+
+        public ClickKind BeatClick
+        {
+            get { return _settings.GetValue<ClickKind>("BeatClick", ClickKind.BeepLo); }
+            set 
+            { 
+                _settings.AddOrUpdateValue<ClickKind> ("BeatClick", value); 
+                RaisePropertyChanged (() => BeatClick);
+            }
+        }
+
+        public bool PlayFirstBeat
+        {
+            get { return _settings.GetValue<bool>("PlayFirstBeat", true); }
+            set 
+            {
+                _settings.AddOrUpdateValue<bool> ("PlayFirstBeat", value); 
+                RaisePropertyChanged (() => PlayFirstBeat);
             }
         }
 
@@ -100,13 +110,13 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        public bool AccentuateLastBeat
+        public bool PlayLastBeat
         {
-            get { return _settings.GetValue<bool>("AccentuateLastBeat", false); }
+            get { return _settings.GetValue<bool>("PlayLastBeat", false); }
             set 
             {
-                _settings.AddOrUpdateValue<bool> ("AccentuateLastBeat", value); 
-                RaisePropertyChanged (() => AccentuateLastBeat);
+                _settings.AddOrUpdateValue<bool> ("PlayLastBeat", value); 
+                RaisePropertyChanged (() => PlayLastBeat);
             }
         }
 
@@ -120,23 +130,23 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        public bool AccentuateCompoundBeats
+        public bool PlayAccentedBeats
         {
-            get { return _settings.GetValue<bool>("AccentuateCompoundBeats", true); }
+            get { return _settings.GetValue<bool>("PlayAccentedBeats", true); }
             set 
             {
-                _settings.AddOrUpdateValue<bool> ("AccentuateCompoundBeats", value); 
-                RaisePropertyChanged (() => AccentuateCompoundBeats);
+                _settings.AddOrUpdateValue<bool> ("PlayAccentedBeats", value); 
+                RaisePropertyChanged (() => PlayAccentedBeats);
             }
         }
 
-        public ClickKind CompoundBeatClick
+        public ClickKind AccentedBeatClick
         {
-            get { return _settings.GetValue<ClickKind>("CompoundBeatClick", ClickKind.Bell); }
+            get { return _settings.GetValue<ClickKind>("AccentedBeatClick", ClickKind.Bell); }
             set 
             {
-                _settings.AddOrUpdateValue<ClickKind> ("CompoundBeatClick", value); 
-                RaisePropertyChanged (() => CompoundBeatClick);
+                _settings.AddOrUpdateValue<ClickKind> ("AccentedBeatClick", value); 
+                RaisePropertyChanged (() => AccentedBeatClick);
             }
         }
 

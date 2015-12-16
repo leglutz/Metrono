@@ -175,22 +175,27 @@ namespace DiodeCompany.Metrono.Core.Models
 
         private byte[] GetBeatSound(Beat beat)
         {
-            if (beat.IsFirst && _settings.AccentuateFirstBeat)
+            if (beat.Status != BeatStatus.Mutated)
             {
-                return ResourcesHelper.ClickSoundMap [_settings.FirstBeatClick];
+                if (beat.Status == BeatStatus.Accented && _settings.PlayAccentedBeats)
+                {
+                    return ResourcesHelper.ClickSoundMap [_settings.AccentedBeatClick];
+                }
+                else if (beat.Number == 1 && _settings.PlayFirstBeat)
+                {
+                    return ResourcesHelper.ClickSoundMap [_settings.FirstBeatClick];
+                }
+                else if (beat.Number == beat.TupletNumerator && _settings.PlayLastBeat)
+                {
+                    return ResourcesHelper.ClickSoundMap [_settings.LastBeatClick];
+                }
+                else if (_settings.PlayClick)
+                { 
+                    return ResourcesHelper.ClickSoundMap [_settings.BeatClick];
+                }
             }
-            else if (beat.IsLast && _settings.AccentuateLastBeat)
-            {
-                return ResourcesHelper.ClickSoundMap [_settings.LastBeatClick];
-            }
-            else if(beat.IsCompound && _settings.AccentuateCompoundBeats)
-            {
-                return ResourcesHelper.ClickSoundMap [_settings.CompoundBeatClick];
-            }
-            else
-            { 
-                return ResourcesHelper.ClickSoundMap [_settings.BeatClick];
-            }
+
+            return _defaultEmptyChunksArray;
         }
 
         private async Task PauseAysnc ()

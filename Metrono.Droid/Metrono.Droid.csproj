@@ -265,6 +265,16 @@
     <AndroidResource Include="Resources\values-sw480dp\dimens.xml" />
     <AndroidResource Include="Resources\values-sw600dp\dimens.xml" />
     <AndroidResource Include="Resources\values-sw360dp\dimens.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\mute.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\mute.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\mute.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\mute.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mute.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\accent.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\accent.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\accent.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\accent.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\accent.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />

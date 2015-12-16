@@ -138,13 +138,6 @@ namespace DiodeCompany.Metrono.Core.Models
             for (int i = 1; i <= TimeSignatureNumerator; i++)
             {
                 var beat = new Beat (i, TimeSignatureDenominator, Tempo);
-                beat.IsFirst = i == 1;
-                beat.IsLast = i == TimeSignatureNumerator;
-                // Compound meters
-                if(TimeSignatureNumerator > 4 && TimeSignatureNumerator % 3 == 0)
-                {
-                    beat.IsCompound = (i-1) % 3 == 0;
-                }
                 BeatList.Add (beat);
             }
         }

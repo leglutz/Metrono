@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/metronome_beat_item_padding"
@@ -19,4 +18,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:textAppearance="@style/text_small" />
+    <ImageView
+        android:id="@+id/beat_status_image_view"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY" />
 </RelativeLayout>

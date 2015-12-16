@@ -68,6 +68,21 @@ namespace DiodeCompany.Metrono.Droid.Views.Adapters
             var beatNumberTextView = view.FindViewById<TextView> (Resource.Id.beat_number_text_view);
             beatNumberTextView.Text = this [position].Number.ToString();
 
+            // Beat status
+            var beatStatusImageView = view.FindViewById<ImageView> (Resource.Id.beat_status_image_view);
+            switch(this[position].Status)
+            {
+                case BeatStatus.Accented:
+                    beatStatusImageView.SetImageResource (Resource.Drawable.accent);
+                    break;
+                case BeatStatus.Mutated:
+                    beatStatusImageView.SetImageResource (Resource.Drawable.mute);
+                    break;
+                case BeatStatus.Normal:
+                    beatStatusImageView.SetImageResource (0);
+                    break;
+            }
+
             // Layout size
             const double numberOfColumns = 5.0;
             const double numberOfRows = 4.0;
@@ -79,11 +94,11 @@ namespace DiodeCompany.Metrono.Droid.Views.Adapters
             var itemWidth = width / numberOfColumns - _gridView.HorizontalSpacing;
             var itemHeight = height / numberOfRows - _gridView.VerticalSpacing;
 
+            // Set the new size
             var size = (int)Math.Min (itemWidth, itemHeight);
-
             view.LayoutParameters = new GridView.LayoutParams (size, size);
 
-            // Initial values for card view
+            // Initial alpha values for card view
             view.Alpha = 0.5f;
 
             return view;

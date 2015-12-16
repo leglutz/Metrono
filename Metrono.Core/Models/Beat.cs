@@ -3,6 +3,13 @@ using Cirrious.MvvmCross.ViewModels;
 
 namespace DiodeCompany.Metrono.Core.Models
 {
+    public enum BeatStatus
+    {
+        Normal,
+        Accented,
+        Mutated
+    }
+
     public class Beat : MvxNotifyPropertyChanged
     {
         private int _number;
@@ -83,25 +90,11 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        private bool _isFirst;
-        public bool IsFirst
+        private BeatStatus _status;
+        public BeatStatus Status
         { 
-            get { return _isFirst; }
-            set { SetProperty (ref _isFirst, value); }
-        }
-
-        private bool _isLast;
-        public bool IsLast
-        { 
-            get { return _isLast; }
-            set { SetProperty (ref _isLast, value); }
-        }
-
-        private bool _isCompound;
-        public bool IsCompound
-        { 
-            get { return _isCompound; }
-            set { SetProperty (ref _isCompound, value); }
+            get { return _status; }
+            set { SetProperty (ref _status, value); }
         }
 
         private bool _isPlaying;
@@ -121,9 +114,7 @@ namespace DiodeCompany.Metrono.Core.Models
             _dots = 0;
             _tupletNumerator = 0;
             _tupletDenominator = 0;
-            _isFirst = false;
-            _isLast = false;
-            _isCompound = false;
+            _status = BeatStatus.Normal;
             _isPlaying = false;
 
             UpdateDuration ();

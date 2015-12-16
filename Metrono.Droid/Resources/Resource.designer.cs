@@ -1599,46 +1599,52 @@ namespace DiodeCompany.Metrono.Droid
 			public const int abc_textfield_search_material = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int background = 2130837573;
+			public const int accent = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int button = 2130837574;
+			public const int background = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int common_full_open_on_phone = 2130837575;
+			public const int button = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int common_ic_googleplayservices = 2130837576;
+			public const int common_full_open_on_phone = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int eighth = 2130837577;
+			public const int common_ic_googleplayservices = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int half = 2130837578;
+			public const int eighth = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int minus = 2130837579;
-			
-			// aapt resource value: 0x7f020052
-			public const int notification_template_icon_bg = 2130837586;
+			public const int half = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int plus = 2130837580;
+			public const int minus = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int quarter = 2130837581;
+			public const int mute = 2130837581;
+			
+			// aapt resource value: 0x7f020054
+			public const int notification_template_icon_bg = 2130837588;
 			
 			// aapt resource value: 0x7f02004e
-			public const int settings = 2130837582;
+			public const int plus = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int sixteenth = 2130837583;
+			public const int quarter = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int splash_screen = 2130837584;
+			public const int settings = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int whole = 2130837585;
+			public const int sixteenth = 2130837585;
+			
+			// aapt resource value: 0x7f020052
+			public const int splash_screen = 2130837586;
+			
+			// aapt resource value: 0x7f020053
+			public const int whole = 2130837587;
 			
 			static Drawable()
 			{
@@ -1727,6 +1733,9 @@ namespace DiodeCompany.Metrono.Droid
 			
 			// aapt resource value: 0x7f0d006d
 			public const int beat_number_text_view = 2131558509;
+			
+			// aapt resource value: 0x7f0d006e
+			public const int beat_status_image_view = 2131558510;
 			
 			// aapt resource value: 0x7f0d005b
 			public const int beats_layout = 2131558491;
@@ -1911,8 +1920,8 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0d0053
 			public const int select_dialog_listview = 2131558483;
 			
-			// aapt resource value: 0x7f0d006e
-			public const int settings_menu = 2131558510;
+			// aapt resource value: 0x7f0d006f
+			public const int settings_menu = 2131558511;
 			
 			// aapt resource value: 0x7f0d003e
 			public const int shortcut = 2131558462;
@@ -2428,7 +2437,7 @@ namespace DiodeCompany.Metrono.Droid
 			public const int settings = 2131165251;
 			
 			// aapt resource value: 0x7f07004b
-			public const int settings_beat_compound = 2131165259;
+			public const int settings_beat_accented = 2131165259;
 			
 			// aapt resource value: 0x7f070049
 			public const int settings_beat_first = 2131165257;
@@ -2437,19 +2446,19 @@ namespace DiodeCompany.Metrono.Droid
 			public const int settings_beat_last = 2131165258;
 			
 			// aapt resource value: 0x7f070048
-			public const int settings_beats_accentuation = 2131165256;
+			public const int settings_click = 2131165256;
 			
 			// aapt resource value: 0x7f070045
-			public const int settings_click = 2131165253;
-			
-			// aapt resource value: 0x7f070046
-			public const int settings_flash = 2131165254;
+			public const int settings_flash = 2131165253;
 			
 			// aapt resource value: 0x7f070044
 			public const int settings_general = 2131165252;
 			
 			// aapt resource value: 0x7f070047
-			public const int settings_vibration = 2131165255;
+			public const int settings_sounds = 2131165255;
+			
+			// aapt resource value: 0x7f070046
+			public const int settings_vibration = 2131165254;
 			
 			// aapt resource value: 0x7f070039
 			public const int status_bar_notification_info_overflow = 2131165241;
