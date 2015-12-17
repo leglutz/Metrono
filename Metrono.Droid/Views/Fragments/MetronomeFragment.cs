@@ -191,41 +191,35 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             {
                 case MetronomeEvent.BeatStarted:
                     {
-                        //if (!metronomeMessage.Beat.IsMuted)
+                        // Beat
+                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
+                        if (beatView != null)
                         {
-                            // Beat
-                            var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
-                            if (beatView != null)
-                            {
-                                beatView.Alpha = 1;
-                            }
+                            beatView.Alpha = 1;
+                        }
 
-                            // Flash
-                            if (_settings.Flash)
-                            {   
-                                _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, ContextCompat.GetColor (Context, Resource.Color.background));
-                                _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
-                                _backgroundColorAnimator.Start ();
-                            }
+                        // Flash
+                        if (_settings.Flash)
+                        {   
+                            _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, ContextCompat.GetColor (Context, Resource.Color.background));
+                            _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
+                            _backgroundColorAnimator.Start ();
                         }
                     }
                     break;
                 case MetronomeEvent.BeatFinished:
                     {
-                        //if (!metronomeMessage.Beat.IsMuted)
+                        // Beat
+                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
+                        if (beatView != null)
                         {
-                            // Beat
-                            var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
-                            if (beatView != null)
-                            {
-                                beatView.Alpha = 0.5f;
-                            }
+                            beatView.Alpha = 0.5f;
+                        }
 
-                            // Flash
-                            if (_settings.Flash)
-                            {
-                                _backgroundColorAnimator.End ();
-                            }
+                        // Flash
+                        if (_settings.Flash)
+                        {
+                            _backgroundColorAnimator.End ();
                         }
                     }
                     break;
