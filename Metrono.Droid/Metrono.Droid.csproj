@@ -154,6 +154,12 @@
     <Compile Include="Views\Adapters\BeatAdapter.cs" />
     <Compile Include="Helpers\GoogleAnalyticsHelper.cs" />
     <Compile Include="Helpers\XamarinInsightsHelper.cs" />
+    <Compile Include="Controls\CirclePageIndicator\IPageIndicator.cs" />
+    <Compile Include="Controls\CirclePageIndicator\ViewPageIndicatorEventHandlers.cs" />
+    <Compile Include="Controls\CirclePageIndicator\CirclePageIndicatorView.cs" />
+    <Compile Include="Views\Activities\ShowcaseActivity.cs" />
+    <Compile Include="Views\Adapters\ShowcaseFragmentAdapter.cs" />
+    <Compile Include="Views\Fragments\ShowcaseFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -191,6 +197,7 @@
     <Folder Include="Resources\values-sw480dp\" />
     <Folder Include="Resources\values-sw600dp\" />
     <Folder Include="Resources\values-sw360dp\" />
+    <Folder Include="Controls\CirclePageIndicator\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.3\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.3\build\MonoAndroid10\Xamarin.Insights.targets')" />
@@ -275,6 +282,10 @@
     <AndroidResource Include="Resources\drawable-xhdpi\accent.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\accent.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\accent.png" />
+    <AndroidResource Include="Resources\layout\activity_showcase.axml" />
+    <AndroidResource Include="Resources\drawable\showcase_measure.png" />
+    <AndroidResource Include="Resources\drawable\showcase_metronome.png" />
+    <AndroidResource Include="Resources\layout\fragment_showcase.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />

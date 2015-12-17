@@ -21,6 +21,13 @@
         <!-- You can also set colorControlNormal, colorControlActivated, colorControlHighlight and colorSwitchThumbNormal. -->
     </style>
 
+    <!-- Translucent  -->
+    <style name="MyTheme.Translucent" parent="android:style/Theme.Translucent">
+        <item name="windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.8</item>
+    </style>  
+
     <!--- Toolbar -->
     <style name="toolbar_theme" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="toolbar_popup_theme" parent="ThemeOverlay.AppCompat.Light" />
