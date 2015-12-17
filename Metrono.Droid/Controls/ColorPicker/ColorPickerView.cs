@@ -29,7 +29,6 @@ namespace DiodeCompany.Metrono.Droid.Controls.ColorPicker
 {
     public class ColorPickerView : View
     {
-        #region Fields
         public event ColorChangedEventHandler ColorChanged;
 
         private const int PanelSatVal = 0;
@@ -118,9 +117,6 @@ namespace DiodeCompany.Metrono.Droid.Controls.ColorPicker
         private AlphaPatternDrawable _alphaPattern;
 
         private Point _startTouchPoint;
-        #endregion
-
-        #region Props
 
         public Color BorderColor
         {
@@ -203,9 +199,6 @@ namespace DiodeCompany.Metrono.Droid.Controls.ColorPicker
         }
 
         public float DrawingOffset { get; private set; }
-
-        #endregion
-
 
         protected ColorPickerView(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {
