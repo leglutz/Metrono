@@ -5,7 +5,7 @@
             <solid
                 android:color="@color/button_start" />
             <corners
-                android:radius="5dp" />
+                android:radius="@dimen/button_radius" />
         </shape>
     </item>
     <item>
@@ -15,7 +15,7 @@
                 android:endColor="@color/button_end"
                 android:angle="270" />
             <corners
-                android:radius="5dp" />
+                android:radius="@dimen/button_radius" />
         </shape>
     </item>
 </selector>

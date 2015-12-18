@@ -25,8 +25,8 @@
                 android:stretchMode="columnWidth"
                 android:numColumns="5"
                 android:gravity="center"
-                android:horizontalSpacing="@dimen/metronome_grid_view_horizontal_spacing"
-                android:verticalSpacing="@dimen/metronome_grid_view_vertical_spacing" />
+                android:horizontalSpacing="@dimen/metronome_grid_horizontal_spacing"
+                android:verticalSpacing="@dimen/metronome_grid_vertical_spacing" />
         </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"

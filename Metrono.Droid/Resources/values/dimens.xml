@@ -10,21 +10,32 @@
     <dimen name="dimen_small">2dp</dimen>
     <dimen name="dimen_medium">3dp</dimen>
 
+    <!-- Button -->
+    <dimen name="button_radius">5dp</dimen>
+
     <!-- Spinner -->
     <dimen name="spinner_item_padding">@dimen/dimen_medium</dimen>
     <dimen name="spinner_drop_down_item_padding">10dp</dimen>
     <dimen name="spinner_min_height">40dp</dimen>
     <dimen name="spinner_min_width">90dp</dimen>
 
+    <!-- activity_showcase -->
+    <dimen name="activity_showcase_circle_page_indicator_padding">10dp</dimen>
+
+    <!-- fragment_showcase -->
+    <dimen name="fragment_showcase_button_margin">50dp</dimen>
+
     <!-- fragment_metronome -->
     <dimen name="metronome_margin">@dimen/dimen_medium</dimen>
     <dimen name="metronome_padding">@dimen/dimen_medium</dimen>
-    <dimen name="metronome_grid_view_horizontal_spacing">@dimen/dimen_small</dimen>
-    <dimen name="metronome_grid_view_vertical_spacing">@dimen/dimen_small</dimen>
+    <dimen name="metronome_grid_horizontal_spacing">@dimen/dimen_small</dimen>
+    <dimen name="metronome_grid_vertical_spacing">@dimen/dimen_small</dimen>
 
     <!-- template_metronome_beat_item -->
     <dimen name="metronome_beat_item_padding">@dimen/dimen_small</dimen>
     <dimen name="metronome_beat_item_image_margin_left">@dimen/dimen_medium</dimen>
+    <dimen name="metronome_beat_item_image_width">15dp</dimen>
+    <dimen name="metronome_beat_item_image_height">15dp</dimen>
 
     <!-- fragment_measure -->
     <dimen name="measure_padding">@dimen/dimen_medium</dimen>

@@ -20,8 +20,8 @@
         android:textAppearance="@style/text_small" />
     <ImageView
         android:id="@+id/beat_status_image_view"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="@dimen/metronome_beat_item_image_width"
+        android:layout_height="@dimen/metronome_beat_item_image_height"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:scaleType="fitXY" />
