@@ -1,5 +1,7 @@
 ﻿using System;
 using Cheesebaron.MvxPlugins.Settings.Interfaces;
+using Cirrious.CrossCore;
+using Cirrious.CrossCore.Platform;
 using Cirrious.CrossCore.UI;
 using Cirrious.MvvmCross.ViewModels;
 using DiodeCompany.Metrono.Core.Resources;
@@ -20,36 +22,28 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        public int LastTempo
+        public Measure LastMeasure
         {
-            get { return _settings.GetValue<int>("LastTempo", 120); }
+            get 
+            {
+                var jsonMeasure = _settings.GetValue<string>("LastMeasure", null); 
+                if (!string.IsNullOrEmpty (jsonMeasure))
+                {
+                    var json = Mvx.Resolve<IMvxJsonConverter> ();
+                    return json.DeserializeObject<Measure> (jsonMeasure);
+                }
+
+                return new Measure ();
+            }
             set 
             { 
-                _settings.AddOrUpdateValue<int> ("LastTempo", value); 
-                RaisePropertyChanged (() => LastTempo);
+                var json = Mvx.Resolve<IMvxJsonConverter> ();
+                var jsonMeasure = json.SerializeObject (value);
+                _settings.AddOrUpdateValue<string> ("LastMeasure", jsonMeasure); 
+                RaisePropertyChanged (() => LastMeasure);
             }
         }
-
-        public int LastTimeSignatureNumerator
-        {
-            get { return _settings.GetValue<int>("LastTimeSignatureNumerator", 4); }
-            set 
-            { 
-                _settings.AddOrUpdateValue<int> ("LastTimeSignatureNumerator", value); 
-                RaisePropertyChanged (() => LastTimeSignatureNumerator);
-            }
-        }
-
-        public int LastTimeSignatureDenominator
-        {
-            get { return _settings.GetValue<int>("LastTimeSignatureDenominator", 4); }
-            set 
-            { 
-                _settings.AddOrUpdateValue<int> ("LastTimeSignatureDenominator", value); 
-                RaisePropertyChanged (() => LastTimeSignatureDenominator);
-            }
-        }
-
+            
         public bool Flash
         {
             get { return _settings.GetValue<bool>("Flash", true); }
