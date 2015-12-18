@@ -8,6 +8,7 @@ using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Services;
 using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Controls.ColorPicker;
+using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Activities;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
@@ -39,12 +40,14 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 colorPickerDialogFragment.Show(FragmentManager, null);
             };
 
+            GoogleAnalyticsHelper.Instance.TrackPage("Settings");
+
             return view;
         }
 
         public override void OnPrepareOptionsMenu (IMenu menu)
         {
-            menu.FindItem (Resource.Id.settings_menu).SetVisible(false);
+            menu.FindItem (Resource.Id.menu_settings).SetVisible(false);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (true);
             ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.settings);
 

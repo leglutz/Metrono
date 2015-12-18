@@ -69,7 +69,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             // Keep the screen always on
             Window.AddFlags (WindowManagerFlags.KeepScreenOn);
 
-            // We are on main page
             GoogleAnalyticsHelper.Instance.TrackPage("Main");
         }
 
@@ -84,14 +83,17 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
         {
             switch(item.ItemId)
             {
-                case Resource.Id.settings_menu:
+                case Resource.Id.menu_settings:
                     // Settings fragment
                     SupportFragmentManager.BeginTransaction ()
                         .SetCustomAnimations(Resource.Animation.abc_slide_in_bottom, 0, 0, Resource.Animation.abc_slide_out_bottom)
                         .Add (Resource.Id.content_frame, _settingsFragment)
                         .AddToBackStack(null)
                         .Commit ();
-                    GoogleAnalyticsHelper.Instance.TrackPage("Settings");
+                    break;
+                case Resource.Id.menu_tutorial:
+                    // Tutorial activity
+                    ViewModel.TutorialCommand.Execute();
                     break;
                 case Android.Resource.Id.Home:
                     // Metronome fragment

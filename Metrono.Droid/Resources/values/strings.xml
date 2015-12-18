@@ -5,6 +5,10 @@
     <string name="app_name">Metrono</string>
     <string name="ad_unit_id">ca-app-pub-7359993483718540/3636403715</string>
 
+    <!-- Menu -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_tutorial">Tutorial</string>
+
     <!-- Metronome -->
     <string name="metronome_touch_to_start">Touch to start</string>
     <string name="metronome_touch_to_stop">Touch to stop</string>

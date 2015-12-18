@@ -178,7 +178,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
         public override void OnPrepareOptionsMenu (IMenu menu)
         {
-            menu.FindItem (Resource.Id.settings_menu).SetVisible(true);
+            menu.FindItem (Resource.Id.menu_settings).SetVisible(true);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (false);
             ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.app_name);
 

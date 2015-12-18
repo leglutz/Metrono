@@ -2,8 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:local="http://schemas.android.com/apk/res-auto">
     <item 
-        android:id="@+id/settings_menu"
+        android:id="@+id/menu_settings"
         android:icon="@drawable/settings"
-        android:title="Settings"
+        android:title="@string/menu_settings"
         local:showAsAction="always" />
+     <item 
+        android:id="@+id/menu_tutorial"
+        android:icon="@drawable/settings"
+        android:title="@string/menu_tutorial"
+        local:showAsAction="never" />
 </menu>

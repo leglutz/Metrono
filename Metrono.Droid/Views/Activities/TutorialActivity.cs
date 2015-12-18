@@ -5,6 +5,7 @@ using Android.Support.V4.View;
 using Cirrious.MvvmCross.Droid.Support.Fragging;
 using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator;
+using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Adapters;
 
 namespace DiodeCompany.Metrono.Droid.Activities
@@ -25,6 +26,8 @@ namespace DiodeCompany.Metrono.Droid.Activities
             // Indicator
             var indicator = FindViewById<CirclePageIndicatorView>(Resource.Id.indicator);
             indicator.SetViewPager(pager);
+
+            GoogleAnalyticsHelper.Instance.TrackPage("Tutorial");
         }
 	}
 }
