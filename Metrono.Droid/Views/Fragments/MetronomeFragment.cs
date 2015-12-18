@@ -78,8 +78,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
         public bool OnFling (MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
         {
-            const int SwipeThreshold = 100;
-            const int SwipeVelocityThreshold = 100;
+            const int SwipeThreshold = 50;
+            const int SwipeVelocityThreshold = 50;
 
             var diffY = e2.GetY() - e1.GetY();
             var diffX = e2.GetX() - e1.GetX();
