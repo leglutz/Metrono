@@ -23,8 +23,8 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
-    <!-- Showcase  -->
-    <style name="showcase_theme" parent="android:style/Theme.Translucent.NoTitleBar">
+    <!-- Tutorial  -->
+    <style name="tutorial_theme" parent="android:style/Theme.Translucent.NoTitleBar">
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:backgroundDimAmount">0.8</item>
     </style>  
