@@ -45,7 +45,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
-            var view = this.BindingInflate (Resource.Layout.fragment_showcase, null);
+            var view = this.BindingInflate (Resource.Layout.fragment_tutorial, null);
 
             // ImageView
             var imageView = view.FindViewById<ImageView> (Resource.Id.tutorial_image_view);

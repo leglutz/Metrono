@@ -1283,7 +1283,7 @@ namespace DiodeCompany.Metrono.Droid
 			public const int abc_text_size_title_material_toolbar = 2131492868;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int activity_showcase_circle_page_indicator_padding = 2131492949;
+			public const int activity_tutorial_circle_page_indicator_padding = 2131492949;
 			
 			// aapt resource value: 0x7f0c0050
 			public const int button_radius = 2131492944;
@@ -1310,7 +1310,7 @@ namespace DiodeCompany.Metrono.Droid
 			public const int disabled_alpha_material_light = 2131492932;
 			
 			// aapt resource value: 0x7f0c0056
-			public const int fragment_showcase_button_margin = 2131492950;
+			public const int fragment_tutorial_button_margin = 2131492950;
 			
 			// aapt resource value: 0x7f0c0045
 			public const int highlight_alpha_material_colored = 2131492933;
@@ -1962,12 +1962,6 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0d0015
 			public const int showTitle = 2131558421;
 			
-			// aapt resource value: 0x7f0d0062
-			public const int showcase_button = 2131558498;
-			
-			// aapt resource value: 0x7f0d0061
-			public const int showcase_image_view = 2131558497;
-			
 			// aapt resource value: 0x7f0d0030
 			public const int spacer = 2131558448;
 			
@@ -2015,6 +2009,12 @@ namespace DiodeCompany.Metrono.Droid
 			
 			// aapt resource value: 0x7f0d0032
 			public const int topPanel = 2131558450;
+			
+			// aapt resource value: 0x7f0d0062
+			public const int tutorial_button = 2131558498;
+			
+			// aapt resource value: 0x7f0d0061
+			public const int tutorial_image_view = 2131558497;
 			
 			// aapt resource value: 0x7f0d0008
 			public const int up = 2131558408;
@@ -2151,10 +2151,10 @@ namespace DiodeCompany.Metrono.Droid
 			public const int activity_main = 2130968601;
 			
 			// aapt resource value: 0x7f04001a
-			public const int activity_showcase = 2130968602;
+			public const int activity_splash_screen = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int activity_splash_screen = 2130968603;
+			public const int activity_tutorial = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
 			public const int fragment_dialog_color_picker = 2130968604;
@@ -2169,7 +2169,7 @@ namespace DiodeCompany.Metrono.Droid
 			public const int fragment_settings = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int fragment_showcase = 2130968608;
+			public const int fragment_tutorial = 2130968608;
 			
 			// aapt resource value: 0x7f040021
 			public const int notification_media_action = 2130968609;
@@ -3457,9 +3457,6 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0a0134
 			public const int main_theme = 2131362100;
 			
-			// aapt resource value: 0x7f0a0137
-			public const int showcase_theme = 2131362103;
-			
 			// aapt resource value: 0x7f0a013b
 			public const int spinner_drop_down_item = 2131362107;
 			
@@ -3486,6 +3483,9 @@ namespace DiodeCompany.Metrono.Droid
 			
 			// aapt resource value: 0x7f0a0138
 			public const int toolbar_theme = 2131362104;
+			
+			// aapt resource value: 0x7f0a0137
+			public const int tutorial_theme = 2131362103;
 			
 			static Style()
 			{

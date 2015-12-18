@@ -15,7 +15,7 @@ namespace DiodeCompany.Metrono.Core
         {
             ShowViewModel<MainViewModel>();
 
-            // If first launch, display the showcase
+            // If first launch, display the tutorial
             var settings = Mvx.Resolve<ISettingsService> ().Settings;
             if(settings.FirstLaunch)
             {

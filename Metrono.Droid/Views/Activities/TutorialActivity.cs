@@ -16,11 +16,11 @@ namespace DiodeCompany.Metrono.Droid.Activities
         {
             base.OnCreate (bundle);
 
-            SetContentView (Resource.Layout.activity_showcase);
+            SetContentView (Resource.Layout.activity_tutorial);
 
             // Pager
             var pager = FindViewById<ViewPager>(Resource.Id.pager);
-            pager.Adapter = new ShowcaseFragmentAdapter(SupportFragmentManager);
+            pager.Adapter = new TutorialFragmentAdapter(SupportFragmentManager);
 
             // Indicator
             var indicator = FindViewById<CirclePageIndicatorView>(Resource.Id.indicator);
