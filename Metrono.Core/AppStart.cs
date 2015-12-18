@@ -1,4 +1,6 @@
-﻿using Cirrious.MvvmCross.ViewModels;
+﻿using Cirrious.CrossCore;
+using Cirrious.MvvmCross.ViewModels;
+using DiodeCompany.Metrono.Core.Services;
 using DiodeCompany.Metrono.Core.ViewModels;
 
 namespace DiodeCompany.Metrono.Core
@@ -12,6 +14,14 @@ namespace DiodeCompany.Metrono.Core
         public void Start(object hint = null)
         {
             ShowViewModel<MainViewModel>();
+
+            // If first launch, display the showcase
+            var settings = Mvx.Resolve<ISettingsService> ().Settings;
+            if(settings.FirstLaunch)
+            {
+                ShowViewModel<ShowcaseViewModel> ();
+                settings.FirstLaunch = false;
+            }
         }
     }
 }

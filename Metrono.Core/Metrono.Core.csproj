@@ -51,6 +51,7 @@
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Messages\LifeCycleMessage.cs" />
     <Compile Include="Messages\MetronomeMessage.cs" />
+    <Compile Include="ViewModels\ShowcaseViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

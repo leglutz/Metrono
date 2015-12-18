@@ -3,13 +3,14 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Support.V4.View;
 using Cirrious.MvvmCross.Droid.Support.Fragging;
+using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator;
 using DiodeCompany.Metrono.Droid.Views.Adapters;
 
 namespace DiodeCompany.Metrono.Droid.Activities
 {
     [Activity (Theme = "@style/showcase_theme")]
-    public class ShowcaseActivity : MvxFragmentActivity
+    public class ShowcaseActivity : MvxFragmentActivity<ShowcaseViewModel>
 	{
         protected override void OnCreate (Bundle bundle)
         {
