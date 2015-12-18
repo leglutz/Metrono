@@ -191,7 +191,6 @@
     <Folder Include="Resources\mipmap-xhdpi\" />
     <Folder Include="Resources\mipmap-xxhdpi\" />
     <Folder Include="Resources\mipmap-xxxhdpi\" />
-    <Folder Include="Resources\values-v21\" />
     <Folder Include="Resources\values-fr\" />
     <Folder Include="Views\Adapters\" />
     <Folder Include="Helpers\" />
@@ -269,7 +268,6 @@
     <AndroidResource Include="Resources\layout\template_measure_item.axml" />
     <AndroidResource Include="Resources\layout\template_measure_drop_down_item.axml" />
     <AndroidResource Include="Resources\drawable\button.xml" />
-    <AndroidResource Include="Resources\values-v21\styles.xml" />
     <AndroidResource Include="Resources\values-fr\strings.xml" />
     <AndroidResource Include="Resources\values-sw480dp\dimens.xml" />
     <AndroidResource Include="Resources\values-sw600dp\dimens.xml" />
