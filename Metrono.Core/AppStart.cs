@@ -19,7 +19,7 @@ namespace DiodeCompany.Metrono.Core
             var settings = Mvx.Resolve<ISettingsService> ().Settings;
             if(settings.FirstLaunch)
             {
-                ShowViewModel<ShowcaseViewModel> ();
+                ShowViewModel<TutorialViewModel> ();
                 settings.FirstLaunch = false;
             }
         }
