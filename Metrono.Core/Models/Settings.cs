@@ -10,6 +10,16 @@ namespace DiodeCompany.Metrono.Core.Models
     {
         private readonly ISettings _settings;
 
+        public bool FirstLaunch
+        {
+            get { return _settings.GetValue<bool>("FirstLaunch", true); }
+            set 
+            { 
+                _settings.AddOrUpdateValue<bool> ("FirstLaunch", value); 
+                RaisePropertyChanged (() => FirstLaunch);
+            }
+        }
+
         public int LastTempo
         {
             get { return _settings.GetValue<int>("LastTempo", 120); }
