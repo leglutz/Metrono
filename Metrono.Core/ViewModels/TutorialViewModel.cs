@@ -1,8 +1,8 @@
 ﻿namespace DiodeCompany.Metrono.Core.ViewModels
 {
-    public class ShowcaseViewModel : ViewModelBase
+    public class TutorialViewModel : ViewModelBase
     {
-        public ShowcaseViewModel ()
+        public TutorialViewModel ()
         {
         }
     }
