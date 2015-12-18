@@ -6,17 +6,17 @@ using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
-    public class ShowcaseFragment : MvxFragment
+    public class TutorialFragment : MvxFragment
     {
-        private const string KeyImageResource = "ShowcaseFragment:ImageResource";
-        private const string KeyIsLast = "ShowcaseFragment:IsLast";
+        private const string KeyImageResource = "TutorialFragment:ImageResource";
+        private const string KeyIsLast = "TutorialFragment:IsLast";
 
         private int _imageResource;
         private bool _isLast;
 
-        public static ShowcaseFragment NewInstance(int imageResource, bool isLast)
+        public static TutorialFragment NewInstance(int imageResource, bool isLast)
         {
-            var fragment = new ShowcaseFragment();
+            var fragment = new TutorialFragment();
 
             fragment._imageResource = imageResource;
             fragment._isLast= isLast;
@@ -48,11 +48,11 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             var view = this.BindingInflate (Resource.Layout.fragment_showcase, null);
 
             // ImageView
-            var imageView = view.FindViewById<ImageView> (Resource.Id.showcase_image_view);
+            var imageView = view.FindViewById<ImageView> (Resource.Id.tutorial_image_view);
             imageView.SetImageResource (_imageResource);
 
             // Button
-            var button = view.FindViewById<Button> (Resource.Id.showcase_button);
+            var button = view.FindViewById<Button> (Resource.Id.tutorial_button);
             button.Visibility = _isLast ? ViewStates.Visible : ViewStates.Gone;
 
             return view;
