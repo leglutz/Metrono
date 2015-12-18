@@ -876,32 +876,32 @@ namespace DiodeCompany.Metrono.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f080050
-			public const int abc_background_cache_hint_selector_material_dark = 2131230800;
-			
 			// aapt resource value: 0x7f080051
-			public const int abc_background_cache_hint_selector_material_light = 2131230801;
+			public const int abc_background_cache_hint_selector_material_dark = 2131230801;
 			
 			// aapt resource value: 0x7f080052
-			public const int abc_color_highlight_material = 2131230802;
+			public const int abc_background_cache_hint_selector_material_light = 2131230802;
+			
+			// aapt resource value: 0x7f080053
+			public const int abc_color_highlight_material = 2131230803;
 			
 			// aapt resource value: 0x7f08000a
 			public const int abc_input_method_navigation_guard = 2131230730;
 			
-			// aapt resource value: 0x7f080053
-			public const int abc_primary_text_disable_only_material_dark = 2131230803;
-			
 			// aapt resource value: 0x7f080054
-			public const int abc_primary_text_disable_only_material_light = 2131230804;
+			public const int abc_primary_text_disable_only_material_dark = 2131230804;
 			
 			// aapt resource value: 0x7f080055
-			public const int abc_primary_text_material_dark = 2131230805;
+			public const int abc_primary_text_disable_only_material_light = 2131230805;
 			
 			// aapt resource value: 0x7f080056
-			public const int abc_primary_text_material_light = 2131230806;
+			public const int abc_primary_text_material_dark = 2131230806;
 			
 			// aapt resource value: 0x7f080057
-			public const int abc_search_url_text = 2131230807;
+			public const int abc_primary_text_material_light = 2131230807;
+			
+			// aapt resource value: 0x7f080058
+			public const int abc_search_url_text = 2131230808;
 			
 			// aapt resource value: 0x7f08000b
 			public const int abc_search_url_text_normal = 2131230731;
@@ -912,11 +912,11 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f08000d
 			public const int abc_search_url_text_selected = 2131230733;
 			
-			// aapt resource value: 0x7f080058
-			public const int abc_secondary_text_material_dark = 2131230808;
-			
 			// aapt resource value: 0x7f080059
-			public const int abc_secondary_text_material_light = 2131230809;
+			public const int abc_secondary_text_material_dark = 2131230809;
+			
+			// aapt resource value: 0x7f08005a
+			public const int abc_secondary_text_material_light = 2131230810;
 			
 			// aapt resource value: 0x7f08000e
 			public const int accent_material_dark = 2131230734;
@@ -1008,29 +1008,29 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f080005
 			public const int common_signin_btn_light_text_pressed = 2131230725;
 			
-			// aapt resource value: 0x7f08005a
-			public const int common_signin_btn_text_dark = 2131230810;
-			
 			// aapt resource value: 0x7f08005b
-			public const int common_signin_btn_text_light = 2131230811;
+			public const int common_signin_btn_text_dark = 2131230811;
 			
-			// aapt resource value: 0x7f08004a
-			public const int default_circle_indicator_fill_color = 2131230794;
+			// aapt resource value: 0x7f08005c
+			public const int common_signin_btn_text_light = 2131230812;
 			
 			// aapt resource value: 0x7f08004b
-			public const int default_circle_indicator_page_color = 2131230795;
+			public const int default_circle_indicator_fill_color = 2131230795;
 			
 			// aapt resource value: 0x7f08004c
-			public const int default_circle_indicator_stroke_color = 2131230796;
+			public const int default_circle_indicator_page_color = 2131230796;
 			
 			// aapt resource value: 0x7f08004d
-			public const int default_title_indicator_footer_color = 2131230797;
+			public const int default_circle_indicator_stroke_color = 2131230797;
 			
 			// aapt resource value: 0x7f08004e
-			public const int default_title_indicator_selected_color = 2131230798;
+			public const int default_title_indicator_footer_color = 2131230798;
 			
 			// aapt resource value: 0x7f08004f
-			public const int default_title_indicator_text_color = 2131230799;
+			public const int default_title_indicator_selected_color = 2131230799;
+			
+			// aapt resource value: 0x7f080050
+			public const int default_title_indicator_text_color = 2131230800;
 			
 			// aapt resource value: 0x7f08001c
 			public const int dim_foreground_disabled_material_dark = 2131230748;
@@ -1146,17 +1146,20 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f080041
 			public const int switch_thumb_disabled_material_light = 2131230785;
 			
-			// aapt resource value: 0x7f08005c
-			public const int switch_thumb_material_dark = 2131230812;
-			
 			// aapt resource value: 0x7f08005d
-			public const int switch_thumb_material_light = 2131230813;
+			public const int switch_thumb_material_dark = 2131230813;
+			
+			// aapt resource value: 0x7f08005e
+			public const int switch_thumb_material_light = 2131230814;
 			
 			// aapt resource value: 0x7f080042
 			public const int switch_thumb_normal_material_dark = 2131230786;
 			
 			// aapt resource value: 0x7f080043
 			public const int switch_thumb_normal_material_light = 2131230787;
+			
+			// aapt resource value: 0x7f08004a
+			public const int tutorial = 2131230794;
 			
 			static Color()
 			{
@@ -1373,7 +1376,7 @@ namespace DiodeCompany.Metrono.Droid
 			public const int abc_text_size_title_material_toolbar = 2131492868;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int activity_tutorial_title_page_indicator_margin_top = 2131492949;
+			public const int activity_tutorial_title_page_indicator_padding_top = 2131492949;
 			
 			// aapt resource value: 0x7f0c0050
 			public const int button_radius = 2131492944;
@@ -1965,8 +1968,8 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0d002e
 			public const int image = 2131558446;
 			
-			// aapt resource value: 0x7f0d005b
-			public const int indicator = 2131558491;
+			// aapt resource value: 0x7f0d005c
+			public const int indicator = 2131558492;
 			
 			// aapt resource value: 0x7f0d0072
 			public const int info = 2131558514;
@@ -2016,8 +2019,8 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0d005e
 			public const int old_color_panel = 2131558494;
 			
-			// aapt resource value: 0x7f0d005c
-			public const int pager = 2131558492;
+			// aapt resource value: 0x7f0d005b
+			public const int pager = 2131558491;
 			
 			// aapt resource value: 0x7f0d0035
 			public const int parentPanel = 2131558453;
@@ -2146,7 +2149,7 @@ namespace DiodeCompany.Metrono.Droid
 			public const int triangle = 2131558437;
 			
 			// aapt resource value: 0x7f0d0066
-			public const int tutorial_button = 2131558502;
+			public const int tutorial_button_ok = 2131558502;
 			
 			// aapt resource value: 0x7f0d0065
 			public const int tutorial_image_view = 2131558501;
@@ -2610,8 +2613,8 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f070023
 			public const int decline = 2131165219;
 			
-			// aapt resource value: 0x7f070043
-			public const int measure_tap = 2131165251;
+			// aapt resource value: 0x7f070044
+			public const int measure_tap = 2131165252;
 			
 			// aapt resource value: 0x7f07003e
 			public const int menu_settings = 2131165246;
@@ -2619,38 +2622,38 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f07003f
 			public const int menu_tutorial = 2131165247;
 			
-			// aapt resource value: 0x7f070041
-			public const int metronome_touch_to_start = 2131165249;
-			
 			// aapt resource value: 0x7f070042
-			public const int metronome_touch_to_stop = 2131165250;
+			public const int metronome_touch_to_start = 2131165250;
 			
-			// aapt resource value: 0x7f070046
-			public const int settings = 2131165254;
-			
-			// aapt resource value: 0x7f07004e
-			public const int settings_beat_accented = 2131165262;
-			
-			// aapt resource value: 0x7f07004c
-			public const int settings_beat_first = 2131165260;
-			
-			// aapt resource value: 0x7f07004d
-			public const int settings_beat_last = 2131165261;
-			
-			// aapt resource value: 0x7f07004b
-			public const int settings_click = 2131165259;
-			
-			// aapt resource value: 0x7f070048
-			public const int settings_flash = 2131165256;
+			// aapt resource value: 0x7f070043
+			public const int metronome_touch_to_stop = 2131165251;
 			
 			// aapt resource value: 0x7f070047
-			public const int settings_general = 2131165255;
+			public const int settings = 2131165255;
 			
-			// aapt resource value: 0x7f07004a
-			public const int settings_sounds = 2131165258;
+			// aapt resource value: 0x7f07004f
+			public const int settings_beat_accented = 2131165263;
+			
+			// aapt resource value: 0x7f07004d
+			public const int settings_beat_first = 2131165261;
+			
+			// aapt resource value: 0x7f07004e
+			public const int settings_beat_last = 2131165262;
+			
+			// aapt resource value: 0x7f07004c
+			public const int settings_click = 2131165260;
 			
 			// aapt resource value: 0x7f070049
-			public const int settings_vibration = 2131165257;
+			public const int settings_flash = 2131165257;
+			
+			// aapt resource value: 0x7f070048
+			public const int settings_general = 2131165256;
+			
+			// aapt resource value: 0x7f07004b
+			public const int settings_sounds = 2131165259;
+			
+			// aapt resource value: 0x7f07004a
+			public const int settings_vibration = 2131165258;
 			
 			// aapt resource value: 0x7f070039
 			public const int status_bar_notification_info_overflow = 2131165241;
@@ -2661,14 +2664,17 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f070020
 			public const int store_picture_title = 2131165216;
 			
-			// aapt resource value: 0x7f070044
-			public const int toggle_button_off = 2131165252;
-			
 			// aapt resource value: 0x7f070045
-			public const int toggle_button_on = 2131165253;
+			public const int toggle_button_off = 2131165253;
+			
+			// aapt resource value: 0x7f070046
+			public const int toggle_button_on = 2131165254;
 			
 			// aapt resource value: 0x7f070040
 			public const int tutorial = 2131165248;
+			
+			// aapt resource value: 0x7f070041
+			public const int tutorial_button_ok = 2131165249;
 			
 			static String()
 			{

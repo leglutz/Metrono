@@ -9,6 +9,7 @@
 
     <!-- Tutorial -->
     <string name="tutorial">Tutoriel</string>
+    <string name="tutorial_button_ok">Ok</string>
 
     <!-- Metronome -->
     <string name="metronome_touch_to_start">Toucher pour démarrer</string>

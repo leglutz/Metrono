@@ -1,8 +1,9 @@
 using Android.OS;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
-using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
+using DiodeCompany.Metrono.Droid.Activities;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
@@ -45,15 +46,16 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
-            var view = this.BindingInflate (Resource.Layout.fragment_tutorial, null);
+            var view = inflater.Inflate(Resource.Layout.fragment_tutorial, null);
 
             // ImageView
             var imageView = view.FindViewById<ImageView> (Resource.Id.tutorial_image_view);
             imageView.SetImageResource (_imageResource);
 
-            // Button
-            var button = view.FindViewById<Button> (Resource.Id.tutorial_button);
-            button.Visibility = _isLast ? ViewStates.Visible : ViewStates.Gone;
+            // Ok button
+            var okButton = view.FindViewById<Button> (Resource.Id.tutorial_button_ok);
+            okButton.Visibility = _isLast ? ViewStates.Visible : ViewStates.Gone;
+            okButton.Click += (sender, e) => ((TutorialActivity)Activity).ViewModel.OkCommand.Execute ();
 
             return view;
         }

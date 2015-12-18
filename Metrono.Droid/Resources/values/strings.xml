@@ -11,6 +11,7 @@
 
     <!-- Tutorial -->
     <string name="tutorial">Tutorial</string>
+    <string name="tutorial_button_ok">Ok</string>
 
     <!-- Metronome -->
     <string name="metronome_touch_to_start">Touch to start</string>

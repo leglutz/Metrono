@@ -13,4 +13,7 @@
     <color name="button_start">#78909C</color>
     <color name="button_end">#546E7A</color>
 
+    <!-- Tutorial  -->
+    <color name="tutorial">#4388CC</color>
+
 </resources>

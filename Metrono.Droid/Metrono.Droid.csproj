@@ -199,6 +199,7 @@
     <Folder Include="Resources\values-sw600dp\" />
     <Folder Include="Resources\values-sw360dp\" />
     <Folder Include="Controls\ViewPagerIndicator\" />
+    <Folder Include="Resources\drawable-fr\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.3\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.3\build\MonoAndroid10\Xamarin.Insights.targets')" />
@@ -288,6 +289,8 @@
     <AndroidResource Include="Resources\drawable\tutorial_measure.png" />
     <AndroidResource Include="Resources\drawable\tutorial_metronome.png" />
     <AndroidResource Include="Resources\values\view_pager_indicator.xml" />
+    <AndroidResource Include="Resources\drawable-fr\tutorial_measure.png" />
+    <AndroidResource Include="Resources\drawable-fr\tutorial_metronome.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />

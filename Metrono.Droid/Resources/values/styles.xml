@@ -26,7 +26,7 @@
     <!-- Tutorial  -->
     <style name="tutorial_theme" parent="android:style/Theme.Translucent.NoTitleBar">
         <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:backgroundDimAmount">0.9</item>
+        <item name="android:backgroundDimAmount">0.8</item>
     </style>  
 
     <!--- Toolbar -->
