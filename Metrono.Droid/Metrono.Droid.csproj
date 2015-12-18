@@ -283,9 +283,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\accent.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\accent.png" />
     <AndroidResource Include="Resources\layout\activity_showcase.axml" />
-    <AndroidResource Include="Resources\drawable\showcase_measure.png" />
-    <AndroidResource Include="Resources\drawable\showcase_metronome.png" />
     <AndroidResource Include="Resources\layout\fragment_showcase.axml" />
+    <AndroidResource Include="Resources\drawable\tutorial_measure.png" />
+    <AndroidResource Include="Resources\drawable\tutorial_metronome.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />

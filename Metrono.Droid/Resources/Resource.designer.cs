@@ -1653,16 +1653,16 @@ namespace DiodeCompany.Metrono.Droid
 			public const int settings = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int showcase_measure = 2130837585;
+			public const int sixteenth = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int showcase_metronome = 2130837586;
+			public const int splash_screen = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int sixteenth = 2130837587;
+			public const int tutorial_measure = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int splash_screen = 2130837588;
+			public const int tutorial_metronome = 2130837588;
 			
 			// aapt resource value: 0x7f020055
 			public const int whole = 2130837589;

@@ -7,8 +7,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Adapters
     {
         private static readonly int[] _showcaseImageResourceArray =
         {
-            Resource.Drawable.showcase_measure,
-            Resource.Drawable.showcase_metronome
+            Resource.Drawable.tutorial_measure,
+            Resource.Drawable.tutorial_metronome
         };
 
         public override int Count
