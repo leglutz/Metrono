@@ -8,7 +8,6 @@
         local:showAsAction="always" />
      <item 
         android:id="@+id/menu_tutorial"
-        android:icon="@drawable/settings"
         android:title="@string/menu_tutorial"
         local:showAsAction="never" />
 </menu>
