@@ -19,11 +19,11 @@
     <dimen name="spinner_min_height">40dp</dimen>
     <dimen name="spinner_min_width">90dp</dimen>
 
-    <!-- activity_showcase -->
-    <dimen name="activity_showcase_circle_page_indicator_padding">10dp</dimen>
+    <!-- activity_tutorial -->
+    <dimen name="activity_tutorial_circle_page_indicator_padding">10dp</dimen>
 
-    <!-- fragment_showcase -->
-    <dimen name="fragment_showcase_button_margin">50dp</dimen>
+    <!-- fragment_tutorial -->
+    <dimen name="fragment_tutorial_button_margin">50dp</dimen>
 
     <!-- fragment_metronome -->
     <dimen name="metronome_margin">@dimen/dimen_medium</dimen>
