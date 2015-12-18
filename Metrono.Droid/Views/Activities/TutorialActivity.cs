@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Support.V4.View;
 using Cirrious.MvvmCross.Droid.Support.Fragging;
 using DiodeCompany.Metrono.Core.ViewModels;
-using DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator;
+using DiodeCompany.Metrono.Droid.Controls.ViewPagerIndicator;
 using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Adapters;
 
@@ -24,7 +24,7 @@ namespace DiodeCompany.Metrono.Droid.Activities
             pager.Adapter = new TutorialFragmentAdapter(SupportFragmentManager);
 
             // Indicator
-            var indicator = FindViewById<CirclePageIndicatorView>(Resource.Id.indicator);
+            var indicator = FindViewById<TitlePageIndicatorView>(Resource.Id.indicator);
             indicator.SetViewPager(pager);
 
             GoogleAnalyticsHelper.Instance.TrackPage("Tutorial");

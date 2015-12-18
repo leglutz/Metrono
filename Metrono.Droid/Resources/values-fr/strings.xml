@@ -7,6 +7,9 @@
     <string name="menu_settings">Paramètres</string>
     <string name="menu_tutorial">Tutoriel</string>
 
+    <!-- Tutorial -->
+    <string name="tutorial">Tutoriel</string>
+
     <!-- Metronome -->
     <string name="metronome_touch_to_start">Toucher pour démarrer</string>
     <string name="metronome_touch_to_stop">Toucher pour arrêter</string>

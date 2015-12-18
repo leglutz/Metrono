@@ -154,12 +154,13 @@
     <Compile Include="Views\Adapters\BeatAdapter.cs" />
     <Compile Include="Helpers\GoogleAnalyticsHelper.cs" />
     <Compile Include="Helpers\XamarinInsightsHelper.cs" />
-    <Compile Include="Controls\CirclePageIndicator\IPageIndicator.cs" />
-    <Compile Include="Controls\CirclePageIndicator\ViewPageIndicatorEventHandlers.cs" />
-    <Compile Include="Controls\CirclePageIndicator\CirclePageIndicatorView.cs" />
     <Compile Include="Views\Activities\TutorialActivity.cs" />
     <Compile Include="Views\Adapters\TutorialFragmentAdapter.cs" />
     <Compile Include="Views\Fragments\TutorialFragment.cs" />
+    <Compile Include="Controls\ViewPagerIndicator\IPageIndicator.cs" />
+    <Compile Include="Controls\ViewPagerIndicator\TitlePageIndicatorView.cs" />
+    <Compile Include="Controls\ViewPagerIndicator\ViewPagerIndicatorEventHandlers.cs" />
+    <Compile Include="Controls\ViewPagerIndicator\CirclePageIndicatorView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -197,7 +198,7 @@
     <Folder Include="Resources\values-sw480dp\" />
     <Folder Include="Resources\values-sw600dp\" />
     <Folder Include="Resources\values-sw360dp\" />
-    <Folder Include="Controls\CirclePageIndicator\" />
+    <Folder Include="Controls\ViewPagerIndicator\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.3\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.3\build\MonoAndroid10\Xamarin.Insights.targets')" />
@@ -286,6 +287,7 @@
     <AndroidResource Include="Resources\layout\fragment_tutorial.axml" />
     <AndroidResource Include="Resources\drawable\tutorial_measure.png" />
     <AndroidResource Include="Resources\drawable\tutorial_metronome.png" />
+    <AndroidResource Include="Resources\values\view_pager_indicator.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />

@@ -1,11 +1,13 @@
 ﻿/*
- * Thanks to Cheesebaron
+ * Thanks to Cheesebaron and JakeWharton
  * https://github.com/Cheesebaron/ViewPagerIndicator/
+ * https://github.com/JakeWharton/ViewPagerIndicator
+ * https://developer.xamarin.com/samples/monodroid/ViewPagerIndicator/
  */
 
 using Android.Support.V4.View;
 
-namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
+namespace DiodeCompany.Metrono.Droid.Controls.ViewPagerIndicator
 {
     public interface IPageIndicator : ViewPager.IOnPageChangeListener
     {

@@ -1,19 +1,22 @@
 ﻿/*
- * Thanks to Cheesebaron
+ * Thanks to Cheesebaron and JakeWharton
  * https://github.com/Cheesebaron/ViewPagerIndicator/
+ * https://github.com/JakeWharton/ViewPagerIndicator
+ * https://developer.xamarin.com/samples/monodroid/ViewPagerIndicator/
  */
 
 using System;
-using Android.Views;
-using Android.Graphics;
-using Android.Support.V4.View;
 using Android.Content;
-using Android.Util;
-using Android.Widget;
+using Android.Graphics;
 using Android.OS;
+using Android.Support.V4.View;
+using Android.Util;
+using Android.Views;
+using Android.Widget;
 using Java.Interop;
+using Android.Support.V4.Content;
 
-namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
+namespace DiodeCompany.Metrono.Droid.Controls.ViewPagerIndicator
 {
     public class CirclePageIndicatorView : View, IPageIndicator
     {
@@ -46,7 +49,7 @@ namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
         {
         }
 
-        public CirclePageIndicatorView(Context context, IAttributeSet attrs) : this(context, attrs, 0)
+        public CirclePageIndicatorView(Context context, IAttributeSet attrs) : this(context, attrs, Resource.Attribute.circle_page_indicator_stlye)
         {
         }
 
@@ -57,17 +60,37 @@ namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
                 return;
             }
 
-            _centered = true;
-            _orientation = 0;
+            var res = Resources;
+            var defaultPageColor = ContextCompat.GetColor(Context, Resource.Color.default_circle_indicator_page_color);
+            var defaultFillColor = ContextCompat.GetColor(Context, Resource.Color.default_circle_indicator_fill_color);
+            var defaultOrientation = res.GetInteger(Resource.Integer.default_circle_indicator_orientation);
+            var defaultStrokeColor = ContextCompat.GetColor(Context, Resource.Color.default_circle_indicator_stroke_color);
+            var defaultStrokeWidth = res.GetDimension(Resource.Dimension.default_circle_indicator_stroke_width);
+            var defaultRadius = res.GetDimension(Resource.Dimension.default_circle_indicator_radius);
+            var defaultCentered = res.GetBoolean(Resource.Boolean.default_circle_indicator_centered);
+            var defaultSnap = res.GetBoolean(Resource.Boolean.default_circle_indicator_snap);
+
+            var a = context.ObtainStyledAttributes(attrs, Resource.Styleable.CirclePageIndicatorView, defStyle, 0);
+
+            _centered = a.GetBoolean(Resource.Styleable.CirclePageIndicatorView_centered, defaultCentered);
+            _orientation = a.GetInt(Resource.Styleable.CirclePageIndicatorView_android_orientation, defaultOrientation);
             _paintPageFill.SetStyle(Paint.Style.Fill);
-            _paintPageFill.Color = Color.Black;
+            _paintPageFill.Color = a.GetColor(Resource.Styleable.CirclePageIndicatorView_pageColor, defaultPageColor);
             _paintStroke.SetStyle(Paint.Style.Stroke);
-            _paintStroke.Color = Color.White;
-            _paintStroke.StrokeWidth = 2;
+            _paintStroke.Color = a.GetColor(Resource.Styleable.CirclePageIndicatorView_strokeColor, defaultStrokeColor);
+            _paintStroke.StrokeWidth = a.GetDimension(Resource.Styleable.CirclePageIndicatorView_strokeWidth, defaultStrokeWidth);
             _paintFill.SetStyle(Paint.Style.Fill);
-            _paintFill.Color = Color.White;
-            _radius = 20;
-            _snap = false;
+            _paintFill.Color = a.GetColor(Resource.Styleable.CirclePageIndicatorView_fillColor, defaultFillColor);
+            _radius = a.GetDimension(Resource.Styleable.CirclePageIndicatorView_radius, defaultRadius);
+            _snap = a.GetBoolean(Resource.Styleable.CirclePageIndicatorView_snap, defaultSnap);
+
+            var background = a.GetDrawable(Resource.Styleable.CirclePageIndicatorView_android_background);
+            if (null != background)
+            {
+                Background = background;
+            }
+
+            a.Recycle();
 
             var configuration = ViewConfiguration.Get(context);
             _touchSlop = ViewConfigurationCompat.GetScaledPagingTouchSlop(configuration);
@@ -116,7 +139,7 @@ namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
                         RequestLayout();
                         break;
                     default:
-                        throw new ArgumentException("Orientation must either be Horizontal or Vertical");
+                        throw new ArgumentException ("Orientation must either be Horizontal or Vertical");
                 }
             }
         }
@@ -375,7 +398,7 @@ namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
 
             if(null != _viewPager)
             {
-                _viewPager.RemoveOnPageChangeListener (this);
+                _viewPager.ClearOnPageChangeListeners ();
             }
 
             if(null == view.Adapter)

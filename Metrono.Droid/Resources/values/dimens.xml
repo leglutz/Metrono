@@ -20,10 +20,11 @@
     <dimen name="spinner_min_width">90dp</dimen>
 
     <!-- activity_tutorial -->
-    <dimen name="activity_tutorial_circle_page_indicator_padding">10dp</dimen>
+    <dimen name="activity_tutorial_title_page_indicator_margin_top">20dp</dimen>
 
     <!-- fragment_tutorial -->
-    <dimen name="fragment_tutorial_button_margin">50dp</dimen>
+    <dimen name="fragment_tutorial_button_margin">20dp</dimen>
+    <dimen name="fragment_tutorial_button_padding">10dp</dimen>
 
     <!-- fragment_metronome -->
     <dimen name="metronome_margin">@dimen/dimen_medium</dimen>

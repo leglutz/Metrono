@@ -1,11 +1,13 @@
 ﻿/*
- * Thanks to Cheesebaron
+ * Thanks to Cheesebaron and JakeWharton
  * https://github.com/Cheesebaron/ViewPagerIndicator/
+ * https://github.com/JakeWharton/ViewPagerIndicator
+ * https://developer.xamarin.com/samples/monodroid/ViewPagerIndicator/
  */
 
 using System;
 
-namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
+namespace DiodeCompany.Metrono.Droid.Controls.ViewPagerIndicator
 {
     public class PageScrollStateChangedEventArgs : EventArgs
     {
@@ -30,11 +32,8 @@ namespace DiodeCompany.Metrono.Droid.Controls.CirclePageIndicator
     }
 
     public delegate void PageScrollStateChangedEventHandler(object sender, PageScrollStateChangedEventArgs args);
-
     public delegate void PageScrolledEventHandler(object sender, PageScrolledEventArgs args);
-
     public delegate void PageSelectedEventHandler(object sender, PageSelectedEventArgs args);
-
     public delegate void TabReselectedEventHandler(object sender, TabReselectedEventArgs args);
 }
 
