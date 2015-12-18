@@ -8,7 +8,7 @@ using DiodeCompany.Metrono.Droid.Views.Adapters;
 
 namespace DiodeCompany.Metrono.Droid.Activities
 {
-    [Activity (Theme = "@style/MyTheme.Translucent")]
+    [Activity (Theme = "@style/showcase_theme")]
     public class ShowcaseActivity : MvxFragmentActivity
 	{
         protected override void OnCreate (Bundle bundle)

@@ -2944,18 +2944,6 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0a0074
 			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131361908;
 			
-			// aapt resource value: 0x7f0a0134
-			public const int MyTheme = 2131362100;
-			
-			// aapt resource value: 0x7f0a0136
-			public const int MyTheme_Base = 2131362102;
-			
-			// aapt resource value: 0x7f0a0135
-			public const int MyTheme_Splash = 2131362101;
-			
-			// aapt resource value: 0x7f0a0137
-			public const int MyTheme_Translucent = 2131362103;
-			
 			// aapt resource value: 0x7f0a0011
 			public const int Platform_AppCompat = 2131361809;
 			
@@ -3448,11 +3436,23 @@ namespace DiodeCompany.Metrono.Droid
 			// aapt resource value: 0x7f0a0133
 			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131362099;
 			
+			// aapt resource value: 0x7f0a0135
+			public const int base_theme = 2131362101;
+			
+			// aapt resource value: 0x7f0a0134
+			public const int main_theme = 2131362100;
+			
+			// aapt resource value: 0x7f0a0137
+			public const int showcase_theme = 2131362103;
+			
 			// aapt resource value: 0x7f0a013b
 			public const int spinner_drop_down_item = 2131362107;
 			
 			// aapt resource value: 0x7f0a013a
 			public const int spinner_item = 2131362106;
+			
+			// aapt resource value: 0x7f0a0136
+			public const int splash_screen_theme = 2131362102;
 			
 			// aapt resource value: 0x7f0a013f
 			public const int text_large = 2131362111;

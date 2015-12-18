@@ -15,7 +15,7 @@ using MvvmCross.Plugins.Messenger;
 
 namespace DiodeCompany.Metrono.Droid.Views.Activities
 {
-    [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity (Label = "@string/app_name", Theme = "@style/main_theme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>, AudioManager.IOnAudioFocusChangeListener
     {
         private readonly IMvxMessenger _messenger;
