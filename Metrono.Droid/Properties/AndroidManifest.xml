@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ch.diodecompany.metrono" android:versionCode="17" android:versionName="1.1.6">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ch.diodecompany.metrono" android:versionCode="18" android:versionName="1.2.0">
 	<uses-sdk android:minSdkVersion="16" />
 	<supports-screens android:smallScreens="false" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="false" />
 	<uses-permission android:name="android.permission.VIBRATE" />
