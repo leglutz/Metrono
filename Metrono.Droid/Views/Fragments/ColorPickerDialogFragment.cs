@@ -17,25 +17,20 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
     {
         public event ColorChangedEventHandler ColorChanged;
 
-        private readonly Settings _settings;
-
         private ColorPickerPanelView _oldColor;
         private ColorPickerPanelView _newColor;
 
         public ColorPickerDialogFragment ()
         { 
-            _settings = Mvx.Resolve<ISettingsService>().Settings;
-
-            SetStyle(MvxDialogFragment.StyleNoTitle, Android.Resource.Style.ThemeHoloLightDialogNoActionBar);
-
             RetainInstance = true;
         }
 
         public override Dialog OnCreateDialog(Bundle savedState)
         {
             base.EnsureBindingContextSet(savedState);
-
             var view = this.BindingInflate(Resource.Layout.fragment_dialog_color_picker, null);
+
+            SetStyle(MvxDialogFragment.StyleNoTitle, Android.Resource.Style.ThemeHoloLightDialogNoActionBar);
 
             var colorPicker = view.FindViewById<ColorPickerView>(Resource.Id.color_picker_view);
             _oldColor = view.FindViewById<ColorPickerPanelView>(Resource.Id.old_color_panel);
@@ -55,7 +50,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 _newColor.Color = args.Color;
             };
 
-            var oldColor = new Color (_settings.FlashColor);
+            var settings = Mvx.Resolve<ISettingsService>().Settings;
+            var oldColor = new Color (settings.FlashColor);
             _oldColor.Color = oldColor;
             colorPicker.Color = oldColor;
 

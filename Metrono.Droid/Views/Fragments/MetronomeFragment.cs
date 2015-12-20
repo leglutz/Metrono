@@ -21,22 +21,16 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
     public class MetronomeFragment : MvxFragment<MetronomeViewModel>, View.IOnClickListener, AdapterView.IOnTouchListener, GestureDetector.IOnGestureListener
     {
-        private readonly Settings _settings;
-        private readonly MvxSubscriptionToken _metronomeMessageSubscriptionToken;
-
+        private MvxSubscriptionToken _metronomeMessageSubscriptionToken;
         private ObjectAnimator _backgroundColorAnimator;
         private GridView _gridView;
-
         private GestureDetector _gestureDetector;
 
         public MetronomeFragment()
         {
-            _settings = Mvx.Resolve<ISettingsService>().Settings;
-            _metronomeMessageSubscriptionToken = Mvx.Resolve<IMvxMessenger>().SubscribeOnMainThread<MetronomeMessage> (OnMetronomeMessage);
-
             RetainInstance = true;
         }
-            
+
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
@@ -47,7 +41,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             // Beats layout background animation
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
             beatsLayout.SetOnClickListener (this);
-            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), _settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
+            var settings = Mvx.Resolve<ISettingsService>().Settings;
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
 
             // GridView
             _gridView = view.FindViewById<GridView>(Resource.Id.grid_view);
@@ -56,14 +51,31 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             _gridView.SetOnTouchListener (this);
 
             // Measure fragment
-            var measureFragment = new MeasureFragment()  { ViewModel = ViewModel.MeasureViewModel };
+            var measureFragment = new MeasureFragment();
+            measureFragment.ViewModel = ViewModel.MeasureViewModel;
             ChildFragmentManager.BeginTransaction ()
                 .Replace (Resource.Id.measure_frame, measureFragment)
                 .Commit ();
 
             _gestureDetector = new GestureDetector(Context, this);
 
+            GoogleAnalyticsHelper.Instance.TrackPage("Metronome");
+
             return view;
+        }
+
+        public override void OnStart ()
+        {
+            base.OnStart ();
+
+            _metronomeMessageSubscriptionToken = Mvx.Resolve<IMvxMessenger>().SubscribeOnMainThread<MetronomeMessage> (OnMetronomeMessage);
+        }
+
+        public override void OnStop ()
+        {
+            base.OnStop ();
+
+            Mvx.Resolve<IMvxMessenger>().Unsubscribe<MetronomeMessage> (_metronomeMessageSubscriptionToken);
         }
 
         public void OnClick (View view)
@@ -187,6 +199,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
         private void OnMetronomeMessage (MetronomeMessage metronomeMessage)
         {
+            var settings = Mvx.Resolve<ISettingsService>().Settings;
             switch(metronomeMessage.MetronomeEvent)
             {
                 case MetronomeEvent.BeatStarted:
@@ -199,9 +212,9 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                         }
 
                         // Flash
-                        if (_settings.Flash)
+                        if (settings.Flash)
                         {   
-                            _backgroundColorAnimator.SetObjectValues (_settings.FlashColor, ContextCompat.GetColor (Context, Resource.Color.background));
+                            _backgroundColorAnimator.SetObjectValues (settings.FlashColor, ContextCompat.GetColor (Context, Resource.Color.background));
                             _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
                             _backgroundColorAnimator.Start ();
                         }
@@ -217,7 +230,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                         }
 
                         // Flash
-                        if (_settings.Flash)
+                        if (settings.Flash)
                         {
                             _backgroundColorAnimator.End ();
                         }

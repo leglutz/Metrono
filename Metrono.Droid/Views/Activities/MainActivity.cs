@@ -9,31 +9,23 @@ using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Droid.Support.AppCompat;
 using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.ViewModels;
-using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Fragments;
 using MvvmCross.Plugins.Messenger;
 
 namespace DiodeCompany.Metrono.Droid.Views.Activities
 {
-    [Activity (Label = "@string/app_name", Theme = "@style/main_theme", LaunchMode = LaunchMode.SingleTop, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity (Label = "@string/app_name", Theme = "@style/main_theme", ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>, AudioManager.IOnAudioFocusChangeListener
     {
-        private readonly IMvxMessenger _messenger;
-
+        private MetronomeFragment _metronomeFragment;
         private SettingsFragment _settingsFragment;
         private AdView _adView;
         private AudioManager _audioManager;
         private PowerManager _powerManager;
 
-        public MainActivity ()
-        {
-           _messenger = Mvx.Resolve<IMvxMessenger>();
-        }
-
         protected override void OnCreate (Bundle bundle)
         {
             base.OnCreate (bundle);
-
             SetContentView (Resource.Layout.activity_main);
 
             // Toolbar will now take on default actionbar characteristics
@@ -41,9 +33,9 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             SetSupportActionBar (toolbar);
 
             // Metronome fragment
-            var metronomeFragment = new MetronomeFragment() { ViewModel = ViewModel.MetronomeViewModel };
+            _metronomeFragment = new MetronomeFragment() { ViewModel = ViewModel.MetronomeViewModel };
             SupportFragmentManager.BeginTransaction ()
-                .Replace (Resource.Id.content_frame, metronomeFragment)
+                .Replace (Resource.Id.content_frame, _metronomeFragment)
                 .Commit ();
            
             // Settings fragment
@@ -51,7 +43,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
 
             // AdView
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
-            #if !DEBUG
+            #if DEBUG
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
                 .Build ();
@@ -68,8 +60,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
 
             // Keep the screen always on
             Window.AddFlags (WindowManagerFlags.KeepScreenOn);
-
-            GoogleAnalyticsHelper.Instance.TrackPage("Main");
         }
 
         public override bool OnCreateOptionsMenu (IMenu menu)
@@ -95,11 +85,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
                     // Tutorial activity
                     ViewModel.TutorialCommand.Execute();
                     break;
-                case Android.Resource.Id.Home:
-                    // Metronome fragment
-                    SupportFragmentManager.PopBackStack();
-                    GoogleAnalyticsHelper.Instance.TrackPage("Main");
-                    break;
             }
 
             return base.OnOptionsItemSelected (item);
@@ -107,13 +92,14 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
 
         protected override void OnPause ()
         {
+            var messenger = Mvx.Resolve<IMvxMessenger>();
             if(IsScreenAwake())
             {
-                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
+                messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
             }
             else
             {
-                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Lock));   
+                messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Lock));   
             }
             _adView.Pause ();
 
@@ -124,13 +110,13 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
         {
             base.OnResume ();
 
-            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Start));
+            Mvx.Resolve<IMvxMessenger>().Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Start));
             _adView.Resume ();
         }
 
         protected override void OnDestroy ()
         {
-            _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Destroy));
+            Mvx.Resolve<IMvxMessenger>().Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Destroy));
             _adView.Destroy ();
 
             base.OnDestroy ();
@@ -140,7 +126,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
         {
             if(focusChange == AudioFocus.LossTransient)
             {
-                _messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
+                Mvx.Resolve<IMvxMessenger>().Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
             }
         }
 
