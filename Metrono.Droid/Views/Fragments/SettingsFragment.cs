@@ -15,8 +15,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
     public class SettingsFragment : MvxFragment<SettingsViewModel>
     {
-        private ColorPickerPanelView _colorPicker;
-
         public SettingsFragment()
         {
             RetainInstance = true;
@@ -29,13 +27,13 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
             HasOptionsMenu = true;
 
-            _colorPicker = view.FindViewById<ColorPickerPanelView>(Resource.Id.color_picker);
-            _colorPicker.Color = new Color(ViewModel.Settings.FlashColor);
-            _colorPicker.Click += (sender, e) => {
+            var colorPicker = view.FindViewById<ColorPickerPanelView>(Resource.Id.color_picker);
+            colorPicker.Color = new Color(ViewModel.Settings.FlashColor);
+            colorPicker.Click += (sender, e) => {
                 var colorPickerDialogFragment = new ColorPickerDialogFragment();
                 colorPickerDialogFragment.ColorChanged += (o, args) => {
-                    _colorPicker.Color = args.Color;
-                    ViewModel.Settings.FlashColor = _colorPicker.Color.ToArgb();
+                    colorPicker.Color = args.Color;
+                    ViewModel.Settings.FlashColor = colorPicker.Color.ToArgb();
                 };
                 colorPickerDialogFragment.Show(FragmentManager, null);
             };
@@ -52,6 +50,19 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.settings);
 
             base.OnPrepareOptionsMenu (menu);
+        }
+
+        public override bool OnOptionsItemSelected (IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    // Metronome fragment
+                    FragmentManager.PopBackStack();
+                    break;
+            }
+
+            return base.OnOptionsItemSelected (item);
         }
     }
 }
