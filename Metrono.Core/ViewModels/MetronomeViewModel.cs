@@ -25,7 +25,7 @@ namespace DiodeCompany.Metrono.Core.ViewModels
             _metronomeMessageSubscriptionToken = messenger.SubscribeOnThreadPoolThread<MetronomeMessage> (OnMetronomeMessage);
 
             MeasureViewModel = Mvx.IocConstruct<MeasureViewModel> ();
-            Metronome = Mvx.IocConstruct<Metronome> ();
+            Metronome = new Metronome();
 
             SettingsCommand = new MvxCommand (() => ShowViewModel<SettingsViewModel> ());
             StartStopCommand = new MvxCommand (DoStartStopCommand);

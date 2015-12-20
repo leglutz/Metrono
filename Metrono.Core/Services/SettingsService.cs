@@ -9,7 +9,7 @@ namespace DiodeCompany.Metrono.Core.Services
 
         public SettingsService ()
         {
-            Settings = Mvx.IocConstruct<Settings>();
+            Settings = new Settings();
         }
     }
 }

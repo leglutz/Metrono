@@ -11,6 +11,7 @@ namespace DiodeCompany.Metrono.Core.Models
     public class Settings : MvxNotifyPropertyChanged
     {
         private readonly ISettings _settings;
+        private readonly IMvxJsonConverter _jsonConverter;
 
         public bool FirstLaunch
         {
@@ -29,17 +30,14 @@ namespace DiodeCompany.Metrono.Core.Models
                 var jsonMeasure = _settings.GetValue<string>("LastMeasure", null); 
                 if (!string.IsNullOrEmpty (jsonMeasure))
                 {
-                    var json = Mvx.Resolve<IMvxJsonConverter> ();
-                    return json.DeserializeObject<Measure> (jsonMeasure);
+                    return _jsonConverter.DeserializeObject<Measure> (jsonMeasure);
                 }
 
                 return new Measure ();
             }
             set 
             { 
-                var json = Mvx.Resolve<IMvxJsonConverter> ();
-                var jsonMeasure = json.SerializeObject (value);
-                _settings.AddOrUpdateValue<string> ("LastMeasure", jsonMeasure); 
+                _settings.AddOrUpdateValue<string> ("LastMeasure", _jsonConverter.SerializeObject (value)); 
                 RaisePropertyChanged (() => LastMeasure);
             }
         }
@@ -154,9 +152,10 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        public Settings(ISettings settings)
+        public Settings()
         {
-            _settings = settings;
+            _settings = Mvx.Resolve<ISettings> ();
+            _jsonConverter = Mvx.Resolve<IMvxJsonConverter> ();
         }
     }
 }

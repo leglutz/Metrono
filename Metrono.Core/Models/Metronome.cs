@@ -5,6 +5,7 @@ using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.Resources;
 using DiodeCompany.Metrono.Core.Services;
 using MvvmCross.Plugins.Messenger;
+using Cirrious.CrossCore;
 
 namespace DiodeCompany.Metrono.Core.Models
 {
@@ -30,11 +31,11 @@ namespace DiodeCompany.Metrono.Core.Models
             private set { SetProperty (ref _isPaused, value); }
         }
 
-        public Metronome (IAudioService audioService, ISettingsService settingsService, IMvxMessenger messenger)
+        public Metronome ()
         {
-            _audioService = audioService;
-            _settings = settingsService.Settings;
-            _messenger = messenger;
+            _audioService = Mvx.Resolve<IAudioService>();
+            _settings = Mvx.Resolve<ISettingsService>().Settings;
+            _messenger = Mvx.Resolve<IMvxMessenger>();
 
             _defaultEmptyChunksArray = new byte[_audioService.MinBufferSize];
 
