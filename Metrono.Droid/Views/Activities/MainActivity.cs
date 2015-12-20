@@ -43,7 +43,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
 
             // AdView
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
-            #if DEBUG
+            #if !DEBUG
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
                 .Build ();
