@@ -1761,37 +1761,40 @@ namespace DiodeCompany.Metrono.Droid
 			public const int half = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int minus = 2130837580;
+			public const int help = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int mute = 2130837581;
-			
-			// aapt resource value: 0x7f020056
-			public const int notification_template_icon_bg = 2130837590;
+			public const int minus = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int plus = 2130837582;
+			public const int mute = 2130837582;
+			
+			// aapt resource value: 0x7f020057
+			public const int notification_template_icon_bg = 2130837591;
 			
 			// aapt resource value: 0x7f02004f
-			public const int quarter = 2130837583;
+			public const int plus = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int settings = 2130837584;
+			public const int quarter = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int sixteenth = 2130837585;
+			public const int settings = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int splash_screen = 2130837586;
+			public const int sixteenth = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int tutorial_measure = 2130837587;
+			public const int splash_screen = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int tutorial_metronome = 2130837588;
+			public const int tutorial_measure = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int whole = 2130837589;
+			public const int tutorial_metronome = 2130837589;
+			
+			// aapt resource value: 0x7f020056
+			public const int whole = 2130837590;
 			
 			static Drawable()
 			{

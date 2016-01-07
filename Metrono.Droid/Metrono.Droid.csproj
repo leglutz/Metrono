@@ -289,6 +289,11 @@
     <AndroidResource Include="Resources\values\view_pager_indicator.xml" />
     <AndroidResource Include="Resources\drawable-fr\tutorial_measure.png" />
     <AndroidResource Include="Resources\drawable-fr\tutorial_metronome.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\help.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\help.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\help.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\help.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\help.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />
