@@ -46,6 +46,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             #if !DEBUG
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
+                .AddTestDevice ("0B04ED2E47EE0BB7DA11F64E36862E6E") // Sony D5503 (Xperia Z1 Compact)
+                .AddTestDevice ("F962876A34DA90EB668FF75632D5DC54") // Samsung GT-S7580 (Galaxy Trend Plus)
                 .Build ();
             // Initialize Insights
             _adView.LoadAd(adRequest);
