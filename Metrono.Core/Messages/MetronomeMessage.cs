@@ -1,5 +1,5 @@
-﻿using MvvmCross.Plugins.Messenger;
-using DiodeCompany.Metrono.Core.Models;
+﻿using DiodeCompany.Metrono.Core.Models;
+using MvvmCross.Plugins.Messenger;
 
 namespace DiodeCompany.Metrono.Core.Messages
 {

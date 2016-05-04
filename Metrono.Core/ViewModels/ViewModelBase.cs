@@ -1,7 +1,6 @@
-﻿using System;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metrono.Core.Messages;
+﻿using DiodeCompany.Metrono.Core.Messages;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 
 namespace DiodeCompany.Metrono.Core.ViewModels

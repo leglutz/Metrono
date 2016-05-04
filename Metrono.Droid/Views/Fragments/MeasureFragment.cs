@@ -1,9 +1,9 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using Cirrious.MvvmCross.Binding.Droid.BindingContext;
-using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
 using DiodeCompany.Metrono.Core.ViewModels;
+using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Droid.Support.V4;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {

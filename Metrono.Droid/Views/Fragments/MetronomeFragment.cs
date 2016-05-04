@@ -1,13 +1,8 @@
-﻿using System;
-using Android.Animation;
+﻿using Android.Animation;
 using Android.OS;
 using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid;
-using Cirrious.MvvmCross.Binding.Droid.BindingContext;
-using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
 using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Services;
@@ -15,7 +10,11 @@ using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Activities;
 using DiodeCompany.Metrono.Droid.Views.Adapters;
+using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
+using System;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {

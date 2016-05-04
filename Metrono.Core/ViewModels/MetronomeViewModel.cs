@@ -1,8 +1,8 @@
-﻿using Cirrious.CrossCore;
-using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metrono.Core.Messages;
+﻿using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Services;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 using Plugin.Vibrate;
 

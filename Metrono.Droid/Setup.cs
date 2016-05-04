@@ -1,11 +1,11 @@
-using System.Collections.Generic;
 using Android.Content;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Platform;
-using Cirrious.MvvmCross.Droid.Platform;
-using Cirrious.MvvmCross.ViewModels;
 using DiodeCompany.Metrono.Core.Services;
 using DiodeCompany.Metrono.Droid.Services;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Droid.Platform;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Platform;
+using System.Collections.Generic;
 
 namespace DiodeCompany.Metrono.Droid
 {
@@ -35,11 +35,6 @@ namespace DiodeCompany.Metrono.Droid
                 toReturn["Controls"] = "DiodeCompany.Metrono.Droid.Controls";
                 return toReturn;
             }
-        }
-
-        protected override IMvxTrace CreateDebugTrace()
-        {
-            return new DebugTrace();
         }
     }
 }

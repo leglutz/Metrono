@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using Cirrious.MvvmCross.ViewModels;
+﻿using MvvmCross.Core.ViewModels;
 
 namespace DiodeCompany.Metrono.Core.Models
 {

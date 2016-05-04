@@ -5,11 +5,11 @@ using Android.Media;
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Droid.Support.AppCompat;
 using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Views.Fragments;
+using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 
 namespace DiodeCompany.Metrono.Droid.Views.Activities
@@ -47,7 +47,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
                 .AddTestDevice ("0B04ED2E47EE0BB7DA11F64E36862E6E") // Sony D5503 (Xperia Z1 Compact)
-                .AddTestDevice ("F962876A34DA90EB668FF75632D5DC54") // Samsung GT-S7580 (Galaxy Trend Plus)
                 .Build ();
             // Initialize Insights
             _adView.LoadAd(adRequest);

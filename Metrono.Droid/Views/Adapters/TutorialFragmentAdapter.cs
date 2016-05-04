@@ -1,7 +1,5 @@
 ﻿using Android.Support.V4.App;
-using DiodeCompany.Metrono.Droid.Controls.ViewPagerIndicator;
 using DiodeCompany.Metrono.Droid.Views.Fragments;
-using Android.Content.Res;
 
 namespace DiodeCompany.Metrono.Droid.Views.Adapters
 {

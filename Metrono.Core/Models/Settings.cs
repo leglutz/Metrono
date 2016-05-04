@@ -1,10 +1,9 @@
-﻿using System;
-using Cheesebaron.MvxPlugins.Settings.Interfaces;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Platform;
-using Cirrious.CrossCore.UI;
-using Cirrious.MvvmCross.ViewModels;
+﻿using Cheesebaron.MvxPlugins.Settings.Interfaces;
 using DiodeCompany.Metrono.Core.Resources;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Platform;
+using MvvmCross.Platform.UI;
 
 namespace DiodeCompany.Metrono.Core.Models
 {

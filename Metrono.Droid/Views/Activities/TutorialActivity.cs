@@ -1,12 +1,11 @@
 using Android.App;
-using Android.Content.PM;
 using Android.OS;
 using Android.Support.V4.View;
-using Cirrious.MvvmCross.Droid.Support.Fragging;
 using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Controls.ViewPagerIndicator;
 using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Adapters;
+using MvvmCross.Droid.Support.V4;
 
 namespace DiodeCompany.Metrono.Droid.Activities
 {

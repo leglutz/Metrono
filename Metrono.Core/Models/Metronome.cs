@@ -1,11 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
-using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metrono.Core.Messages;
+﻿using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.Resources;
 using DiodeCompany.Metrono.Core.Services;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
-using Cirrious.CrossCore;
+using System;
+using System.Threading.Tasks;
 
 namespace DiodeCompany.Metrono.Core.Models
 {
@@ -49,7 +49,7 @@ namespace DiodeCompany.Metrono.Core.Models
             {
                 // Run the GC to clean everything
                 GC.Collect ();
-
+                
                 _audioService.StartPlaying ();
 
                 IsPlaying = true;
@@ -114,6 +114,9 @@ namespace DiodeCompany.Metrono.Core.Models
                 {
                     // End of the measure, loop from start
                     currentBeatIndex = 0;
+
+                    // Run the GC to clean everything
+                    GC.Collect();
                 }
 
                 // Check if is paused and pause if needed

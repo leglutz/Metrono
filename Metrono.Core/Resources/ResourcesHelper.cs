@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using DiodeCompany.Metrono.Core.Attributes;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using DiodeCompany.Metrono.Core.Attributes;
 
 namespace DiodeCompany.Metrono.Core.Resources
 {

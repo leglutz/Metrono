@@ -1,7 +1,7 @@
-﻿using Cirrious.CrossCore;
-using Cirrious.MvvmCross.ViewModels;
-using DiodeCompany.Metrono.Core.Services;
+﻿using DiodeCompany.Metrono.Core.Services;
 using DiodeCompany.Metrono.Core.ViewModels;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 
 namespace DiodeCompany.Metrono.Core
 {

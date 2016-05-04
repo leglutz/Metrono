@@ -1,8 +1,8 @@
-﻿using System;
-using System.Globalization;
-using Cirrious.CrossCore.Converters;
-using DiodeCompany.Metrono.Core.Attributes;
+﻿using DiodeCompany.Metrono.Core.Attributes;
 using DiodeCompany.Metrono.Core.Extensions;
+using MvvmCross.Platform.Converters;
+using System;
+using System.Globalization;
 
 namespace DiodeCompany.Metrono.Core.Converters
 {

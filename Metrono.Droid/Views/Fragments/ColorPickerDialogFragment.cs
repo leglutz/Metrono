@@ -1,15 +1,14 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Graphics;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Binding.Droid.BindingContext;
-using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
-using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Services;
 using DiodeCompany.Metrono.Droid.Controls.ColorPicker;
+using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platform;
+using System;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {

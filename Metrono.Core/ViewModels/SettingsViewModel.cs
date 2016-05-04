@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DiodeCompany.Metrono.Core.Models;
+﻿using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Resources;
 using DiodeCompany.Metrono.Core.Services;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DiodeCompany.Metrono.Core.ViewModels
 {

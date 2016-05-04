@@ -1,5 +1,5 @@
-using Cirrious.CrossCore.IoC;
-using Cirrious.MvvmCross.ViewModels;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform.IoC;
 
 namespace DiodeCompany.Metrono.Core
 {

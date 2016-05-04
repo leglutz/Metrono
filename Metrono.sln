@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.Droid", "Metrono.Droid\Metrono.Droid.csproj", "{C27B412B-AE12-4B02-B4FF-2874F733A898}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.Core", "Metrono.Core\Metrono.Core.csproj", "{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}"
@@ -13,17 +15,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C27B412B-AE12-4B02-B4FF-2874F733A898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C27B412B-AE12-4B02-B4FF-2874F733A898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27B412B-AE12-4B02-B4FF-2874F733A898}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{C27B412B-AE12-4B02-B4FF-2874F733A898}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C27B412B-AE12-4B02-B4FF-2874F733A898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C27B412B-AE12-4B02-B4FF-2874F733A898}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,8 @@
-using Cirrious.CrossCore.Plugins;
+using MvvmCross.Platform.Plugins;
 
 namespace DiodeCompany.Metrono.Droid.Bootstrap
 {
-    public class VisibilityPluginBootstrap 
+    public class VisibilityPluginBootstrap
         : MvxPluginBootstrapAction<MvvmCross.Plugins.Visibility.PluginLoader>
     {
     }

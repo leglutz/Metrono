@@ -1,9 +1,7 @@
-using Cirrious.CrossCore.Plugins;
+using MvvmCross.Platform.Plugins;
 
 namespace DiodeCompany.Metrono.Droid.Bootstrap
 {
-    public class SettingsPluginBootstrap 
-        : MvxPluginBootstrapAction<Cheesebaron.MvxPlugins.Settings.PluginLoader> 
-    {
-    }
+    public class SettingsPluginBootstrap
+        : MvxPluginBootstrapAction<Cheesebaron.MvxPlugins.Settings.PluginLoader> { }
 }

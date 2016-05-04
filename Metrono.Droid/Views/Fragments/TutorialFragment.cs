@@ -1,9 +1,8 @@
 using Android.OS;
-using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
-using Cirrious.MvvmCross.Droid.Support.Fragging.Fragments;
 using DiodeCompany.Metrono.Droid.Activities;
+using MvvmCross.Droid.Support.V4;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
