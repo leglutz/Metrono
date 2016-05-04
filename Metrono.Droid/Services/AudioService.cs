@@ -38,13 +38,20 @@ namespace DiodeCompany.Metrono.Droid.Services
 
         public void StopPlaying ()
         {
-            _audioTrack.Stop ();
-            _audioTrack.Release ();
+            if (_audioTrack != null && _audioTrack.State != AudioTrackState.Uninitialized)
+            {
+                _audioTrack.Stop();
+                _audioTrack.Release();
+                _audioTrack = null;
+            }
         }
 
         public async Task PlayAsync (byte[] sound)
         {
-            await _audioTrack.WriteAsync (sound, 0, sound.Length).ConfigureAwait(false);
+            if (_audioTrack != null && IsPlaying)
+            {
+                await _audioTrack.WriteAsync(sound, 0, sound.Length).ConfigureAwait(false);
+            }
         }
     }
 }

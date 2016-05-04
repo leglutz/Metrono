@@ -20,9 +20,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
         private MetronomeFragment _metronomeFragment;
         private SettingsFragment _settingsFragment;
         private AdView _adView;
-        private AudioManager _audioManager;
-        private PowerManager _powerManager;
-
+        
         protected override void OnCreate (Bundle bundle)
         {
             base.OnCreate (bundle);
@@ -53,11 +51,11 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             #endif
 
             // AudioManager
-            _audioManager = (AudioManager) GetSystemService(Android.Content.Context.AudioService);
-            _audioManager.RequestAudioFocus(this, Stream.Music, AudioFocus.Gain);
-
-            // PowerManager
-            _powerManager = (PowerManager) GetSystemService(Android.Content.Context.PowerService);
+            var audioManager = GetSystemService(Android.Content.Context.AudioService) as AudioManager;
+            if (audioManager != null)
+            {
+                audioManager.RequestAudioFocus(this, Stream.Music, AudioFocus.Gain);
+            }
 
             // Keep the screen always on
             Window.AddFlags (WindowManagerFlags.KeepScreenOn);
@@ -133,17 +131,22 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
 
         private bool IsScreenAwake()
         {
-            if (Build.VERSION.SdkInt >= BuildVersionCodes.KitkatWatch)
+            var powerManager = GetSystemService(Android.Content.Context.PowerService) as PowerManager;
+            if (powerManager != null)
             {
-                return _powerManager.IsInteractive;
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.KitkatWatch)
+                {
+                    return powerManager.IsInteractive;
+                }
+                else
+                {
+                    // Disable the obsolete warning message
+#pragma warning disable 618
+                    return powerManager.IsScreenOn;
+#pragma warning restore 618
+                }
             }
-            else 
-            {
-                // Disable the obsolete warning message
-                #pragma warning disable 618
-                return _powerManager.IsScreenOn;
-                #pragma warning restore 618
-            }
+            return true;
         }
     }
 }
