@@ -27,11 +27,11 @@ namespace DiodeCompany.Metrono.Droid.Helpers
         public void Initialize(Application application)
         {
             // Initialize Insights
-            #if DEBUG
+#if DEBUG
             Xamarin.Insights.Initialize (Insights.DebugModeKey, application.ApplicationContext);
-            #else
+#else
             Xamarin.Insights.Initialize (ApiKey, application.ApplicationContext);
-            #endif
+#endif
         }
     }
 }

@@ -4,7 +4,6 @@ using DiodeCompany.Metrono.Droid.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Platform;
-using MvvmCross.Platform.Platform;
 using System.Collections.Generic;
 
 namespace DiodeCompany.Metrono.Droid

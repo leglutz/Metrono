@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.Gms.Analytics;
 
 namespace DiodeCompany.Metrono.Droid.Helpers
@@ -33,14 +32,14 @@ namespace DiodeCompany.Metrono.Droid.Helpers
             _googleAnalytics = GoogleAnalytics.GetInstance(application.ApplicationContext);
             _tracker = _googleAnalytics.NewTracker(TrackingId);
 
-            #if DEBUG
+#if DEBUG
             _googleAnalytics.SetDryRun(true);
-            #endif
+#endif
         }
 
         public void TrackPage(string pageName)
         {
-            _tracker.SetScreenName (pageName);
+            _tracker.SetScreenName(pageName);
             _tracker.Send(new HitBuilders.ScreenViewBuilder().Build());
         }
 

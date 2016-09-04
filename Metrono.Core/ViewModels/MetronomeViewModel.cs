@@ -2,9 +2,9 @@
 using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Services;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 using Plugin.Vibrate;
+using System;
 
 namespace DiodeCompany.Metrono.Core.ViewModels
 {
@@ -19,12 +19,12 @@ namespace DiodeCompany.Metrono.Core.ViewModels
         public IMvxCommand SettingsCommand { get; private set; }
         public IMvxCommand StartStopCommand { get; private set; }
 
-        public MetronomeViewModel (ISettingsService settingsService, IMvxMessenger messenger)
+        public MetronomeViewModel (MeasureViewModel measureViewModel, ISettingsService settingsService, IMvxMessenger messenger)
         {
             _settings = settingsService.Settings;
             _metronomeMessageSubscriptionToken = messenger.SubscribeOnThreadPoolThread<MetronomeMessage> (OnMetronomeMessage);
 
-            MeasureViewModel = Mvx.IocConstruct<MeasureViewModel> ();
+            MeasureViewModel = measureViewModel;
             Metronome = new Metronome();
 
             SettingsCommand = new MvxCommand (() => ShowViewModel<SettingsViewModel> ());
@@ -63,7 +63,14 @@ namespace DiodeCompany.Metrono.Core.ViewModels
                         // Vibration
                         if (_settings.Vibration)
                         {
-                            CrossVibrate.Current.Vibration ((int)(metronomeMessage.Beat.Duration / 3.0 * 1000));
+                            try
+                            {
+                                CrossVibrate.Current.Vibration((int)(metronomeMessage.Beat.Duration / 4.0 * 1000));
+                            }
+                            catch (Exception)
+                            {
+                                _settings.Vibration = false;
+                            }
                         }
                     }
                     break;

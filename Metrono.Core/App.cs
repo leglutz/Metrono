@@ -1,5 +1,7 @@
+using DiodeCompany.Metrono.Core.Services;
+using DiodeCompany.Metrono.Core.ViewModels;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform.IoC;
+using MvvmCross.Platform;
 
 namespace DiodeCompany.Metrono.Core
 {
@@ -7,11 +9,15 @@ namespace DiodeCompany.Metrono.Core
     {
         public override void Initialize ()
         {
-            CreatableTypes ()
-                .EndingWith ("Service")
-                .AsInterfaces ()
-                .RegisterAsLazySingleton ();
+            // Register services
+            Mvx.ConstructAndRegisterSingleton<ISettingsService, SettingsService>();
 
+            // Registers ViewModels
+            Mvx.LazyConstructAndRegisterSingleton<SettingsViewModel, SettingsViewModel>();
+            Mvx.LazyConstructAndRegisterSingleton<MetronomeViewModel, MetronomeViewModel>();
+            Mvx.LazyConstructAndRegisterSingleton<MeasureViewModel, MeasureViewModel>();
+
+            // Register app start
             RegisterAppStart(new AppStart());
         }
     }

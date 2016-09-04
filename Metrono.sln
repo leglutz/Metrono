@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.Droid", "Metrono.Dr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.Core", "Metrono.Core\Metrono.Core.csproj", "{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrono.UITests", "Metrono.UITests\Metrono.UITests.csproj", "{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,10 +23,6 @@ Global
 		{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD7C4C86-103F-4BA8-B515-B92D3CE61DB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E2EB874-E81D-4E1E-A6C0-BBDFA888B320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using Android.Graphics;
 using Android.OS;
+using Android.Runtime;
 using Android.Views;
 using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Controls.ColorPicker;
@@ -7,18 +8,17 @@ using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Activities;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platform;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
+    [Register("diodecompany.metrono.droid.views.fragments.SettingsFragment")]
     public class SettingsFragment : MvxFragment<SettingsViewModel>
     {
-        public SettingsFragment()
-        {
-            RetainInstance = true;
-        }
-
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            ViewModel = Mvx.Resolve<SettingsViewModel>();
+
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
             var view = this.BindingInflate (Resource.Layout.fragment_settings, null);
 

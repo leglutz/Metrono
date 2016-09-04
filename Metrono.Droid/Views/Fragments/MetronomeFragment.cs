@@ -1,5 +1,6 @@
 ﻿using Android.Animation;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
@@ -18,6 +19,7 @@ using System;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
+    [Register("diodecompany.metrono.droid.views.fragments.MetronomeFragment")]
     public class MetronomeFragment : MvxFragment<MetronomeViewModel>, View.IOnClickListener, AdapterView.IOnTouchListener, GestureDetector.IOnGestureListener
     {
         private MvxSubscriptionToken _metronomeMessageSubscriptionToken;
@@ -25,13 +27,10 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
         private GridView _gridView;
         private GestureDetector _gestureDetector;
 
-        public MetronomeFragment()
-        {
-            RetainInstance = true;
-        }
-
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            ViewModel = Mvx.Resolve<MetronomeViewModel>();
+
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
             var view = this.BindingInflate (Resource.Layout.fragment_metronome, null);
 
@@ -51,7 +50,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
             // Measure fragment
             var measureFragment = new MeasureFragment();
-            measureFragment.ViewModel = ViewModel.MeasureViewModel;
             ChildFragmentManager.BeginTransaction ()
                 .Replace (Resource.Id.measure_frame, measureFragment)
                 .Commit ();
@@ -241,15 +239,15 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
         private void StartStopMetronome()
         {
             ViewModel.StartStopCommand.Execute();
-            if(ViewModel.Metronome.IsPlaying)
+
+            if (ViewModel.Metronome.IsPlaying)
             {
-                GoogleAnalyticsHelper.Instance.TrackEvent ("Metronome", "Start");
+                GoogleAnalyticsHelper.Instance.TrackEvent("Metronome", "Start");
             }
             else
             {
-                GoogleAnalyticsHelper.Instance.TrackEvent ("Metronome", "Stop");
+                GoogleAnalyticsHelper.Instance.TrackEvent("Metronome", "Stop");
             }
-
         }
     }
 }

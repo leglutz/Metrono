@@ -7,6 +7,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.ViewModels;
+using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Fragments;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
@@ -31,13 +32,13 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             SetSupportActionBar (toolbar);
 
             // Metronome fragment
-            _metronomeFragment = new MetronomeFragment() { ViewModel = ViewModel.MetronomeViewModel };
+            _metronomeFragment = new MetronomeFragment();
             SupportFragmentManager.BeginTransaction ()
                 .Replace (Resource.Id.content_frame, _metronomeFragment)
                 .Commit ();
            
             // Settings fragment
-            _settingsFragment = new SettingsFragment() { ViewModel = ViewModel.SettingsViewModel };
+            _settingsFragment = new SettingsFragment();
 
             // AdView
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
@@ -48,10 +49,10 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
                 .Build ();
             // Initialize Insights
             _adView.LoadAd(adRequest);
-            #endif
+#endif
 
             // AudioManager
-            var audioManager = GetSystemService(Android.Content.Context.AudioService) as AudioManager;
+            var audioManager = GetSystemService(AudioService) as AudioManager;
             if (audioManager != null)
             {
                 audioManager.RequestAudioFocus(this, Stream.Music, AudioFocus.Gain);
@@ -94,11 +95,13 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             var messenger = Mvx.Resolve<IMvxMessenger>();
             if(IsScreenAwake())
             {
-                messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
+                messenger.Publish(new LifeCycleMessage (this, LifeCycleEvent.Stop));
+                GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Stop");
             }
             else
             {
-                messenger.Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Lock));   
+                messenger.Publish(new LifeCycleMessage (this, LifeCycleEvent.Lock));
+                GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Lock");
             }
             _adView.Pause ();
 
@@ -109,14 +112,18 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
         {
             base.OnResume ();
 
-            Mvx.Resolve<IMvxMessenger>().Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Start));
+            Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Start));
             _adView.Resume ();
+
+            GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Start");
         }
 
         protected override void OnDestroy ()
         {
-            Mvx.Resolve<IMvxMessenger>().Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Destroy));
+            Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Destroy));
             _adView.Destroy ();
+
+            GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Destroy");
 
             base.OnDestroy ();
         }
@@ -125,13 +132,14 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
         {
             if(focusChange == AudioFocus.LossTransient)
             {
-                Mvx.Resolve<IMvxMessenger>().Publish<LifeCycleMessage> (new LifeCycleMessage (this, LifeCycleEvent.Stop));   
+                Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Stop));
+                GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Stop");
             }
         }
 
         private bool IsScreenAwake()
         {
-            var powerManager = GetSystemService(Android.Content.Context.PowerService) as PowerManager;
+            var powerManager = GetSystemService(PowerService) as PowerManager;
             if (powerManager != null)
             {
                 if (Build.VERSION.SdkInt >= BuildVersionCodes.KitkatWatch)

@@ -1,4 +1,5 @@
 using Android.OS;
+using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using DiodeCompany.Metrono.Droid.Activities;
@@ -6,6 +7,7 @@ using MvvmCross.Droid.Support.V4;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
 {
+    [Register("diodecompany.metrono.droid.views.fragments.TutorialFragment")]
     public class TutorialFragment : MvxFragment
     {
         private const string KeyImageResource = "TutorialFragment:ImageResource";
