@@ -1,5 +1,4 @@
-﻿using DiodeCompany.Metrono.Core.Messages;
-using DiodeCompany.Metrono.Core.Resources;
+﻿using DiodeCompany.Metrono.Core.Resources;
 using DiodeCompany.Metrono.Core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
@@ -11,6 +10,9 @@ namespace DiodeCompany.Metrono.Core.Models
 {
     public class Metronome : MvxNotifyPropertyChanged
     {
+        public event EventHandler<Beat> BeatStarted;
+        public event EventHandler<Beat> BeatFinished;
+
         private readonly IAudioService _audioService;
         private readonly Settings _settings;
         private readonly IMvxMessenger _messenger;
@@ -101,8 +103,6 @@ namespace DiodeCompany.Metrono.Core.Models
             var currentBeatIndex = 0;
             measure.IsPlaying = true;
 
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureStarted, measure));
-
             while (IsPlaying && currentBeatIndex < measure.BeatList.Count)
             {
                 // Play the current beat
@@ -114,9 +114,6 @@ namespace DiodeCompany.Metrono.Core.Models
                 {
                     // End of the measure, loop from start
                     currentBeatIndex = 0;
-
-                    // Run the GC to clean everything
-                    GC.Collect();
                 }
 
                 // Check if is paused and pause if needed
@@ -127,8 +124,6 @@ namespace DiodeCompany.Metrono.Core.Models
             }
 
             measure.IsPlaying = false;
-
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.MeasureFinished, measure));
         }
 
         private async Task PlayBeatAsync (Measure measure, Beat beat)
@@ -136,10 +131,11 @@ namespace DiodeCompany.Metrono.Core.Models
             beat.IsPlaying = true;
 
             // Play the beat first (sound takes more time than light)
-            var beatSound = GetBeatSound (beat);
-            await _audioService.PlayAsync (beatSound).ConfigureAwait(false);
+            var beatSound = GetBeatSound (measure, beat);
+            await _audioService.PlayAsync (beatSound, beatSound.Length).ConfigureAwait(false);
 
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatStarted, measure, beat));
+            // Raise BeatStarted event
+            BeatStarted?.BeginInvoke(this, beat, null, null);
 
             // Divided by two due to the ratio 16 bit PCM / wav
             var samplesElapsed = beatSound.Length / 2;
@@ -149,15 +145,16 @@ namespace DiodeCompany.Metrono.Core.Models
                 var samplesLeft = samplesPerBeat - samplesElapsed;
 
                 // Rest for a full write chunk or until the next click needs to play, whichever is less.
-                var emptyChunksArray = _defaultEmptyChunksArray;
+                var emptyChunksSamples = _defaultEmptyChunksArray.Length;
                 if (samplesLeft < _defaultEmptyChunksArray.Length)
                 {
                     // Multiplied by two due to the ratio wav / 16 bit PCM
-                    emptyChunksArray = new byte[2 * samplesLeft];
+                    emptyChunksSamples = 2 * samplesLeft;
                 }
-                await _audioService.PlayAsync (emptyChunksArray).ConfigureAwait(false);
+                await _audioService.PlayAsync (_defaultEmptyChunksArray, emptyChunksSamples).ConfigureAwait(false);
 
-                samplesElapsed += emptyChunksArray.Length / 2;
+                // Elasped samples
+                samplesElapsed += emptyChunksSamples / 2;
 
                 // In case the tempo changed
                 samplesPerBeat = GetSamplesPerBeat (beat);
@@ -171,32 +168,35 @@ namespace DiodeCompany.Metrono.Core.Models
 
             beat.IsPlaying = false;
 
-            _messenger.Publish<MetronomeMessage> (new MetronomeMessage (this, MetronomeEvent.BeatFinished, measure, beat));
-
-            // Run the GC on each beat to avoid an unwanted GC
-            GC.Collect (0);
+            // Raise BeatFinished event
+            BeatFinished?.BeginInvoke(this, beat, null, null);
         }
 
-        private byte[] GetBeatSound(Beat beat)
+        private byte[] GetBeatSound(Measure measure, Beat beat)
         {
-            if (beat.Status != BeatStatus.Mutated)
+            if (beat.Status == BeatStatus.Mutated)
             {
-                if (beat.Status == BeatStatus.Accented && _settings.PlayAccentedBeats)
-                {
-                    return ResourcesHelper.ClickSoundMap [_settings.AccentedBeatClick];
-                }
-                else if (beat.Number == 1 && _settings.PlayFirstBeat)
-                {
-                    return ResourcesHelper.ClickSoundMap [_settings.FirstBeatClick];
-                }
-                else if (beat.Number == beat.TupletNumerator && _settings.PlayLastBeat)
-                {
-                    return ResourcesHelper.ClickSoundMap [_settings.LastBeatClick];
-                }
-                else if (_settings.PlayClick)
-                { 
-                    return ResourcesHelper.ClickSoundMap [_settings.BeatClick];
-                }
+                return _defaultEmptyChunksArray;
+            }
+
+            if (beat.Status == BeatStatus.Accented && _settings.PlayAccentedBeats)
+            {
+                return ResourcesHelper.ClickSoundMap [_settings.AccentedBeatClick];
+            }
+
+            if (beat.Number == 1 && _settings.PlayFirstBeat)
+            {
+                return ResourcesHelper.ClickSoundMap [_settings.FirstBeatClick];
+            }
+
+            if (beat.Number == measure.BeatList.Count && _settings.PlayLastBeat)
+            {
+                return ResourcesHelper.ClickSoundMap [_settings.LastBeatClick];
+            }
+
+            if (_settings.PlayClick)
+            { 
+                return ResourcesHelper.ClickSoundMap [_settings.BeatClick];
             }
 
             return _defaultEmptyChunksArray;

@@ -3,7 +3,6 @@ using Android.OS;
 using Android.Support.V4.View;
 using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Controls.ViewPagerIndicator;
-using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Adapters;
 using MvvmCross.Droid.Support.V4;
 
@@ -24,8 +23,6 @@ namespace DiodeCompany.Metrono.Droid.Activities
             // Indicator
             var indicator = FindViewById<TitlePageIndicatorView>(Resource.Id.indicator);
             indicator.SetViewPager(pager);
-
-            GoogleAnalyticsHelper.Instance.TrackPage("Tutorial");
         }
 	}
 }

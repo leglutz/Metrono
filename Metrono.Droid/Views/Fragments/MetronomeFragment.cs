@@ -4,17 +4,14 @@ using Android.Runtime;
 using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
-using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Services;
 using DiodeCompany.Metrono.Core.ViewModels;
-using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Activities;
 using DiodeCompany.Metrono.Droid.Views.Adapters;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.Messenger;
 using System;
 
 namespace DiodeCompany.Metrono.Droid.Views.Fragments
@@ -22,7 +19,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
     [Register("diodecompany.metrono.droid.views.fragments.MetronomeFragment")]
     public class MetronomeFragment : MvxFragment<MetronomeViewModel>, View.IOnClickListener, AdapterView.IOnTouchListener, GestureDetector.IOnGestureListener
     {
-        private MvxSubscriptionToken _metronomeMessageSubscriptionToken;
+        private Settings _settings;
         private ObjectAnimator _backgroundColorAnimator;
         private GridView _gridView;
         private GestureDetector _gestureDetector;
@@ -30,6 +27,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
         public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ViewModel = Mvx.Resolve<MetronomeViewModel>();
+            _settings = Mvx.Resolve<ISettingsService>().Settings;
 
             var ignored = base.OnCreateView (inflater, container, savedInstanceState);
             var view = this.BindingInflate (Resource.Layout.fragment_metronome, null);
@@ -39,8 +37,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             // Beats layout background animation
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
             beatsLayout.SetOnClickListener (this);
-            var settings = Mvx.Resolve<ISettingsService>().Settings;
-            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
+            _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), _settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
+            _backgroundColorAnimator.SetAutoCancel(true);
 
             // GridView
             _gridView = view.FindViewById<GridView>(Resource.Id.grid_view);
@@ -54,9 +52,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 .Replace (Resource.Id.measure_frame, measureFragment)
                 .Commit ();
 
+            // Gesture detector
             _gestureDetector = new GestureDetector(Context, this);
-
-            GoogleAnalyticsHelper.Instance.TrackPage("Metronome");
 
             return view;
         }
@@ -65,14 +62,16 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
         {
             base.OnStart ();
 
-            _metronomeMessageSubscriptionToken = Mvx.Resolve<IMvxMessenger>().SubscribeOnMainThread<MetronomeMessage> (OnMetronomeMessage);
+            ViewModel.Metronome.BeatStarted += OnBeatStarted;
+            ViewModel.Metronome.BeatFinished += OnBeatFinished;
         }
 
         public override void OnStop ()
         {
             base.OnStop ();
 
-            Mvx.Resolve<IMvxMessenger>().Unsubscribe<MetronomeMessage> (_metronomeMessageSubscriptionToken);
+            ViewModel.Metronome.BeatStarted -= OnBeatStarted;
+            ViewModel.Metronome.BeatFinished -= OnBeatFinished;
         }
 
         public void OnClick (View view)
@@ -187,67 +186,50 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
         public override void OnPrepareOptionsMenu (IMenu menu)
         {
+
+            base.OnPrepareOptionsMenu(menu);
             menu.FindItem (Resource.Id.menu_settings).SetVisible(true);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (false);
             ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.app_name);
-
-            base.OnPrepareOptionsMenu (menu);
         }
 
-        private void OnMetronomeMessage (MetronomeMessage metronomeMessage)
+        private void OnBeatStarted(object sender, Beat beat)
         {
-            var settings = Mvx.Resolve<ISettingsService>().Settings;
-            switch(metronomeMessage.MetronomeEvent)
+            Activity.RunOnUiThread(() =>
             {
-                case MetronomeEvent.BeatStarted:
-                    {
-                        // Beat
-                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
-                        if (beatView != null)
-                        {
-                            beatView.Alpha = 1;
-                        }
+                // Beat
+                var beatView = _gridView.GetChildAt(beat.Number - 1);
+                if (beatView != null)
+                {
+                    beatView.Alpha = 1;
+                }
 
-                        // Flash
-                        if (settings.Flash)
-                        {   
-                            _backgroundColorAnimator.SetObjectValues (settings.FlashColor, ContextCompat.GetColor (Context, Resource.Color.background));
-                            _backgroundColorAnimator.SetDuration ((long)(metronomeMessage.Beat.Duration * 1000));
-                            _backgroundColorAnimator.Start ();
-                        }
-                    }
-                    break;
-                case MetronomeEvent.BeatFinished:
-                    {
-                        // Beat
-                        var beatView = _gridView.GetChildAt (metronomeMessage.Beat.Number - 1);
-                        if (beatView != null)
-                        {
-                            beatView.Alpha = 0.5f;
-                        }
+                // Flash
+                if (_settings.Flash)
+                {
+                    _backgroundColorAnimator.SetObjectValues(_settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
+                    _backgroundColorAnimator.SetDuration((long)(beat.Duration * 1000));
+                    _backgroundColorAnimator.Start();
+                }
+            });
+        }
 
-                        // Flash
-                        if (settings.Flash)
-                        {
-                            _backgroundColorAnimator.End ();
-                        }
-                    }
-                    break;
-            }
+        private void OnBeatFinished(object sender, Beat beat)
+        {
+            Activity.RunOnUiThread(() =>
+            {
+                // Beat
+                var beatView = _gridView.GetChildAt(beat.Number - 1);
+                if (beatView != null)
+                {
+                    beatView.Alpha = 0.5f;
+                }
+            });
         }
 
         private void StartStopMetronome()
         {
             ViewModel.StartStopCommand.Execute();
-
-            if (ViewModel.Metronome.IsPlaying)
-            {
-                GoogleAnalyticsHelper.Instance.TrackEvent("Metronome", "Start");
-            }
-            else
-            {
-                GoogleAnalyticsHelper.Instance.TrackEvent("Metronome", "Stop");
-            }
         }
     }
 }

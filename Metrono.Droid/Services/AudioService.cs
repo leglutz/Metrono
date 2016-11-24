@@ -11,7 +11,7 @@ namespace DiodeCompany.Metrono.Droid.Services
     /// </summary>
     public class AudioService : IAudioService
     {
-        private readonly AudioTrack _audioTrack;
+        private AudioTrack _audioTrack;
 
         public int SamplingRate
         {
@@ -28,11 +28,11 @@ namespace DiodeCompany.Metrono.Droid.Services
         public AudioService ()
         {
             MinBufferSize = AudioTrack.GetMinBufferSize (SamplingRate, ChannelOut.Mono, Encoding.Pcm16bit);
-            _audioTrack = new AudioTrack(Stream.Music, SamplingRate, ChannelOut.Mono, Encoding.Pcm16bit, 2 * MinBufferSize, AudioTrackMode.Stream);
         }
 
         public void StartPlaying ()
         {
+            _audioTrack = new AudioTrack(Stream.Music, SamplingRate, ChannelOut.Mono, Encoding.Pcm16bit, 2 * MinBufferSize, AudioTrackMode.Stream);
             _audioTrack.Play ();
         }
 
@@ -41,10 +41,12 @@ namespace DiodeCompany.Metrono.Droid.Services
             if (_audioTrack != null)
             {
                 _audioTrack.Stop();
+                _audioTrack.Release();
+                _audioTrack = null;
             }
         }
 
-        public async Task PlayAsync (byte[] sound)
+        public async Task PlayAsync (byte[] sound, int length)
         {
             if (_audioTrack != null && IsPlaying)
             {

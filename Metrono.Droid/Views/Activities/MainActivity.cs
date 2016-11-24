@@ -7,7 +7,6 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using DiodeCompany.Metrono.Core.Messages;
 using DiodeCompany.Metrono.Core.ViewModels;
-using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Fragments;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
@@ -42,10 +41,10 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
 
             // AdView
             _adView = FindViewById<AdView> (Resource.Id.ad_view);
-            #if !DEBUG
+#if !DEBUG
             var adRequest = new AdRequest.Builder ()
                 .AddTestDevice (AdRequest.DeviceIdEmulator)
-                .AddTestDevice ("0B04ED2E47EE0BB7DA11F64E36862E6E") // Sony D5503 (Xperia Z1 Compact)
+                .AddTestDevice ("6F60B4E94DEB43A40218FC26DD2DAF58") // Honor 5C
                 .Build ();
             // Initialize Insights
             _adView.LoadAd(adRequest);
@@ -80,11 +79,11 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
                         .Add (Resource.Id.content_frame, _settingsFragment)
                         .AddToBackStack(null)
                         .Commit ();
-                    break;
+                    return true;
                 case Resource.Id.menu_tutorial:
                     // Tutorial activity
                     ViewModel.TutorialCommand.Execute();
-                    break;
+                    return true;
             }
 
             return base.OnOptionsItemSelected (item);
@@ -92,40 +91,34 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
 
         protected override void OnPause ()
         {
+            base.OnPause();
+
             var messenger = Mvx.Resolve<IMvxMessenger>();
             if(IsScreenAwake())
             {
                 messenger.Publish(new LifeCycleMessage (this, LifeCycleEvent.Stop));
-                GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Stop");
             }
             else
             {
                 messenger.Publish(new LifeCycleMessage (this, LifeCycleEvent.Lock));
-                GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Lock");
             }
             _adView.Pause ();
-
-            base.OnPause ();
         }
 
         protected override void OnResume ()
         {
-            base.OnResume ();
+            base.OnResume();
 
             Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Start));
             _adView.Resume ();
-
-            GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Start");
         }
 
         protected override void OnDestroy ()
         {
+            base.OnDestroy();
+
             Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Destroy));
             _adView.Destroy ();
-
-            GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Destroy");
-
-            base.OnDestroy ();
         }
 
         public void OnAudioFocusChange (AudioFocus focusChange)
@@ -133,7 +126,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             if(focusChange == AudioFocus.LossTransient)
             {
                 Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Stop));
-                GoogleAnalyticsHelper.Instance.TrackEvent("LifeCycleEvent", "Stop");
             }
         }
 

@@ -44,23 +44,6 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:layout_gravity="center_vertical"
-                    android:textAppearance="@style/text_small"
-                    android:text="@string/settings_vibration" />
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/settings_margin" />
-                <ToggleButton
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/settings_margin"
-                    android:layout_gravity="center"
-                    style="@style/toggle_button"
-                    local:MvxBind="Checked Settings.Vibration" />
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_span="3"

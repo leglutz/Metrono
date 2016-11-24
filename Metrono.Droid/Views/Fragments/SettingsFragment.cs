@@ -4,7 +4,6 @@ using Android.Runtime;
 using Android.Views;
 using DiodeCompany.Metrono.Core.ViewModels;
 using DiodeCompany.Metrono.Droid.Controls.ColorPicker;
-using DiodeCompany.Metrono.Droid.Helpers;
 using DiodeCompany.Metrono.Droid.Views.Activities;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
@@ -34,19 +33,17 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 };
                 colorPickerDialogFragment.Show(FragmentManager, null);
             };
-
-            GoogleAnalyticsHelper.Instance.TrackPage("Settings");
-
+            
             return view;
         }
 
         public override void OnPrepareOptionsMenu (IMenu menu)
         {
+            base.OnPrepareOptionsMenu(menu);
+
             menu.FindItem (Resource.Id.menu_settings).SetVisible(false);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (true);
             ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.settings);
-
-            base.OnPrepareOptionsMenu (menu);
         }
 
         public override bool OnOptionsItemSelected (IMenuItem item)
@@ -56,7 +53,7 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
                 case Android.Resource.Id.Home:
                     // Metronome fragment
                     FragmentManager.PopBackStack();
-                    break;
+                    return true;
             }
 
             return base.OnOptionsItemSelected (item);

@@ -61,16 +61,6 @@ namespace DiodeCompany.Metrono.Core.Models
             }
         }
 
-        public bool Vibration
-        {
-            get { return _settings.GetValue<bool>("Vibration", false); }
-            set 
-            { 
-                _settings.AddOrUpdateValue<bool>("Vibration", value); 
-                RaisePropertyChanged (() => Vibration);
-            }
-        }
-
         public bool PlayClick
         {
             get { return _settings.GetValue<bool>("PlayClick", true); }

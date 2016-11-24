@@ -17,8 +17,6 @@ namespace DiodeCompany.Metrono.Droid.Activities
 		{
             // Initialize Xamarin Insights
             XamarinInsightsHelper.Instance.Initialize(Application);
-            // Initialize Google Analytics
-            GoogleAnalyticsHelper.Instance.Initialize(Application);
 
 			base.OnCreate (bundle);
 		}

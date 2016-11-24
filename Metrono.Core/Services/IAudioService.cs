@@ -9,7 +9,7 @@ namespace DiodeCompany.Metrono.Core.Services
         bool IsPlaying { get; }
         void StartPlaying ();
         void StopPlaying ();
-        Task PlayAsync (byte[] sound);
+        Task PlayAsync (byte[] sound, int length);
     }
 }
 

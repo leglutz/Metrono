@@ -3,16 +3,13 @@ using DiodeCompany.Metrono.Core.Models;
 using DiodeCompany.Metrono.Core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
-using Plugin.Vibrate;
-using System;
 
 namespace DiodeCompany.Metrono.Core.ViewModels
 {
     public class MetronomeViewModel : ViewModelBase
     {
         private readonly Settings _settings;
-        private readonly MvxSubscriptionToken _metronomeMessageSubscriptionToken;
-
+        
         public MeasureViewModel MeasureViewModel { get; private set; }
         public Metronome Metronome { get; set; }
 
@@ -22,7 +19,6 @@ namespace DiodeCompany.Metrono.Core.ViewModels
         public MetronomeViewModel (MeasureViewModel measureViewModel, ISettingsService settingsService, IMvxMessenger messenger)
         {
             _settings = settingsService.Settings;
-            _metronomeMessageSubscriptionToken = messenger.SubscribeOnThreadPoolThread<MetronomeMessage> (OnMetronomeMessage);
 
             MeasureViewModel = measureViewModel;
             Metronome = new Metronome();
@@ -50,29 +46,6 @@ namespace DiodeCompany.Metrono.Core.ViewModels
                 case LifeCycleEvent.Stop:
                 case LifeCycleEvent.Destroy:
                     Metronome.Stop ();
-                    break;
-            }
-        }
-
-        private void OnMetronomeMessage (MetronomeMessage metronomeMessage)
-        {
-            switch (metronomeMessage.MetronomeEvent)
-            {
-                case MetronomeEvent.BeatStarted:
-                    {
-                        // Vibration
-                        if (_settings.Vibration)
-                        {
-                            try
-                            {
-                                CrossVibrate.Current.Vibration((int)(metronomeMessage.Beat.Duration / 4.0 * 1000));
-                            }
-                            catch (Exception)
-                            {
-                                _settings.Vibration = false;
-                            }
-                        }
-                    }
                     break;
             }
         }
