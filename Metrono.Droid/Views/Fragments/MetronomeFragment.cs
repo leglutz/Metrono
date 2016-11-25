@@ -38,7 +38,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
             var beatsLayout = view.FindViewById<View>(Resource.Id.beats_layout);
             beatsLayout.SetOnClickListener (this);
             _backgroundColorAnimator = ObjectAnimator.OfObject (beatsLayout, "backgroundColor", new ArgbEvaluator(), _settings.FlashColor, ContextCompat.GetColor(Context, Resource.Color.background));
-            _backgroundColorAnimator.SetAutoCancel(true);
 
             // GridView
             _gridView = view.FindViewById<GridView>(Resource.Id.grid_view);
@@ -186,8 +185,8 @@ namespace DiodeCompany.Metrono.Droid.Views.Fragments
 
         public override void OnPrepareOptionsMenu (IMenu menu)
         {
-
             base.OnPrepareOptionsMenu(menu);
+
             menu.FindItem (Resource.Id.menu_settings).SetVisible(true);
             ((MainActivity)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled (false);
             ((MainActivity)Activity).SupportActionBar.Title = GetString(Resource.String.app_name);
