@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using Android.Gms.Ads;
 using Android.Media;
 using Android.OS;
 using Android.Support.V7.Widget;
@@ -19,7 +18,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
     {
         private MetronomeFragment _metronomeFragment;
         private SettingsFragment _settingsFragment;
-        private AdView _adView;
         
         protected override void OnCreate (Bundle bundle)
         {
@@ -38,17 +36,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
            
             // Settings fragment
             _settingsFragment = new SettingsFragment();
-
-            // AdView
-            _adView = FindViewById<AdView> (Resource.Id.ad_view);
-#if !DEBUG
-            var adRequest = new AdRequest.Builder ()
-                .AddTestDevice (AdRequest.DeviceIdEmulator)
-                .AddTestDevice ("6F60B4E94DEB43A40218FC26DD2DAF58") // Honor 5C
-                .Build ();
-            // Initialize Insights
-            _adView.LoadAd(adRequest);
-#endif
 
             // AudioManager
             var audioManager = GetSystemService(AudioService) as AudioManager;
@@ -102,7 +89,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             {
                 messenger.Publish(new LifeCycleMessage (this, LifeCycleEvent.Lock));
             }
-            _adView.Pause ();
         }
 
         protected override void OnResume ()
@@ -110,7 +96,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             base.OnResume();
 
             Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Start));
-            _adView.Resume ();
         }
 
         protected override void OnDestroy ()
@@ -118,7 +103,6 @@ namespace DiodeCompany.Metrono.Droid.Views.Activities
             base.OnDestroy();
 
             Mvx.Resolve<IMvxMessenger>().Publish(new LifeCycleMessage (this, LifeCycleEvent.Destroy));
-            _adView.Destroy ();
         }
 
         public void OnAudioFocusChange (AudioFocus focusChange)

@@ -13,11 +13,4 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/ad_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        local:adSize="SMART_BANNER"
-        local:adUnitId="@string/ad_unit_id" />
 </LinearLayout>

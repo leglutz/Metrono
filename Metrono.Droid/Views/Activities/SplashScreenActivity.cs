@@ -1,7 +1,5 @@
 using Android.App;
 using Android.Content.PM;
-using Android.OS;
-using DiodeCompany.Metrono.Droid.Helpers;
 using MvvmCross.Droid.Views;
 
 namespace DiodeCompany.Metrono.Droid.Activities
@@ -11,14 +9,6 @@ namespace DiodeCompany.Metrono.Droid.Activities
 	{
 		public SplashScreenActivity () : base (Resource.Layout.activity_splash_screen)
 		{
-		}
-
-		protected override void OnCreate (Bundle bundle)
-		{
-            // Initialize Xamarin Insights
-            XamarinInsightsHelper.Instance.Initialize(Application);
-
-			base.OnCreate (bundle);
 		}
 	}
 }
