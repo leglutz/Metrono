@@ -56,10 +56,6 @@
     </JavaMaximumHeapSize>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <AndroidKeyStore>True</AndroidKeyStore>
-    <AndroidSigningKeyStore>***REMOVED***</AndroidSigningKeyStore>
-    <AndroidSigningStorePass>***REMOVED***</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>***REMOVED***</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>***REMOVED***</AndroidSigningKeyPass>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
     <BundleAssemblies>False</BundleAssemblies>
